@@ -48,7 +48,9 @@ const MEASURE_JS = `(() => {
   texts.sort((a, b) => b.bbox.w * b.bbox.h - a.bbox.w * a.bbox.h);
   return {
     texts: texts.slice(0, 60),
-    bodyBg: hex(getComputedStyle(document.body).backgroundColor),
+    // The page colour often sits on html or a full-size wrapper, not body; browsers default to white.
+    bodyBg: [document.body, document.documentElement].map((e) => hex(getComputedStyle(e).backgroundColor)).find((c) => c !== "transparent")
+      || ([...bgs].find(([c, a]) => a >= W * H * 0.9) || ["#ffffff"])[0],
     dominantBgs: [...bgs].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([color, area]) => ({ color, area })),
   };
 })()`;
