@@ -1,0 +1,21 @@
+.main { max-width: 1120px; margin: 0 auto; padding: 40px 32px 96px; }
+.title { font: 600 64px/1 var(--font-display); letter-spacing: -0.03em; margin: 12px 0 14px; }
+.dek { color: var(--muted); font-size: 17px; max-width: 640px; margin: 0 0 32px; }
+.pass { border-left: 4px solid var(--accent); padding: 6px 12px; margin: 0 0 24px; font-weight: 500; }
+.empty { border: 1px dashed var(--border-strong); border-radius: 8px; padding: 32px; margin-bottom: 32px; }
+.empty h2 { font: 600 20px/1.2 var(--font-body); margin: 0 0 8px; }
+.empty p { color: var(--muted); margin: 0; max-width: 680px; }
+.table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+.table th { text-align: left; font-size: 12px; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--text); padding: 8px 12px 8px 0; }
+.table td { border-bottom: 1px solid var(--border); padding: 12px 12px 12px 0; font-size: 15px; }
+.table .num, .table th.num { text-align: right; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.panel { border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+.stat { margin: 16px 0 0; }
+.stat dt { font-weight: 600; margin-bottom: 4px; }
+.stat dd { margin: 0; color: var(--muted); }
+.stat dd span { color: var(--text); font-size: 17px; }
+.small { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+.method { margin: 12px 0 0; padding-left: 18px; color: var(--muted); display: grid; gap: 8px; }
+.h2 { font: 600 22px/1.2 var(--font-body); margin: 8px 0 0; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .title { font-size: 44px; } }

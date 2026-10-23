@@ -1,0 +1,20 @@
+.main { max-width: 960px; margin: 0 auto; padding: 40px 32px 96px; }
+.title { font: 600 64px/1 var(--font-display); letter-spacing: -0.03em; margin: 12px 0 32px; }
+.presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 48px; }
+.preset { text-align: left; display: grid; gap: 8px; padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); cursor: pointer; transition: border-color 120ms ease-out; }
+.preset:hover { border-color: var(--border-strong); }
+.preset[aria-pressed="true"] { border-color: var(--text); box-shadow: inset 0 0 0 1px var(--text); }
+.preset strong { font-size: 18px; }
+.swatches { display: flex; gap: 4px; }
+.swatches i { width: 28px; height: 28px; border-radius: 4px; border: 1px solid var(--border); }
+.source { font-size: 12px; color: var(--muted); }
+.form { display: grid; gap: 16px; max-width: 620px; }
+.h2 { font: 600 22px/1.2 var(--font-body); margin: 0; }
+.form label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.form input:not([type="color"]), .form select { height: 40px; border: 1px solid var(--border-strong); border-radius: 6px; padding: 0 12px; font: 400 15px var(--font-body); color: var(--text); background: var(--bg); }
+.colours { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.colours legend { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.colours input { width: 100%; height: 40px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--bg); padding: 2px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form > .btn { justify-self: start; }
+.message { margin: 0; font-weight: 500; }
