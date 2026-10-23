@@ -17,7 +17,7 @@ import { describe, describeDom, build, critique, updateLessons } from "./agents.
 import { usage } from "./mubit.ts";
 import { render, closeBrowser } from "./render.ts";
 import { measureToText, type Measure } from "./measure.ts";
-import { domFixes } from "./dom-diff.ts";
+import { domFixes, domScore } from "./dom-diff.ts";
 import { score, type Box, type Score } from "./score.ts";
 
 const { values: opts, positionals } = parseArgs({
@@ -47,6 +47,9 @@ type Entry = { slug: string; split: string; image_heavy?: number; big_canvas?: b
 type Labels = { visual_style?: string; layout_style?: string; category?: string; bad_capture?: string };
 const readJson = <T>(path: string, fallback: T): T => (existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback);
 const INDEX: Entry[] = readJson(`${opts.sites}/index.json`, []);
+// data/holdout-extra.json moves some train sites to holdout, so the screenshot scorecard has enough type-led sites.
+const EXTRA = new Set<string>(readJson<{ slugs: string[] }>("data/holdout-extra.json", { slugs: [] }).slugs);
+for (const s of INDEX) if (EXTRA.has(s.slug)) s.split = "holdout";
 const SPLIT = new Map(INDEX.map((s) => [s.slug, s.split]));
 const LABELS: Record<string, Labels> = readJson(opts.labels!, {});
 const layoutOf = (slug: string) => LABELS[slug]?.layout_style ?? "unlabelled";
@@ -67,6 +70,17 @@ function guidance(slug: string) {
 function alreadyDone(slug: string) {
   const dir = `data/runs/${slug}`;
   return existsSync(dir) && readdirSync(dir).some((d) => d.endsWith(`-${MODE}-${TAG}`) && existsSync(`${dir}/${d}/run.json`));
+}
+
+// One lessons update at a time per layout, each reading the latest file, so parallel sites never overwrite each other.
+const lessonChains = new Map<string, Promise<void>>();
+function lessonUpdate(layout: string, fixes: string[]) {
+  const next = (lessonChains.get(layout) ?? Promise.resolve()).then(async () => {
+    mkdirSync(`data/lessons/${MODE}`, { recursive: true });
+    writeFileSync(lessonPath(layout), (await updateLessons(read(lessonPath(layout)), fixes)) + "\n");
+  });
+  lessonChains.set(layout, next.catch(() => {}));
+  return next;
 }
 
 type Round = { round: number; score: Score; fixes: string[]; describerRequestId: string | null; ms: number };
@@ -104,6 +118,14 @@ async function runSite(slug: string) {
       png = await render("<!doctype html><body style='margin:0;background:#fff'></body>").then((r) => r.png);
     }
     const s = await score(original, png, masks);
+    // DOM mode: blend in the measurement score, and use it alone when masks hide most of the frame
+    // (on a full-screen canvas the pixel score is meaningless, since both sides are grey).
+    if (DOM) {
+      s.dom = domScore(measured!, measure ?? { texts: [], bodyBg: "#ffffff", dominantBgs: [] });
+      s.total = s.visible >= 0.3 ? Math.round(5 * (s.total + s.dom)) / 10 : s.dom;
+    } else if (s.visible < 0.3) {
+      s.total = Math.round(s.total * s.visible * 10) / 10;
+    }
     const out = `${runDir}/r${round}`;
     mkdirSync(out, { recursive: true });
     writeFileSync(`${out}/spec.md`, spec);
@@ -117,7 +139,7 @@ async function runSite(slug: string) {
     const r: Round = { round, score: s, fixes, describerRequestId: d.requestId, ms: Date.now() - started };
     writeFileSync(`${out}/round.json`, JSON.stringify(r, null, 2));
     rounds.push(r);
-    console.log(`${slug} [${MODE}/${TAG}] r${round}: ${s.total} (structure ${s.structure}, colour ${s.colour}, edges ${s.edges})`);
+    console.log(`${slug} [${MODE}/${TAG}] r${round}: ${s.total} (structure ${s.structure}, colour ${s.colour}, edges ${s.edges}, visible ${s.visible}${s.dom !== undefined ? `, dom ${s.dom}` : ""})`);
     if (done) break;
   }
 
@@ -141,11 +163,7 @@ async function runSite(slug: string) {
 
   if (opts.learn) {
     const allFixes = rounds.flatMap((r) => r.fixes);
-    if (allFixes.length) {
-      const layout = layoutOf(slug);
-      mkdirSync(`data/lessons/${MODE}`, { recursive: true });
-      writeFileSync(lessonPath(layout), (await updateLessons(read(lessonPath(layout)), allFixes)) + "\n");
-    }
+    if (allFixes.length) await lessonUpdate(layoutOf(slug), allFixes);
   }
   return summary;
 }
@@ -195,8 +213,13 @@ if (!slugs.length) {
   process.exit(0);
 }
 
+// With --learn, each layout is a queue; big layouts split into interleaved sub-queues of about 12 sites,
+// so lessons still build up within a layout without one 50-site queue running all night.
 const queues = opts.learn
-  ? Object.values(Object.groupBy(slugs, layoutOf)).map((q) => q!)
+  ? Object.values(Object.groupBy(slugs, layoutOf)).flatMap((q) => {
+      const k = Math.ceil(q!.length / 12);
+      return Array.from({ length: k }, (_, i) => q!.filter((_, j) => j % k === i));
+    })
   : slugs.map((s) => [s]);
 const results = await runQueues(queues, Number(opts.concurrency));
 if (opts.learn) await refreshAllLessons();

@@ -4,7 +4,7 @@ import sharp from "sharp";
 import { ssim } from "ssim.js";
 
 export type Box = { x: number; y: number; w: number; h: number };
-export type Score = { total: number; structure: number; colour: number; edges: number };
+export type Score = { total: number; structure: number; colour: number; edges: number; visible: number; dom?: number };
 
 const W = 480;
 const H = 300;
@@ -112,7 +112,9 @@ export async function score(original: Buffer, rebuild: Buffer, masks: Box[] = []
   const structure = Math.max(0, ssim(toRgba(a.rgb), toRgba(b.rgb)).mssim);
   const colour = colourMatch(a.rgb, b.rgb, a.keep);
   const edges = edgeMatch(a.rgb, b.rgb, a.keep);
+  // Share of the frame left after masking. Near zero, every rebuild looks perfect, so callers must not trust total alone.
+  const visible = a.keep.reduce((n, k) => n + k, 0) / (W * H);
   const total = 100 * (WEIGHTS.structure * structure + WEIGHTS.colour * colour + WEIGHTS.edges * edges);
   const r = (v: number) => Math.round(v * 1000) / 1000;
-  return { total: Math.round(total * 10) / 10, structure: r(structure), colour: r(colour), edges: r(edges) };
+  return { total: Math.round(total * 10) / 10, structure: r(structure), colour: r(colour), edges: r(edges), visible: r(visible) };
 }

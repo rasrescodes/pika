@@ -62,7 +62,7 @@ await phase("baseline", ["--split", "holdout", "--no-lessons", "--rounds", "1", 
 let previous = holdoutMean("baseline");
 let flat = 0;
 for (let epoch = 1; epoch <= MAX_EPOCHS; epoch++) {
-  if (!(await phase(`train-e${epoch}`, ["--split", "train", "--learn", "--rounds", "5", "--concurrency", "6"]))) break;
+  if (!(await phase(`train-e${epoch}`, ["--split", "train", "--learn", "--rounds", "5", "--concurrency", "8"]))) break;
   if (!(await phase(`eval-e${epoch}`, ["--split", "holdout", "--rounds", "1", "--concurrency", "6"]))) break;
   const now = holdoutMean(`eval-e${epoch}`);
   log(`epoch ${epoch}: holdout first-shot ${previous.toFixed(1)} -> ${now.toFixed(1)}`);

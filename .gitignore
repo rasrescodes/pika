@@ -8,3 +8,6 @@ dist/
 *.log
 data/runs/
 .claude/worktrees/
+data/batch/READY
+data/batch/batch.log
+data/batch/watcher.out

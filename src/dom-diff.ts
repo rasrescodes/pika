@@ -17,10 +17,16 @@ function colourGap(a: string, b: string) {
   return x && y ? Math.hypot(x[0] - y[0], x[1] - y[1], x[2] - y[2]) : 0;
 }
 
+// Same text can appear more than once (hover duplicates, repeated labels), so take the nearest candidate.
 function match(t: TextBox, pool: TextBox[]) {
   const key = norm(t.text);
   if (!key) return undefined;
-  return pool.find((p) => norm(p.text) === key) ?? pool.find((p) => norm(p.text).startsWith(key.slice(0, 20)) || key.startsWith(norm(p.text).slice(0, 20)));
+  const dist = (p: TextBox) => Math.hypot(p.bbox.x - t.bbox.x, p.bbox.y - t.bbox.y);
+  const nearest = (xs: TextBox[]) => xs.sort((a, b) => dist(a) - dist(b))[0];
+  return (
+    nearest(pool.filter((p) => norm(p.text) === key)) ??
+    nearest(pool.filter((p) => norm(p.text).startsWith(key.slice(0, 20)) || key.startsWith(norm(p.text).slice(0, 20))))
+  );
 }
 
 export function domFixes(original: Measure, rebuild: Measure): string[] {
@@ -63,4 +69,25 @@ export function domFixes(original: Measure, rebuild: Measure): string[] {
   }
 
   return found.sort((a, b) => b.weight - a.weight).slice(0, 5).map((f) => f.fix);
+}
+
+// 0-100: how well the rebuild's text matches the original's, weighted by text area, plus the page colour.
+// Per text: found (or not), then position, size and colour closeness. Used where media masks hide most pixels.
+export function domScore(original: Measure, rebuild: Measure): number {
+  let sum = 0;
+  let weight = 0;
+  for (const t of original.texts) {
+    if (!norm(t.text)) continue; // symbols-only text can't be matched, so it doesn't count
+    const area = Math.max(1, t.bbox.w * t.bbox.h);
+    weight += area;
+    const r = match(t, rebuild.texts);
+    if (!r) continue;
+    const pos = Math.max(0, 1 - Math.hypot(r.bbox.x - t.bbox.x, r.bbox.y - t.bbox.y) / 200);
+    const size = Math.max(0, 1 - Math.abs(num(r.fontSize) / (num(t.fontSize) || 1) - 1));
+    const colour = Math.max(0, 1 - colourGap(t.color, r.color) / 255);
+    sum += area * (0.4 + 0.25 * pos + 0.2 * size + 0.15 * colour);
+  }
+  const text = weight ? sum / weight : 1;
+  const bg = Math.max(0, 1 - colourGap(original.bodyBg, rebuild.bodyBg) / 255);
+  return Math.round(1000 * (0.85 * text + 0.15 * bg)) / 10;
 }
