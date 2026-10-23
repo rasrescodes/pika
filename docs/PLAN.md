@@ -5,7 +5,7 @@
 2. **Generator:** makes N versions of one website section (start with the hero) as HTML/CSS/SVG, all text, through Mubit.
 3. **Juror:** scores each version 1-10 on design, usability, creativity and content, plus one line on what's wrong. Fixed system prompt, short JSON output, through Mubit. This is the task Mubit trains.
 4. **Wall:** the versions render live on a grid, ranked by the Juror.
-5. **Override:** the art director drags a version up or down or edits a score. That correction is logged and sent to Mubit as the correction for that call.
+5. **Override:** the art director drags a version up or down or edits a score. The correction goes into taste memory, which every later Juror call carries through Mubit; Mubit's next trained adapter learns from those calls (and from Mubit's own correction route, if the team confirms one exists).
 6. **Next batch** is ranked the way the art director would rank it.
 
 ## The proof (what makes it survive questions)
@@ -37,9 +37,9 @@
 
 ## Demo (3 minutes, draft)
 1. 0:00 The pain: "Studios review dozens of options a day. Taste doesn't scale."
-2. 0:20 Upload a judge's favourite brand; 20 hero sections appear and the Juror ranks them.
-3. 1:00 The art director overrides: drags #7 to #1, "braver type".
-4. 1:30 The next batch is ranked their way. That's the correction becoming a model update through Mubit.
+2. 0:20 Pick a preset brand (Pika, or Mubit's own brand); 12 hero sections appear and the Juror ranks them.
+3. 1:00 A judge plays art director: drags #7 to #1, "braver type".
+4. 1:30 The next batch is ranked their way: the Juror applies the correction on the next call. We say "model update" only if the correction proof (adapter trained after the correction, answers moving the right way) has passed; otherwise we say the update lands on Mubit's next training run.
 5. 2:10 Scorecard: Juror vs real Awwwards scores, big vs small model, cost and speed side by side.
 6. 2:45 Close: "Your taste, at the price of a small model."
 
