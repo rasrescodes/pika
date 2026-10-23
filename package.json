@@ -7,7 +7,11 @@
     "smoke:image": "tsx scripts/mubit-smoke-image.ts",
     "loop": "tsx src/loop.ts",
     "score": "tsx src/score-cli.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "batch": "tsx src/batch.ts",
+    "report": "tsx src/report.ts",
+    "features": "tsx scripts/features.ts",
+    "labels:merge": "tsx scripts/labels-merge.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.2.0",

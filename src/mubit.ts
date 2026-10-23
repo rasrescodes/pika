@@ -49,8 +49,12 @@ export type Call = {
 
 export type Reply = { text: string; requestId: string | null; ms: number; inTokens: number; outTokens: number };
 
+// Running totals for this process, so a batch can report usage and stop at a budget.
+export const usage = { calls: 0, inTokens: 0, outTokens: 0 };
+
 export async function ask(call: Call): Promise<Reply> {
   const started = Date.now();
+  usage.calls++;
   const { data, response } = await mubit()
     .messages.create(
       {
@@ -63,6 +67,8 @@ export async function ask(call: Call): Promise<Reply> {
       call.record === false ? { headers: { "x-middleware-record": "metadata" } } : undefined,
     )
     .withResponse();
+  usage.inTokens += data.usage.input_tokens;
+  usage.outTokens += data.usage.output_tokens;
   const out = data.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join("");
   return {
     text: out,

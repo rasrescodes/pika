@@ -2,7 +2,7 @@
 
 Things only a person can do. Tick when done.
 
-- [ ] Rassa and Luka: each get a Mubit key (early-access email) and put it in your own `.env`.
+- [ ] **Blocking everything tonight:** Rassa and Luka: each get a Mubit key (early-access email) and put it in your own `.env`. The batch starts by itself once `.env` has `MUBIT_API_KEY` (see OPERATE.md).
 - [ ] Luka: accept the GitHub invite to rasrescodes/pika.
 - [ ] Kimberley: accept the GitHub invite to rasrescodes/pika, then read brand/README.md.
 - [ ] Ask the Mubit team: how do corrections reach the adapter, and can a corrected answer become a training example?

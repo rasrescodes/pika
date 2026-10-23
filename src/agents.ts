@@ -5,10 +5,12 @@ import sharp from "sharp";
 import { ask, image, text, MODELS, type Reply } from "./mubit.ts";
 
 const prompt = (name: string) => readFileSync(`prompts/${name}.md`, "utf8").trim();
+// Pinned versions: changing one starts a new Mubit task, so bump on purpose and note it in DECISIONS.md.
+const V = { describer: process.env.DESCRIBER_PROMPT || "v1", builder: process.env.BUILDER_PROMPT || "v1" };
 const SYSTEM = {
-  describer: prompt("describer.v1"),
-  describerDom: prompt("describer-dom.v1"),
-  builder: prompt("builder.v1"),
+  describer: prompt(`describer.${V.describer}`),
+  describerDom: prompt(`describer-dom.${V.describer}`),
+  builder: prompt(`builder.${V.builder}`),
   critic: prompt("critic.v1"),
   lessons: prompt("lessons.v1"),
 };
