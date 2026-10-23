@@ -1,0 +1,24 @@
+{
+  "slug": "truckn-roll-r",
+  "url": "https://trucknroll.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/truckn-roll-r",
+  "award": "Site of the Day",
+  "award_date": "2026-06-03",
+  "jury": {
+    "design": 7.34,
+    "usability": 7.09,
+    "creativity": 7.2,
+    "content": 7.21,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:51:36.102Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.479,
+  "big_canvas": false,
+  "notes": ""
+}

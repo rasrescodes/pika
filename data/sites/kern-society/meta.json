@@ -1,19 +1,19 @@
 {
   "slug": "kern-society",
   "url": "https://shockingmike.github.io/kern-society",
-  "source": "onepagelove",
   "awwwards_url": null,
   "onepagelove_url": "https://onepagelove.com/kern-society",
   "award": "One Page Love",
   "award_date": "2026-10-13",
   "jury": null,
-  "captured_at": "2026-10-23T20:39:46.961Z",
+  "split": "train",
+  "captured_at": "2026-10-23T21:47:44.453Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
   "image_heavy": 0,
-  "split": "train",
-  "notes": "Featured on One Page Love (Bold, Brutalism, Typographic). One Page Love does not publish jury scores."
+  "big_canvas": false,
+  "notes": ""
 }

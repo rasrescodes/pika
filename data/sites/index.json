@@ -1,629 +1,802 @@
-{
-  "captured_at": "2026-10-23T21:05:24Z",
-  "viewport": [
-    1440,
-    900
-  ],
-  "sources": [
-    "awwwards",
-    "onepagelove"
-  ],
-  "faked": [],
-  "notes": "One Page Love does not publish jury scores, so those sites have jury null. Nothing was invented. The holdout five span the original Awwwards range, 7.18 to 7.60. Sites added later are train, including floema at 7.65.",
-  "sites": [
-    {
-      "slug": "coffeetech-r",
-      "source": "awwwards",
-      "url": "https://coffee-tech.com/",
-      "award": "Site of the Day",
-      "award_date": "2026-07-16",
-      "overall": 7.18,
-      "split": "holdout",
-      "image_heavy": 0,
-      "banner": false,
-      "notes": ""
-    },
-    {
-      "slug": "produx-design",
-      "source": "awwwards",
-      "url": "https://www.produx.design",
-      "award": "Site of the Day",
-      "award_date": "2026-08-09",
-      "overall": 7.19,
-      "split": "train",
-      "image_heavy": 0.358,
-      "banner": true,
-      "notes": "Small cookie card stayed. The buttons read May the cookies be with you and I will pass, outside accept, agree, ok and got it."
-    },
-    {
-      "slug": "signal-a-studio",
-      "source": "awwwards",
-      "url": "https://signal-a.studio",
-      "award": "Site of the Day",
-      "award_date": "2026-10-18",
-      "overall": 7.22,
-      "split": "train",
-      "image_heavy": 0.293,
-      "banner": false,
-      "notes": ""
-    },
-    {
-      "slug": "2xa-studio",
-      "source": "awwwards",
-      "url": "https://2xa.studio/",
-      "award": "Site of the Day",
-      "award_date": "2026-07-31",
-      "overall": 7.22,
-      "split": "train",
-      "image_heavy": 1,
-      "banner": false,
-      "notes": "The diagram is large SVG circles, so image_heavy is 1. Settled layout, not a photograph."
-    },
-    {
-      "slug": "mosbys-files",
-      "source": "awwwards",
-      "url": "https://www.mosbyfiles.com/",
-      "award": "Site of the Day",
-      "award_date": "2026-08-13",
-      "overall": 7.23,
-      "split": "train",
-      "image_heavy": 0,
-      "banner": false,
-      "notes": ""
-    },
-    {
-      "slug": "c-design-by-dylan",
-      "source": "awwwards",
-      "url": "https://www.dylanbrouwer.design/",
-      "award": "Site of the Day",
-      "award_date": "2026-02-03",
-      "overall": 7.28,
-      "split": "train",
-      "image_heavy": 0.867,
-      "banner": false,
-      "notes": "Display type with a monitor mock. The mock is in the masks."
-    },
-    {
-      "slug": "new-genre-studio",
-      "source": "awwwards",
-      "url": "https://newgenre.studio",
-      "award": "Site of the Day",
-      "award_date": "2025-11-28",
-      "overall": 7.3,
-      "split": "holdout",
-      "image_heavy": 0.008,
-      "banner": false,
-      "notes": "An Awwwards Site of the Day tab sits on the right edge."
-    },
-    {
-      "slug": "bleibtgleich26",
-      "source": "awwwards",
-      "url": "https://bleibtgleich.dev",
-      "award": "Site of the Day",
-      "award_date": "2026-09-22",
-      "overall": 7.46,
-      "split": "holdout",
-      "image_heavy": 0.185,
-      "banner": false,
-      "notes": ""
-    },
-    {
-      "slug": "paul-kalkbrenner",
-      "source": "awwwards",
-      "url": "https://www.paulkalkbrenner.net/",
-      "award": "Site of the Day",
-      "award_date": "2026-09-02",
-      "overall": 7.47,
-      "split": "train",
-      "image_heavy": 0.007,
-      "banner": false,
-      "notes": "The navigation is split into single letters, so the text sample fills with those after the headline."
-    },
-    {
-      "slug": "nine-to-five",
-      "source": "awwwards",
-      "url": "https://www.9to5studio.it/",
-      "award": "Site of the Day",
-      "award_date": "2026-04-08",
-      "overall": 7.52,
-      "split": "holdout",
-      "image_heavy": 0.329,
-      "banner": true,
-      "notes": "Italian cookie panel stayed. The button reads Accetta, outside accept, agree, ok and got it. A narrow photograph sits on the right edge."
-    },
-    {
-      "slug": "obys-design-books",
-      "source": "awwwards",
-      "url": "https://library.obys.agency/",
-      "award": "Site of the Day",
-      "award_date": "2025-12-17",
-      "overall": 7.6,
-      "split": "holdout",
-      "image_heavy": 0.788,
-      "banner": false,
-      "notes": "Editorial layout with a halftone graphic. The graphic is in the masks."
-    },
-    {
-      "slug": "kern-society",
-      "source": "onepagelove",
-      "url": "https://shockingmike.github.io/kern-society",
-      "award": "One Page Love",
-      "award_date": "2026-10-13",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0,
-      "banner": false,
-      "notes": "Featured on One Page Love (Bold, Brutalism, Typographic). One Page Love does not publish jury scores."
-    },
-    {
-      "slug": "dialkit",
-      "source": "onepagelove",
-      "url": "https://www.dialkit.dev",
-      "award": "One Page Love",
-      "award_date": "2026-09-07",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.062,
-      "banner": false,
-      "notes": "Featured on One Page Love (Glassmorphism, Minimal, Typographic). One Page Love does not publish jury scores."
-    },
-    {
-      "slug": "specia1ne",
-      "source": "onepagelove",
-      "url": "https://specia1ne.com",
-      "award": "One Page Love",
-      "award_date": "2026-08-18",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0,
-      "banner": false,
-      "notes": "Featured on One Page Love (Editorial, Scroll Effects, Typographic). One Page Love does not publish jury scores."
-    },
-    {
-      "slug": "scout-graphics",
-      "source": "onepagelove",
-      "url": "https://scoutgraphics.com",
-      "award": "One Page Love",
-      "award_date": "2026-10-16",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.111,
-      "banner": false,
-      "notes": "Featured on One Page Love (Illustrative, Minimal, Retro & Vintage). One Page Love does not publish jury scores."
-    },
-    {
-      "slug": "bymayo-2",
-      "source": "onepagelove",
-      "url": "https://bymayo.co.uk",
-      "award": "One Page Love",
-      "award_date": "2026-10-12",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.033,
-      "banner": false,
-      "notes": "Featured on One Page Love (Glitch, Minimal). One Page Love does not publish jury scores. A small portrait sits in the header and is masked."
-    },
-    {
-      "slug": "fromt",
-      "source": "onepagelove",
-      "url": "https://www.fromt.app",
-      "award": "One Page Love",
-      "award_date": "2026-09-10",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.08,
-      "banner": false,
-      "notes": "Featured on One Page Love (Fun, Minimal, Typographic). One Page Love does not publish jury scores."
-    },
-    {
-      "slug": "uglycash",
-      "source": "onepagelove",
-      "url": "https://ugly.cash",
-      "award": "One Page Love",
-      "award_date": "2026-08-31",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.184,
-      "banner": false,
-      "notes": "Featured on One Page Love (Bold, Brutalism, Typographic). One Page Love does not publish jury scores. A phone mock sits under the headline and is masked."
-    },
-    {
-      "slug": "estacion-venenta",
-      "source": "onepagelove",
-      "url": "https://estacionvenenta.com",
-      "award": "One Page Love",
-      "award_date": "2026-08-20",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.014,
-      "banner": false,
-      "notes": "Featured on One Page Love (Brutalism, Minimal, Typographic). One Page Love does not publish jury scores. The dithered graphic looks drawn on a full-viewport canvas. Capture skips that as an effect layer, so the graphic is barely masked."
-    },
-    {
-      "slug": "vessa",
-      "source": "onepagelove",
-      "url": "https://vessa.design",
-      "award": "One Page Love",
-      "award_date": "2026-08-31",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.636,
-      "banner": false,
-      "notes": "Featured on One Page Love (Minimal, Pixel Art, Typographic). One Page Love does not publish jury scores. The lower band includes a photograph and it is in the masks. The upper half is type."
-    },
-    {
-      "slug": "floema",
-      "source": "awwwards",
-      "url": "https://www.floema.com/en",
-      "award": "Site of the Day",
-      "award_date": "2026-05-13",
-      "overall": 7.65,
-      "split": "train",
-      "image_heavy": 0.106,
-      "banner": false,
-      "notes": "Minimal type on a plain ground."
-    },
-    {
-      "slug": "noho",
-      "source": "awwwards",
-      "url": "https://noho.ink",
-      "award": "Site of the Day",
-      "award_date": "2026-09-18",
-      "overall": 7.34,
-      "split": "train",
-      "image_heavy": 0.219,
-      "banner": false,
-      "notes": "The right half is a photograph grid and is masked. The left half is type."
-    },
-    {
-      "slug": "aardvark-book-club",
-      "source": "awwwards",
-      "url": "https://aardvarkbookclub.com",
-      "award": "Site of the Day",
-      "award_date": "2026-08-30",
-      "overall": 7.2,
-      "split": "train",
-      "image_heavy": 0.003,
-      "banner": false,
-      "notes": "Display type on flat colour shapes."
-    },
-    {
-      "slug": "weeksync",
-      "source": "onepagelove",
-      "url": "https://weeksync.app",
-      "award": "One Page Love",
-      "award_date": "2026-09-16",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0,
-      "banner": false,
-      "notes": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. Type on a plain ground, with a lot of open space."
-    },
-    {
-      "slug": "resurf",
-      "source": "onepagelove",
-      "url": "https://resurf.so",
-      "award": "One Page Love",
-      "award_date": "2026-10-21",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.265,
-      "banner": false,
-      "notes": "Featured on One Page Love (Editorial, Minimal, Typographic). One Page Love does not publish jury scores. A product screenshot fills the lower half and is masked."
-    },
-    {
-      "slug": "tiny-computer-co",
-      "source": "onepagelove",
-      "url": "https://tinycomputer.co",
-      "award": "One Page Love",
-      "award_date": "2026-08-28",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.144,
-      "banner": false,
-      "notes": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. A strip of photographs sits along the bottom and is masked."
-    },
-    {
-      "slug": "the-content-architecture",
-      "source": "onepagelove",
-      "url": "https://www.contentarchitecture.dev",
-      "award": "One Page Love",
-      "award_date": "2026-08-21",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.065,
-      "banner": false,
-      "notes": "Featured on One Page Love (Pixel Art, Scroll Effects, Typographic). One Page Love does not publish jury scores. The right half is a spiral of repeated type."
-    },
-    {
-      "slug": "aniket",
-      "source": "onepagelove",
-      "url": "https://unfunnyket.com",
-      "award": "One Page Love",
-      "award_date": "2026-10-20",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.057,
-      "banner": false,
-      "notes": "Featured on One Page Love (Flat Design, Grid Layout, Minimal, Narrow Layout). One Page Love does not publish jury scores. Narrow editorial column."
-    },
-    {
-      "slug": "smallbits",
-      "source": "onepagelove",
-      "url": "https://smallbits.design",
-      "award": "One Page Love",
-      "award_date": "2026-09-08",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.011,
-      "banner": false,
-      "notes": "Featured on One Page Love (Brutalism, Fun, Pixel Art). One Page Love does not publish jury scores. A grid of pixel icons."
-    },
-    {
-      "slug": "pairio",
-      "source": "onepagelove",
-      "url": "https://pairio.app",
-      "award": "One Page Love",
-      "award_date": "2026-10-17",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.159,
-      "banner": false,
-      "notes": "Featured on One Page Love (Editorial, Flat Design, Minimal). One Page Love does not publish jury scores. An app window sits along the bottom and is masked."
-    },
-    {
-      "slug": "kontu",
-      "source": "onepagelove",
-      "url": "https://kontu.io",
-      "award": "One Page Love",
-      "award_date": "2026-09-18",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.432,
-      "banner": false,
-      "notes": "Featured on One Page Love (Grid Layout, Minimal). One Page Love does not publish jury scores. A dashboard mock fills the lower half and is masked."
-    },
-    {
-      "slug": "flowjam-2",
-      "source": "onepagelove",
-      "url": "https://flowjam.com",
-      "award": "One Page Love",
-      "award_date": "2026-09-28",
-      "overall": null,
-      "split": "train",
-      "image_heavy": 0.255,
-      "banner": false,
-      "notes": "Featured on One Page Love (Editorial, Fun, Glassmorphism). One Page Love does not publish jury scores. A blurred panel sits on the left and is masked."
-    }
-  ],
-  "skipped": [
-    {
-      "slug": "leo-parpeix-portfolio-2026",
-      "reason": "Hero never settled. The frame is only the navigation."
-    },
-    {
-      "slug": "studio-dialect",
-      "reason": "Lower half is a photo carousel on a canvas, plus a cookie bar. The canvas covers the viewport so it was not masked."
-    },
-    {
-      "slug": "ai-in-design-report-2026",
-      "reason": "A mask covers the full viewport, so the scorer would grey the type."
-    },
-    {
-      "slug": "sohub",
-      "reason": "Hero is a 3D robot."
-    },
-    {
-      "slug": "made-with-gsap-1",
-      "reason": "Dark frame with a single line of type. Not a settled hero."
-    },
-    {
-      "slug": "serve-robotics",
-      "reason": "Grey wash with the headline cut off. Not a settled hero."
-    },
-    {
-      "slug": "brunello-cucinelli-ai-e-com",
-      "reason": "Access denied."
-    },
-    {
-      "slug": "cartier-watches-wonders-2026",
-      "reason": "Access denied."
-    },
-    {
-      "slug": "cleo-ai",
-      "reason": "Error page."
-    },
-    {
-      "slug": "ciao-energy-launch-website",
-      "reason": "Loader still on screen."
-    },
-    {
-      "slug": "lacoste-polo-factory",
-      "reason": "Cookie wall over the hero."
-    },
-    {
-      "slug": "wembi",
-      "reason": "Cookie wall over the hero."
-    },
-    {
-      "slug": "pp-neue-montreal",
-      "reason": "Loader. A ring of letters, not a settled hero."
-    },
-    {
-      "slug": "obys-2",
-      "reason": "Black frame. Not settled."
-    },
-    {
-      "slug": "obys-r-experiment-space",
-      "reason": "Blank frame."
-    },
-    {
-      "slug": "trionn-2",
-      "reason": "3D canvas behind the type."
-    },
-    {
-      "slug": "julien-calot",
-      "reason": "Full-bleed illustration."
-    },
-    {
-      "slug": "normal-is-boring",
-      "reason": "Cookie wall over a broken headline."
-    },
-    {
-      "slug": "kvs-studio",
-      "reason": "Enter gate."
-    },
-    {
-      "slug": "hiroto-sato",
-      "reason": "Loader still on screen."
-    },
-    {
-      "slug": "realevate",
-      "reason": "Photograph in the hero."
-    },
-    {
-      "slug": "meer-mohsin",
-      "reason": "Black loader."
-    },
-    {
-      "slug": "digitalists-1",
-      "reason": "Cookie wall."
-    },
-    {
-      "slug": "studio375-2",
-      "reason": "Photograph and a cookie wall."
-    },
-    {
-      "slug": "steven-com",
-      "reason": "Loader and a cookie card."
-    },
-    {
-      "slug": "radian",
-      "reason": "3D product render."
-    },
-    {
-      "slug": "monolog",
-      "reason": "A mask covers the full viewport, so the scorer would grey the type."
-    },
-    {
-      "slug": "glitch-grit",
-      "reason": "Masks cover the viewport."
-    },
-    {
-      "slug": "offfforum",
-      "reason": "Photograph and a cookie wall."
-    },
-    {
-      "slug": "zara-webb",
-      "reason": "Blank frame."
-    },
-    {
-      "slug": "dabbit",
-      "reason": "Empty product pane."
-    },
-    {
-      "slug": "glide-typeface",
-      "reason": "A mask covers the full viewport."
-    },
-    {
-      "slug": "beige-force",
-      "reason": "A mask covers the full viewport."
-    },
-    {
-      "slug": "twks-1",
-      "reason": "Photograph of posters."
-    },
-    {
-      "slug": "partizan",
-      "reason": "Photo collage."
-    },
-    {
-      "slug": "hilden-kaira",
-      "reason": "A mask covers the headline."
-    },
-    {
-      "slug": "sowieso-wero",
-      "reason": "Cookie wall."
-    },
-    {
-      "slug": "pensatori-irrazionali",
-      "reason": "Logo only. Not settled."
-    },
-    {
-      "slug": "son-daven",
-      "reason": "A mask covers the full viewport."
-    },
-    {
-      "slug": "indigo-laboratory",
-      "reason": "Enter gate."
-    },
-    {
-      "slug": "juan-mora-1",
-      "reason": "Photograph fills the hero."
-    },
-    {
-      "slug": "aino-agency",
-      "reason": "Product photography."
-    },
-    {
-      "slug": "astrodither",
-      "reason": "Enter gate."
-    },
-    {
-      "slug": "elva",
-      "reason": "Photograph, and it is not masked."
-    },
-    {
-      "slug": "sakazuki",
-      "reason": "Type over an unmasked photograph."
-    },
-    {
-      "slug": "cominvi",
-      "reason": "3D scene."
-    },
-    {
-      "slug": "podium",
-      "reason": "Loader still on screen."
-    },
-    {
-      "slug": "neutomni",
-      "reason": "The display word is a masked graphic, and a cookie panel covers the lower half."
-    },
-    {
-      "slug": "illoca",
-      "reason": "Logo and a cookie bar."
-    },
-    {
-      "slug": "izanami",
-      "reason": "Almost blank."
-    },
-    {
-      "slug": "meech213",
-      "reason": "Photo collage."
-    },
-    {
-      "slug": "units",
-      "reason": "A popup over photographs."
-    },
-    {
-      "slug": "longbow",
-      "reason": "3D car render."
-    },
-    {
-      "slug": "vectr",
-      "reason": "Loader."
-    },
-    {
-      "slug": "silent-house",
-      "reason": "Photograph and a cookie wall."
-    },
-    {
-      "slug": "pieterkoopt-r",
-      "reason": "Audio gate. The hero never starts."
-    },
-    {
-      "slug": "sstr-friction-reduction",
-      "reason": "Product photograph."
-    }
-  ]
-}
+[
+ {
+  "slug": "coffeetech-r",
+  "split": "train",
+  "captured": true,
+  "overall": 7.18,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "signal-a-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 0.293,
+  "big_canvas": false
+ },
+ {
+  "slug": "mosbys-files",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "bleibtgleich26",
+  "split": "train",
+  "captured": true,
+  "overall": 7.46,
+  "image_heavy": 0.192,
+  "big_canvas": true
+ },
+ {
+  "slug": "paul-kalkbrenner",
+  "split": "train",
+  "captured": true,
+  "overall": 7.47,
+  "image_heavy": 0.007,
+  "big_canvas": false
+ },
+ {
+  "slug": "obys-design-books",
+  "split": "train",
+  "captured": true,
+  "overall": 7.6,
+  "image_heavy": 0.785,
+  "big_canvas": true
+ },
+ {
+  "slug": "kern-society",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "dialkit",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.062,
+  "big_canvas": false
+ },
+ {
+  "slug": "specia1ne",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "scout-graphics",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.115,
+  "big_canvas": false
+ },
+ {
+  "slug": "bymayo-2",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.033,
+  "big_canvas": false
+ },
+ {
+  "slug": "estacion-venenta",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.014,
+  "big_canvas": true
+ },
+ {
+  "slug": "vessa",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.636,
+  "big_canvas": false
+ },
+ {
+  "slug": "noho",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0.219,
+  "big_canvas": false
+ },
+ {
+  "slug": "aardvark-book-club",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 0.003,
+  "big_canvas": true
+ },
+ {
+  "slug": "resurf",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.265,
+  "big_canvas": false
+ },
+ {
+  "slug": "tiny-computer-co",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.144,
+  "big_canvas": false
+ },
+ {
+  "slug": "aniket",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.057,
+  "big_canvas": false
+ },
+ {
+  "slug": "smallbits",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.011,
+  "big_canvas": false
+ },
+ {
+  "slug": "pairio",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.159,
+  "big_canvas": false
+ },
+ {
+  "slug": "kontu",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.432,
+  "big_canvas": false
+ },
+ {
+  "slug": "flowjam-2",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0.255,
+  "big_canvas": false
+ },
+ {
+  "slug": "esr-bespoke",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.077,
+  "big_canvas": false
+ },
+ {
+  "slug": "ascension-pegassi-r",
+  "split": "train",
+  "captured": true,
+  "overall": 7.51,
+  "image_heavy": 0.288,
+  "big_canvas": true
+ },
+ {
+  "slug": "format",
+  "split": "train",
+  "captured": true,
+  "overall": 7.59,
+  "image_heavy": 0.258,
+  "big_canvas": false
+ },
+ {
+  "slug": "offfforum",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "heron-ai",
+  "split": "train",
+  "captured": true,
+  "overall": 7.7,
+  "image_heavy": 0.991,
+  "big_canvas": false
+ },
+ {
+  "slug": "odyssee",
+  "split": "train",
+  "captured": true,
+  "overall": 7.38,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "twks-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "cominvi",
+  "split": "train",
+  "captured": true,
+  "overall": 7.44,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "butter",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.5,
+  "image_heavy": 0.398,
+  "big_canvas": false
+ },
+ {
+  "slug": "moto-finance",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "sobha-privy-collection",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "boc-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "lxl-creative",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.634,
+  "big_canvas": false
+ },
+ {
+  "slug": "leo-parpeix-portfolio-2026",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.69,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "warm-fuzzy",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.26,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "white-desert",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "cerebrium",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0.002,
+  "big_canvas": true
+ },
+ {
+  "slug": "hobro-digital",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0.244,
+  "big_canvas": false
+ },
+ {
+  "slug": "ai-in-design-report-2026",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.4,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "kononenko-architectural-bureau",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "oimachi",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.61,
+  "big_canvas": false
+ },
+ {
+  "slug": "likova",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "sstr-friction-reduction",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.17,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "studio-k95-3",
+  "split": "train",
+  "captured": true,
+  "overall": 7.32,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "no-art",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "lacoste-ace-breaker",
+  "split": "train",
+  "captured": true,
+  "overall": 7.46,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "made-with-gsap-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.65,
+  "image_heavy": 0.113,
+  "big_canvas": false
+ },
+ {
+  "slug": "dragonfly-redux",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "house-of-honey-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0.92,
+  "big_canvas": false
+ },
+ {
+  "slug": "monolog",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.43,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "bucks-sauce",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0.313,
+  "big_canvas": false
+ },
+ {
+  "slug": "wolverine-worldwide",
+  "split": "train",
+  "captured": true,
+  "overall": 7.45,
+  "image_heavy": 0.98,
+  "big_canvas": false
+ },
+ {
+  "slug": "sui",
+  "split": "train",
+  "captured": true,
+  "overall": 7.38,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "fauna-robotics",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0.585,
+  "big_canvas": false
+ },
+ {
+  "slug": "serve-robotics",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 0.024,
+  "big_canvas": false
+ },
+ {
+  "slug": "apechain",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.278,
+  "big_canvas": true
+ },
+ {
+  "slug": "truckn-roll-r",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0.479,
+  "big_canvas": false
+ },
+ {
+  "slug": "ref-digital",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.402,
+  "big_canvas": false
+ },
+ {
+  "slug": "zettajoule",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.542,
+  "big_canvas": false
+ },
+ {
+  "slug": "cdiscount-jumping-max",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.432,
+  "big_canvas": false
+ },
+ {
+  "slug": "razorpay-sprint-26",
+  "split": "train",
+  "captured": true,
+  "overall": 7.42,
+  "image_heavy": 0.23,
+  "big_canvas": true
+ },
+ {
+  "slug": "cleo-ai",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "la-revoltosa",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.45,
+  "image_heavy": 0.008,
+  "big_canvas": true
+ },
+ {
+  "slug": "aino-agency",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 0.915,
+  "big_canvas": false
+ },
+ {
+  "slug": "juan-mora-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.4,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "happly",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "marvell-tile-stone",
+  "split": "train",
+  "captured": true,
+  "overall": 7.26,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "where-worlds-take-shape",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.066,
+  "big_canvas": false
+ },
+ {
+  "slug": "studio375-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0.004,
+  "big_canvas": true
+ },
+ {
+  "slug": "wild-week-athens",
+  "split": "train",
+  "captured": true,
+  "overall": 7.36,
+  "image_heavy": 0.847,
+  "big_canvas": false
+ },
+ {
+  "slug": "don-molinico",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "ashley-brooke",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.098,
+  "big_canvas": false
+ },
+ {
+  "slug": "shader-development-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.73,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "evolve-2",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "the-obsidian-assembly",
+  "split": "train",
+  "captured": true,
+  "overall": 7.41,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "odd-ritual",
+  "split": "train",
+  "captured": true,
+  "overall": 7.55,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "icomat",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.56,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "champions-for-good",
+  "split": "train",
+  "captured": true,
+  "overall": 7.69,
+  "image_heavy": 0.129,
+  "big_canvas": false
+ },
+ {
+  "slug": "som",
+  "split": "train",
+  "captured": true,
+  "overall": 7.36,
+  "image_heavy": 0.982,
+  "big_canvas": false
+ },
+ {
+  "slug": "vast",
+  "split": "train",
+  "captured": true,
+  "overall": 7.65,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "fluid-glass",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.77,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "shed",
+  "split": "train",
+  "captured": true,
+  "overall": 7.64,
+  "image_heavy": 0.081,
+  "big_canvas": false
+ },
+ {
+  "slug": "darknode",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "good-fella",
+  "split": "train",
+  "captured": true,
+  "overall": 7.47,
+  "image_heavy": 0.352,
+  "big_canvas": false
+ },
+ {
+  "slug": "joby",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.61,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "momoney",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0.876,
+  "big_canvas": false
+ },
+ {
+  "slug": "outsource-consultants-inc",
+  "split": "train",
+  "captured": true,
+  "overall": 7.53,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "on-energy",
+  "split": "train",
+  "captured": true,
+  "overall": 7.44,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "adovasio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.147,
+  "big_canvas": false
+ },
+ {
+  "slug": "jason-bergh",
+  "split": "train",
+  "captured": true,
+  "overall": 7.58,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "neon-rated",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "vibrant-wellness",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.013,
+  "big_canvas": true
+ },
+ {
+  "slug": "valiente",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 0.75,
+  "big_canvas": false
+ },
+ {
+  "slug": "emilie-aubry",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "the-renaissance-edition",
+  "split": "train",
+  "captured": true,
+  "overall": 7.92,
+  "image_heavy": 0.128,
+  "big_canvas": true
+ },
+ {
+  "slug": "nicola-romeitm",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 0.04,
+  "big_canvas": true
+ },
+ {
+  "slug": "nfinite",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "ciridae",
+  "split": "train",
+  "captured": true,
+  "overall": 7.26,
+  "image_heavy": 1,
+  "big_canvas": false
+ }
+]

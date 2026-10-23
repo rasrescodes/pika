@@ -1,0 +1,24 @@
+{
+  "slug": "twks-1",
+  "url": "https://twks.ch/en",
+  "awwwards_url": "https://www.awwwards.com/sites/twks-1",
+  "award": "Site of the Day",
+  "award_date": "2026-10-07",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.28,
+    "creativity": 7.09,
+    "content": 7.64,
+    "overall": 7.35
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:48:36.506Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

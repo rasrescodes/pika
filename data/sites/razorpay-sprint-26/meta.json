@@ -1,0 +1,24 @@
+{
+  "slug": "razorpay-sprint-26",
+  "url": "https://razorpay.com/sprint/26",
+  "awwwards_url": "https://www.awwwards.com/sites/razorpay-sprint-26",
+  "award": "Site of the Day",
+  "award_date": "2026-05-26",
+  "jury": {
+    "design": 7.25,
+    "usability": 7.21,
+    "creativity": 8.1,
+    "content": 7.4,
+    "overall": 7.42
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:52:27.723Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.23,
+  "big_canvas": true,
+  "notes": ""
+}

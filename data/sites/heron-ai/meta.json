@@ -1,0 +1,24 @@
+{
+  "slug": "heron-ai",
+  "url": "https://heronaiapp.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/heron-ai",
+  "award": "Site of the Day",
+  "award_date": "2026-10-12",
+  "jury": {
+    "design": 7.75,
+    "usability": 7.48,
+    "creativity": 7.85,
+    "content": 7.81,
+    "overall": 7.7
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:48:31.329Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.991,
+  "big_canvas": false,
+  "notes": ""
+}

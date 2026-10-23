@@ -1,0 +1,24 @@
+{
+  "slug": "sobha-privy-collection",
+  "url": "https://sobha-privy-collection.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/sobha-privy-collection",
+  "award": "Site of the Day",
+  "award_date": "2026-09-23",
+  "jury": {
+    "design": 7.41,
+    "usability": 7.09,
+    "creativity": 7.63,
+    "content": 7.53,
+    "overall": 7.37
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:48:59.358Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,19 +1,19 @@
 {
   "slug": "dialkit",
   "url": "https://www.dialkit.dev",
-  "source": "onepagelove",
   "awwwards_url": null,
   "onepagelove_url": "https://onepagelove.com/dialkit",
   "award": "One Page Love",
   "award_date": "2026-09-07",
   "jury": null,
-  "captured_at": "2026-10-23T20:39:59.809Z",
+  "split": "train",
+  "captured_at": "2026-10-23T21:47:47.317Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
   "image_heavy": 0.062,
-  "split": "train",
-  "notes": "Featured on One Page Love (Glassmorphism, Minimal, Typographic). One Page Love does not publish jury scores."
+  "big_canvas": false,
+  "notes": ""
 }

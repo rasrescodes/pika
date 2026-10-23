@@ -1,9 +1,7 @@
 {
   "slug": "paul-kalkbrenner",
   "url": "https://www.paulkalkbrenner.net/",
-  "source": "awwwards",
   "awwwards_url": "https://www.awwwards.com/sites/paul-kalkbrenner",
-  "onepagelove_url": null,
   "award": "Site of the Day",
   "award_date": "2026-09-02",
   "jury": {
@@ -13,13 +11,14 @@
     "content": 7.49,
     "overall": 7.47
   },
-  "captured_at": "2026-10-23T20:38:49.742Z",
+  "split": "train",
+  "captured_at": "2026-10-23T21:47:45.458Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
   "image_heavy": 0.007,
-  "split": "train",
+  "big_canvas": false,
   "notes": "The navigation is split into single letters, so the text sample fills with those after the headline."
 }

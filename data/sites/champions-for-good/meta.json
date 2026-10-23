@@ -1,0 +1,24 @@
+{
+  "slug": "champions-for-good",
+  "url": "https://www.champions4good.club/",
+  "awwwards_url": "https://www.awwwards.com/sites/champions-for-good",
+  "award": "Site of the Day",
+  "award_date": "2026-04-06",
+  "jury": {
+    "design": 7.69,
+    "usability": 7.38,
+    "creativity": 8.19,
+    "content": 7.69,
+    "overall": 7.69
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:53:47.572Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.129,
+  "big_canvas": false,
+  "notes": ""
+}

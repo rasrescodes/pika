@@ -1,0 +1,24 @@
+{
+  "slug": "som",
+  "url": "https://www.drinksom.eu/",
+  "awwwards_url": "https://www.awwwards.com/sites/som",
+  "award": "Site of the Day",
+  "award_date": "2026-04-04",
+  "jury": {
+    "design": 7.5,
+    "usability": 7.11,
+    "creativity": 7.5,
+    "content": 7.25,
+    "overall": 7.36
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:53:54.875Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.982,
+  "big_canvas": false,
+  "notes": ""
+}

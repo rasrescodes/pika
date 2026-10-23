@@ -1,0 +1,24 @@
+{
+  "slug": "evolve-2",
+  "url": "https://madeinevolve.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/evolve-2",
+  "award": "Site of the Day",
+  "award_date": "2026-04-18",
+  "jury": {
+    "design": 7.47,
+    "usability": 7.16,
+    "creativity": 7.38,
+    "content": 7.41,
+    "overall": 7.35
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T21:53:11.872Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

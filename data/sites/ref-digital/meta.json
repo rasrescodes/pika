@@ -1,0 +1,24 @@
+{
+  "slug": "ref-digital",
+  "url": "https://ref.digital/",
+  "awwwards_url": "https://www.awwwards.com/sites/ref-digital",
+  "award": "Site of the Day",
+  "award_date": "2026-06-02",
+  "jury": {
+    "design": 7.54,
+    "usability": 7,
+    "creativity": 7.36,
+    "content": 7.17,
+    "overall": 7.31
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:51:38.052Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 0.402,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,9 +1,7 @@
 {
   "slug": "bleibtgleich26",
   "url": "https://bleibtgleich.dev",
-  "source": "awwwards",
   "awwwards_url": "https://www.awwwards.com/sites/bleibtgleich26",
-  "onepagelove_url": null,
   "award": "Site of the Day",
   "award_date": "2026-09-22",
   "jury": {
@@ -13,13 +11,14 @@
     "content": 7.4,
     "overall": 7.46
   },
-  "captured_at": "2026-10-23T20:39:24.097Z",
+  "split": "train",
+  "captured_at": "2026-10-23T21:47:44.149Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
-  "image_heavy": 0.185,
-  "split": "holdout",
+  "image_heavy": 0.192,
+  "big_canvas": true,
   "notes": ""
 }

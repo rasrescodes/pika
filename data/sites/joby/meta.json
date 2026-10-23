@@ -1,0 +1,24 @@
+{
+  "slug": "joby",
+  "url": "https://www.jobyaviation.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/joby",
+  "award": "Site of the Day",
+  "award_date": "2026-03-16",
+  "jury": {
+    "design": 7.64,
+    "usability": 7.48,
+    "creativity": 7.58,
+    "content": 7.93,
+    "overall": 7.61
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T21:54:34.716Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

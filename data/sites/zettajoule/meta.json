@@ -1,0 +1,24 @@
+{
+  "slug": "zettajoule",
+  "url": "https://zetta-joule.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/zettajoule",
+  "award": "Site of the Day",
+  "award_date": "2026-05-30",
+  "jury": {
+    "design": 7.22,
+    "usability": 7.29,
+    "creativity": 7.17,
+    "content": 7.38,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:51:41.893Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.542,
+  "big_canvas": false,
+  "notes": ""
+}

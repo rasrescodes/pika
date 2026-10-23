@@ -1,0 +1,24 @@
+{
+  "slug": "apechain",
+  "url": "https://apechain.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/apechain",
+  "award": "Site of the Day",
+  "award_date": "2026-06-06",
+  "jury": {
+    "design": 7.17,
+    "usability": 7.17,
+    "creativity": 7.49,
+    "content": 7.3,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:51:34.319Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.278,
+  "big_canvas": true,
+  "notes": ""
+}
