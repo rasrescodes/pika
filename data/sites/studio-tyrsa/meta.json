@@ -1,0 +1,24 @@
+{
+  "slug": "studio-tyrsa",
+  "url": "https://www.studiotyrsa.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/studio-tyrsa",
+  "award": "Site of the Day",
+  "award_date": "2025-11-01",
+  "jury": {
+    "design": 7.31,
+    "usability": 7.06,
+    "creativity": 7.25,
+    "content": 7.25,
+    "overall": 7.22
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:31:14.404Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.735,
+  "big_canvas": true,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "metamask",
+  "url": "https://metamask.io/",
+  "awwwards_url": "https://www.awwwards.com/sites/metamask",
+  "award": "Site of the Day",
+  "award_date": "2025-08-13",
+  "jury": {
+    "design": 7.31,
+    "usability": 7.23,
+    "creativity": 7.69,
+    "content": 7.6,
+    "overall": 7.39
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:19.116Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.11,
+  "big_canvas": false,
+  "notes": ""
+}

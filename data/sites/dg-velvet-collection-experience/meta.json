@@ -1,0 +1,24 @@
+{
+  "slug": "dg-velvet-collection-experience",
+  "url": "https://beautytools.dolcegabbana.com/en-it/velvet",
+  "awwwards_url": "https://www.awwwards.com/sites/dg-velvet-collection-experience",
+  "award": "Site of the Day",
+  "award_date": "2025-08-10",
+  "jury": {
+    "design": 7.17,
+    "usability": 6.91,
+    "creativity": 7.63,
+    "content": 7.54,
+    "overall": 7.22
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:36:06.249Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 0.013,
+  "big_canvas": true,
+  "notes": ""
+}

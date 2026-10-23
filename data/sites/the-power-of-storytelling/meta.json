@@ -1,0 +1,24 @@
+{
+  "slug": "the-power-of-storytelling",
+  "url": "https://storytelling.noomoagency.com",
+  "awwwards_url": "https://www.awwwards.com/sites/the-power-of-storytelling",
+  "award": "Site of the Day",
+  "award_date": "2026-06-08",
+  "jury": {
+    "design": 7.84,
+    "usability": 7.59,
+    "creativity": 8.37,
+    "content": 7.83,
+    "overall": 7.87
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:16:21.943Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.015,
+  "big_canvas": false,
+  "notes": ""
+}

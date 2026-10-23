@@ -16,6 +16,14 @@
   "big_canvas": false
  },
  {
+  "slug": "2xa-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
   "slug": "mosbys-files",
   "split": "holdout",
   "captured": true,
@@ -24,11 +32,27 @@
   "big_canvas": false
  },
  {
+  "slug": "c-design-by-dylan",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 0.867,
+  "big_canvas": false
+ },
+ {
+  "slug": "new-genre-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 0.008,
+  "big_canvas": false
+ },
+ {
   "slug": "bleibtgleich26",
   "split": "train",
   "captured": true,
   "overall": 7.46,
-  "image_heavy": 0.192,
+  "image_heavy": 0.164,
   "big_canvas": true
  },
  {
@@ -40,31 +64,7 @@
   "big_canvas": false
  },
  {
-  "slug": "obys-design-books",
-  "split": "train",
-  "captured": true,
-  "overall": 7.6,
-  "image_heavy": 0.785,
-  "big_canvas": true
- },
- {
   "slug": "kern-society",
-  "split": "train",
-  "captured": true,
-  "overall": null,
-  "image_heavy": 0,
-  "big_canvas": false
- },
- {
-  "slug": "dialkit",
-  "split": "train",
-  "captured": true,
-  "overall": null,
-  "image_heavy": 0.062,
-  "big_canvas": false
- },
- {
-  "slug": "specia1ne",
   "split": "train",
   "captured": true,
   "overall": null,
@@ -76,15 +76,15 @@
   "split": "train",
   "captured": true,
   "overall": null,
-  "image_heavy": 0.115,
+  "image_heavy": 0.116,
   "big_canvas": false
  },
  {
-  "slug": "bymayo-2",
+  "slug": "fromt",
   "split": "train",
   "captured": true,
   "overall": null,
-  "image_heavy": 0.033,
+  "image_heavy": 0.08,
   "big_canvas": false
  },
  {
@@ -120,19 +120,19 @@
   "big_canvas": true
  },
  {
+  "slug": "weeksync",
+  "split": "train",
+  "captured": true,
+  "overall": null,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
   "slug": "resurf",
   "split": "train",
   "captured": true,
   "overall": null,
   "image_heavy": 0.265,
-  "big_canvas": false
- },
- {
-  "slug": "tiny-computer-co",
-  "split": "train",
-  "captured": true,
-  "overall": null,
-  "image_heavy": 0.144,
   "big_canvas": false
  },
  {
@@ -152,44 +152,12 @@
   "big_canvas": false
  },
  {
-  "slug": "pairio",
-  "split": "train",
-  "captured": true,
-  "overall": null,
-  "image_heavy": 0.159,
-  "big_canvas": false
- },
- {
-  "slug": "kontu",
-  "split": "train",
-  "captured": true,
-  "overall": null,
-  "image_heavy": 0.432,
-  "big_canvas": false
- },
- {
   "slug": "flowjam-2",
   "split": "train",
   "captured": true,
   "overall": null,
   "image_heavy": 0.255,
   "big_canvas": false
- },
- {
-  "slug": "esr-bespoke",
-  "split": "train",
-  "captured": true,
-  "overall": 7.31,
-  "image_heavy": 0.077,
-  "big_canvas": false
- },
- {
-  "slug": "ascension-pegassi-r",
-  "split": "train",
-  "captured": true,
-  "overall": 7.51,
-  "image_heavy": 0.288,
-  "big_canvas": true
  },
  {
   "slug": "format",
@@ -200,8 +168,16 @@
   "big_canvas": false
  },
  {
-  "slug": "offfforum",
+  "slug": "belgrade-arbor",
   "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "offfforum",
+  "split": "holdout",
   "captured": true,
   "overall": 7.33,
   "image_heavy": 1,
@@ -212,7 +188,7 @@
   "split": "train",
   "captured": true,
   "overall": 7.7,
-  "image_heavy": 0.991,
+  "image_heavy": 0.841,
   "big_canvas": false
  },
  {
@@ -232,12 +208,44 @@
   "big_canvas": false
  },
  {
+  "slug": "lidar-drone-scanning",
+  "split": "train",
+  "captured": true,
+  "overall": 7.68,
+  "image_heavy": 0.436,
+  "big_canvas": false
+ },
+ {
+  "slug": "tengile-malamala-collection",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "milledollars",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0.018,
+  "big_canvas": true
+ },
+ {
   "slug": "cominvi",
   "split": "train",
   "captured": true,
   "overall": 7.44,
   "image_heavy": 1,
   "big_canvas": false
+ },
+ {
+  "slug": "jesper-landberg-4",
+  "split": "train",
+  "captured": true,
+  "overall": 7.73,
+  "image_heavy": 0,
+  "big_canvas": true
  },
  {
   "slug": "butter",
@@ -288,6 +296,14 @@
   "big_canvas": true
  },
  {
+  "slug": "the-tuscan-journey-begins",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 0.043,
+  "big_canvas": true
+ },
+ {
   "slug": "warm-fuzzy",
   "split": "holdout",
   "captured": true,
@@ -312,20 +328,68 @@
   "big_canvas": true
  },
  {
+  "slug": "usavionix",
+  "split": "train",
+  "captured": true,
+  "overall": 7.41,
+  "image_heavy": 0.144,
+  "big_canvas": true
+ },
+ {
+  "slug": "united-carriers",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "illoca",
+  "split": "train",
+  "captured": true,
+  "overall": 7.44,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "trevor-noah",
+  "split": "train",
+  "captured": true,
+  "overall": 7.45,
+  "image_heavy": 0.265,
+  "big_canvas": true
+ },
+ {
   "slug": "hobro-digital",
   "split": "holdout",
   "captured": true,
   "overall": 7.29,
-  "image_heavy": 0.244,
+  "image_heavy": 1,
   "big_canvas": false
  },
  {
-  "slug": "ai-in-design-report-2026",
-  "split": "holdout",
+  "slug": "sharplink",
+  "split": "train",
   "captured": true,
-  "overall": 7.4,
+  "overall": 7.38,
   "image_heavy": 1,
   "big_canvas": false
+ },
+ {
+  "slug": "miu-miu-a-house-that-we-shaped",
+  "split": "train",
+  "captured": true,
+  "overall": 7.41,
+  "image_heavy": 0.002,
+  "big_canvas": false
+ },
+ {
+  "slug": "zeroz-brand-site",
+  "split": "train",
+  "captured": true,
+  "overall": 7.41,
+  "image_heavy": 0.038,
+  "big_canvas": true
  },
  {
   "slug": "kononenko-architectural-bureau",
@@ -344,12 +408,12 @@
   "big_canvas": false
  },
  {
-  "slug": "likova",
-  "split": "holdout",
+  "slug": "cipher",
+  "split": "train",
   "captured": true,
-  "overall": 7.33,
-  "image_heavy": 1,
-  "big_canvas": false
+  "overall": 7.38,
+  "image_heavy": 0,
+  "big_canvas": true
  },
  {
   "slug": "sstr-friction-reduction",
@@ -360,11 +424,43 @@
   "big_canvas": false
  },
  {
+  "slug": "haoqi-design",
+  "split": "train",
+  "captured": true,
+  "overall": 7.36,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
   "slug": "studio-k95-3",
   "split": "train",
   "captured": true,
   "overall": 7.32,
   "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "nothin",
+  "split": "train",
+  "captured": true,
+  "overall": 7.45,
+  "image_heavy": 0.92,
+  "big_canvas": true
+ },
+ {
+  "slug": "vero-new-york",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "20-years-inspired-by-people",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 0.14,
   "big_canvas": true
  },
  {
@@ -384,19 +480,51 @@
   "big_canvas": true
  },
  {
-  "slug": "made-with-gsap-1",
+  "slug": "ciao-energy-launch-website",
   "split": "train",
   "captured": true,
-  "overall": 7.65,
-  "image_heavy": 0.113,
-  "big_canvas": false
+  "overall": 7.22,
+  "image_heavy": 0,
+  "big_canvas": true
  },
  {
-  "slug": "dragonfly-redux",
+  "slug": "obys-r-experiment-space",
   "split": "train",
   "captured": true,
-  "overall": 7.39,
+  "overall": 7.24,
+  "image_heavy": 0.014,
+  "big_canvas": true
+ },
+ {
+  "slug": "trionn-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.42,
   "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "partizan",
+  "split": "train",
+  "captured": true,
+  "overall": 7.18,
+  "image_heavy": 0.918,
+  "big_canvas": true
+ },
+ {
+  "slug": "lama-lama-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.51,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "glitch-grit",
+  "split": "train",
+  "captured": true,
+  "overall": 7.17,
+  "image_heavy": 1,
   "big_canvas": false
  },
  {
@@ -408,6 +536,14 @@
   "big_canvas": false
  },
  {
+  "slug": "julien-calot",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0.178,
+  "big_canvas": true
+ },
+ {
   "slug": "monolog",
   "split": "holdout",
   "captured": true,
@@ -416,12 +552,44 @@
   "big_canvas": false
  },
  {
+  "slug": "hilden-kaira",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 0.79,
+  "big_canvas": false
+ },
+ {
+  "slug": "radian",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0.028,
+  "big_canvas": true
+ },
+ {
   "slug": "bucks-sauce",
   "split": "holdout",
   "captured": true,
   "overall": 7.34,
-  "image_heavy": 0.313,
+  "image_heavy": 0.315,
   "big_canvas": false
+ },
+ {
+  "slug": "nrg-build-your-data-center",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.646,
+  "big_canvas": false
+ },
+ {
+  "slug": "podium",
+  "split": "train",
+  "captured": true,
+  "overall": 7.19,
+  "image_heavy": 0,
+  "big_canvas": true
  },
  {
   "slug": "wolverine-worldwide",
@@ -432,12 +600,28 @@
   "big_canvas": false
  },
  {
-  "slug": "sui",
+  "slug": "rpa-comunicacion",
   "split": "train",
   "captured": true,
-  "overall": 7.38,
+  "overall": 7.2,
+  "image_heavy": 0.356,
+  "big_canvas": false
+ },
+ {
+  "slug": "balmoral",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
   "image_heavy": 1,
   "big_canvas": false
+ },
+ {
+  "slug": "indigo-laboratory",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 1,
+  "big_canvas": true
  },
  {
   "slug": "fauna-robotics",
@@ -448,11 +632,51 @@
   "big_canvas": false
  },
  {
+  "slug": "sakazuki",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0.074,
+  "big_canvas": true
+ },
+ {
+  "slug": "crav-burgers",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.258,
+  "big_canvas": false
+ },
+ {
   "slug": "serve-robotics",
   "split": "train",
   "captured": true,
   "overall": 7.3,
-  "image_heavy": 0.024,
+  "image_heavy": 0.64,
+  "big_canvas": false
+ },
+ {
+  "slug": "hubtown",
+  "split": "train",
+  "captured": true,
+  "overall": 7.66,
+  "image_heavy": 0.907,
+  "big_canvas": true
+ },
+ {
+  "slug": "the-power-of-storytelling",
+  "split": "train",
+  "captured": true,
+  "overall": 7.87,
+  "image_heavy": 0.015,
+  "big_canvas": false
+ },
+ {
+  "slug": "sohub",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 0.394,
   "big_canvas": false
  },
  {
@@ -460,7 +684,7 @@
   "split": "train",
   "captured": true,
   "overall": 7.25,
-  "image_heavy": 0.278,
+  "image_heavy": 0.838,
   "big_canvas": true
  },
  {
@@ -468,7 +692,7 @@
   "split": "train",
   "captured": true,
   "overall": 7.23,
-  "image_heavy": 0.479,
+  "image_heavy": 0.462,
   "big_canvas": false
  },
  {
@@ -476,7 +700,7 @@
   "split": "train",
   "captured": true,
   "overall": 7.31,
-  "image_heavy": 0.402,
+  "image_heavy": 0.112,
   "big_canvas": false
  },
  {
@@ -496,6 +720,14 @@
   "big_canvas": false
  },
  {
+  "slug": "air-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.42,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
   "slug": "razorpay-sprint-26",
   "split": "train",
   "captured": true,
@@ -504,10 +736,10 @@
   "big_canvas": true
  },
  {
-  "slug": "cleo-ai",
+  "slug": "aimees-papercraft-world",
   "split": "train",
   "captured": true,
-  "overall": 7.23,
+  "overall": 7.33,
   "image_heavy": 1,
   "big_canvas": true
  },
@@ -516,7 +748,7 @@
   "split": "holdout",
   "captured": true,
   "overall": 7.45,
-  "image_heavy": 0.008,
+  "image_heavy": 0.004,
   "big_canvas": true
  },
  {
@@ -528,6 +760,14 @@
   "big_canvas": false
  },
  {
+  "slug": "capitolium",
+  "split": "holdout",
+  "captured": true,
+  "overall": 7.4,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
   "slug": "juan-mora-1",
   "split": "train",
   "captured": true,
@@ -536,11 +776,19 @@
   "big_canvas": false
  },
  {
-  "slug": "happly",
+  "slug": "fromanother-love",
   "split": "train",
   "captured": true,
-  "overall": 7.34,
-  "image_heavy": 0,
+  "overall": 7.44,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "outfit",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.768,
   "big_canvas": false
  },
  {
@@ -550,6 +798,14 @@
   "overall": 7.26,
   "image_heavy": 0,
   "big_canvas": false
+ },
+ {
+  "slug": "obys-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.46,
+  "image_heavy": 0.034,
+  "big_canvas": true
  },
  {
   "slug": "where-worlds-take-shape",
@@ -568,19 +824,35 @@
   "big_canvas": true
  },
  {
+  "slug": "pieterkoopt-r",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0.018,
+  "big_canvas": false
+ },
+ {
+  "slug": "silent-house",
+  "split": "train",
+  "captured": true,
+  "overall": 7.5,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "detroit-paris",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 0.404,
+  "big_canvas": false
+ },
+ {
   "slug": "wild-week-athens",
   "split": "train",
   "captured": true,
   "overall": 7.36,
   "image_heavy": 0.847,
-  "big_canvas": false
- },
- {
-  "slug": "don-molinico",
-  "split": "train",
-  "captured": true,
-  "overall": 7.35,
-  "image_heavy": 1,
   "big_canvas": false
  },
  {
@@ -600,12 +872,28 @@
   "big_canvas": true
  },
  {
+  "slug": "the-agency-of-love-logic",
+  "split": "train",
+  "captured": true,
+  "overall": 7.44,
+  "image_heavy": 0.963,
+  "big_canvas": false
+ },
+ {
   "slug": "evolve-2",
   "split": "holdout",
   "captured": true,
   "overall": 7.35,
   "image_heavy": 1,
   "big_canvas": false
+ },
+ {
+  "slug": "max-mara-jacket-circle",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0,
+  "big_canvas": true
  },
  {
   "slug": "the-obsidian-assembly",
@@ -616,10 +904,26 @@
   "big_canvas": true
  },
  {
-  "slug": "odd-ritual",
+  "slug": "oryzo-ai",
   "split": "train",
   "captured": true,
-  "overall": 7.55,
+  "overall": 7.86,
+  "image_heavy": 0.083,
+  "big_canvas": true
+ },
+ {
+  "slug": "naughtyduk-c-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "mersi",
+  "split": "train",
+  "captured": true,
+  "overall": 7.52,
   "image_heavy": 1,
   "big_canvas": false
  },
@@ -648,6 +952,14 @@
   "big_canvas": false
  },
  {
+  "slug": "artefakt",
+  "split": "train",
+  "captured": true,
+  "overall": 7.63,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
   "slug": "vast",
   "split": "train",
   "captured": true,
@@ -656,19 +968,27 @@
   "big_canvas": true
  },
  {
+  "slug": "san-rita",
+  "split": "train",
+  "captured": true,
+  "overall": 7.66,
+  "image_heavy": 0.024,
+  "big_canvas": true
+ },
+ {
   "slug": "fluid-glass",
   "split": "holdout",
   "captured": true,
   "overall": 7.77,
-  "image_heavy": 1,
+  "image_heavy": 0.93,
   "big_canvas": false
  },
  {
-  "slug": "shed",
+  "slug": "fc-porto-memorial",
   "split": "train",
   "captured": true,
-  "overall": 7.64,
-  "image_heavy": 0.081,
+  "overall": 7.27,
+  "image_heavy": 1,
   "big_canvas": false
  },
  {
@@ -680,11 +1000,11 @@
   "big_canvas": false
  },
  {
-  "slug": "good-fella",
+  "slug": "aupale-vodka",
   "split": "train",
   "captured": true,
-  "overall": 7.47,
-  "image_heavy": 0.352,
+  "overall": 7.5,
+  "image_heavy": 1,
   "big_canvas": false
  },
  {
@@ -720,6 +1040,30 @@
   "big_canvas": false
  },
  {
+  "slug": "springs",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "waabi",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "griflan-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.113,
+  "big_canvas": false
+ },
+ {
   "slug": "adovasio",
   "split": "train",
   "captured": true,
@@ -736,6 +1080,14 @@
   "big_canvas": false
  },
  {
+  "slug": "shift-5",
+  "split": "train",
+  "captured": true,
+  "overall": 7.4,
+  "image_heavy": 0.186,
+  "big_canvas": true
+ },
+ {
   "slug": "neon-rated",
   "split": "train",
   "captured": true,
@@ -744,12 +1096,44 @@
   "big_canvas": false
  },
  {
+  "slug": "cathy-dolle-portfolio-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "voku-studiotm",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.035,
+  "big_canvas": true
+ },
+ {
   "slug": "vibrant-wellness",
   "split": "train",
   "captured": true,
   "overall": 7.31,
-  "image_heavy": 0.013,
+  "image_heavy": 0.012,
   "big_canvas": true
+ },
+ {
+  "slug": "mob-links",
+  "split": "train",
+  "captured": true,
+  "overall": 7.47,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "damn-good-brands-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 0.393,
+  "big_canvas": false
  },
  {
   "slug": "valiente",
@@ -760,27 +1144,11 @@
   "big_canvas": false
  },
  {
-  "slug": "emilie-aubry",
-  "split": "train",
-  "captured": true,
-  "overall": 7.3,
-  "image_heavy": 1,
-  "big_canvas": false
- },
- {
   "slug": "the-renaissance-edition",
   "split": "train",
   "captured": true,
   "overall": 7.92,
   "image_heavy": 0.128,
-  "big_canvas": true
- },
- {
-  "slug": "nicola-romeitm",
-  "split": "train",
-  "captured": true,
-  "overall": 7.21,
-  "image_heavy": 0.04,
   "big_canvas": true
  },
  {
@@ -796,6 +1164,838 @@
   "split": "train",
   "captured": true,
   "overall": 7.26,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "explore-primland",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 0.182,
+  "big_canvas": true
+ },
+ {
+  "slug": "mouthful-of-dust",
+  "split": "train",
+  "captured": true,
+  "overall": 7.17,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "yucca-packaging",
+  "split": "train",
+  "captured": true,
+  "overall": 7.17,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "jesko-jets",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "midlife-engineering",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 0.606,
+  "big_canvas": false
+ },
+ {
+  "slug": "paper-tiger",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 0.102,
+  "big_canvas": false
+ },
+ {
+  "slug": "lightship-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.971,
+  "big_canvas": false
+ },
+ {
+  "slug": "estrela",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "prototype-3",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "the-pendragon-cycle",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0.192,
+  "big_canvas": true
+ },
+ {
+  "slug": "sunday",
+  "split": "train",
+  "captured": true,
+  "overall": 7.38,
+  "image_heavy": 0.594,
+  "big_canvas": false
+ },
+ {
+  "slug": "inversa",
+  "split": "train",
+  "captured": true,
+  "overall": 7.48,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "mindmarket",
+  "split": "train",
+  "captured": true,
+  "overall": 7.85,
+  "image_heavy": 0.28,
+  "big_canvas": false
+ },
+ {
+  "slug": "paris-by-emily",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "tesoro-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "ousmane-dembele-ballon-dor",
+  "split": "train",
+  "captured": true,
+  "overall": 7.43,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "freshman",
+  "split": "train",
+  "captured": true,
+  "overall": 7.69,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "shopify-supply-performance-pack",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 0.912,
+  "big_canvas": true
+ },
+ {
+  "slug": "flim",
+  "split": "train",
+  "captured": true,
+  "overall": 7.26,
+  "image_heavy": 0.19,
+  "big_canvas": false
+ },
+ {
+  "slug": "seventeen",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 0.231,
+  "big_canvas": false
+ },
+ {
+  "slug": "norgram-co",
+  "split": "train",
+  "captured": true,
+  "overall": 7.45,
+  "image_heavy": 0.258,
+  "big_canvas": false
+ },
+ {
+  "slug": "the-spark",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "jacques-cie",
+  "split": "train",
+  "captured": true,
+  "overall": 7.18,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "titangate-equity",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "davincii",
+  "split": "train",
+  "captured": true,
+  "overall": 7.15,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "elliott-mangham",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 0.16,
+  "big_canvas": false
+ },
+ {
+  "slug": "microsoft-ai",
+  "split": "train",
+  "captured": true,
+  "overall": 7.16,
+  "image_heavy": 0.331,
+  "big_canvas": true
+ },
+ {
+  "slug": "the-monolith-project",
+  "split": "train",
+  "captured": true,
+  "overall": 7.69,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "sofaknows",
+  "split": "train",
+  "captured": true,
+  "overall": 7.18,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "digilab",
+  "split": "train",
+  "captured": true,
+  "overall": 7.36,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "lando-norris",
+  "split": "train",
+  "captured": true,
+  "overall": 8.18,
+  "image_heavy": 0.38,
+  "big_canvas": true
+ },
+ {
+  "slug": "amrit-palace",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "marie-antoinette",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "cappen-4",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0.01,
+  "big_canvas": false
+ },
+ {
+  "slug": "mantis",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "soil",
+  "split": "train",
+  "captured": true,
+  "overall": 7.19,
+  "image_heavy": 0.348,
+  "big_canvas": false
+ },
+ {
+  "slug": "kaleida",
+  "split": "train",
+  "captured": true,
+  "overall": 7.32,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "iventions",
+  "split": "train",
+  "captured": true,
+  "overall": 7.37,
+  "image_heavy": 0.222,
+  "big_canvas": false
+ },
+ {
+  "slug": "portfolio-25-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 0.545,
+  "big_canvas": true
+ },
+ {
+  "slug": "studio-tyrsa",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 0.735,
+  "big_canvas": true
+ },
+ {
+  "slug": "untold-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.5,
+  "image_heavy": 0.144,
+  "big_canvas": true
+ },
+ {
+  "slug": "get-hyped",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 0.284,
+  "big_canvas": false
+ },
+ {
+  "slug": "ova-investment",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "anuc-home",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.954,
+  "big_canvas": false
+ },
+ {
+  "slug": "won-j-you-studios-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.32,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "ponpon-mania",
+  "split": "train",
+  "captured": true,
+  "overall": 7.64,
+  "image_heavy": 0.056,
+  "big_canvas": true
+ },
+ {
+  "slug": "heimdall-power",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "working-stiff-films",
+  "split": "train",
+  "captured": true,
+  "overall": 7.48,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "ink-games",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0.094,
+  "big_canvas": true
+ },
+ {
+  "slug": "up-up",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0.31,
+  "big_canvas": false
+ },
+ {
+  "slug": "silver-pinewood-residences",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "mammoth-murals",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 0.054,
+  "big_canvas": false
+ },
+ {
+  "slug": "eddie",
+  "split": "train",
+  "captured": true,
+  "overall": 7.18,
+  "image_heavy": 0.451,
+  "big_canvas": false
+ },
+ {
+  "slug": "example",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 0.453,
+  "big_canvas": false
+ },
+ {
+  "slug": "letude-creative-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 0.401,
+  "big_canvas": false
+ },
+ {
+  "slug": "olha-lazarieva",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0.21,
+  "big_canvas": true
+ },
+ {
+  "slug": "activehop",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 0.963,
+  "big_canvas": true
+ },
+ {
+  "slug": "weavy",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "paisana-house",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "der-baukasten",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "pantheon-media-group",
+  "split": "train",
+  "captured": true,
+  "overall": 7.46,
+  "image_heavy": 0.214,
+  "big_canvas": false
+ },
+ {
+  "slug": "caeli-energie",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "stefan-vitasovic-portfolio25",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "madar",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "walrus",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0.743,
+  "big_canvas": false
+ },
+ {
+  "slug": "18-years-of-buro",
+  "split": "train",
+  "captured": true,
+  "overall": 7.44,
+  "image_heavy": 0.004,
+  "big_canvas": true
+ },
+ {
+  "slug": "purpose-talent",
+  "split": "train",
+  "captured": true,
+  "overall": 7.3,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "bitter-creek",
+  "split": "train",
+  "captured": true,
+  "overall": 7.47,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "savor",
+  "split": "train",
+  "captured": true,
+  "overall": 7.56,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "truus",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0.066,
+  "big_canvas": false
+ },
+ {
+  "slug": "juice-agency",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0.677,
+  "big_canvas": false
+ },
+ {
+  "slug": "clou-agency-portfolio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0.137,
+  "big_canvas": false
+ },
+ {
+  "slug": "terminal-industries",
+  "split": "train",
+  "captured": true,
+  "overall": 7.68,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "make-it-real-foundation-merch",
+  "split": "train",
+  "captured": true,
+  "overall": 7.38,
+  "image_heavy": 0.98,
+  "big_canvas": false
+ },
+ {
+  "slug": "form-fun-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.34,
+  "image_heavy": 0.069,
+  "big_canvas": false
+ },
+ {
+  "slug": "martin-briceno-portfolio-2",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "compsych-brand-hub",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "casa-lunara",
+  "split": "train",
+  "captured": true,
+  "overall": 7.2,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "ning-huang-digital-designer",
+  "split": "train",
+  "captured": true,
+  "overall": 7.21,
+  "image_heavy": 0.173,
+  "big_canvas": true
+ },
+ {
+  "slug": "clay-boan-25",
+  "split": "train",
+  "captured": true,
+  "overall": 7.43,
+  "image_heavy": 0.311,
+  "big_canvas": true
+ },
+ {
+  "slug": "ethical-life",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.259,
+  "big_canvas": false
+ },
+ {
+  "slug": "aether-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.59,
+  "image_heavy": 0.004,
+  "big_canvas": true
+ },
+ {
+  "slug": "metamask",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0.11,
+  "big_canvas": false
+ },
+ {
+  "slug": "dg-velvet-collection-experience",
+  "split": "train",
+  "captured": true,
+  "overall": 7.22,
+  "image_heavy": 0.013,
+  "big_canvas": true
+ },
+ {
+  "slug": "hungry-tiger",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "dapper",
+  "split": "train",
+  "captured": true,
+  "overall": 7.38,
+  "image_heavy": 1,
+  "big_canvas": true
+ },
+ {
+  "slug": "phive-clubs",
+  "split": "train",
+  "captured": true,
+  "overall": 7.39,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "miux-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
+  "image_heavy": 0.342,
+  "big_canvas": false
+ },
+ {
+  "slug": "radical-face",
+  "split": "train",
+  "captured": true,
+  "overall": 7.28,
+  "image_heavy": 0.676,
+  "big_canvas": false
+ },
+ {
+  "slug": "adaline",
+  "split": "train",
+  "captured": true,
+  "overall": 7.35,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "palmer",
+  "split": "train",
+  "captured": true,
+  "overall": 7.46,
+  "image_heavy": 0.676,
+  "big_canvas": false
+ },
+ {
+  "slug": "flowfest-2025",
+  "split": "train",
+  "captured": true,
+  "overall": 7.36,
+  "image_heavy": 0.465,
+  "big_canvas": false
+ },
+ {
+  "slug": "avax-network-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.33,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "daydream-player",
+  "split": "train",
+  "captured": true,
+  "overall": 7.25,
+  "image_heavy": 0.958,
+  "big_canvas": true
+ },
+ {
+  "slug": "vooban-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.43,
+  "image_heavy": 0.685,
+  "big_canvas": false
+ },
+ {
+  "slug": "8bit-ai",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "fine-thought-site",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 0,
+  "big_canvas": false
+ },
+ {
+  "slug": "bright-biotech",
+  "split": "train",
+  "captured": true,
+  "overall": 7.23,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "nk-studio",
+  "split": "train",
+  "captured": true,
+  "overall": 7.31,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "telescope",
+  "split": "train",
+  "captured": true,
+  "overall": 7.75,
+  "image_heavy": 0.163,
+  "big_canvas": false
+ },
+ {
+  "slug": "myhealthprac",
+  "split": "train",
+  "captured": true,
+  "overall": 7.24,
+  "image_heavy": 1,
+  "big_canvas": false
+ },
+ {
+  "slug": "u-x-machina",
+  "split": "train",
+  "captured": true,
+  "overall": 7.27,
+  "image_heavy": 0,
+  "big_canvas": true
+ },
+ {
+  "slug": "the-adhd-experience",
+  "split": "train",
+  "captured": true,
+  "overall": 7.47,
+  "image_heavy": 0.253,
+  "big_canvas": false
+ },
+ {
+  "slug": "duroc-1",
+  "split": "train",
+  "captured": true,
+  "overall": 7.29,
   "image_heavy": 1,
   "big_canvas": false
  }

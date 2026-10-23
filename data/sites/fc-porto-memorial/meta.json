@@ -1,0 +1,24 @@
+{
+  "slug": "fc-porto-memorial",
+  "url": "https://memorial.fcporto.pt/",
+  "awwwards_url": "https://www.awwwards.com/sites/fc-porto-memorial",
+  "award": "Site of the Day",
+  "award_date": "2026-03-22",
+  "jury": {
+    "design": 7.41,
+    "usability": 6.8,
+    "creativity": 7.44,
+    "content": 7.84,
+    "overall": 7.27
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:24:30.154Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "18-years-of-buro",
+  "url": "https://18.burocratik.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/18-years-of-buro",
+  "award": "Site of the Day",
+  "award_date": "2025-09-17",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.19,
+    "creativity": 7.7,
+    "content": 7.59,
+    "overall": 7.44
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:34:05.713Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.004,
+  "big_canvas": true,
+  "notes": ""
+}

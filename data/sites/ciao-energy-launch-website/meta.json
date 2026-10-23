@@ -1,0 +1,24 @@
+{
+  "slug": "ciao-energy-launch-website",
+  "url": "https://www.ciaoenergy.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/ciao-energy-launch-website",
+  "award": "Site of the Day",
+  "award_date": "2026-07-30",
+  "jury": {
+    "design": 7.2,
+    "usability": 7.16,
+    "creativity": 7.45,
+    "content": 7.02,
+    "overall": 7.22
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:14:03.385Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

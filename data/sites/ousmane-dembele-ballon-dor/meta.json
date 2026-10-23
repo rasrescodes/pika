@@ -1,0 +1,24 @@
+{
+  "slug": "ousmane-dembele-ballon-dor",
+  "url": "https://www.ousmaneballondor.fr",
+  "awwwards_url": "https://www.awwwards.com/sites/ousmane-dembele-ballon-dor",
+  "award": "Site of the Day",
+  "award_date": "2025-12-24",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.25,
+    "creativity": 7.52,
+    "content": 7.7,
+    "overall": 7.43
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:29:12.448Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "get-hyped",
+  "url": "https://www.gethyped.nl/",
+  "awwwards_url": "https://www.awwwards.com/sites/get-hyped",
+  "award": "Site of the Day",
+  "award_date": "2025-10-26",
+  "jury": {
+    "design": 7.49,
+    "usability": 6.94,
+    "creativity": 7.16,
+    "content": 7.03,
+    "overall": 7.21
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:31:36.715Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.284,
+  "big_canvas": false,
+  "notes": ""
+}

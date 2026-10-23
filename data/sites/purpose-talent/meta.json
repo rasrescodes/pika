@@ -1,0 +1,24 @@
+{
+  "slug": "purpose-talent",
+  "url": "https://www.purposetalent.xyz/",
+  "awwwards_url": "https://www.awwwards.com/sites/purpose-talent",
+  "award": "Site of the Day",
+  "award_date": "2025-09-14",
+  "jury": {
+    "design": 7.38,
+    "usability": 7.12,
+    "creativity": 7.51,
+    "content": 7.13,
+    "overall": 7.3
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:59.552Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

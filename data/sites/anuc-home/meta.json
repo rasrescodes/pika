@@ -1,0 +1,24 @@
+{
+  "slug": "anuc-home",
+  "url": "https://www.anuchome.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/anuc-home",
+  "award": "Site of the Day",
+  "award_date": "2025-10-24",
+  "jury": {
+    "design": 7.41,
+    "usability": 7.11,
+    "creativity": 7.14,
+    "content": 7.25,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:32:34.667Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.954,
+  "big_canvas": false,
+  "notes": ""
+}

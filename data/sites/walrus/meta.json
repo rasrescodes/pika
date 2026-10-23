@@ -1,0 +1,24 @@
+{
+  "slug": "walrus",
+  "url": "https://walrus-new.webflow.io/",
+  "awwwards_url": "https://www.awwwards.com/sites/walrus",
+  "award": "Site of the Day",
+  "award_date": "2025-09-18",
+  "jury": {
+    "design": 7.35,
+    "usability": 7.16,
+    "creativity": 7.34,
+    "content": 7.3,
+    "overall": 7.29
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:39.074Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.743,
+  "big_canvas": false,
+  "notes": ""
+}

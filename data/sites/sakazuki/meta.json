@@ -1,0 +1,24 @@
+{
+  "slug": "sakazuki",
+  "url": "https://sakazuki.io/",
+  "awwwards_url": "https://www.awwwards.com/sites/sakazuki",
+  "award": "Site of the Day",
+  "award_date": "2026-06-14",
+  "jury": {
+    "design": 7.19,
+    "usability": 7.06,
+    "creativity": 7.46,
+    "content": 7.44,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:16:23.751Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.074,
+  "big_canvas": true,
+  "notes": ""
+}

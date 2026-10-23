@@ -1,0 +1,24 @@
+{
+  "slug": "detroit-paris",
+  "url": "https://www.detroit.paris/",
+  "awwwards_url": "https://www.awwwards.com/sites/detroit-paris",
+  "award": "Site of the Day",
+  "award_date": "2026-04-27",
+  "jury": {
+    "design": 7.38,
+    "usability": 7.18,
+    "creativity": 7.51,
+    "content": 7.43,
+    "overall": 7.35
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:19:12.637Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.404,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "flowfest-2025",
+  "url": "https://www.flowfest.co.uk/",
+  "awwwards_url": "https://www.awwwards.com/sites/flowfest-2025",
+  "award": "Site of the Day",
+  "award_date": "2025-07-29",
+  "jury": {
+    "design": 7.47,
+    "usability": 7.19,
+    "creativity": 7.51,
+    "content": 7.16,
+    "overall": 7.36
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:58.691Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.465,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -12,13 +12,13 @@
     "overall": 7.31
   },
   "split": "train",
-  "captured_at": "2026-10-23T21:55:33.282Z",
+  "captured_at": "2026-10-23T22:25:25.748Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
-  "image_heavy": 0.013,
+  "image_heavy": 0.012,
   "big_canvas": true,
   "notes": ""
 }

@@ -1,0 +1,24 @@
+{
+  "slug": "aimees-papercraft-world",
+  "url": "https://aimees-papercraft-world.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/aimees-papercraft-world",
+  "award": "Site of the Day",
+  "award_date": "2026-05-24",
+  "jury": {
+    "design": 7.37,
+    "usability": 7.02,
+    "creativity": 7.81,
+    "content": 7.14,
+    "overall": 7.33
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:17:50.273Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

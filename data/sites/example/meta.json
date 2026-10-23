@@ -1,0 +1,24 @@
+{
+  "slug": "example",
+  "url": "https://www.weareexample.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/example",
+  "award": "Site of the Day",
+  "award_date": "2025-10-04",
+  "jury": {
+    "design": 7.16,
+    "usability": 7.09,
+    "creativity": 7.35,
+    "content": 7.42,
+    "overall": 7.2
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:02.838Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.453,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "seventeen",
+  "url": "https://www.seventeenagency.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/seventeen",
+  "award": "Site of the Day",
+  "award_date": "2025-12-10",
+  "jury": {
+    "design": 7.44,
+    "usability": 6.89,
+    "creativity": 7.83,
+    "content": 7.39,
+    "overall": 7.35
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:29:46.010Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.231,
+  "big_canvas": false,
+  "notes": ""
+}

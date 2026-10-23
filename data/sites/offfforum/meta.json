@@ -11,8 +11,8 @@
     "content": 7.5,
     "overall": 7.33
   },
-  "split": "train",
-  "captured_at": "2026-10-23T21:48:18.280Z",
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:08:31.540Z",
   "viewport": [
     1440,
     900

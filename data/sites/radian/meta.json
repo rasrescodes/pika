@@ -1,0 +1,24 @@
+{
+  "slug": "radian",
+  "url": "https://www.rideradian.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/radian",
+  "award": "Site of the Day",
+  "award_date": "2026-07-04",
+  "jury": {
+    "design": 7.27,
+    "usability": 7.17,
+    "creativity": 7.23,
+    "content": 7.28,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:15:09.400Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.028,
+  "big_canvas": true,
+  "notes": ""
+}

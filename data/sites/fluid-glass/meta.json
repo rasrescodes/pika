@@ -12,13 +12,13 @@
     "overall": 7.77
   },
   "split": "holdout",
-  "captured_at": "2026-10-23T21:54:07.400Z",
+  "captured_at": "2026-10-23T22:23:47.862Z",
   "viewport": [
     1440,
     900
   ],
   "banner": false,
-  "image_heavy": 1,
+  "image_heavy": 0.93,
   "big_canvas": false,
   "notes": ""
 }
