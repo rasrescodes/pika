@@ -104,5 +104,7 @@ export function mockJudge(brand: Brand, family: Family, taste: TasteItem[], tast
     creativity: clamp(target + (family === "centred" || family === "minimal" ? -1 : 0.6)),
     content: clamp(target - 0.2),
   };
-  return { scores, overall: Math.round(target * 10) / 10, note: MOCK_NOTES[family], tasteApplied, ms: 0 };
+  const reason = taste.slice(0, TASTE_IN_PROMPT).find((t) => t.family === family && t.reason)?.reason;
+  const note = bias >= 1 ? `Lifted by your note${reason ? `: "${reason}"` : ""}.`.slice(0, 140) : bias <= -1 ? `Marked down by your note${reason ? `: "${reason}"` : ""}.`.slice(0, 140) : MOCK_NOTES[family];
+  return { scores, overall: overallOf(scores), note, tasteApplied, ms: 0 };
 }

@@ -54,3 +54,19 @@ describe("spend guard", () => {
     delete process.env.PIKA_MAX_CALLS_PER_DAY;
   });
 });
+
+describe("Mubit-only provenance", () => {
+  it("accepts only https mubit.ai hosts as the base URL", async () => {
+    const { isMubitUrl } = await import("@/lib/llm");
+    expect(isMubitUrl("https://api.mubit.ai/openai/v1")).toBe(true);
+    expect(isMubitUrl("https://api.openai.com/v1")).toBe(false);
+    expect(isMubitUrl("https://mubit.ai.evil.example/v1")).toBe(false);
+    expect(isMubitUrl("http://api.mubit.ai/openai/v1")).toBe(false);
+  });
+
+  it("refuses cross-site requests to mutating routes", async () => {
+    const { crossSite } = await import("@/lib/guard");
+    expect(crossSite(new Request("http://127.0.0.1:3000/api/reset", { method: "POST", headers: { "sec-fetch-site": "cross-site" } }))?.status).toBe(403);
+    expect(crossSite(new Request("http://127.0.0.1:3000/api/reset", { method: "POST", headers: { "sec-fetch-site": "same-origin" } }))).toBeNull();
+  });
+});

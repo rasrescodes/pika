@@ -32,7 +32,7 @@ export default function Scorecard() {
         <p className="marker">Scorecard</p>
         <h1 className={styles.title}>Does the Juror have taste?</h1>
         <p className={styles.dek}>
-          The Juror against the real Awwwards jury on sites it has never seen, the big model against Mubit&apos;s small trained model, and what each costs.
+          How close the Juror comes to the real Awwwards jury on sites it has never seen, how Mubit&apos;s small trained model compares with the big one, and what each costs. Measured, never estimated.
         </p>
 
         {ready && <p data-testid="demo-ready-pass" className={styles.pass}>Checked: every number below is sourced and recorded ({verdict.success ? new Date(verdict.data.checkedAt).toLocaleString("en-GB") : ""}).</p>}
@@ -41,7 +41,7 @@ export default function Scorecard() {
           <section className={styles.empty}>
             <h2>No scorecard run yet</h2>
             <p>
-              Add at least 8 Awwwards sites with their jury scores to <code>data/scorecard/sites.json</code>, then run <code>npm run scorecard</code> with a Mubit key. Nothing here is estimated.
+              The held-out test runs on real Awwwards sites with real calls through Mubit. Until it has run, this page shows nothing rather than a guess.
             </p>
           </section>
         ) : (
@@ -80,8 +80,8 @@ export default function Scorecard() {
               return (
                 <dl key={label} className={styles.stat}>
                   <dt>{label}{model ? `, ${model}` : ""}</dt>
-                  <dd><span className="num">{ms !== null ? `${ms} ms` : "unavailable"}</span> median per critique</dd>
-                  <dd><span className="num">{cost.value !== null ? `$${cost.value}` : "unavailable"}</span> per 100 critiques{cost.reason ? ` (${cost.reason})` : ""}</dd>
+                  <dd><span className="num">{ms !== null ? `${ms} ms` : "Pending"}</span> median per critique</dd>
+                  <dd><span className="num">{cost.value !== null ? `$${cost.value}` : "Pending"}</span> per 100 critiques{cost.reason && rs.length > 0 ? ` (${cost.reason})` : ""}</dd>
                 </dl>
               );
             })}
@@ -93,8 +93,8 @@ export default function Scorecard() {
             <ul className={styles.method}>
               <li>Held-out sites: picked by hand, never used for corrections. Jury scores copied from each site&apos;s Awwwards page (linked).</li>
               <li>Each critique is one Juror call through Mubit: the same fixed instructions, a screenshot we took, no art director notes.</li>
-              <li>Speed: wall-clock time per call. Cost: token usage returned by the provider times the published price in <code>data/pricing.json</code>, mean per call, times 100.</li>
-              <li>Anything missing shows as unavailable. Nothing is estimated.</li>
+              <li>Speed: wall-clock time per call. Cost: token usage returned by the provider times the provider&apos;s published price, mean per call, times 100.</li>
+              <li>Anything not yet measured shows as pending. Nothing is estimated.</li>
             </ul>
           </div>
         </section>

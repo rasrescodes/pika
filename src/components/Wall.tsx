@@ -35,6 +35,7 @@ export default function Wall({ initial }: { initial: Initial }) {
   const [dragId, setDragId] = useState<string | null>(null);
   const [overSlot, setOverSlot] = useState<number | null>(null);
   const [focus, setFocus] = useState<Card | null>(null);
+  const [painted, setPainted] = useState<Set<string>>(new Set());
 
   const ranked = useMemo(() => order(cards, pinned), [cards, pinned]);
   const jurorBest = useMemo(() => order(cards, [])[0]?.id, [cards]);
@@ -79,6 +80,7 @@ export default function Wall({ initial }: { initial: Initial }) {
     setError(null);
     setCards([]);
     setPinned([]);
+    setPainted(new Set());
     last.current.clear();
     const started = performance.now();
     try {
@@ -149,6 +151,7 @@ export default function Wall({ initial }: { initial: Initial }) {
       return el ? Number(el.dataset.slot) : null;
     };
     const move = (ev: PointerEvent) => setOverSlot(slotAt(ev.clientX, ev.clientY));
+    const sx = e.clientX, sy = e.clientY;
     const up = (ev: PointerEvent) => {
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", up);
@@ -156,6 +159,12 @@ export default function Wall({ initial }: { initial: Initial }) {
       const from = ranked.findIndex((c) => c.id === id) + 1;
       setDragId(null);
       setOverSlot(null);
+      // A click without movement opens the section full size; a drag to another slot is a correction.
+      if (Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) {
+        const card = ranked.find((c) => c.id === id);
+        if (card?.html) setFocus(card);
+        return;
+      }
       if (to && to !== from) setPending({ cardId: id, from, to, kind: "move" });
     };
     window.addEventListener("pointermove", move);
@@ -229,9 +238,9 @@ export default function Wall({ initial }: { initial: Initial }) {
                       onKeyDown={(e) => onCardKey(e, card.id, pos)}
                       aria-label={`Rank ${pos}, ${card.family} layout${v ? `, scored ${v.overall}` : ""}. Alt and arrow keys to move.`}
                     >
-                      <div className={styles.preview} onPointerDown={(e) => startDrag(e, card.id)} data-testid="drag-handle" title="Drag to re-rank">
+                      <div className={styles.preview} onPointerDown={(e) => startDrag(e, card.id)} data-testid="drag-handle" title="Click to view full size, drag to re-rank">
                         {card.html ? (
-                          <iframe sandbox="" srcDoc={card.html} title={`${card.family} section`} tabIndex={-1} />
+                          <iframe sandbox="" srcDoc={card.html} title={`${card.family} section`} tabIndex={-1} onLoad={() => setPainted((s) => new Set(s).add(card.id))} />
                         ) : (
                           <div className={styles.failed}>Not judged</div>
                         )}
@@ -262,9 +271,6 @@ export default function Wall({ initial }: { initial: Initial }) {
                                   Move to top
                                 </button>
                               )}
-                              <button className={styles.link} data-testid="view" onClick={() => setFocus(card)}>
-                                View
-                              </button>
                               <button className={styles.link} data-testid="rescore" onClick={() => setPending({ cardId: card.id, from: pos, to: pos, kind: "score", scores: v.scores })}>
                                 Score it yourself
                               </button>
@@ -280,9 +286,9 @@ export default function Wall({ initial }: { initial: Initial }) {
               })}
             </ol>
           )}
-          {done && !running && ranked.length > 0 && (
+          {done && !running && ranked.length > 0 && ranked.every((c) => !c.html || painted.has(c.id)) && (
             <p data-testid="batch-done" className={styles.status}>
-              {judgedCount} designs judged{batchSecs ? ` in ${batchSecs} s` : ""}
+              {judgedCount} of {cards.length} designs judged{batchSecs ? ` in ${batchSecs} s` : ""}{cards.length > judgedCount ? `; ${cards.length - judgedCount} could not be judged and are shown at the end` : ""}
               {taste.length > 0 ? `, with ${Math.min(taste.length, 6)} of your notes applied` : ""}.
             </p>
           )}

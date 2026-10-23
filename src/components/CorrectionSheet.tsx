@@ -69,7 +69,7 @@ export default function CorrectionSheet({
           </div>
         )}
         <label className={styles.reasonLabel} htmlFor="reason">
-          Why? The Juror reads this on every call from now on.
+          What about the design made you move it? The Juror reads this on every call from now on.
         </label>
         <textarea
           id="reason"
@@ -77,6 +77,8 @@ export default function CorrectionSheet({
           data-testid="reason"
           className={styles.reason}
           maxLength={200}
+          minLength={3}
+          required
           rows={3}
           placeholder="Braver type, more white space"
           value={reason}
@@ -86,7 +88,7 @@ export default function CorrectionSheet({
           <button type="button" className="btn btn-quiet" onClick={onCancel}>
             Cancel
           </button>
-          <button type="submit" className="btn" data-testid="save-correction" disabled={saving}>
+          <button type="submit" className="btn" data-testid="save-correction" disabled={saving || reason.trim().length < 3}>
             {saving ? "Saving" : "Save correction"}
           </button>
         </div>

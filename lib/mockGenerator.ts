@@ -5,12 +5,15 @@ import { FAMILIES, type Family } from "./families";
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 
-export function mockSection(brand: Brand, family: Family): string {
-  const { bg, ink, accent, soft } = brand.colours;
+export function mockSection(brand: Brand, family: Family, variant = 0): string {
+  // Each batch varies: odd variants swap ink and background on some families, and the headline rotates.
+  const swap = variant % 2 === 1 && ["centred", "minimal", "oversized", "editorial"].includes(family);
+  const c = brand.colours;
+  const { bg, ink, accent, soft } = swap ? { bg: c.ink, ink: c.bg, accent: c.accent, soft: c.soft } : c;
   const d = fontStack(brand.displayFont);
   const b = fontStack(brand.bodyFont);
   const lines = [brand.headline, ...(brand.alternates ?? [])];
-  const h = esc(lines[FAMILIES.indexOf(family) % lines.length]);
+  const h = esc(lines[(FAMILIES.indexOf(family) + variant) % lines.length]);
   const s = esc(brand.subline);
   const a = esc(brand.action);
   const n = esc(brand.name);

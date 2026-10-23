@@ -19,3 +19,5 @@
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .form > .btn { justify-self: start; }
 .message { margin: 0; font-weight: 500; }
+.mini { display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; border-radius: 4px; border: 1px solid var(--border); container-type: inline-size; }
+.mini iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 720px; border: 0; transform-origin: 0 0; transform: scale(calc(100cqw / 1280px)); pointer-events: none; }

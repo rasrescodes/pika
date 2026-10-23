@@ -32,27 +32,27 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 1290
+          "ms": 1264
         },
         {
           "step": 2,
           "k": "expect_selector",
-          "ms": 3
+          "ms": 4
         },
         {
           "step": 3,
           "k": "expect_selector",
-          "ms": 6
+          "ms": 10
         },
         {
           "step": 4,
           "k": "expect_text",
-          "ms": 2
+          "ms": 3
         },
         {
           "step": 5,
           "k": "click",
-          "ms": 19
+          "ms": 79
         },
         {
           "step": 6,
@@ -62,7 +62,7 @@
         {
           "step": 7,
           "k": "wait_for",
-          "ms": 784
+          "ms": 780
         },
         {
           "step": 8,
@@ -72,12 +72,12 @@
         {
           "step": 9,
           "k": "expect_selector",
-          "ms": 3
+          "ms": 4
         },
         {
           "step": 10,
           "k": "expect_selector",
-          "ms": 2
+          "ms": 6
         },
         {
           "step": 11,
@@ -87,7 +87,7 @@
         {
           "step": 12,
           "k": "screenshot",
-          "ms": 89
+          "ms": 67
         }
       ]
     },
@@ -115,12 +115,12 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 543
+          "ms": 556
         },
         {
           "step": 2,
           "k": "click",
-          "ms": 30
+          "ms": 29
         },
         {
           "step": 3,
@@ -135,12 +135,12 @@
         {
           "step": 5,
           "k": "eval",
-          "ms": 7
+          "ms": 5
         },
         {
           "step": 6,
           "k": "click",
-          "ms": 68
+          "ms": 99
         },
         {
           "step": 7,
@@ -150,27 +150,27 @@
         {
           "step": 8,
           "k": "click",
-          "ms": 229
+          "ms": 246
         },
         {
           "step": 9,
           "k": "expect_text",
-          "ms": 3
+          "ms": 2
         },
         {
           "step": 10,
           "k": "expect_selector",
-          "ms": 2
+          "ms": 3
         },
         {
           "step": 11,
           "k": "click",
-          "ms": 26
+          "ms": 40
         },
         {
           "step": 12,
           "k": "wait_for",
-          "ms": 779
+          "ms": 782
         },
         {
           "step": 13,
@@ -180,7 +180,7 @@
         {
           "step": 14,
           "k": "wait_ms",
-          "ms": 703
+          "ms": 702
         },
         {
           "step": 15,
@@ -190,7 +190,7 @@
         {
           "step": 16,
           "k": "screenshot",
-          "ms": 104
+          "ms": 101
         }
       ]
     },
@@ -213,17 +213,17 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 528
+          "ms": 537
         },
         {
           "step": 2,
           "k": "expect_selector",
-          "ms": 3
+          "ms": 2
         },
         {
           "step": 3,
           "k": "expect_text",
-          "ms": 6
+          "ms": 7
         },
         {
           "step": 4,
@@ -238,7 +238,7 @@
         {
           "step": 6,
           "k": "screenshot",
-          "ms": 37
+          "ms": 63
         }
       ]
     },
@@ -262,7 +262,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 562
+          "ms": 546
         },
         {
           "step": 2,
@@ -272,7 +272,7 @@
         {
           "step": 3,
           "k": "goto",
-          "ms": 528
+          "ms": 525
         },
         {
           "step": 4,
@@ -313,17 +313,17 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 553
+          "ms": 549
         },
         {
           "step": 2,
           "k": "click",
-          "ms": 17
+          "ms": 21
         },
         {
           "step": 3,
           "k": "wait_for",
-          "ms": 794
+          "ms": 781
         },
         {
           "step": 4,
@@ -333,22 +333,22 @@
         {
           "step": 5,
           "k": "screenshot",
-          "ms": 67
+          "ms": 84
         },
         {
           "step": 6,
           "k": "click",
-          "ms": 13
+          "ms": 12
         },
         {
           "step": 7,
           "k": "expect_count",
-          "ms": 0
+          "ms": 1
         },
         {
           "step": 8,
           "k": "screenshot",
-          "ms": 29
+          "ms": 28
         }
       ]
     },
@@ -401,22 +401,22 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 1126
+          "ms": 1106
         },
         {
           "step": 2,
           "k": "click",
-          "ms": 17
+          "ms": 19
         },
         {
           "step": 3,
           "k": "click",
-          "ms": 35
+          "ms": 21
         },
         {
           "step": 4,
           "k": "wait_for",
-          "ms": 786
+          "ms": 782
         },
         {
           "step": 5,
@@ -426,7 +426,7 @@
         {
           "step": 6,
           "k": "drag",
-          "ms": 211
+          "ms": 210
         },
         {
           "step": 7,
@@ -441,7 +441,7 @@
         {
           "step": 9,
           "k": "click",
-          "ms": 245
+          "ms": 246
         },
         {
           "step": 10,
@@ -451,27 +451,27 @@
         {
           "step": 11,
           "k": "wait_for",
-          "ms": 4
+          "ms": 2
         },
         {
           "step": 12,
           "k": "eval",
-          "ms": 5
+          "ms": 7
         },
         {
           "step": 13,
           "k": "click",
-          "ms": 43
+          "ms": 7
         },
         {
           "step": 14,
           "k": "wait_for",
-          "ms": 793
+          "ms": 786
         },
         {
           "step": 15,
           "k": "wait_ms",
-          "ms": 703
+          "ms": 702
         },
         {
           "step": 16,
@@ -481,14 +481,14 @@
         {
           "step": 17,
           "k": "screenshot",
-          "ms": 87
+          "ms": 92
         }
       ]
     }
   ],
   "stamp": {
     "contract": "735301ee0f582297",
-    "head": "13db344d17c631150fba2c70694b31dfbf093805+dirty:0e3d5903",
-    "at": "2026-10-23T23:53:06"
+    "head": "a0bd6f44e02efd8fa90d60ec334d63b4ad37d827+dirty:72e1c5c8",
+    "at": "2026-10-23T23:58:04"
   }
 }

@@ -1,3 +1,4 @@
+import { crossSite } from "@/lib/guard";
 import { z } from "zod";
 import { read, write } from "@/lib/store";
 import { getWall, getTaste } from "@/lib/wall";
@@ -11,11 +12,13 @@ const score = z.number().int().min(1).max(10);
 const Body = z.object({
   cardId: z.string(),
   to: z.number().int().min(1).max(12),
-  reason: z.string().max(200).default(""),
+  reason: z.string().trim().min(3, "Say what about the design").max(200),
   scores: z.object({ design: score, usability: score, creativity: score, content: score }).optional(),
 });
 
 export async function POST(req: Request) {
+  const refused = crossSite(req);
+  if (refused) return refused;
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return Response.json({ error: "Invalid correction" }, { status: 400 });
   const wall = getWall();

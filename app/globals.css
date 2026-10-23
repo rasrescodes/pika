@@ -15,7 +15,7 @@ button { font: inherit; color: inherit; }
   font: 600 12px/1 var(--font-body);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .btn {

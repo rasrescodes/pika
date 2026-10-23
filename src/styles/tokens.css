@@ -11,6 +11,7 @@
   --accent: #ff5d1f; /* provisional */
   --accent-hover: #e64a0e; /* provisional */
   --accent-soft: #ffead9; /* provisional */
+  --accent-ink: #b83a0b; /* provisional */
   --font-display: var(--font-newsreader), "Iowan Old Style", Georgia, serif; /* provisional */
   --font-heading: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif; /* provisional */
   --font-body: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif; /* provisional */

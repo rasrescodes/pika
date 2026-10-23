@@ -1,3 +1,4 @@
+import { crossSite } from "@/lib/guard";
 import { z } from "zod";
 import { write, remove } from "@/lib/store";
 import { PRESETS } from "@/lib/brands";
@@ -19,6 +20,8 @@ const Custom = z.object({
 const Body = z.union([z.object({ preset: z.string() }), z.object({ custom: Custom })]);
 
 export async function POST(req: Request) {
+  const refused = crossSite(req);
+  if (refused) return refused;
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return Response.json({ error: "Check the brand fields" }, { status: 400 });
   if ("preset" in parsed.data) {

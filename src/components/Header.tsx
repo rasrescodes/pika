@@ -10,7 +10,7 @@ export default function Header({ current, children }: { current: "wall" | "brand
   return (
     <header className={styles.header}>
       <Link href="/" prefetch={false} className={styles.mark} aria-label="Pika home">
-        Pika
+        Pika<span className={styles.dot}>.</span>
       </Link>
       <nav className={styles.nav}>
         {links.map(([id, href, label]) => (

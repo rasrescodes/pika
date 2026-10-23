@@ -1,10 +1,13 @@
+import { crossSite } from "@/lib/guard";
 import { runBatch } from "@/lib/wall";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Streams each judged card as it finishes (Server-Sent Events), then a final "done" event.
-export async function POST() {
+export async function POST(req: Request) {
+  const refused = crossSite(req);
+  if (refused) return refused;
   const enc = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {

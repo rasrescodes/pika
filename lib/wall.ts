@@ -39,6 +39,8 @@ export async function runBatch(onCard: (card: Card) => void): Promise<NonNullabl
   const brand = currentBrand();
   const taste = getTaste();
   const batchId = Date.now().toString(36);
+  const variant = read<number>("batches", 0);
+  write("batches", variant + 1);
   const cards: Card[] = [];
   const queue = [...FAMILIES];
 
@@ -47,7 +49,7 @@ export async function runBatch(onCard: (card: Card) => void): Promise<NonNullabl
       const id = `${batchId}-${family}`;
       let card: Card;
       try {
-        const gen = await generate(brand, family);
+        const gen = await generate(brand, family, variant);
         const html = sanitise(gen.html);
         const shot = await screenshot(html);
         const verdict = await judge({ imageDataUrl: shot.dataUrl, brand, family, taste });

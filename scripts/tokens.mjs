@@ -15,6 +15,7 @@ const PROVISIONAL_COLOUR = {
   accent: "#ff5d1f",
   "accent-hover": "#e64a0e",
   "accent-soft": "#ffead9",
+  "accent-ink": "#b83a0b",
 };
 const PROVISIONAL_TYPE = {
   display: 'var(--font-newsreader), "Iowan Old Style", Georgia, serif',

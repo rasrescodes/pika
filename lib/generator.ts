@@ -10,8 +10,8 @@ const GENERATOR_SYSTEM = readFileSync(path.join(process.cwd(), "prompts", "gener
 
 export type Generated = { html: string; usage?: { input: number; output: number }; ms: number };
 
-export async function generate(brand: Brand, family: Family): Promise<Generated> {
-  if (mode() === "MOCK") return { html: mockSection(brand, family), ms: 0 };
+export async function generate(brand: Brand, family: Family, variant = 0): Promise<Generated> {
+  if (mode() === "MOCK") return { html: mockSection(brand, family, variant), ms: 0 };
   const res = await chat({
     system: GENERATOR_SYSTEM,
     user: `${brandSummary(brand)} Subline: "${brand.subline}". Action: "${brand.action}". Display font stack: ${fontStack(brand.displayFont)}. Body font stack: ${fontStack(brand.bodyFont)}.\nLayout direction: ${FAMILY_BRIEF[family]}.`,

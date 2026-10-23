@@ -7,7 +7,7 @@ import type { Brand } from "@/lib/brands";
 
 type Draft = Omit<Brand, "id" | "source">;
 
-export default function BrandForm({ presets, current }: { presets: Brand[]; current: Brand }) {
+export default function BrandForm({ presets, current, previews }: { presets: Brand[]; current: Brand; previews: Record<string, string> }) {
   const router = useRouter();
   const [selected, setSelected] = useState(current.id);
   const [draft, setDraft] = useState<Draft>({ ...current });
@@ -34,6 +34,11 @@ export default function BrandForm({ presets, current }: { presets: Brand[]; curr
       <section className={styles.presets} aria-label="Preset brands">
         {presets.map((p) => (
           <button key={p.id} className={styles.preset} aria-pressed={selected === p.id} onClick={() => save({ preset: p.id })}>
+            {previews[p.id] && (
+              <span className={styles.mini}>
+                <iframe sandbox="" srcDoc={previews[p.id]} title={`${p.name} sample section`} tabIndex={-1} />
+              </span>
+            )}
             <span className={styles.swatches}>
               {[p.colours.bg, p.colours.ink, p.colours.accent, p.colours.soft].map((c) => <i key={c} style={{ background: c }} />)}
             </span>

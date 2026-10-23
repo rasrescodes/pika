@@ -23,8 +23,20 @@ export type ChatResult = {
 
 export const DEFAULT_BASE_URL = "https://api.mubit.ai/openai/v1";
 
+// The hackathon rule: every call goes through Mubit. A base URL on any other host is refused, so the
+// LIVE · MUBIT badge can only ever mean calls really go to Mubit.
+export function isMubitUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.protocol === "https:" && (u.hostname === "mubit.ai" || u.hostname.endsWith(".mubit.ai"));
+  } catch {
+    return false;
+  }
+}
+
 export function mode(): Mode {
-  return process.env.MUBIT_API_KEY && process.env.MODEL ? "MUBIT" : "MOCK";
+  const base = process.env.MUBIT_BASE_URL || DEFAULT_BASE_URL;
+  return process.env.MUBIT_API_KEY && process.env.MODEL && isMubitUrl(base) ? "MUBIT" : "MOCK";
 }
 
 let client: OpenAI | null = null;
