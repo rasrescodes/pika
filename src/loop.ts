@@ -44,7 +44,7 @@ const MODE = opts.mode!;
 const TAG = opts.tag!;
 
 type Entry = { slug: string; split: string; image_heavy?: number; big_canvas?: boolean };
-type Labels = { visual_style?: string; layout_style?: string; category?: string };
+type Labels = { visual_style?: string; layout_style?: string; category?: string; bad_capture?: string };
 const readJson = <T>(path: string, fallback: T): T => (existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback);
 const INDEX: Entry[] = readJson(`${opts.sites}/index.json`, []);
 const SPLIT = new Map(INDEX.map((s) => [s.slug, s.split]));
@@ -190,7 +190,8 @@ async function refreshAllLessons() {
 let slugs = positionals;
 // The pixel score is mostly masked on media-heavy heroes, so the screenshot loop keeps to type-led ones.
 const pixelFriendly = (s: Entry) => (s.image_heavy ?? 0) <= 0.5 && !s.big_canvas;
-if (opts.split) slugs = INDEX.filter((s) => s.split === opts.split && (DOM || pixelFriendly(s))).map((s) => s.slug);
+// Labellers flag captures that show a loader or an error page instead of the hero.
+if (opts.split) slugs = INDEX.filter((s) => s.split === opts.split && (DOM || pixelFriendly(s)) && !LABELS[s.slug]?.bad_capture).map((s) => s.slug);
 if (opts.resume) slugs = slugs.filter((s) => !alreadyDone(s));
 if (!slugs.length) {
   console.log("Nothing to run (no sites matched, or all done under this tag).");
