@@ -59,12 +59,9 @@ const read = (path: string) => (existsSync(path) ? readFileSync(path, "utf8").tr
 function guidance(slug: string) {
   if (opts["no-lessons"]) return "";
   const layout = layoutOf(slug);
-  const parts = [
-    read(`prompts/playbooks/${layout}.md`) && `Playbook for ${layout}:\n${read(`prompts/playbooks/${layout}.md`)}`,
-    read(lessonPath(ALL)) && `For every layout:\n${read(lessonPath(ALL))}`,
-    read(lessonPath(layout)) && `For ${layout}:\n${read(lessonPath(layout))}`,
-  ];
-  return parts.filter(Boolean).join("\n\n");
+  const playbook = read(`prompts/playbooks/${layout}.md`);
+  const lessons = [read(lessonPath(ALL)), read(lessonPath(layout))].filter(Boolean).join("\n");
+  return [playbook && `PLAYBOOK:\n${playbook}`, `HOUSE LESSONS:\n${lessons || "(none yet)"}`].filter(Boolean).join("\n\n");
 }
 
 function alreadyDone(slug: string) {

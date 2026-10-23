@@ -6,7 +6,7 @@ import { ask, image, text, MODELS, type Reply } from "./mubit.ts";
 
 const prompt = (name: string) => readFileSync(`prompts/${name}.md`, "utf8").trim();
 // Pinned versions: changing one starts a new Mubit task, so bump on purpose and note it in DECISIONS.md.
-const V = { describer: process.env.DESCRIBER_PROMPT || "v1", builder: process.env.BUILDER_PROMPT || "v1" };
+const V = { describer: process.env.DESCRIBER_PROMPT || "v2", builder: process.env.BUILDER_PROMPT || "v2" };
 const SYSTEM = {
   describer: prompt(`describer.${V.describer}`),
   describerDom: prompt(`describer-dom.${V.describer}`),
@@ -20,8 +20,9 @@ const jpeg = async (png: Buffer) => image(await sharp(png).jpeg({ quality: 85 })
 
 export type DescribeInput = { lessons: string; previousSpec?: string; fixes?: string[] };
 
+// input.lessons arrives already headed (PLAYBOOK, HOUSE LESSONS) from the loop.
 function describeText(input: DescribeInput, first: string) {
-  const parts = [`HOUSE LESSONS:\n${input.lessons.trim() || "(none yet)"}`];
+  const parts = [input.lessons.trim() || "HOUSE LESSONS: (none yet)"];
   if (input.previousSpec && input.fixes?.length) {
     parts.push(`PREVIOUS SPEC:\n${input.previousSpec.trim()}`);
     parts.push(`FIXES:\n${input.fixes.map((f) => `- ${f}`).join("\n")}`);
@@ -55,6 +56,9 @@ export async function describeDom(input: DescribeInput & { measured: string }, s
   });
 }
 
+const FIT_SCRIPT =
+  "<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('[data-fit]')){const r=Number(e.dataset.fit)/e.getBoundingClientRect().width;if(r>0.4&&r<2.5){e.style.transformOrigin='0 0';e.style.transform='scaleX('+r+')'}}})</script>";
+
 export async function build(spec: string, session: string, record = true) {
   const reply = await ask({
     model: MODELS.builder,
@@ -65,7 +69,11 @@ export async function build(spec: string, session: string, record = true) {
     record,
   });
   const fenced = reply.text.match(/```(?:html)?\s*([\s\S]*?)```/);
-  const html = (fenced ? fenced[1] : reply.text).trim();
+  let html = (fenced ? fenced[1] : reply.text).trim();
+  // builder.v2 asks for this exact script; add it if the model left it out, so fit never depends on copying it.
+  if (html.includes("data-fit") && !html.includes("[data-fit]")) {
+    html = html.includes("</body>") ? html.replace("</body>", `${FIT_SCRIPT}</body>`) : html + FIT_SCRIPT;
+  }
   return { ...reply, html };
 }
 
