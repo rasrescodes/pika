@@ -1,0 +1,19 @@
+{
+  "slug": "estacion-venenta",
+  "url": "https://estacionvenenta.com",
+  "source": "onepagelove",
+  "awwwards_url": null,
+  "onepagelove_url": "https://onepagelove.com/estacion-venenta",
+  "award": "One Page Love",
+  "award_date": "2026-08-20",
+  "jury": null,
+  "captured_at": "2026-10-23T20:40:03.558Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.014,
+  "split": "train",
+  "notes": "Featured on One Page Love (Brutalism, Minimal, Typographic). One Page Love does not publish jury scores. The dithered graphic looks drawn on a full-viewport canvas. Capture skips that as an effect layer, so the graphic is barely masked."
+}

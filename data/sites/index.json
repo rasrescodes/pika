@@ -1,0 +1,305 @@
+{
+  "captured_at": "2026-10-23T20:47:44Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "sources": [
+    "awwwards",
+    "onepagelove"
+  ],
+  "faked": [],
+  "notes": "One Page Love does not publish jury scores, so those sites have jury null. Nothing was invented. Holdout sites are Awwwards only, picked so their overall scores span the kept range.",
+  "sites": [
+    {
+      "slug": "coffeetech-r",
+      "source": "awwwards",
+      "url": "https://coffee-tech.com/",
+      "award": "Site of the Day",
+      "award_date": "2026-07-16",
+      "overall": 7.18,
+      "split": "holdout",
+      "image_heavy": 0,
+      "banner": false,
+      "notes": ""
+    },
+    {
+      "slug": "produx-design",
+      "source": "awwwards",
+      "url": "https://www.produx.design",
+      "award": "Site of the Day",
+      "award_date": "2026-08-09",
+      "overall": 7.19,
+      "split": "train",
+      "image_heavy": 0.358,
+      "banner": true,
+      "notes": "Small cookie card stayed. The buttons read May the cookies be with you and I will pass, outside accept, agree, ok and got it."
+    },
+    {
+      "slug": "signal-a-studio",
+      "source": "awwwards",
+      "url": "https://signal-a.studio",
+      "award": "Site of the Day",
+      "award_date": "2026-10-18",
+      "overall": 7.22,
+      "split": "train",
+      "image_heavy": 0.293,
+      "banner": false,
+      "notes": ""
+    },
+    {
+      "slug": "2xa-studio",
+      "source": "awwwards",
+      "url": "https://2xa.studio/",
+      "award": "Site of the Day",
+      "award_date": "2026-07-31",
+      "overall": 7.22,
+      "split": "train",
+      "image_heavy": 1,
+      "banner": false,
+      "notes": "The diagram is large SVG circles, so image_heavy is 1. Settled layout, not a photograph."
+    },
+    {
+      "slug": "mosbys-files",
+      "source": "awwwards",
+      "url": "https://www.mosbyfiles.com/",
+      "award": "Site of the Day",
+      "award_date": "2026-08-13",
+      "overall": 7.23,
+      "split": "train",
+      "image_heavy": 0,
+      "banner": false,
+      "notes": ""
+    },
+    {
+      "slug": "c-design-by-dylan",
+      "source": "awwwards",
+      "url": "https://www.dylanbrouwer.design/",
+      "award": "Site of the Day",
+      "award_date": "2026-02-03",
+      "overall": 7.28,
+      "split": "train",
+      "image_heavy": 0.867,
+      "banner": false,
+      "notes": "Display type with a monitor mock. The mock is in the masks."
+    },
+    {
+      "slug": "new-genre-studio",
+      "source": "awwwards",
+      "url": "https://newgenre.studio",
+      "award": "Site of the Day",
+      "award_date": "2025-11-28",
+      "overall": 7.3,
+      "split": "holdout",
+      "image_heavy": 0.008,
+      "banner": false,
+      "notes": "An Awwwards Site of the Day tab sits on the right edge."
+    },
+    {
+      "slug": "bleibtgleich26",
+      "source": "awwwards",
+      "url": "https://bleibtgleich.dev",
+      "award": "Site of the Day",
+      "award_date": "2026-09-22",
+      "overall": 7.46,
+      "split": "holdout",
+      "image_heavy": 0.185,
+      "banner": false,
+      "notes": ""
+    },
+    {
+      "slug": "paul-kalkbrenner",
+      "source": "awwwards",
+      "url": "https://www.paulkalkbrenner.net/",
+      "award": "Site of the Day",
+      "award_date": "2026-09-02",
+      "overall": 7.47,
+      "split": "train",
+      "image_heavy": 0.007,
+      "banner": false,
+      "notes": "The navigation is split into single letters, so the text sample fills with those after the headline."
+    },
+    {
+      "slug": "nine-to-five",
+      "source": "awwwards",
+      "url": "https://www.9to5studio.it/",
+      "award": "Site of the Day",
+      "award_date": "2026-04-08",
+      "overall": 7.52,
+      "split": "holdout",
+      "image_heavy": 0.329,
+      "banner": true,
+      "notes": "Italian cookie panel stayed. The button reads Accetta, outside accept, agree, ok and got it. A narrow photograph sits on the right edge."
+    },
+    {
+      "slug": "obys-design-books",
+      "source": "awwwards",
+      "url": "https://library.obys.agency/",
+      "award": "Site of the Day",
+      "award_date": "2025-12-17",
+      "overall": 7.6,
+      "split": "holdout",
+      "image_heavy": 0.788,
+      "banner": false,
+      "notes": "Editorial layout with a halftone graphic. The graphic is in the masks."
+    },
+    {
+      "slug": "kern-society",
+      "source": "onepagelove",
+      "url": "https://shockingmike.github.io/kern-society",
+      "award": "One Page Love",
+      "award_date": "2026-10-13",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0,
+      "banner": false,
+      "notes": "Featured on One Page Love (Bold, Brutalism, Typographic). One Page Love does not publish jury scores."
+    },
+    {
+      "slug": "dialkit",
+      "source": "onepagelove",
+      "url": "https://www.dialkit.dev",
+      "award": "One Page Love",
+      "award_date": "2026-09-07",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.062,
+      "banner": false,
+      "notes": "Featured on One Page Love (Glassmorphism, Minimal, Typographic). One Page Love does not publish jury scores."
+    },
+    {
+      "slug": "specia1ne",
+      "source": "onepagelove",
+      "url": "https://specia1ne.com",
+      "award": "One Page Love",
+      "award_date": "2026-08-18",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0,
+      "banner": false,
+      "notes": "Featured on One Page Love (Editorial, Scroll Effects, Typographic). One Page Love does not publish jury scores."
+    },
+    {
+      "slug": "scout-graphics",
+      "source": "onepagelove",
+      "url": "https://scoutgraphics.com",
+      "award": "One Page Love",
+      "award_date": "2026-10-16",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.111,
+      "banner": false,
+      "notes": "Featured on One Page Love (Illustrative, Minimal, Retro & Vintage). One Page Love does not publish jury scores."
+    },
+    {
+      "slug": "bymayo-2",
+      "source": "onepagelove",
+      "url": "https://bymayo.co.uk",
+      "award": "One Page Love",
+      "award_date": "2026-10-12",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.033,
+      "banner": false,
+      "notes": "Featured on One Page Love (Glitch, Minimal). One Page Love does not publish jury scores. A small portrait sits in the header and is masked."
+    },
+    {
+      "slug": "fromt",
+      "source": "onepagelove",
+      "url": "https://www.fromt.app",
+      "award": "One Page Love",
+      "award_date": "2026-09-10",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.08,
+      "banner": false,
+      "notes": "Featured on One Page Love (Fun, Minimal, Typographic). One Page Love does not publish jury scores."
+    },
+    {
+      "slug": "uglycash",
+      "source": "onepagelove",
+      "url": "https://ugly.cash",
+      "award": "One Page Love",
+      "award_date": "2026-08-31",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.184,
+      "banner": false,
+      "notes": "Featured on One Page Love (Bold, Brutalism, Typographic). One Page Love does not publish jury scores. A phone mock sits under the headline and is masked."
+    },
+    {
+      "slug": "estacion-venenta",
+      "source": "onepagelove",
+      "url": "https://estacionvenenta.com",
+      "award": "One Page Love",
+      "award_date": "2026-08-20",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.014,
+      "banner": false,
+      "notes": "Featured on One Page Love (Brutalism, Minimal, Typographic). One Page Love does not publish jury scores. The dithered graphic looks drawn on a full-viewport canvas. Capture skips that as an effect layer, so the graphic is barely masked."
+    },
+    {
+      "slug": "vessa",
+      "source": "onepagelove",
+      "url": "https://vessa.design",
+      "award": "One Page Love",
+      "award_date": "2026-08-31",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.636,
+      "banner": false,
+      "notes": "Featured on One Page Love (Minimal, Pixel Art, Typographic). One Page Love does not publish jury scores. The lower band includes a photograph and it is in the masks. The upper half is type."
+    }
+  ],
+  "skipped": [
+    {
+      "slug": "leo-parpeix-portfolio-2026",
+      "reason": "Hero never settled. The frame is only the navigation."
+    },
+    {
+      "slug": "studio-dialect",
+      "reason": "Lower half is a photo carousel on a canvas, plus a cookie bar. The canvas covers the viewport so it was not masked."
+    },
+    {
+      "slug": "ai-in-design-report-2026",
+      "reason": "A mask covers the full viewport, so the scorer would grey the type."
+    },
+    {
+      "slug": "sohub",
+      "reason": "Hero is a 3D robot."
+    },
+    {
+      "slug": "made-with-gsap-1",
+      "reason": "Dark frame with a single line of type. Not a settled hero."
+    },
+    {
+      "slug": "serve-robotics",
+      "reason": "Grey wash with the headline cut off. Not a settled hero."
+    },
+    {
+      "slug": "brunello-cucinelli-ai-e-com",
+      "reason": "Access denied."
+    },
+    {
+      "slug": "cartier-watches-wonders-2026",
+      "reason": "Access denied."
+    },
+    {
+      "slug": "cleo-ai",
+      "reason": "Error page."
+    },
+    {
+      "slug": "ciao-energy-launch-website",
+      "reason": "Loader still on screen."
+    },
+    {
+      "slug": "lacoste-polo-factory",
+      "reason": "Cookie wall over the hero."
+    },
+    {
+      "slug": "wembi",
+      "reason": "Cookie wall over the hero."
+    }
+  ]
+}

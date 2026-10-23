@@ -1,0 +1,25 @@
+{
+  "slug": "produx-design",
+  "url": "https://www.produx.design",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/produx-design",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2026-08-09",
+  "jury": {
+    "design": 7.1,
+    "usability": 7.1,
+    "creativity": 7.52,
+    "content": 7.1,
+    "overall": 7.19
+  },
+  "captured_at": "2026-10-23T20:38:55.549Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 0.358,
+  "split": "train",
+  "notes": "Small cookie card stayed. The buttons read May the cookies be with you and I will pass, outside accept, agree, ok and got it."
+}

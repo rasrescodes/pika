@@ -1,0 +1,25 @@
+{
+  "slug": "obys-design-books",
+  "url": "https://library.obys.agency/",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/obys-design-books",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2025-12-17",
+  "jury": {
+    "design": 7.94,
+    "usability": 6.77,
+    "creativity": 8.13,
+    "content": 7.7,
+    "overall": 7.6
+  },
+  "captured_at": "2026-10-23T20:39:46.085Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.788,
+  "split": "holdout",
+  "notes": "Editorial layout with a halftone graphic. The graphic is in the masks."
+}

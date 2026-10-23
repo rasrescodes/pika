@@ -1,0 +1,25 @@
+{
+  "slug": "signal-a-studio",
+  "url": "https://signal-a.studio",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/signal-a-studio",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2026-10-18",
+  "jury": {
+    "design": 7.44,
+    "usability": 7,
+    "creativity": 7.06,
+    "content": 7.31,
+    "overall": 7.22
+  },
+  "captured_at": "2026-10-23T20:38:51.718Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.293,
+  "split": "train",
+  "notes": ""
+}

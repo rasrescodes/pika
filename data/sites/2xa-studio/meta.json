@@ -1,0 +1,25 @@
+{
+  "slug": "2xa-studio",
+  "url": "https://2xa.studio/",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/2xa-studio",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2026-07-31",
+  "jury": {
+    "design": 7.32,
+    "usability": 6.92,
+    "creativity": 7.45,
+    "content": 7.28,
+    "overall": 7.22
+  },
+  "captured_at": "2026-10-23T20:38:54.451Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "split": "train",
+  "notes": "The diagram is large SVG circles, so image_heavy is 1. Settled layout, not a photograph."
+}
