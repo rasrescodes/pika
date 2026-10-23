@@ -18,6 +18,20 @@ Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa 
 
 ## Setup
 ```bash
-cp .env.example .env   # add your MUBIT_API_KEY
-node scripts/mubit-smoke.mjs   # proves calls go through Mubit
+npm install
+cp .env.example .env   # add MUBIT_API_KEY and MODEL; without them Pika runs in MOCK mode
+npm run dev            # http://localhost:3000
 ```
+
+## How it works
+- **The Wall** (`/`): Generate makes 12 hero sections for the current brand (one per layout family), screenshots each one in a locked-down browser, and the **Juror** scores it (design, usability, creativity, content). Cards are ranked by score.
+- **Corrections**: drag a card, click Move to top, or Score it yourself, and say why. The correction goes into **taste memory**, which travels in every later Juror call through Mubit, so the next batch is judged your way. Mubit trains its small model on those calls.
+- **Brand kit** (`/brand`): Pika or Mubit presets, or your own.
+- **Scorecard** (`/scorecard`): the Juror against real Awwwards jury scores, big model against Mubit's small model, cost and speed. Only recorded numbers; see `data/scorecard/README.md`.
+
+## MOCK mode (no key)
+Sections come from 12 built-in templates and the Juror is rule-based: fixed per-layout scores, and each correction moves that layout family up (+1.5) or down (-1). The header shows MOCK. Add a key to switch to real calls through Mubit.
+
+## Safety
+- Generated HTML can't run scripts or load anything: sanitised, CSP, sandboxed iframe, and a JavaScript-off, network-blocked screenshot browser.
+- Spend cap: at most `PIKA_MAX_CALLS_PER_DAY` model calls a day (default 300; one batch is 24). Calls over the cap are refused, never charged.

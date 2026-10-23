@@ -7,7 +7,10 @@ How to run Pika. Keep this true as the stack lands.
 2. `node scripts/mubit-smoke.mjs` should print `200 via ...` and the call should show in the console under **Requests**.
 
 ## Running the app
-TBD once the stack is chosen.
+- `npm install`, `npm run dev`, open http://localhost:3000.
+- No key: MOCK mode (labelled). Key + MODEL in `.env`: every call goes through Mubit, capped at `PIKA_MAX_CALLS_PER_DAY`.
+- Reset between expo judges: the Reset button (clears taste memory and the wall, keeps the brand).
+- State lives in `data/state/` (gitignored). Delete it to start completely fresh.
 
 ## Mubit training
 - Training needs about 25 kept examples of one task (same system prompt, model, tools, output format).

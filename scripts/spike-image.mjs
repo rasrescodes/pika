@@ -17,7 +17,7 @@ if (!key || !model) {
   process.exit(1);
 }
 
-const imgPath = process.argv[2] || "scripts/fixtures/spike-section.png";
+const imgPath = process.argv[2] || "scripts/fixtures/spike-section.jpg";
 if (!existsSync(imgPath)) {
   console.error(`No image at ${imgPath}. Pass a screenshot path.`);
   process.exit(1);
