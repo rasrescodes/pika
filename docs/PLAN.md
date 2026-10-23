@@ -32,6 +32,7 @@
 ## Split
 - **Rassa:** generator + the Wall UI + demo.
 - **Luka:** Juror prompt + Mubit wiring + corrections + scorecard data.
+- **Kimberley:** design. Pika's brand and the three screens (brand-kit upload, the Wall, scorecard), then slide assets. Everything in `brand/`.
 - Swap or merge as soon as either is blocked.
 
 ## Demo (3 minutes, draft)

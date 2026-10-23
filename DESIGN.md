@@ -2,8 +2,11 @@
 
 Pika is a design tool judged by people with taste, so its own interface must look like it belongs on Awwwards. Lock the direction with design-beast before building UI, then record it here: brand, type, colour tokens, motion, layout rules, and the house-style tells to avoid.
 
+## Owner
+Kimberley (GitHub `kimberleys-ai`). Source files and tokens live in `brand/` (start at `brand/README.md`). This file records the locked direction once she sets it.
+
 ## Direction
-TBD (run design-beast for the Wall, the brand-kit upload and the scorecard page).
+TBD by Kimberley.
 
 ## Surfaces
 1. Brand-kit upload.

@@ -1,6 +1,6 @@
 # Pika
 
-An AI art director that learns your taste. Generator makes on-brand website sections from a brand kit; the Juror scores them like an Awwwards jury; the art director's overrides go through Mubit and become model updates. Built at Night Shift (Mubit hackathon, London, 23 to 25 Oct 2026) by Rassa and Luka. Read `docs/BRIEF.md` (event, tracks, judging, verified Mubit facts) and `docs/PLAN.md` (order of work, split, demo) before changing product behaviour.
+An AI art director that learns your taste. Generator makes on-brand website sections from a brand kit; the Juror scores them like an Awwwards jury; the art director's overrides go through Mubit and become model updates. Built at Night Shift (Mubit hackathon, London, 23 to 25 Oct 2026) by Rassa, Luka and Kimberley. Read `docs/BRIEF.md` (event, tracks, judging, verified Mubit facts) and `docs/PLAN.md` (order of work, split, demo) before changing product behaviour.
 
 ## Commands
 
@@ -23,7 +23,7 @@ An AI art director that learns your taste. Generator makes on-brand website sect
 
 ## Working together
 
-- Two humans (Rassa, Luka) and their agents share this repo. Pull before you start, commit small, push often.
+- Three humans and their agents share this repo: Rassa (generator, the Wall, demo), Luka (Juror, Mubit wiring, scorecard), Kimberley (design: owns `brand/`, see `brand/README.md`). Builders take colours, type and layout from `brand/` and `DESIGN.md`; don't invent brand values. Pull before you start, commit small, push often.
 - Branch per task and merge to `main` with a short PR, unless we agree otherwise (record it in `DECISIONS.md`).
 - If you change something the other side depends on (a prompt, an API shape, a file layout), say so in the commit message and in `DECISIONS.md`.
 - Blocked on a human-only action (keys, accounts, asking the Mubit team)? Add it to `HUMAN-NEEDED.md` and move on.
