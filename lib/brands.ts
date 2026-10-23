@@ -39,9 +39,10 @@ export const PRESETS: Brand[] = [
 ];
 
 export function fontStack(kind: Brand["displayFont"]): string {
-  if (kind === "serif") return 'Georgia, "Times New Roman", serif';
-  if (kind === "mono") return 'Menlo, "Courier New", monospace';
-  return '"Helvetica Neue", Helvetica, Arial, sans-serif';
+  // Single quotes inside: these stacks are embedded in double-quoted inline style attributes.
+  if (kind === "serif") return "Georgia, 'Times New Roman', serif";
+  if (kind === "mono") return "Menlo, 'Courier New', monospace";
+  return "'Helvetica Neue', Helvetica, Arial, sans-serif";
 }
 
 export function brandSummary(b: Brand): string {

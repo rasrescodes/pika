@@ -11,7 +11,7 @@
   --accent: #ff5d1f; /* provisional */
   --accent-hover: #e64a0e; /* provisional */
   --accent-soft: #ffead9; /* provisional */
-  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif; /* provisional */
+  --font-display: var(--font-newsreader), "Iowan Old Style", Georgia, serif; /* provisional */
   --font-heading: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif; /* provisional */
   --font-body: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif; /* provisional */
   --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace; /* provisional */
