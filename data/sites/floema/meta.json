@@ -1,0 +1,25 @@
+{
+  "slug": "floema",
+  "url": "https://www.floema.com/en",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/floema",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2026-05-13",
+  "jury": {
+    "design": 7.77,
+    "usability": 7.38,
+    "creativity": 7.82,
+    "content": 7.64,
+    "overall": 7.65
+  },
+  "captured_at": "2026-10-23T20:58:27.077Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.106,
+  "split": "train",
+  "notes": "Minimal type on a plain ground."
+}

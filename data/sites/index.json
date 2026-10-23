@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-10-23T20:47:44Z",
+  "captured_at": "2026-10-23T21:05:24Z",
   "viewport": [
     1440,
     900
@@ -9,7 +9,7 @@
     "onepagelove"
   ],
   "faked": [],
-  "notes": "One Page Love does not publish jury scores, so those sites have jury null. Nothing was invented. Holdout sites are Awwwards only, picked so their overall scores span the kept range.",
+  "notes": "One Page Love does not publish jury scores, so those sites have jury null. Nothing was invented. The holdout five span the original Awwwards range, 7.18 to 7.60. Sites added later are train, including floema at 7.65.",
   "sites": [
     {
       "slug": "coffeetech-r",
@@ -250,6 +250,150 @@
       "image_heavy": 0.636,
       "banner": false,
       "notes": "Featured on One Page Love (Minimal, Pixel Art, Typographic). One Page Love does not publish jury scores. The lower band includes a photograph and it is in the masks. The upper half is type."
+    },
+    {
+      "slug": "floema",
+      "source": "awwwards",
+      "url": "https://www.floema.com/en",
+      "award": "Site of the Day",
+      "award_date": "2026-05-13",
+      "overall": 7.65,
+      "split": "train",
+      "image_heavy": 0.106,
+      "banner": false,
+      "notes": "Minimal type on a plain ground."
+    },
+    {
+      "slug": "noho",
+      "source": "awwwards",
+      "url": "https://noho.ink",
+      "award": "Site of the Day",
+      "award_date": "2026-09-18",
+      "overall": 7.34,
+      "split": "train",
+      "image_heavy": 0.219,
+      "banner": false,
+      "notes": "The right half is a photograph grid and is masked. The left half is type."
+    },
+    {
+      "slug": "aardvark-book-club",
+      "source": "awwwards",
+      "url": "https://aardvarkbookclub.com",
+      "award": "Site of the Day",
+      "award_date": "2026-08-30",
+      "overall": 7.2,
+      "split": "train",
+      "image_heavy": 0.003,
+      "banner": false,
+      "notes": "Display type on flat colour shapes."
+    },
+    {
+      "slug": "weeksync",
+      "source": "onepagelove",
+      "url": "https://weeksync.app",
+      "award": "One Page Love",
+      "award_date": "2026-09-16",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0,
+      "banner": false,
+      "notes": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. Type on a plain ground, with a lot of open space."
+    },
+    {
+      "slug": "resurf",
+      "source": "onepagelove",
+      "url": "https://resurf.so",
+      "award": "One Page Love",
+      "award_date": "2026-10-21",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.265,
+      "banner": false,
+      "notes": "Featured on One Page Love (Editorial, Minimal, Typographic). One Page Love does not publish jury scores. A product screenshot fills the lower half and is masked."
+    },
+    {
+      "slug": "tiny-computer-co",
+      "source": "onepagelove",
+      "url": "https://tinycomputer.co",
+      "award": "One Page Love",
+      "award_date": "2026-08-28",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.144,
+      "banner": false,
+      "notes": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. A strip of photographs sits along the bottom and is masked."
+    },
+    {
+      "slug": "the-content-architecture",
+      "source": "onepagelove",
+      "url": "https://www.contentarchitecture.dev",
+      "award": "One Page Love",
+      "award_date": "2026-08-21",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.065,
+      "banner": false,
+      "notes": "Featured on One Page Love (Pixel Art, Scroll Effects, Typographic). One Page Love does not publish jury scores. The right half is a spiral of repeated type."
+    },
+    {
+      "slug": "aniket",
+      "source": "onepagelove",
+      "url": "https://unfunnyket.com",
+      "award": "One Page Love",
+      "award_date": "2026-10-20",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.057,
+      "banner": false,
+      "notes": "Featured on One Page Love (Flat Design, Grid Layout, Minimal, Narrow Layout). One Page Love does not publish jury scores. Narrow editorial column."
+    },
+    {
+      "slug": "smallbits",
+      "source": "onepagelove",
+      "url": "https://smallbits.design",
+      "award": "One Page Love",
+      "award_date": "2026-09-08",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.011,
+      "banner": false,
+      "notes": "Featured on One Page Love (Brutalism, Fun, Pixel Art). One Page Love does not publish jury scores. A grid of pixel icons."
+    },
+    {
+      "slug": "pairio",
+      "source": "onepagelove",
+      "url": "https://pairio.app",
+      "award": "One Page Love",
+      "award_date": "2026-10-17",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.159,
+      "banner": false,
+      "notes": "Featured on One Page Love (Editorial, Flat Design, Minimal). One Page Love does not publish jury scores. An app window sits along the bottom and is masked."
+    },
+    {
+      "slug": "kontu",
+      "source": "onepagelove",
+      "url": "https://kontu.io",
+      "award": "One Page Love",
+      "award_date": "2026-09-18",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.432,
+      "banner": false,
+      "notes": "Featured on One Page Love (Grid Layout, Minimal). One Page Love does not publish jury scores. A dashboard mock fills the lower half and is masked."
+    },
+    {
+      "slug": "flowjam-2",
+      "source": "onepagelove",
+      "url": "https://flowjam.com",
+      "award": "One Page Love",
+      "award_date": "2026-09-28",
+      "overall": null,
+      "split": "train",
+      "image_heavy": 0.255,
+      "banner": false,
+      "notes": "Featured on One Page Love (Editorial, Fun, Glassmorphism). One Page Love does not publish jury scores. A blurred panel sits on the left and is masked."
     }
   ],
   "skipped": [
@@ -300,6 +444,186 @@
     {
       "slug": "wembi",
       "reason": "Cookie wall over the hero."
+    },
+    {
+      "slug": "pp-neue-montreal",
+      "reason": "Loader. A ring of letters, not a settled hero."
+    },
+    {
+      "slug": "obys-2",
+      "reason": "Black frame. Not settled."
+    },
+    {
+      "slug": "obys-r-experiment-space",
+      "reason": "Blank frame."
+    },
+    {
+      "slug": "trionn-2",
+      "reason": "3D canvas behind the type."
+    },
+    {
+      "slug": "julien-calot",
+      "reason": "Full-bleed illustration."
+    },
+    {
+      "slug": "normal-is-boring",
+      "reason": "Cookie wall over a broken headline."
+    },
+    {
+      "slug": "kvs-studio",
+      "reason": "Enter gate."
+    },
+    {
+      "slug": "hiroto-sato",
+      "reason": "Loader still on screen."
+    },
+    {
+      "slug": "realevate",
+      "reason": "Photograph in the hero."
+    },
+    {
+      "slug": "meer-mohsin",
+      "reason": "Black loader."
+    },
+    {
+      "slug": "digitalists-1",
+      "reason": "Cookie wall."
+    },
+    {
+      "slug": "studio375-2",
+      "reason": "Photograph and a cookie wall."
+    },
+    {
+      "slug": "steven-com",
+      "reason": "Loader and a cookie card."
+    },
+    {
+      "slug": "radian",
+      "reason": "3D product render."
+    },
+    {
+      "slug": "monolog",
+      "reason": "A mask covers the full viewport, so the scorer would grey the type."
+    },
+    {
+      "slug": "glitch-grit",
+      "reason": "Masks cover the viewport."
+    },
+    {
+      "slug": "offfforum",
+      "reason": "Photograph and a cookie wall."
+    },
+    {
+      "slug": "zara-webb",
+      "reason": "Blank frame."
+    },
+    {
+      "slug": "dabbit",
+      "reason": "Empty product pane."
+    },
+    {
+      "slug": "glide-typeface",
+      "reason": "A mask covers the full viewport."
+    },
+    {
+      "slug": "beige-force",
+      "reason": "A mask covers the full viewport."
+    },
+    {
+      "slug": "twks-1",
+      "reason": "Photograph of posters."
+    },
+    {
+      "slug": "partizan",
+      "reason": "Photo collage."
+    },
+    {
+      "slug": "hilden-kaira",
+      "reason": "A mask covers the headline."
+    },
+    {
+      "slug": "sowieso-wero",
+      "reason": "Cookie wall."
+    },
+    {
+      "slug": "pensatori-irrazionali",
+      "reason": "Logo only. Not settled."
+    },
+    {
+      "slug": "son-daven",
+      "reason": "A mask covers the full viewport."
+    },
+    {
+      "slug": "indigo-laboratory",
+      "reason": "Enter gate."
+    },
+    {
+      "slug": "juan-mora-1",
+      "reason": "Photograph fills the hero."
+    },
+    {
+      "slug": "aino-agency",
+      "reason": "Product photography."
+    },
+    {
+      "slug": "astrodither",
+      "reason": "Enter gate."
+    },
+    {
+      "slug": "elva",
+      "reason": "Photograph, and it is not masked."
+    },
+    {
+      "slug": "sakazuki",
+      "reason": "Type over an unmasked photograph."
+    },
+    {
+      "slug": "cominvi",
+      "reason": "3D scene."
+    },
+    {
+      "slug": "podium",
+      "reason": "Loader still on screen."
+    },
+    {
+      "slug": "neutomni",
+      "reason": "The display word is a masked graphic, and a cookie panel covers the lower half."
+    },
+    {
+      "slug": "illoca",
+      "reason": "Logo and a cookie bar."
+    },
+    {
+      "slug": "izanami",
+      "reason": "Almost blank."
+    },
+    {
+      "slug": "meech213",
+      "reason": "Photo collage."
+    },
+    {
+      "slug": "units",
+      "reason": "A popup over photographs."
+    },
+    {
+      "slug": "longbow",
+      "reason": "3D car render."
+    },
+    {
+      "slug": "vectr",
+      "reason": "Loader."
+    },
+    {
+      "slug": "silent-house",
+      "reason": "Photograph and a cookie wall."
+    },
+    {
+      "slug": "pieterkoopt-r",
+      "reason": "Audio gate. The hero never starts."
+    },
+    {
+      "slug": "sstr-friction-reduction",
+      "reason": "Product photograph."
     }
   ]
 }

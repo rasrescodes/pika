@@ -1,0 +1,25 @@
+{
+  "slug": "aardvark-book-club",
+  "url": "https://aardvarkbookclub.com",
+  "source": "awwwards",
+  "awwwards_url": "https://www.awwwards.com/sites/aardvark-book-club",
+  "onepagelove_url": null,
+  "award": "Site of the Day",
+  "award_date": "2026-08-30",
+  "jury": {
+    "design": 7.13,
+    "usability": 7.16,
+    "creativity": 7.38,
+    "content": 7.26,
+    "overall": 7.2
+  },
+  "captured_at": "2026-10-23T20:58:29.932Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.003,
+  "split": "train",
+  "notes": "Display type on flat colour shapes."
+}

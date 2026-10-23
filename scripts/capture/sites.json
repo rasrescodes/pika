@@ -304,5 +304,167 @@
     "jury": null,
     "split": "train",
     "note": "Featured on One Page Love (Minimal, Pixel Art, Typographic). One Page Love does not publish jury scores. The lower band includes a photograph and it is in the masks. The upper half is type."
+  },
+  {
+    "slug": "floema",
+    "url": "https://www.floema.com/en",
+    "source": "awwwards",
+    "awwwards_url": "https://www.awwwards.com/sites/floema",
+    "onepagelove_url": null,
+    "award": "Site of the Day",
+    "award_date": "2026-05-13",
+    "jury": {
+      "design": 7.77,
+      "usability": 7.38,
+      "creativity": 7.82,
+      "content": 7.64,
+      "overall": 7.65
+    },
+    "split": "train",
+    "note": "Minimal type on a plain ground."
+  },
+  {
+    "slug": "noho",
+    "url": "https://noho.ink",
+    "source": "awwwards",
+    "awwwards_url": "https://www.awwwards.com/sites/noho",
+    "onepagelove_url": null,
+    "award": "Site of the Day",
+    "award_date": "2026-09-18",
+    "jury": {
+      "design": 7.64,
+      "usability": 7,
+      "creativity": 7.25,
+      "content": 7.35,
+      "overall": 7.34
+    },
+    "split": "train",
+    "note": "The right half is a photograph grid and is masked. The left half is type."
+  },
+  {
+    "slug": "aardvark-book-club",
+    "url": "https://aardvarkbookclub.com",
+    "source": "awwwards",
+    "awwwards_url": "https://www.awwwards.com/sites/aardvark-book-club",
+    "onepagelove_url": null,
+    "award": "Site of the Day",
+    "award_date": "2026-08-30",
+    "jury": {
+      "design": 7.13,
+      "usability": 7.16,
+      "creativity": 7.38,
+      "content": 7.26,
+      "overall": 7.2
+    },
+    "split": "train",
+    "note": "Display type on flat colour shapes."
+  },
+  {
+    "slug": "weeksync",
+    "url": "https://weeksync.app",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/weeksync",
+    "award": "One Page Love",
+    "award_date": "2026-09-16",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. Type on a plain ground, with a lot of open space."
+  },
+  {
+    "slug": "resurf",
+    "url": "https://resurf.so",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/resurf",
+    "award": "One Page Love",
+    "award_date": "2026-10-21",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Editorial, Minimal, Typographic). One Page Love does not publish jury scores. A product screenshot fills the lower half and is masked."
+  },
+  {
+    "slug": "tiny-computer-co",
+    "url": "https://tinycomputer.co",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/tiny-computer-co",
+    "award": "One Page Love",
+    "award_date": "2026-08-28",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Minimal, Scroll Effects, Typographic). One Page Love does not publish jury scores. A strip of photographs sits along the bottom and is masked."
+  },
+  {
+    "slug": "the-content-architecture",
+    "url": "https://www.contentarchitecture.dev",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/the-content-architecture",
+    "award": "One Page Love",
+    "award_date": "2026-08-21",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Pixel Art, Scroll Effects, Typographic). One Page Love does not publish jury scores. The right half is a spiral of repeated type."
+  },
+  {
+    "slug": "aniket",
+    "url": "https://unfunnyket.com",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/aniket",
+    "award": "One Page Love",
+    "award_date": "2026-10-20",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Flat Design, Grid Layout, Minimal, Narrow Layout). One Page Love does not publish jury scores. Narrow editorial column."
+  },
+  {
+    "slug": "smallbits",
+    "url": "https://smallbits.design",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/smallbits",
+    "award": "One Page Love",
+    "award_date": "2026-09-08",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Brutalism, Fun, Pixel Art). One Page Love does not publish jury scores. A grid of pixel icons."
+  },
+  {
+    "slug": "pairio",
+    "url": "https://pairio.app",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/pairio",
+    "award": "One Page Love",
+    "award_date": "2026-10-17",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Editorial, Flat Design, Minimal). One Page Love does not publish jury scores. An app window sits along the bottom and is masked."
+  },
+  {
+    "slug": "kontu",
+    "url": "https://kontu.io",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/kontu",
+    "award": "One Page Love",
+    "award_date": "2026-09-18",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Grid Layout, Minimal). One Page Love does not publish jury scores. A dashboard mock fills the lower half and is masked."
+  },
+  {
+    "slug": "flowjam-2",
+    "url": "https://flowjam.com",
+    "source": "onepagelove",
+    "awwwards_url": null,
+    "onepagelove_url": "https://onepagelove.com/flowjam-2",
+    "award": "One Page Love",
+    "award_date": "2026-09-28",
+    "jury": null,
+    "split": "train",
+    "note": "Featured on One Page Love (Editorial, Fun, Glassmorphism). One Page Love does not publish jury scores. A blurred panel sits on the left and is masked."
   }
 ]
