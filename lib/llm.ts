@@ -1,6 +1,7 @@
 // The only place Pika talks to a model. Every call goes to MUBIT_BASE_URL (the hackathon rule);
 // with no key or model configured, Pika runs in MOCK mode and callers use their fixtures instead.
 import OpenAI from "openai";
+import { read, write } from "./store";
 
 export type Mode = "MOCK" | "MUBIT";
 
@@ -37,8 +38,24 @@ function mubit(): OpenAI {
   return client;
 }
 
+// Spend guard: a hard cap on paid model calls per day (PIKA_MAX_CALLS_PER_DAY, default 300).
+// Calls over the cap are refused before they reach Mubit, so nothing over the cap is ever charged.
+export class SpendCapError extends Error {}
+export function callsToday(): { date: string; calls: number } {
+  const today = new Date().toISOString().slice(0, 10);
+  const s = read<{ date: string; calls: number }>("spend", { date: today, calls: 0 });
+  return s.date === today ? s : { date: today, calls: 0 };
+}
+function reserveCall(): void {
+  const cap = Number(process.env.PIKA_MAX_CALLS_PER_DAY ?? 300);
+  const s = callsToday();
+  if (s.calls >= cap) throw new SpendCapError(`Daily cap of ${cap} model calls reached; raise PIKA_MAX_CALLS_PER_DAY on purpose to continue.`);
+  write("spend", { date: s.date, calls: s.calls + 1 });
+}
+
 export async function chat(input: ChatInput): Promise<ChatResult> {
   if (mode() !== "MUBIT") throw new Error("chat() called in MOCK mode");
+  reserveCall();
   const model = input.model || (process.env.MODEL as string);
   const content: OpenAI.Chat.Completions.ChatCompletionContentPart[] = [{ type: "text", text: input.user }];
   for (const url of input.images ?? []) content.push({ type: "image_url", image_url: { url } });

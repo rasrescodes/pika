@@ -39,3 +39,18 @@ describe("ranking", () => {
     expect(applyOrder(cards, ["c", "a", "b"]).map((c) => c.id)).toEqual(["c", "a", "b"]);
   });
 });
+
+describe("spend guard", () => {
+  it("refuses calls over the daily cap before they reach Mubit", async () => {
+    const { mkdirSync } = await import("node:fs");
+    process.env.MUBIT_API_KEY = "test-key-not-real";
+    process.env.MODEL = "test-model";
+    process.env.PIKA_MAX_CALLS_PER_DAY = "0";
+    mkdirSync("data/state", { recursive: true });
+    const { chat, SpendCapError } = await import("@/lib/llm");
+    await expect(chat({ system: "s", user: "u", maxTokens: 5 })).rejects.toBeInstanceOf(SpendCapError);
+    delete process.env.MUBIT_API_KEY;
+    delete process.env.MODEL;
+    delete process.env.PIKA_MAX_CALLS_PER_DAY;
+  });
+});

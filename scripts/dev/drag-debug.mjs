@@ -1,0 +1,14 @@
+import { chromium } from "playwright";
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+p.on("console", (m) => console.log("console:", m.text()));
+await p.goto("http://localhost:3000/"); await p.click("[data-testid=reset]"); await p.click("[data-testid=generate]");
+await p.waitForSelector("[data-testid=batch-done]");
+const a = await p.locator("[data-testid=slot-7] [data-testid=drag-handle]").boundingBox();
+const t = await p.locator("[data-testid=slot-1]").boundingBox();
+console.log("handle", a, "target", t);
+await p.evaluate(() => { window.addEventListener("pointerdown", (e) => console.log("pd", e.target.dataset?.testid, e.button)); window.addEventListener("pointerup", (e) => console.log("pu", document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-slot]")?.dataset.slot)); });
+await p.mouse.move(a.x + a.width / 2, a.y + a.height / 2); await p.mouse.down();
+for (let i = 1; i <= 12; i++) await p.mouse.move(a.x + a.width/2 + (t.x + t.width/2 - a.x - a.width/2) * i/12, a.y + a.height/2 + (t.y + t.height/2 - a.y - a.height/2) * i/12);
+await p.mouse.up(); await p.waitForTimeout(500);
+console.log("sheet?", await p.locator("[data-testid=reason]").count());
+await b.close();

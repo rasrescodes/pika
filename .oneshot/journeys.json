@@ -87,7 +87,7 @@
           "eval": "(()=>{const cards=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')]; const c=cards[6]; if(!c) return false; const badge=c.querySelector('[data-testid=rank-badge]'); if(!badge || badge.textContent.trim()!=='7') return false; sessionStorage.setItem('jr2fam', c.dataset.family); return true;})()"
         },
         {
-          "click": "[data-testid=wall] [data-testid=card]:nth-child(7) [data-testid=promote]"
+          "click": "[data-testid=slot-7] [data-testid=promote]"
         },
         {
           "fill": {
@@ -112,6 +112,9 @@
         },
         {
           "expect_selector": "[data-testid=card][data-taste-applied=true]"
+        },
+        {
+          "wait_ms": 700
         },
         {
           "eval": "(()=>{const f=sessionStorage.getItem('jr2fam'); const cards=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')]; const i=cards.findIndex(c=>c.dataset.family===f); if(i<0) return false; const c=cards[i]; const shown=Number(c.querySelector('[data-testid=rank-badge]').textContent.trim()); const byPos=[...cards].sort((a,b)=>{const ra=a.getBoundingClientRect(), rb=b.getBoundingClientRect(); return (Math.round(ra.top)-Math.round(rb.top))||(ra.left-rb.left);}); return i<6 && shown===i+1 && byPos.indexOf(c)===i;})()"
@@ -281,7 +284,7 @@
         },
         {
           "drag": {
-            "from": "[data-testid=wall] [data-testid=card]:nth-child(7) [data-testid=drag-handle]",
+            "from": "[data-testid=slot-7] [data-testid=drag-handle]",
             "to": "[data-testid=slot-1]"
           }
         },
@@ -311,7 +314,11 @@
         }
       ],
       "pass": "a real pointer drag of #7 onto slot 1 opens the correction sheet, saves, and the card is still #1 after a reload",
-      "then": null
+      "then": null,
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      }
     }
   ]
 }
