@@ -2,17 +2,22 @@
 // Usage:
 //   npm run loop -- <slug> [<slug> ...]     run named sites
 //   npm run loop -- --split train           run every site in data/sites/index.json with that split
-// Options: --rounds 6 --target 80 --concurrency 3 --no-lessons --learn (update house lessons after each site)
+// Options: --mode image|dom --rounds 6 --target 80 --concurrency 3 --no-lessons --learn (update house lessons after each site)
+//   image: the Describer sees the screenshot and an LLM Critic compares screenshots.
+//   dom:   the Describer reads measure.json as text and the fixes come from a code diff of measurements.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { parseArgs } from "node:util";
-import { describe, build, critique, updateLessons } from "./agents.ts";
-import { renderHtml, closeBrowser } from "./render.ts";
+import { describe, describeDom, build, critique, updateLessons } from "./agents.ts";
+import { render, closeBrowser } from "./render.ts";
+import { measureToText, type Measure } from "./measure.ts";
+import { domFixes } from "./dom-diff.ts";
 import { score, type Box, type Score } from "./score.ts";
 
 const { values: opts, positionals } = parseArgs({
   allowPositionals: true,
   options: {
     split: { type: "string" },
+    mode: { type: "string", default: "image" },
     rounds: { type: "string", default: "6" },
     target: { type: "string", default: "80" },
     concurrency: { type: "string", default: "3" },
@@ -21,7 +26,10 @@ const { values: opts, positionals } = parseArgs({
   },
 });
 
-const LESSONS = "data/lessons.md";
+if (!["image", "dom"].includes(opts.mode!)) throw new Error("--mode is image or dom");
+const DOM = opts.mode === "dom";
+// Each mode keeps its own lessons: what helps a reader of pixels is not what helps a reader of numbers.
+const LESSONS = DOM ? "data/lessons-dom.md" : "data/lessons.md";
 const readLessons = () => (opts["no-lessons"] || !existsSync(LESSONS) ? "" : readFileSync(LESSONS, "utf8"));
 
 type Round = { round: number; score: Score; fixes: string[]; describerRequestId: string | null; ms: number };
@@ -30,8 +38,10 @@ async function runSite(slug: string) {
   const dir = `data/sites/${slug}`;
   const original = readFileSync(`${dir}/original.png`);
   const masks: Box[] = existsSync(`${dir}/masks.json`) ? JSON.parse(readFileSync(`${dir}/masks.json`, "utf8")) : [];
+  const measured: Measure | undefined = DOM ? JSON.parse(readFileSync(`${dir}/measure.json`, "utf8")) : undefined;
+  const measuredText = measured ? measureToText(measured, masks) : "";
   const lessons = readLessons();
-  const runDir = `data/runs/${slug}/${new Date().toISOString().replace(/[:.]/g, "-")}`;
+  const runDir = `data/runs/${slug}/${new Date().toISOString().replace(/[:.]/g, "-")}-${opts.mode}`;
   const session = `site-${slug}`;
   const rounds: Round[] = [];
   let spec: string | undefined;
@@ -39,10 +49,11 @@ async function runSite(slug: string) {
 
   for (let round = 1; round <= Number(opts.rounds); round++) {
     const started = Date.now();
-    const d = await describe({ original, lessons, previousSpec: spec, fixes }, session);
+    const input = { lessons, previousSpec: spec, fixes };
+    const d = DOM ? await describeDom({ ...input, measured: measuredText }, session) : await describe({ ...input, original }, session);
     spec = d.text.trim();
     const b = await build(spec, session);
-    const png = await renderHtml(b.html);
+    const { png, measure } = await render(b.html);
     const s = await score(original, png, masks);
     const out = `${runDir}/r${round}`;
     mkdirSync(out, { recursive: true });
@@ -51,7 +62,9 @@ async function runSite(slug: string) {
     writeFileSync(`${out}/build.png`, png);
 
     const done = s.total >= Number(opts.target) || round === Number(opts.rounds);
-    fixes = done ? [] : (await critique(original, png, spec, session)).fixes;
+    if (done) fixes = [];
+    else if (DOM) fixes = domFixes(measured!, measure);
+    else fixes = (await critique(original, png, spec, session)).fixes;
     const r: Round = { round, score: s, fixes, describerRequestId: d.requestId, ms: Date.now() - started };
     writeFileSync(`${out}/round.json`, JSON.stringify(r, null, 2));
     rounds.push(r);
@@ -62,6 +75,7 @@ async function runSite(slug: string) {
   const best = rounds.reduce((a, b) => (b.score.total > a.score.total ? b : a));
   const summary = {
     slug,
+    mode: opts.mode,
     lessonsUsed: lessons.trim().length > 0,
     firstShot: rounds[0].score.total,
     best: best.score.total,

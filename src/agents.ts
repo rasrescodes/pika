@@ -7,6 +7,7 @@ import { ask, image, text, MODELS, type Reply } from "./mubit.ts";
 const prompt = (name: string) => readFileSync(`prompts/${name}.md`, "utf8").trim();
 const SYSTEM = {
   describer: prompt("describer.v1"),
+  describerDom: prompt("describer-dom.v1"),
   builder: prompt("builder.v1"),
   critic: prompt("critic.v1"),
   lessons: prompt("lessons.v1"),
@@ -15,20 +16,37 @@ const SYSTEM = {
 // JPEG keeps request bodies small (starter credit caps them at 8 MiB) and costs no detail that matters here.
 const jpeg = async (png: Buffer) => image(await sharp(png).jpeg({ quality: 85 }).toBuffer(), "image/jpeg");
 
-export type DescribeInput = { original: Buffer; lessons: string; previousSpec?: string; fixes?: string[] };
+export type DescribeInput = { lessons: string; previousSpec?: string; fixes?: string[] };
 
-export async function describe(input: DescribeInput, session: string, record = true): Promise<Reply> {
+function describeText(input: DescribeInput, first: string) {
   const parts = [`HOUSE LESSONS:\n${input.lessons.trim() || "(none yet)"}`];
   if (input.previousSpec && input.fixes?.length) {
     parts.push(`PREVIOUS SPEC:\n${input.previousSpec.trim()}`);
-    parts.push(`FIXES FROM THE CRITIC:\n${input.fixes.map((f) => `- ${f}`).join("\n")}`);
+    parts.push(`FIXES:\n${input.fixes.map((f) => `- ${f}`).join("\n")}`);
   } else {
-    parts.push("This is the first attempt for this screenshot.");
+    parts.push(first);
   }
+  return parts.join("\n\n");
+}
+
+// Screenshot loop: the Describer sees the original image.
+export async function describe(input: DescribeInput & { original: Buffer }, session: string, record = true): Promise<Reply> {
   return ask({
     model: MODELS.describer,
     system: SYSTEM.describer,
-    content: [await jpeg(input.original), text(parts.join("\n\n"))],
+    content: [await jpeg(input.original), text(describeText(input, "This is the first attempt for this screenshot."))],
+    maxTokens: 900,
+    session,
+    record,
+  });
+}
+
+// DOM loop: text only, the measurements from measure.json. A separate Mubit task from the screenshot Describer.
+export async function describeDom(input: DescribeInput & { measured: string }, session: string, record = true): Promise<Reply> {
+  return ask({
+    model: MODELS.describer,
+    system: SYSTEM.describerDom,
+    content: [text(`MEASUREMENTS:\n${input.measured}\n\n${describeText(input, "This is the first attempt for this page.")}`)],
     maxTokens: 900,
     session,
     record,
