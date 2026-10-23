@@ -53,26 +53,28 @@ export async function describeDom(input: DescribeInput & { measured: string }, s
   });
 }
 
-export async function build(spec: string, session: string) {
+export async function build(spec: string, session: string, record = true) {
   const reply = await ask({
     model: MODELS.builder,
     system: SYSTEM.builder,
     content: [text(spec)],
     maxTokens: 12000,
     session,
+    record,
   });
   const fenced = reply.text.match(/```(?:html)?\s*([\s\S]*?)```/);
   const html = (fenced ? fenced[1] : reply.text).trim();
   return { ...reply, html };
 }
 
-export async function critique(original: Buffer, rebuild: Buffer, spec: string, session: string) {
+export async function critique(original: Buffer, rebuild: Buffer, spec: string, session: string, record = true) {
   const reply = await ask({
     model: MODELS.critic,
     system: SYSTEM.critic,
     content: [text("Image A, the original:"), await jpeg(original), text("Image B, the rebuild:"), await jpeg(rebuild), text(`SPEC:\n${spec}`)],
     maxTokens: 600,
     session,
+    record,
   });
   let fixes: string[] = [];
   try {

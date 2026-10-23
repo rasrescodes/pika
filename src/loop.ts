@@ -2,7 +2,8 @@
 // Usage:
 //   npm run loop -- <slug> [<slug> ...]     run named sites
 //   npm run loop -- --split train           run every site in data/sites/index.json with that split
-// Options: --mode image|dom --rounds 6 --target 80 --concurrency 3 --no-lessons --learn (update house lessons after each site)
+// Holdout sites run with Mubit recording off, so they never become training examples.
+// Options: --sites data/sites --mode image|dom --rounds 6 --target 80 --concurrency 3 --no-lessons --learn (update house lessons after each site)
 //   image: the Describer sees the screenshot and an LLM Critic compares screenshots.
 //   dom:   the Describer reads measure.json as text and the fixes come from a code diff of measurements.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -16,6 +17,7 @@ import { score, type Box, type Score } from "./score.ts";
 const { values: opts, positionals } = parseArgs({
   allowPositionals: true,
   options: {
+    sites: { type: "string", default: "data/sites" },
     split: { type: "string" },
     mode: { type: "string", default: "image" },
     rounds: { type: "string", default: "6" },
@@ -29,13 +31,17 @@ const { values: opts, positionals } = parseArgs({
 if (!["image", "dom"].includes(opts.mode!)) throw new Error("--mode is image or dom");
 const DOM = opts.mode === "dom";
 // Each mode keeps its own lessons: what helps a reader of pixels is not what helps a reader of numbers.
+type Entry = { slug: string; split: string; image_heavy?: number; big_canvas?: boolean };
+const INDEX: Entry[] = existsSync(`${opts.sites}/index.json`) ? JSON.parse(readFileSync(`${opts.sites}/index.json`, "utf8")) : [];
+const SPLIT = new Map(INDEX.map((s) => [s.slug, s.split]));
 const LESSONS = DOM ? "data/lessons-dom.md" : "data/lessons.md";
 const readLessons = () => (opts["no-lessons"] || !existsSync(LESSONS) ? "" : readFileSync(LESSONS, "utf8"));
 
 type Round = { round: number; score: Score; fixes: string[]; describerRequestId: string | null; ms: number };
 
 async function runSite(slug: string) {
-  const dir = `data/sites/${slug}`;
+  const dir = `${opts.sites}/${slug}`;
+  const record = SPLIT.get(slug) !== "holdout";
   const original = readFileSync(`${dir}/original.png`);
   const masks: Box[] = existsSync(`${dir}/masks.json`) ? JSON.parse(readFileSync(`${dir}/masks.json`, "utf8")) : [];
   const measured: Measure | undefined = DOM ? JSON.parse(readFileSync(`${dir}/measure.json`, "utf8")) : undefined;
@@ -50,9 +56,11 @@ async function runSite(slug: string) {
   for (let round = 1; round <= Number(opts.rounds); round++) {
     const started = Date.now();
     const input = { lessons, previousSpec: spec, fixes };
-    const d = DOM ? await describeDom({ ...input, measured: measuredText }, session) : await describe({ ...input, original }, session);
+    const d = DOM
+      ? await describeDom({ ...input, measured: measuredText }, session, record)
+      : await describe({ ...input, original }, session, record);
     spec = d.text.trim();
-    const b = await build(spec, session);
+    const b = await build(spec, session, record);
     const { png, measure } = await render(b.html);
     const s = await score(original, png, masks);
     const out = `${runDir}/r${round}`;
@@ -64,7 +72,7 @@ async function runSite(slug: string) {
     const done = s.total >= Number(opts.target) || round === Number(opts.rounds);
     if (done) fixes = [];
     else if (DOM) fixes = domFixes(measured!, measure);
-    else fixes = (await critique(original, png, spec, session)).fixes;
+    else fixes = (await critique(original, png, spec, session, record)).fixes;
     const r: Round = { round, score: s, fixes, describerRequestId: d.requestId, ms: Date.now() - started };
     writeFileSync(`${out}/round.json`, JSON.stringify(r, null, 2));
     rounds.push(r);
@@ -76,6 +84,7 @@ async function runSite(slug: string) {
   const summary = {
     slug,
     mode: opts.mode,
+    recorded: record,
     lessonsUsed: lessons.trim().length > 0,
     firstShot: rounds[0].score.total,
     best: best.score.total,
@@ -111,10 +120,9 @@ async function pool<T, R>(items: T[], n: number, fn: (t: T) => Promise<R>) {
 }
 
 let slugs = positionals;
-if (opts.split) {
-  const index: { slug: string; split: string }[] = JSON.parse(readFileSync("data/sites/index.json", "utf8"));
-  slugs = index.filter((s) => s.split === opts.split).map((s) => s.slug);
-}
+// The pixel score is mostly masked on media-heavy heroes, so the screenshot loop keeps to type-led ones.
+const pixelFriendly = (s: Entry) => (s.image_heavy ?? 0) <= 0.5 && !s.big_canvas;
+if (opts.split) slugs = INDEX.filter((s) => s.split === opts.split && (DOM || pixelFriendly(s))).map((s) => s.slug);
 if (!slugs.length) {
   console.error("Name sites or pass --split train|holdout.");
   process.exit(1);
