@@ -17,7 +17,7 @@ const PROVISIONAL_COLOUR = {
   "accent-soft": "#ffead9",
 };
 const PROVISIONAL_TYPE = {
-  display: '"Newsreader", "Iowan Old Style", Georgia, serif',
+  display: 'var(--font-newsreader), "Iowan Old Style", Georgia, serif',
   heading: 'var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif',
   body: 'var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif',
   mono: 'var(--font-geist-mono), ui-monospace, Menlo, monospace',
