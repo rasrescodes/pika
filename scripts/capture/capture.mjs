@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import sharp from 'sharp';
 
 const SITES = process.argv[2] || 'sites.json';
 const CONC = Math.max(1, Number(process.argv[3]) || 2);
@@ -38,6 +39,9 @@ const inPage = () => {
   const texts = [];
   let banner = false;
 
+  let fixedMax = 0;
+  let bigCanvas = false;
+  let fullBg = null;
   for (const el of document.body.querySelectorAll('*')) {
     const cs = getComputedStyle(el);
     const r = el.getBoundingClientRect();
@@ -51,6 +55,8 @@ const inPage = () => {
     const cover = (box.w * box.h) / (VW * VH);
     // A full-viewport canvas or svg is usually a grain or cursor layer over the type.
     // Masking it would hide the whole hero from the scorer.
+    if (tag === 'canvas' && cover > 0.8) bigCanvas = true;
+    if (cover > 0.9 && cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent' && !fullBg) fullBg = hex(cs.backgroundColor);
     const effectLayer = (tag === 'canvas' || tag === 'svg') && cover > 0.9;
     if (((media && big) || bgImage) && !effectLayer) masks.push(box);
 
@@ -60,6 +66,7 @@ const inPage = () => {
       banner = true;
     }
 
+    if ((cs.position === 'fixed' || cs.position === 'sticky') && ((el.innerText || '').trim().length > 0 && (el.innerText || '').length < 400 && cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent' || /cookie|consent|loading/i.test(el.innerText || ''))) fixedMax = Math.max(fixedMax, (box.w * box.h) / (VW * VH));
     if (tag === 'script' || tag === 'style' || tag === 'noscript') continue;
     let own = '';
     for (const node of el.childNodes) if (node.nodeType === 3) own += node.textContent;
@@ -114,15 +121,20 @@ const inPage = () => {
   const bodyBg = bodyCs.backgroundColor !== 'rgba(0, 0, 0, 0)' && bodyCs.backgroundColor !== 'transparent'
     ? hex(bodyCs.backgroundColor)
     : hex(rootCs.backgroundColor);
+  const rootTransparent = rootCs.backgroundColor === 'rgba(0, 0, 0, 0)' || rootCs.backgroundColor === 'transparent';
+  const bodyTransparent = bodyCs.backgroundColor === 'rgba(0, 0, 0, 0)' || bodyCs.backgroundColor === 'transparent';
+  const bodyBgFinal = bodyTransparent && rootTransparent ? (fullBg || '#ffffff') : bodyBg;
 
   texts.sort((a, b) => b._a - a._a);
   const dominantBgs = Object.entries(bgArea).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([color, area]) => ({ color, area }));
   return {
     masks,
+    fixedMax,
     banner,
     image_heavy: Math.round((covered / grid.length) * 1000) / 1000,
     texts: texts.slice(0, 60).map(({ _a, ...t }) => t),
-    bodyBg,
+    bodyBg: bodyBgFinal,
+    bigCanvas,
     dominantBgs,
   };
 };
@@ -154,7 +166,8 @@ async function shoot(browser, site) {
   });
   const page = await context.newPage();
   try {
-    await page.goto(site.url, { waitUntil: 'load', timeout: 35000 });
+    try { await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 45000 }); }
+    catch (e) { await page.waitForTimeout(1500); await page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 45000 }); }
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(2500);
     await dismiss(page);
@@ -162,7 +175,14 @@ async function shoot(browser, site) {
     const measured = await page.evaluate(inPage);
     const png = await page.screenshot({ type: 'png', fullPage: false });
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'original.png'), png);
+    const { data } = await sharp(png).resize(144, 90).greyscale().raw().toBuffer({ resolveWithObject: true });
+    const mean = data.reduce((a, b) => a + b, 0) / data.length;
+    const sd = Math.sqrt(data.reduce((a, b) => a + (b - mean) ** 2, 0) / data.length);
+    const flags = [];
+    if (sd < 6) flags.push('FLAG near-uniform');
+    if (measured.fixedMax > 0.3) flags.push(`FLAG fixed overlay ${Math.round(measured.fixedMax * 100)}%`);
+    const out = png.length > 5e6 ? await sharp(png).png({ compressionLevel: 9 }).toBuffer() : png;
+    fs.writeFileSync(path.join(dir, 'original.png'), out);
     fs.writeFileSync(path.join(dir, 'masks.json'), JSON.stringify(measured.masks));
     fs.writeFileSync(path.join(dir, 'measure.json'), JSON.stringify({
       texts: measured.texts,
@@ -174,7 +194,7 @@ async function shoot(browser, site) {
     if (/access denied|403 forbidden|just a moment|enable javascript/.test(joined) && measured.texts.length < 8) notes.push('blocked or interstitial');
     if (/\b(is loading|please wait|experience is loading)\b/.test(joined) || /\b0%/.test(joined)) notes.push('loader still on screen');
     if (measured.texts.length < 2) notes.push('little visible text');
-    if (measured.image_heavy > 0.55) notes.push('image heavy');
+    notes.push(...flags);
     const meta = {
       slug: site.slug,
       url: site.url,
@@ -183,11 +203,13 @@ async function shoot(browser, site) {
       onepagelove_url: site.onepagelove_url || null,
       award: site.award,
       award_date: site.award_date,
-      jury: site.jury,
+      jury: site.jury || null,
+      split: null,
       captured_at: new Date().toISOString(),
       viewport: [1440, 900],
       banner: measured.banner,
       image_heavy: measured.image_heavy,
+      big_canvas: measured.bigCanvas,
       notes: [site.note, ...notes].filter(Boolean).join('; '),
     };
     fs.writeFileSync(path.join(dir, 'meta.json'), `${JSON.stringify(meta, null, 2)}\n`);
@@ -201,7 +223,7 @@ async function shoot(browser, site) {
   }
 }
 
-const todo = list.filter((site) => !fs.existsSync(path.join(OUT, site.slug, 'original.png')));
+const todo = process.env.FORCE ? list : list.filter((site) => !fs.existsSync(path.join(OUT, site.slug, 'original.png')));
 console.log('to capture', todo.length);
 const browser = await chromium.launch({ headless: true });
 let cursor = 0;
