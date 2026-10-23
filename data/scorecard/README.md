@@ -32,3 +32,11 @@ From the provider's public pricing page, per model id we call:
 
 ## ../proof/ (the correction proof)
 `frozen-eval.json` holds the 6 frozen evaluation messages (no taste notes); `correction-proof.json` records both adapter versions' replies on them. `npm run check:demo-ready` checks everything and stamps the page.
+
+## Making the correction proof (Saturday)
+1. Pick the correction you will demo (for example "braver type": oversized and editorial layouts up; minimal and centred down).
+2. `npx tsx scripts/frozen-eval.ts <3 up images> -- <3 down images>` writes `data/proof/frozen-eval.json` and prints its hash.
+3. In Mubit's Try models, run the 6 inputs on the current adapter version (BEFORE). Record replies.
+4. Make the correction in Pika, generate batches so Mubit records calls carrying it, and wait for the next adapter version.
+5. Run the same 6 inputs on the new version (AFTER). Record replies.
+6. Write `data/proof/correction-proof.json` (shape checked by `npm run check:demo-ready`), then run the check. "Model update" may be said on stage only if it passes.
