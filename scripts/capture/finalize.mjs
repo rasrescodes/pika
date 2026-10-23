@@ -16,6 +16,16 @@ for (const d of fs.readdirSync(root)) {
 const textCount = sl => JSON.parse(fs.readFileSync(path.join(root, sl, 'measure.json'))).texts.length;
 const bad = m => /FLAG|blocked|loader|little visible/.test(m.notes || '') || textCount(m.slug) < 5 || (!m.jury && !m.onepagelove_url);
 const good = metas.filter(m => !bad(m)).sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+const prevIdx = fs.existsSync(idxFile) ? JSON.parse(fs.readFileSync(idxFile)) : [];
+const goodSet = new Set(good.map(m => m.slug));
+const swaps = [];
+for (const slug of [...prevHold]) {
+  if (goodSet.has(slug)) continue;
+  const target = prevIdx.find(e => e.slug === slug)?.overall ?? 7.4;
+  const rep = good.filter(m => m.jury && !prevHold.has(m.slug)).sort((a, b) => Math.abs(a.jury.overall - target) - Math.abs(b.jury.overall - target))[0];
+  prevHold.delete(slug); if (rep) { prevHold.add(rep.slug); swaps.push(`${slug} (${target}) -> ${rep.slug} (${rep.jury.overall})`); }
+}
+if (swaps.length) console.log('holdout swaps', swaps);
 const keep = [...good.filter(m => prevHold.has(m.slug)), ...good.filter(m => !prevHold.has(m.slug))].slice(0, Math.max(TARGET, prevHold.size)).sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 const keepSet = new Set(keep.map(m => m.slug));
 const dropped = [];

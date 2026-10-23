@@ -154,6 +154,40 @@ async function dismiss(page) {
   }
 }
 
+async function snap(page) {
+  const measured = await page.evaluate(inPage);
+  const png = await page.screenshot({ type: 'png', fullPage: false });
+  const { data } = await sharp(png).resize(144, 90).greyscale().raw().toBuffer({ resolveWithObject: true });
+  const mean = data.reduce((a, b) => a + b, 0) / data.length;
+  const sd = Math.sqrt(data.reduce((a, b) => a + (b - mean) ** 2, 0) / data.length);
+  const title = await page.title().catch(() => '');
+  return { measured, png, sd, title };
+}
+
+function badReason(r) {
+  const texts = r.measured.texts.map((t) => t.text);
+  const joined = texts.join(' ');
+  if (/password|access denied|forbidden|\b404\b/i.test(r.title) || (/password|access denied|forbidden|not found/i.test(joined) && texts.length < 12)) return 'password or blocked page';
+  if (texts.length <= 3) return 'few texts (loader?)';
+  if (texts.some((t) => /^\d{1,3}\s?%?$/.test(t.trim()))) return 'counter on screen';
+  if (/loading|preloader/i.test(joined) && texts.length < 12) return 'loading text';
+  if (r.sd < 6) return 'near-uniform';
+  return '';
+}
+
+// Long settle: poll each second, up to 15 s, until text count and variance are stable for 2 s.
+async function settle(page) {
+  let last = null, stable = 0, r = null;
+  for (let i = 0; i < 15 && stable < 2; i++) {
+    await page.waitForTimeout(1000);
+    r = await snap(page);
+    const key = `${r.measured.texts.length}:${Math.round(r.sd)}`;
+    stable = key === last ? stable + 1 : 0;
+    last = key;
+  }
+  return r;
+}
+
 async function shoot(browser, site) {
   const dir = path.join(OUT, site.slug);
   const context = await browser.newContext({
@@ -172,12 +206,12 @@ async function shoot(browser, site) {
     await page.waitForTimeout(2500);
     await dismiss(page);
     await page.waitForTimeout(300);
-    const measured = await page.evaluate(inPage);
-    const png = await page.screenshot({ type: 'png', fullPage: false });
+    let r = await snap(page);
+    let why = badReason(r);
+    if (why && !/password|blocked/.test(why)) { r = (await settle(page)) || r; why = badReason(r); }
+    const { measured, png } = r;
     fs.mkdirSync(dir, { recursive: true });
-    const { data } = await sharp(png).resize(144, 90).greyscale().raw().toBuffer({ resolveWithObject: true });
-    const mean = data.reduce((a, b) => a + b, 0) / data.length;
-    const sd = Math.sqrt(data.reduce((a, b) => a + (b - mean) ** 2, 0) / data.length);
+    const sd = r.sd;
     const flags = [];
     if (sd < 6) flags.push('FLAG near-uniform');
     if (measured.fixedMax > 0.3) flags.push(`FLAG fixed overlay ${Math.round(measured.fixedMax * 100)}%`);
@@ -191,6 +225,7 @@ async function shoot(browser, site) {
     }));
     const joined = measured.texts.map((t) => t.text).join(' ').toLowerCase();
     const notes = [];
+    if (why) notes.push('FLAG ' + why);
     if (/access denied|403 forbidden|just a moment|enable javascript/.test(joined) && measured.texts.length < 8) notes.push('blocked or interstitial');
     if (/\b(is loading|please wait|experience is loading)\b/.test(joined) || /\b0%/.test(joined)) notes.push('loader still on screen');
     if (measured.texts.length < 2) notes.push('little visible text');
