@@ -9,7 +9,7 @@ Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa 
 ## Why it fits the brief
 - **Recurring task:** design critique. Every studio reviews dozens of options a day.
 - **Corrections become model updates:** the art director's overrides train the Juror through Mubit.
-- **Own your intelligence layer (main track):** a small trained critic is cheap enough to judge 100 designs instead of 5. Show quality, cost and speed against the big model side by side.
+- **Own your intelligence layer (main track):** a small trained critic is cheap enough to judge 100 designs instead of 5 (the scorecard measures whether that holds). Show quality, cost and speed against the big model side by side.
 
 ## Start here
 - `docs/BRIEF.md`: the event, tracks, judging, and verified Mubit facts.
@@ -30,7 +30,7 @@ npm run dev            # http://localhost:3000
 - **Scorecard** (`/scorecard`): the Juror against real Awwwards jury scores, big model against Mubit's small model, cost and speed. Only recorded numbers; see `data/scorecard/README.md`.
 
 ## MOCK mode (no key)
-Sections come from 12 built-in templates and the Juror is rule-based: fixed per-layout scores, and each correction moves that layout family up (+1.5) or down (-1). The header shows MOCK. Add a key to switch to real calls through Mubit.
+Sections come from 12 built-in templates and the Juror is rule-based: fixed per-layout scores, and each correction moves that layout family by 0.35 points per place moved (so #7 to #1 lifts it 2.1 points, to the top). The header shows MOCK. Add a key to switch to real calls through Mubit.
 
 ## Safety
 - Generated HTML can't run scripts or load anything: sanitised, CSP, sandboxed iframe, and a JavaScript-off, network-blocked screenshot browser.

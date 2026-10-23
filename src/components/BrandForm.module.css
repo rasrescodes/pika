@@ -11,6 +11,7 @@
 .form { display: grid; gap: 16px; max-width: 620px; }
 .h2 { font: 600 22px/1.2 var(--font-body); margin: 0; }
 .form label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.form textarea { border: 1px solid var(--border-strong); border-radius: 6px; padding: 10px 12px; font: 400 15px/1.45 var(--font-body); color: var(--text); background: var(--bg); resize: vertical; }
 .form input:not([type="color"]), .form select { height: 40px; border: 1px solid var(--border-strong); border-radius: 6px; padding: 0 12px; font: 400 15px var(--font-body); color: var(--text); background: var(--bg); }
 .colours { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .colours legend { font-size: 13px; color: var(--muted); margin-bottom: 6px; }

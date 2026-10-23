@@ -54,7 +54,7 @@ export default function BrandForm({ presets, current }: { presets: Brand[]; curr
         <h2 className={styles.h2}>Or describe your own</h2>
         <label>Name<input value={draft.name} onChange={set("name")} maxLength={40} required /></label>
         <label>Headline<input value={draft.headline} onChange={set("headline")} maxLength={90} required /></label>
-        <label>Supporting line<input value={draft.subline} onChange={set("subline")} maxLength={160} required /></label>
+        <label>Supporting line<textarea value={draft.subline} onChange={(e) => setDraft({ ...draft, subline: e.target.value })} maxLength={160} rows={2} required /></label>
         <label>Action<input value={draft.action} onChange={set("action")} maxLength={30} required /></label>
         <label>Tone<input value={draft.tone} onChange={set("tone")} maxLength={80} required /></label>
         <fieldset className={styles.colours}>

@@ -1,0 +1,21 @@
+Pika
+The Wall
+Brand kit
+Scorecard
+MOCK
+Reset
+Judging 0 of 12
+
+THE WALL
+
+Pika, judged by the Juror
+
+Twelve hero sections, scored like an Awwwards jury on design, usability, creativity and content. Disagree? Drag a card or move it to the top, say why, and the next batch is judged your way.
+
+TASTE MEMORY
+
+MOCK mode: a rule-based Juror applies your last 6 corrections to the next batch. With a Mubit key, they travel with every real Juror call and Mubit trains its small model on them.
+
+Dragged to the top
+
+Minimal Layout, #7 To #1

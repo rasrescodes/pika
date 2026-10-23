@@ -1,7 +1,7 @@
 // MOCK generator: real, self-contained HTML hero sections built from the brand kit, one per family.
 // Used when no Mubit key is configured. Shown with a MOCK chip; never passed off as model output.
 import { type Brand, fontStack } from "./brands";
-import type { Family } from "./families";
+import { FAMILIES, type Family } from "./families";
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 
@@ -9,7 +9,8 @@ export function mockSection(brand: Brand, family: Family): string {
   const { bg, ink, accent, soft } = brand.colours;
   const d = fontStack(brand.displayFont);
   const b = fontStack(brand.bodyFont);
-  const h = esc(brand.headline);
+  const lines = [brand.headline, ...(brand.alternates ?? [])];
+  const h = esc(lines[FAMILIES.indexOf(family) % lines.length]);
   const s = esc(brand.subline);
   const a = esc(brand.action);
   const n = esc(brand.name);

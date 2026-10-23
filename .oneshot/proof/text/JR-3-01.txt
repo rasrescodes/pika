@@ -1,0 +1,32 @@
+Pika
+The Wall
+Brand kit
+Scorecard
+
+SCORECARD
+
+Does the Juror have taste?
+
+The Juror against the real Awwwards jury on sites it has never seen, the big model against Mubit's small trained model, and what each costs.
+
+No scorecard run yet
+
+Add at least 8 Awwwards sites with their jury scores to data/scorecard/sites.json, then run npm run scorecard with a Mubit key. Nothing here is estimated.
+
+COST AND SPEED
+
+Big model
+unavailable median per critique
+unavailable per 100 critiques (not run yet)
+Small model
+unavailable median per critique
+unavailable per 100 critiques (not run yet)
+
+Small-model cost and speed are not measurable from our app unless Mubit lets apps call the adapter. Mubit's console comparison is shown instead.
+
+METHOD
+
+Held-out sites: picked by hand, never used for corrections. Jury scores copied from each site's Awwwards page (linked).
+Each critique is one Juror call through Mubit: the same fixed instructions, a screenshot we took, no art director notes.
+Speed: wall-clock time per call. Cost: token usage returned by the provider times the published price in data/pricing.json, mean per call, times 100.
+Anything missing shows as unavailable. Nothing is estimated.

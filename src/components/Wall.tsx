@@ -34,8 +34,10 @@ export default function Wall({ initial }: { initial: Initial }) {
   const [pending, setPending] = useState<Pending | null>(null);
   const [dragId, setDragId] = useState<string | null>(null);
   const [overSlot, setOverSlot] = useState<number | null>(null);
+  const [focus, setFocus] = useState<Card | null>(null);
 
   const ranked = useMemo(() => order(cards, pinned), [cards, pinned]);
+  const jurorBest = useMemo(() => order(cards, [])[0]?.id, [cards]);
   const judgedCount = cards.filter((c) => c.verdict).length;
 
   // FLIP: animate cards from their old position to their new one when the ranking changes.
@@ -59,6 +61,17 @@ export default function Wall({ initial }: { initial: Initial }) {
   useEffect(() => {
     (window as unknown as { __pika?: object }).__pika = { batchMs: initial.wall?.batchMs };
   }, [initial.wall]);
+
+  // A judge never meets an empty Wall: in MOCK (free) the first batch starts by itself.
+  // With a real key it waits for a click, so nothing spends money without someone asking.
+  const autoStarted = useRef(false);
+  useEffect(() => {
+    if (!autoStarted.current && initial.mode === "MOCK" && !initial.wall) {
+      autoStarted.current = true;
+      void generate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function generate() {
     setRunning(true);
@@ -186,6 +199,9 @@ export default function Wall({ initial }: { initial: Initial }) {
           </div>
 
           {error && <p role="alert" className={styles.error}>{error}</p>}
+          {pinned.length > 0 && ranked.length > 0 && (
+            <p className={styles.orderNote}>Order set by you. Scores are the Juror&apos;s; your next batch is judged with your notes.</p>
+          )}
 
           {ranked.length === 0 && !running ? (
             <div className={styles.empty}>
@@ -215,7 +231,7 @@ export default function Wall({ initial }: { initial: Initial }) {
                     >
                       <div className={styles.preview} onPointerDown={(e) => startDrag(e, card.id)} data-testid="drag-handle" title="Drag to re-rank">
                         {card.html ? (
-                          <iframe sandbox="" srcDoc={card.html} title={`${card.family} section`} tabIndex={-1} loading="lazy" />
+                          <iframe sandbox="" srcDoc={card.html} title={`${card.family} section`} tabIndex={-1} />
                         ) : (
                           <div className={styles.failed}>Not judged</div>
                         )}
@@ -225,7 +241,8 @@ export default function Wall({ initial }: { initial: Initial }) {
                           <span data-testid="rank-badge" className={`num ${styles.rank}`}>
                             {pos}
                           </span>
-                          {pos === 1 && v && <span data-testid="rank-1" className="marker">Best new design</span>}
+                          {card.id === jurorBest && v && <span data-testid="rank-1" className="marker">Best new design</span>}
+                          {pos === 1 && pinned[0] === card.id && card.id !== jurorBest && <span className={`marker ${styles.yours}`}>Your pick</span>}
                           {v && <span className={`num ${styles.score}`}>{v.overall.toFixed(1)}</span>}
                         </div>
                         {v ? (
@@ -245,6 +262,9 @@ export default function Wall({ initial }: { initial: Initial }) {
                                   Move to top
                                 </button>
                               )}
+                              <button className={styles.link} data-testid="view" onClick={() => setFocus(card)}>
+                                View
+                              </button>
                               <button className={styles.link} data-testid="rescore" onClick={() => setPending({ cardId: card.id, from: pos, to: pos, kind: "score", scores: v.scores })}>
                                 Score it yourself
                               </button>
@@ -268,8 +288,19 @@ export default function Wall({ initial }: { initial: Initial }) {
           )}
         </section>
 
-        <TasteMemory items={taste} />
+        <TasteMemory items={taste} mode={initial.mode} />
       </main>
+
+      {focus && (
+        <div className={styles.focusScrim} onClick={() => setFocus(null)} role="dialog" aria-modal="true" aria-label={`${focus.family} section, full size`}>
+          <div className={styles.focusFrame}>
+            <iframe sandbox="" srcDoc={focus.html} title={`${focus.family} section, full size`} />
+          </div>
+          <p className={styles.focusCaption}>
+            {focus.verdict ? `${focus.verdict.overall.toFixed(1)} · ${focus.verdict.note}` : ""} <span>Click anywhere to close</span>
+          </p>
+        </div>
+      )}
 
       {pending && pendingCard && (
         <CorrectionSheet pending={pending} family={pendingCard.family} onCancel={() => setPending(null)} onSave={saveCorrection} />

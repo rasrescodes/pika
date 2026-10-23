@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { write } from "@/lib/store";
+import { write, remove } from "@/lib/store";
 import { PRESETS } from "@/lib/brands";
 
 export const runtime = "nodejs";
@@ -25,9 +25,11 @@ export async function POST(req: Request) {
     const preset = PRESETS.find((p) => p.id === (parsed.data as { preset: string }).preset);
     if (!preset) return Response.json({ error: "Unknown preset" }, { status: 404 });
     write("brand", preset);
+    remove("wall");
     return Response.json({ brand: preset });
   }
   const brand = { ...parsed.data.custom, id: `custom-${parsed.data.custom.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, source: "Entered by the art director" };
   write("brand", brand);
+  remove("wall");
   return Response.json({ brand });
 }

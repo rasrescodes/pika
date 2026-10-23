@@ -36,13 +36,13 @@ describe("Juror contract (the Mubit task)", () => {
 });
 
 describe("MOCK taste effect (controlled check behind JR-2)", () => {
-  it("promoting the #7 family moves it above #7 in the next batch", () => {
+  it("moving the #7 card to #1 makes that family #1 in the next batch", () => {
     const rank = (taste: TasteItem[]) =>
       jurorOrder(FAMILIES.map((f) => ({ id: f, family: f, verdict: mockJudge(pika, f, taste, taste.length > 0) })));
     const before = rank([]);
     const seventh = before[6];
     const taste: TasteItem[] = [{ id: "t", cardId: seventh.id, family: seventh.family, from: 7, to: 1, reason: "", jurorScores: seventh.verdict.scores, at: "now" }];
     const after = rank(taste);
-    expect(after.findIndex((c) => c.family === seventh.family)).toBeLessThan(6);
+    expect(after.findIndex((c) => c.family === seventh.family)).toBe(0);
   });
 });

@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "target": "http://localhost:3000/",
+  "texts": 29,
+  "private_terms": [
+    "UK English."
+  ],
+  "findings": [],
+  "stamp": {
+    "contract": "328d4aae65bf446c",
+    "head": "9039204b873ae74fb60749ed0b3c3d18c43a222d+dirty:c583a96c",
+    "at": "2026-10-23T23:45:13"
+  }
+}

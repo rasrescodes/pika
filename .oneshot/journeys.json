@@ -1,5 +1,5 @@
 {
-  "base_url": "http://localhost:3000",
+  "base_url": "http://127.0.0.1:3000",
   "defaults": {
     "device": "Desktop Chrome",
     "viewport": {
@@ -16,7 +16,7 @@
     {
       "id": "JR-1",
       "persona": "Night Shift judge at the expo table, watching on the demo laptop, never seen Pika",
-      "entry": "http://localhost:3000/",
+      "entry": "http://127.0.0.1:3000/",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -67,7 +67,7 @@
     {
       "id": "JR-2",
       "persona": "the same judge, invited to be the art director and overrule the Juror",
-      "entry": "http://localhost:3000/",
+      "entry": "http://127.0.0.1:3000/",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -129,7 +129,7 @@
     {
       "id": "JR-3",
       "persona": "ML-engineer judge asking whether the taste is real and what it costs",
-      "entry": "http://localhost:3000/scorecard",
+      "entry": "http://127.0.0.1:3000/scorecard",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -158,18 +158,18 @@
     {
       "id": "JR-4",
       "persona": "anyone following an old or wrong link",
-      "entry": "http://localhost:3000/does-not-exist",
+      "entry": "http://127.0.0.1:3000/does-not-exist",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
         {
-          "goto": "http://localhost:3000/does-not-exist"
+          "goto": "http://127.0.0.1:3000/does-not-exist"
         },
         {
           "expect_selector": "[data-testid=wall]"
         },
         {
-          "goto": "http://localhost:3000/brand"
+          "goto": "http://127.0.0.1:3000/brand"
         },
         {
           "expect_selector": "[data-testid=brand-form]"
@@ -187,7 +187,7 @@
     {
       "id": "JR-5",
       "persona": "the stage projector at 1920x1080, then the next expo judge after a reset",
-      "entry": "http://localhost:3000/",
+      "entry": "http://127.0.0.1:3000/",
       "device": "Desktop Chrome",
       "viewport": {
         "width": 1920,
@@ -230,7 +230,7 @@
     {
       "id": "JR-3D",
       "persona": "ML-engineer judge on demo day (demo-ready only)",
-      "entry": "http://localhost:3000/scorecard",
+      "entry": "http://127.0.0.1:3000/scorecard",
       "device": "Desktop Chrome",
       "auth": null,
       "demo_ready_only": true,
@@ -263,7 +263,7 @@
     {
       "id": "JR-6",
       "persona": "a judge dragging the #7 card to the top with the mouse",
-      "entry": "http://localhost:3000/",
+      "entry": "http://127.0.0.1:3000/",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -280,7 +280,7 @@
           "wait_for": "[data-testid=batch-done]"
         },
         {
-          "eval": "(()=>{const c=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')][6]; if(!c) return false; sessionStorage.setItem('jr6id', c.dataset.cardId); return true;})()"
+          "eval": "(()=>{const c=document.querySelector('[data-testid=slot-7] [data-testid=card]'); if(!c) return false; sessionStorage.setItem('jr6id', c.dataset.cardId); sessionStorage.setItem('jr6fam', c.dataset.family); return true;})()"
         },
         {
           "drag": {
@@ -310,10 +310,22 @@
           "eval": "(()=>{const c=document.querySelector('[data-testid=wall] [data-testid=card]'); return c.dataset.cardId===sessionStorage.getItem('jr6id') && c.querySelector('[data-testid=rank-badge]').textContent.trim()==='1';})()"
         },
         {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "wait_ms": 700
+        },
+        {
+          "eval": "(()=>{const c=document.querySelector('[data-testid=slot-1] [data-testid=card]'); return !!c && c.dataset.family===sessionStorage.getItem('jr6fam') && c.dataset.tasteApplied==='true';})()"
+        },
+        {
           "screenshot": "after-drag-reload"
         }
       ],
-      "pass": "a real pointer drag of #7 onto slot 1 opens the correction sheet, saves, and the card is still #1 after a reload",
+      "pass": "a real mouse drag of #7 onto slot 1 saves a correction that persists across reload, and the next fresh batch ranks that layout family first",
       "then": null,
       "viewport": {
         "width": 1440,

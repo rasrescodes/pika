@@ -7,7 +7,9 @@ How to run Pika. Keep this true as the stack lands.
 2. `node scripts/mubit-smoke.mjs` should print `200 via ...` and the call should show in the console under **Requests**.
 
 ## Running the app
-- `npm install`, `npm run dev`, open http://localhost:3000.
+- Development: `npm run dev`, open http://127.0.0.1:3000.
+- **Demo: run the production build**: `npm run build && npm start`, open http://127.0.0.1:3000. It is faster, has no dev badge, and is what the journeys prove. If you rebuild, stop the old server first (`lsof -ti tcp:3000 | xargs kill`), or it serves deleted files.
+- The server only listens on 127.0.0.1, so nobody on the venue Wi-Fi can reset the demo or spend calls.
 - No key: MOCK mode (labelled). Key + MODEL in `.env`: every call goes through Mubit, capped at `PIKA_MAX_CALLS_PER_DAY`.
 - Reset between expo judges: the Reset button (clears taste memory and the wall, keeps the brand).
 - State lives in `data/state/` (gitignored). Delete it to start completely fresh.

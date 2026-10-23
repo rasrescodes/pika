@@ -1,0 +1,118 @@
+{
+  "pass": true,
+  "partial": true,
+  "fatal": null,
+  "ids": [
+    "JR-2"
+  ],
+  "journeys": [
+    {
+      "id": "JR-2",
+      "persona": "the same judge, invited to be the art director and overrule the Juror",
+      "device": "Desktop Chrome",
+      "engine": "chromium",
+      "entry": "http://localhost:3000/",
+      "final_url": "http://localhost:3000/",
+      "pass": true,
+      "pass_desc": "a correction on the #7 card is saved and shown in taste memory, and in the next fresh batch the promoted layout family ranks higher than its no-taste baseline",
+      "errors": [],
+      "video": "/Users/rassa/Documents/pika/.oneshot/proof/video/JR-2.webm",
+      "screenshots": [
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-01-step1-goto.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-02-step2-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-03-step3-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-04-step6-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-05-step8-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-06-step11-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-07-next-batch-with-taste.png"
+      ],
+      "timings": [
+        {
+          "step": 1,
+          "k": "goto",
+          "ms": 731
+        },
+        {
+          "step": 2,
+          "k": "click",
+          "ms": 59
+        },
+        {
+          "step": 3,
+          "k": "click",
+          "ms": 36
+        },
+        {
+          "step": 4,
+          "k": "wait_for",
+          "ms": 793
+        },
+        {
+          "step": 5,
+          "k": "eval",
+          "ms": 7
+        },
+        {
+          "step": 6,
+          "k": "click",
+          "ms": 273
+        },
+        {
+          "step": 7,
+          "k": "fill",
+          "ms": 9
+        },
+        {
+          "step": 8,
+          "k": "click",
+          "ms": 246
+        },
+        {
+          "step": 9,
+          "k": "expect_text",
+          "ms": 3
+        },
+        {
+          "step": 10,
+          "k": "expect_selector",
+          "ms": 4
+        },
+        {
+          "step": 11,
+          "k": "click",
+          "ms": 33
+        },
+        {
+          "step": 12,
+          "k": "wait_for",
+          "ms": 783
+        },
+        {
+          "step": 13,
+          "k": "expect_selector",
+          "ms": 1
+        },
+        {
+          "step": 14,
+          "k": "wait_ms",
+          "ms": 703
+        },
+        {
+          "step": 15,
+          "k": "eval",
+          "ms": 2
+        },
+        {
+          "step": 16,
+          "k": "screenshot",
+          "ms": 64
+        }
+      ]
+    }
+  ],
+  "stamp": {
+    "contract": "328d4aae65bf446c",
+    "head": "ccb55d3842e5934c1bea7fb81a29bbc8db46bb4e+dirty:2d08035b",
+    "at": "2026-10-23T23:44:44"
+  }
+}

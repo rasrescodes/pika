@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "dataHash": "1deb95a3eaf7ab1f",
+  "gaps": [
+    "sites.json: Invalid input: expected array, received undefined",
+    "results.json: missing or invalid (run npm run scorecard)",
+    "frozen-eval.json: missing",
+    "correction-proof.json: missing or invalid"
+  ],
+  "checkedAt": "2026-10-23T22:40:10.286Z"
+}

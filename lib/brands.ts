@@ -6,6 +6,7 @@ export type Brand = {
   bodyFont: "serif" | "sans" | "mono";
   tone: string;
   headline: string;
+  alternates?: string[];
   subline: string;
   action: string;
   source: string;
@@ -20,6 +21,7 @@ export const PRESETS: Brand[] = [
     bodyFont: "sans",
     tone: "confident, editorial, a critic with taste",
     headline: "An art director that learns your taste",
+    alternates: ["Taste, at the price of a small model", "Twelve designs. One opinion that counts", "Overrule the Juror once", "The critic that takes notes"],
     subline: "Generate a wall of designs. Overrule the Juror once. Watch the next batch come back your way.",
     action: "Generate a wall",
     source: "Provisional Pika tokens (DESIGN.md); Kimberley's brand replaces them",
@@ -32,6 +34,7 @@ export const PRESETS: Brand[] = [
     bodyFont: "sans",
     tone: "calm, technical, precise",
     headline: "The runtime calibration layer for AI agents",
+    alternates: ["Your frontier models stay in place", "Capture the run. Calibrate the next one", "Connect, capture, calibrate, evaluate"],
     subline: "Your frontier models stay in place. Every run teaches the next one.",
     action: "Connect your agent",
     source: "Colours from mubit.ai (unconfirmed); copy from mubit.ai",

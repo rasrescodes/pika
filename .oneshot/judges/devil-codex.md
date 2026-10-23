@@ -1,0 +1,28 @@
+1. [P0] **T11’s first objection will be the missing proof.** `/scorecard` says “No scorecard run yet”; `data/pricing.json` is `{}`, and the demo-ready verdict is `FAIL`. There are no real Awwwards comparisons, big-versus-small results, cost figures, or correction proof for T3. JR-3 passed by checking headings and panels, not rows or numbers; JR-3D correctly failed with zero rows. - [scorecard screenshot](/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-3-02-scorecard.png), [demo-ready.json](/Users/rassa/Documents/pika/data/scorecard/demo-ready.json), [JR-3 checks](/Users/rassa/Documents/pika/.oneshot/journeys.json:130) - Collect sourced sites and real runs, record the adapter comparison and correction proof, then rerun the strict gate.
+
+2. [P0] The promised model update is unproven. No `.env` or Mubit key is present; the tested loop ran in `MOCK`, where a promotion adds a hard-coded `+1.5` family bias. The UI says “Mubit trains its small model on those calls,” although this run made no Mubit calls and no trained adapter exists in the evidence. - [mock scoring](/Users/rassa/Documents/pika/lib/taste.ts:32), [Juror mode branch](/Users/rassa/Documents/pika/lib/juror.ts:57), [taste-memory copy](/Users/rassa/Documents/pika/src/components/TasteMemory.tsx:9) - Prove a correction reaches a later adapter version before claiming a model update; describe the current result as a MOCK ranking rule.
+
+3. [P0] The moment of truth fails as specified. After #7 is promoted to #1, the next batch shows that layout at **#3**, and JR-2 fails its final assertion. JR-2 also clicks “Move to top”; JR-6 tests a pointer drag but only checks that the *same* batch retains its order after reload. Neither proves a drag followed by a fresh batch ranked the judge’s way. - [failed next-batch screenshot](/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-2-07-FAILED.png), [JR-2 and JR-6 steps](/Users/rassa/Documents/pika/.oneshot/journeys.json:68) - Run one end-to-end journey using a real drag, correction, and fresh batch; make the promoted result visibly satisfy the stated outcome.
+
+4. [P1] A fresh install opens on “No designs on the wall yet,” contrary to W1’s “empty state never shown to a judge.” JR-1 began with 12 persisted cards, so its “fresh context” check did not test fresh server state. - [empty-state branch](/Users/rassa/Documents/pika/src/components/Wall.tsx:190), [JR-1 first screenshot](/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-1-01-step1-goto.png) - Seed a ready Wall or run the first batch before judging, and test after clearing `data/state/`.
+
+5. [P1] “Score it yourself” records edited scores but does not apply them. The correction endpoint stores `directorScores`; later taste notes only say the layout was “re-scored,” and MOCK bias is zero for a score change. - [correction endpoint](/Users/rassa/Documents/pika/app/api/correction/route.ts:30), [taste processing](/Users/rassa/Documents/pika/lib/taste.ts:21) - Feed the edited scores into subsequent judging and verify their effect on a fresh batch.
+
+6. [P1] The demo server’s default host is `0.0.0.0`, while `/api/state` exposes taste notes and `/api/batch`, `/api/reset`, and `/api/brand` accept unauthenticated requests. On a reachable expo network, another device could read corrections, erase the demo, change its brand, or spend Mubit calls. - [dev command](/Users/rassa/Documents/pika/package.json:6), [state endpoint](/Users/rassa/Documents/pika/app/api/state/route.ts:6), [batch endpoint](/Users/rassa/Documents/pika/app/api/batch/route.ts:7) - Bind to `127.0.0.1` for the laptop demo and restrict state-changing endpoints.
+
+7. [P1] Changing the brand leaves the old Wall in storage. The page can then display the newly selected brand above sections generated for the previous one. - [brand save](/Users/rassa/Documents/pika/app/api/brand/route.ts:21), [Wall state](/Users/rassa/Documents/pika/lib/wall.ts:31) - Clear the Wall when the brand changes, then test preset switching after generation.
+
+8. [P1] The Mubit preset uses unconfirmed colours and copy, yet the brand form presents it as a usable preset. Its source label itself says “unconfirmed.” - [Mubit preset](/Users/rassa/Documents/pika/lib/brands.ts:27), [brand form](/Users/rassa/Documents/pika/src/components/BrandForm.tsx:34) - Verify the kit with the Mubit team or label the entire preset provisional during the demo.
+
+9. [P1] The repo claims a small critic is cheap enough to judge “100 designs instead of 5,” with no price source or measured comparison in `truth/` or `data/pricing.json`. That is the cost question the scorecard is meant to answer. - [README claim](/Users/rassa/Documents/pika/README.md:12), [pricing.json](/Users/rassa/Documents/pika/data/pricing.json) - Remove the number until sourced pricing and measured usage support it.
+
+10. [P1] The supplied artifact was unavailable during this review: `http://localhost:3000/` refused the connection. The recorded journeys therefore cannot establish that the current handoff URL opens for a first-time reviewer. - `http://localhost:3000/` - Start the app on the demo laptop and rerun the journeys against the running build.
+
+11. [P2] The proof pack is still a template, including `# Proof pack - <project>` and `Link: <url>`. Luka’s repo review will encounter leftover handoff text. - [proof.md](/Users/rassa/Documents/pika/.oneshot/proof.md:1) - Fill it with the actual journey results and limitations.
+
+PROVENANCE: role=devil model=gpt-6 contract=328d4aae65bf446c
+VERDICT: FAIL
+
+GATE-RECOMPUTED: unresolved P0/P1 = 10
+PROVENANCE: role=devil model=codex contract=328d4aae65bf446c (written by oneshot-judge)
+VERDICT: FAIL

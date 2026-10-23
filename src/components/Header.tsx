@@ -9,12 +9,12 @@ export default function Header({ current, children }: { current: "wall" | "brand
   ];
   return (
     <header className={styles.header}>
-      <Link href="/" className={styles.mark} aria-label="Pika home">
+      <Link href="/" prefetch={false} className={styles.mark} aria-label="Pika home">
         Pika
       </Link>
       <nav className={styles.nav}>
         {links.map(([id, href, label]) => (
-          <Link key={id} href={href} aria-current={current === id ? "page" : undefined} className={styles.link}>
+          <Link key={id} href={href} prefetch={false} aria-current={current === id ? "page" : undefined} className={styles.link}>
             {label}
           </Link>
         ))}
