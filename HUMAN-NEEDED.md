@@ -10,3 +10,5 @@ Things only a person can do. Tick when done.
 - [ ] Ask the Mubit team: does image input (screenshots) count toward the task and training?
 - [ ] Pick the stack together (default: Next.js + TypeScript, OpenAI SDK pointed at Mubit).
 - [ ] Choose the held-out scorecard sites and record their public Awwwards scores.
+- [ ] Ask the Mubit team: which Claude models does the starter credit serve (or do we add our own Anthropic key)?
+- [ ] Ask the Mubit team: is Banyan Sapling served anywhere we can call through Mubit? (stretch only)

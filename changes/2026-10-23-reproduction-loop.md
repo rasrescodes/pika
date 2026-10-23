@@ -18,7 +18,7 @@ All the prompt work and all the learning sit in the Describer. The Builder is a 
 
 ## Why it fits Mubit
 - **Corrections without a human.** The spec that finally converged is the corrected answer for the Describer's first attempt on that screenshot. Ground truth is the original site, so every correction is measurable.
-- **One clear metric:** first-shot score and rounds to converge. Before training: about 4 rounds. After: the small model gets there in 1 or 2. That chart is the demo.
+- **One clear metric:** first-shot score and rounds to converge. Caveat from `docs/RESEARCH.md`: Mubit trains adapters to copy the big model's answers, so the small model only beats the big model's first try if corrections reach training. Otherwise the improvement comes from in-app house lessons, and the adapter story is cheaper and faster at the same quality.
 - **Volume:** each site gives several Describer calls, so 25+ kept examples overnight is realistic.
 - Track 1 (corrections become model updates) is the natural fit; the big-vs-small Describer comparison also covers track 2.
 
