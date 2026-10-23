@@ -1,0 +1,30 @@
+{
+  "type": "web-app",
+  "created": "2026-10-23",
+  "stage": "build",
+  "builder": "claude",
+  "deliverables": [
+    {
+      "kind": "web",
+      "target": "http://localhost:3000"
+    }
+  ],
+  "approval": {
+    "by": "Rassa (pre-approved: 'Full send, I'm watching a movie', 23 Oct)",
+    "at": "2026-10-23T23:29:00",
+    "contract": "fb71d396542d3483",
+    "spec": ".oneshot/SPEC.md",
+    "spec_hash": "1685f301d76fbee2",
+    "spec_review": {
+      "model": "codex",
+      "file": ".oneshot/judges/spec-codex.md"
+    },
+    "tier": "Client-ready",
+    "tier_reason": "hackathon profile): judges and the Mubit team watch the demo; no real accounts, money or personal data."
+  },
+  "passed_premortem": {
+    "contract": "cdd92f382c25e41a",
+    "head": "4a1b61761a99a60b455d957ef6f22d7bd1f954ad"
+  },
+  "tier": "Client-ready"
+}

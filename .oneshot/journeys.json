@@ -1,0 +1,317 @@
+{
+  "base_url": "http://localhost:3000",
+  "defaults": {
+    "device": "Desktop Chrome",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "timeout_ms": 30000,
+    "slow_ms": 8000
+  },
+  "credentials": {
+    "note": "no login anywhere"
+  },
+  "journeys": [
+    {
+      "id": "JR-1",
+      "persona": "Night Shift judge at the expo table, watching on the demo laptop, never seen Pika",
+      "entry": "http://localhost:3000/",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_selector": "[data-testid=wall]"
+        },
+        {
+          "expect_selector": "[data-testid=mode-chip]"
+        },
+        {
+          "expect_text": "Juror"
+        },
+        {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=card]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "expect_count": {
+            "selector": "[data-testid=card][data-scored=true]",
+            "min": 12
+          }
+        },
+        {
+          "expect_selector": "[data-testid=card] iframe[sandbox='']"
+        },
+        {
+          "expect_selector": "[data-testid=rank-1]"
+        },
+        {
+          "eval": "(window.__pika && window.__pika.batchMs < 60000) === true"
+        },
+        {
+          "screenshot": "wall-ranked"
+        }
+      ],
+      "pass": "the Wall loads ready, a full batch of 12 is generated, rendered sandboxed and ranked inside the 60-second expo budget, with no console or network errors",
+      "then": "JR-2",
+      "slow_ms": 15000
+    },
+    {
+      "id": "JR-2",
+      "persona": "the same judge, invited to be the art director and overrule the Juror",
+      "entry": "http://localhost:3000/",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "click": "[data-testid=reset]"
+        },
+        {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "eval": "(()=>{const cards=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')]; const c=cards[6]; if(!c) return false; const badge=c.querySelector('[data-testid=rank-badge]'); if(!badge || badge.textContent.trim()!=='7') return false; sessionStorage.setItem('jr2fam', c.dataset.family); return true;})()"
+        },
+        {
+          "click": "[data-testid=wall] [data-testid=card]:nth-child(7) [data-testid=promote]"
+        },
+        {
+          "fill": {
+            "selector": "[data-testid=reason]",
+            "value": "Braver type, more white space"
+          }
+        },
+        {
+          "click": "[data-testid=save-correction]"
+        },
+        {
+          "expect_text": "Braver type, more white space"
+        },
+        {
+          "expect_selector": "[data-testid=taste-memory] [data-testid=taste-item]"
+        },
+        {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "expect_selector": "[data-testid=card][data-taste-applied=true]"
+        },
+        {
+          "eval": "(()=>{const f=sessionStorage.getItem('jr2fam'); const cards=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')]; const i=cards.findIndex(c=>c.dataset.family===f); if(i<0) return false; const c=cards[i]; const shown=Number(c.querySelector('[data-testid=rank-badge]').textContent.trim()); const byPos=[...cards].sort((a,b)=>{const ra=a.getBoundingClientRect(), rb=b.getBoundingClientRect(); return (Math.round(ra.top)-Math.round(rb.top))||(ra.left-rb.left);}); return i<6 && shown===i+1 && byPos.indexOf(c)===i;})()"
+        },
+        {
+          "screenshot": "next-batch-with-taste"
+        }
+      ],
+      "pass": "a correction on the #7 card is saved and shown in taste memory, and in the next fresh batch the promoted layout family ranks higher than its no-taste baseline",
+      "then": "JR-3"
+    },
+    {
+      "id": "JR-3",
+      "persona": "ML-engineer judge asking whether the taste is real and what it costs",
+      "entry": "http://localhost:3000/scorecard",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_selector": "[data-testid=scorecard]"
+        },
+        {
+          "expect_text": "Awwwards"
+        },
+        {
+          "expect_selector": "[data-testid=cost-latency]"
+        },
+        {
+          "expect_selector": "[data-testid=method]"
+        },
+        {
+          "screenshot": "scorecard"
+        }
+      ],
+      "pass": "the scorecard shows Juror vs real jury scores with sources, plus cost and latency with the method",
+      "then": null
+    },
+    {
+      "id": "JR-4",
+      "persona": "anyone following an old or wrong link",
+      "entry": "http://localhost:3000/does-not-exist",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "http://localhost:3000/does-not-exist"
+        },
+        {
+          "expect_selector": "[data-testid=wall]"
+        },
+        {
+          "goto": "http://localhost:3000/brand"
+        },
+        {
+          "expect_selector": "[data-testid=brand-form]"
+        },
+        {
+          "expect_text": "Mubit"
+        },
+        {
+          "screenshot": "brand-form"
+        }
+      ],
+      "pass": "an unknown route lands on the Wall, and the brand form loads with the Mubit preset",
+      "then": null
+    },
+    {
+      "id": "JR-5",
+      "persona": "the stage projector at 1920x1080, then the next expo judge after a reset",
+      "entry": "http://localhost:3000/",
+      "device": "Desktop Chrome",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "eval": "document.documentElement.scrollWidth <= window.innerWidth"
+        },
+        {
+          "screenshot": "projector"
+        },
+        {
+          "click": "[data-testid=reset]"
+        },
+        {
+          "expect_count": {
+            "selector": "[data-testid=taste-memory] [data-testid=taste-item]",
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "screenshot": "after-reset"
+        }
+      ],
+      "pass": "the Wall fits a 1920x1080 projector with no horizontal scroll, and reset clears taste memory for the next judge",
+      "then": null
+    },
+    {
+      "id": "JR-3D",
+      "persona": "ML-engineer judge on demo day (demo-ready only)",
+      "entry": "http://localhost:3000/scorecard",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "demo_ready_only": true,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_count": {
+            "selector": "[data-testid=scorecard-row]",
+            "min": 8
+          }
+        },
+        {
+          "expect_no_text": "No scorecard run yet"
+        },
+        {
+          "expect_selector": "[data-testid=demo-ready-pass]"
+        },
+        {
+          "expect_selector": "[data-testid=correction-proof]"
+        },
+        {
+          "screenshot": "scorecard-real"
+        }
+      ],
+      "pass": "the strict demo-ready validator passed for the current data (sources, all jury scores, provenance for both models, directional correction proof) and the page shows its PASS stamp",
+      "then": null
+    },
+    {
+      "id": "JR-6",
+      "persona": "a judge dragging the #7 card to the top with the mouse",
+      "entry": "http://localhost:3000/",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "click": "[data-testid=reset]"
+        },
+        {
+          "click": "[data-testid=generate]"
+        },
+        {
+          "wait_for": "[data-testid=batch-done]"
+        },
+        {
+          "eval": "(()=>{const c=[...document.querySelectorAll('[data-testid=wall] [data-testid=card]')][6]; if(!c) return false; sessionStorage.setItem('jr6id', c.dataset.cardId); return true;})()"
+        },
+        {
+          "drag": {
+            "from": "[data-testid=wall] [data-testid=card]:nth-child(7) [data-testid=drag-handle]",
+            "to": "[data-testid=slot-1]"
+          }
+        },
+        {
+          "wait_for": "[data-testid=reason]"
+        },
+        {
+          "fill": {
+            "selector": "[data-testid=reason]",
+            "value": "Dragged to the top"
+          }
+        },
+        {
+          "click": "[data-testid=save-correction]"
+        },
+        {
+          "goto": "{entry}"
+        },
+        {
+          "wait_for": "[data-testid=wall] [data-testid=card]"
+        },
+        {
+          "eval": "(()=>{const c=document.querySelector('[data-testid=wall] [data-testid=card]'); return c.dataset.cardId===sessionStorage.getItem('jr6id') && c.querySelector('[data-testid=rank-badge]').textContent.trim()==='1';})()"
+        },
+        {
+          "screenshot": "after-drag-reload"
+        }
+      ],
+      "pass": "a real pointer drag of #7 onto slot 1 opens the correction sheet, saves, and the card is still #1 after a reload",
+      "then": null
+    }
+  ]
+}

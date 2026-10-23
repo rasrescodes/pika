@@ -1,0 +1,25 @@
+{
+ "type": "web-app",
+ "walls": [
+  {
+   "id": "domain-dns",
+   "label": "Domain purchased + DNS pointed at the host",
+   "lead": "hours",
+   "env_missing": [],
+   "howto": "registrar \u2192 A/CNAME. Propagation is minutes-to-hours; do it before polish, not after.",
+   "status": "todo"
+  },
+  {
+   "id": "llm-api-key",
+   "label": "LLM provider key with billing enabled",
+   "lead": "mins",
+   "env_missing": [
+    "ANTHROPIC_API_KEY",
+    "OPENAI_API_KEY",
+    "GROQ_API_KEY"
+   ],
+   "howto": "console \u2192 billing. Free-tier rate limits will fail the load path, not the smoke test.",
+   "status": "todo"
+  }
+ ]
+}
