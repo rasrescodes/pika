@@ -10,3 +10,4 @@ data/state/
 next-env.d.ts
 *.tsbuildinfo
 .workwin/budget*
+.oneshot/proof/
