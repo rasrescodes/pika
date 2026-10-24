@@ -250,8 +250,8 @@ export default function Wall({ initial }: { initial: Initial }) {
                           <span data-testid="rank-badge" className={`num ${styles.rank}`}>
                             {pos}
                           </span>
-                          {card.id === jurorBest && v && <span data-testid="rank-1" className="marker">Best new design</span>}
-                          {pos === 1 && pinned[0] === card.id && card.id !== jurorBest && <span className={`marker ${styles.yours}`}>Your pick</span>}
+                          {card.id === jurorBest && v && <span data-testid="rank-1" className={`${styles.best} pulse`} key={`best-${card.id}`}><Bulb />Best new design</span>}
+                          {pos === 1 && pinned[0] === card.id && card.id !== jurorBest && <span className={styles.pick}>Your pick</span>}
                           {v && <span className={`num ${styles.score}`}>{v.overall.toFixed(1)}</span>}
                         </div>
                         {v ? (
@@ -312,5 +312,15 @@ export default function Wall({ initial }: { initial: Initial }) {
         <CorrectionSheet pending={pending} family={pendingCard.family} onCancel={() => setPending(null)} onSave={saveCorrection} />
       )}
     </>
+  );
+}
+
+// Brand doodle: lightbulb with three rays (brand/guidelines illustration system).
+function Bulb() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9 18h6M10 21h4M12 3v1.5M5.5 6l1 1M18.5 6l-1 1" />
+      <path d="M8.5 15.5c-1.4-1-2.5-2.7-2.5-4.6a6 6 0 0 1 12 0c0 1.9-1.1 3.6-2.5 4.6" />
+    </svg>
   );
 }

@@ -24,7 +24,7 @@ export default async function SitePage({ params }: { params: Promise<{ slug: str
       <Header current="sites" />
       <main style={{ padding: "28px 32px 80px" }}>
         <p className="marker"><Link href="/sites" prefetch={false} style={{ textDecoration: "none" }}>Sites</Link> / {site.heldOut ? "held out" : "training"}</p>
-        <h1 style={{ font: "600 48px/1 var(--font-display)", letterSpacing: "-0.025em", margin: "10px 0 24px" }}>Can Pika rebuild it blind?</h1>
+        <h1 style={{ font: "650 48px/1 var(--font-display)", letterSpacing: "-0.01em", margin: "10px 0 24px" }}>Can Pika rebuild it blind?</h1>
         <LoopViewer site={site} runs={runs} reference={reference(slug)} />
       </main>
     </>

@@ -24,6 +24,21 @@ const PROVISIONAL_TYPE = {
   mono: 'var(--font-geist-mono), ui-monospace, Menlo, monospace',
 };
 
+// Shapes, depth and motion from brand/guidelines/pika-brand-guidelines-v1.md (UI shapes and depth, Motion).
+const SHAPE = [
+  "  --r-card: 16px;",
+  "  --r-lg: 22px;",
+  "  --r-input: 12px;",
+  "  --r-button: 14px;",
+  "  --r-small: 8px;",
+  "  --r-pill: 999px;",
+  "  --shadow: 0 4px 20px rgba(10, 10, 10, 0.06);",
+  "  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);",
+  "  --spring: cubic-bezier(0.34, 1.36, 0.64, 1);",
+  "  --t-ui: 200ms;",
+  "  --t-card: 380ms;",
+];
+
 function rows(file) {
   if (!existsSync(file)) return [];
   return readFileSync(file, "utf8")
@@ -46,7 +61,8 @@ const type = { ...PROVISIONAL_TYPE };
 for (const [role, font] of rows("brand/type/tokens.md")) {
   const key = role.toLowerCase().split(/\s|\(/)[0];
   if (font && key in type) {
-    type[key] = `"${font}", ${PROVISIONAL_TYPE[key]}`;
+    // Google fonts are loaded with next/font in app/layout.tsx and exposed as --font-<name>.
+    type[key] = `var(--font-${font.toLowerCase().replace(/\s+/g, "-")}), "${font}", "Helvetica Neue", Arial, sans-serif`;
     fromBrand.add(`t:${key}`);
   }
 }
@@ -57,6 +73,7 @@ const css = [
   ":root {",
   ...Object.entries(colour).map(([k, v]) => `  --${k}: ${v};${mark(`c:${k}`)}`),
   ...Object.entries(type).map(([k, v]) => `  --font-${k}: ${v};${mark(`t:${k}`)}`),
+  ...SHAPE,
   "}",
   "",
 ].join("\n");

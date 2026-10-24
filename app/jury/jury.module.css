@@ -1,5 +1,5 @@
 .main { max-width: 1240px; margin: 0 auto; padding: 32px 32px 96px; display: grid; gap: 24px; }
-.title { font: 600 60px/1 var(--font-display); letter-spacing: -0.03em; margin: 0; max-width: 900px; }
+.title { font: 650 56px/1 var(--font-display); letter-spacing: -0.01em; margin: 0; max-width: 900px; }
 .dek { color: var(--muted); font-size: 17px; max-width: 720px; margin: 0; }
 .dataset { margin: 0; padding: 12px 0; border-top: 2px solid var(--text); border-bottom: 1px solid var(--border); color: var(--muted); }
 .dataset .num { color: var(--text); font-weight: 600; }
@@ -10,5 +10,5 @@
 .table td span { font-size: 13px; color: var(--muted); }
 .table :global(.num), .table th:global(.num) { text-align: right; font-size: 18px; }
 .pending { margin: -8px 0 0; color: var(--muted); font-size: 13px; }
-.notes pre { white-space: pre-wrap; font: 14px/1.6 var(--font-mono); background: var(--surface); padding: 16px; border-radius: 6px; margin: 8px 0 0; }
+.notes pre { white-space: pre-wrap; font: 14px/1.6 var(--font-mono); background: var(--surface); padding: 16px; border-radius: var(--r-small); margin: 8px 0 0; }
 @media (max-width: 800px) { .title { font-size: 42px; } }

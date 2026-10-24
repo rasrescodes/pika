@@ -1,5 +1,15 @@
 # DESIGN
 
+## Source of truth: Kimberley's brand v1 (24 Oct)
+The app follows `brand/guidelines/pika-brand-guidelines-v1.md` (and the visual sheet beside it). Values reach the code through `brand/colour/tokens.md` and `brand/type/tokens.md` -> `npm run tokens` -> `src/styles/tokens.css`; shapes, shadow and motion timings come from the same guideline and live in `scripts/tokens.mjs`.
+- Colour: Warm Cream `#FBF5EA` background, Pika Black `#0A0A0A` text, Pika Blue `#3027F4` for calls to action and active states, Deep Navy `#28339E` on hover, Mist Blue `#E8F5FC` for selected states, Sky Blue `#96D2F2` for supporting tags, white cards.
+- Type: Fredoka for headings (650), Inter for UI and body. Geist Mono stays for scores only. No italics (Fredoka has none): emphasis is Pika Blue.
+- Shapes: cards 16px, modals 22px, inputs 12px, buttons 14px, tags as pills; 1px `#E7E5E0` borders; soft shadow only on hover.
+- Mascot: `public/brand/pika-mark.svg` (header), `pika-icon.svg` (favicon), `pika-logo.svg` (full lockup), all cut from `brand/logo/pika-logo-v1.svg`.
+- Motion: UI 200ms ease-out, cards about 380ms soft spring, the bulb pulse (600ms, 1 to 1.06, twice) on the Juror's "Best new design" tag. Reduced motion respected.
+
+Everything below is the earlier provisional direction, kept for history only.
+
 DESIGN_VARIANCE: 6 · MOTION_INTENSITY: 4 · VISUAL_DENSITY: 6
 
 ## Owner

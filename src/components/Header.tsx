@@ -13,7 +13,9 @@ export default function Header({ current, children }: { current: "loop" | "jury"
   return (
     <header className={styles.header}>
       <Link href="/" prefetch={false} className={styles.mark} aria-label="Pika home">
-        Pika<span className={styles.dot}>.</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/pika-mark.svg" alt="" width={30} height={43} />
+        Pika
       </Link>
       <nav className={styles.nav}>
         {links.map(([id, href, label]) => (
