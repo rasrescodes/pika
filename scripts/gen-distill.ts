@@ -61,7 +61,9 @@ async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
   }
 }
 
-async function generateHtml(b: Brand, f: Family): Promise<string> {
+type Gen = { text: string; ms: number; inTokens: number; outTokens: number };
+async function generateHtml(b: Brand, f: Family): Promise<Gen> {
+  const started = Date.now();
   const user = userMessage(b, f);
   if (opts.backend === "local") {
     const res = await fetch("http://127.0.0.1:8080/v1/chat/completions", {
@@ -71,10 +73,12 @@ async function generateHtml(b: Brand, f: Family): Promise<string> {
       body: JSON.stringify({ model: "default_model", max_tokens: 2400, temperature: 0.9, messages: [{ role: "system", content: SYSTEM }, { role: "user", content: user }] }),
     });
     if (!res.ok) throw new Error(`local model ${res.status}`);
-    const data = (await res.json()) as { choices: { message: { content: string } }[] };
-    return data.choices[0]?.message.content ?? "";
+    const data = (await res.json()) as { choices: { message: { content: string } }[]; usage?: { prompt_tokens: number; completion_tokens: number } };
+    return { text: data.choices[0]?.message.content ?? "", ms: Date.now() - started, inTokens: data.usage?.prompt_tokens ?? 0, outTokens: data.usage?.completion_tokens ?? 0 };
   }
-  return (await withRetry(() => ask({ model: MODEL, system: SYSTEM, content: [text(user)], maxTokens: 16000, session: `gen-${b.id}-${f}`, record: opts.split !== "holdout" }))).text;
+  const r = await withRetry(() => ask({ model: MODEL, system: SYSTEM, content: [text(user)], maxTokens: 16000, session: `gen-${b.id}-${f}`, record: opts.split !== "holdout" }));
+  // Time includes Mubit retries on 429; output tokens include Sonnet's thinking.
+  return { text: r.text, ms: r.ms, inTokens: r.inTokens, outTokens: r.outTokens };
 }
 
 type Finding = { antipattern: string; category: string };
@@ -118,14 +122,16 @@ await Promise.all(
     while (next < jobs.length) {
       const { b, f, v, id } = jobs[next++];
       try {
-        const raw = (await generateHtml(b, f)).replace(/^```(?:html)?\s*|\s*```$/g, "").trim();
+        const gen = await generateHtml(b, f);
+        const cost = { ms: gen.ms, inTokens: gen.inTokens, outTokens: gen.outTokens };
+        const raw = gen.text.replace(/^```(?:html)?\s*|\s*```$/g, "").trim();
         const file = `${OUT}/${id}.html`;
         writeFileSync(file, raw);
         const t0 = Date.now();
         const det = detect(file);
         if (opts["skip-judge"]) {
           // Training data only: the detector filters, the Juror is saved for the holdout comparison.
-          const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...det, juror: null, overall: 0, note: "" };
+          const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...cost, ...det, juror: null, overall: 0, note: "" };
           appendFileSync(RESULTS, JSON.stringify(row) + "\n");
           console.log(`${id}: slop ${det.slop}, quality ${det.quality}, ${raw.length} chars`);
           continue;
@@ -138,7 +144,7 @@ await Promise.all(
           parseReply((await withRetry(() => ask({ model: MODEL, system: JUROR_SYSTEM, content: [text(jurorUserMessage(b, [])), image(jpeg, "image/jpeg")], maxTokens: 4000, record: false }))).text);
         const j = await judgeOnce().catch(judgeOnce);
         const scores = { design: j.design, usability: j.usability, creativity: j.creativity, content: j.content };
-        const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...det, juror: scores, overall: overallOf(scores), note: j.note };
+        const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...cost, ...det, juror: scores, overall: overallOf(scores), note: j.note };
         appendFileSync(RESULTS, JSON.stringify(row) + "\n");
         console.log(`${id}: juror ${row.overall}, slop ${det.slop}, quality ${det.quality}, ${raw.length} chars`);
       } catch (err) {

@@ -2,6 +2,15 @@
 
 Owner: Luka (with his agent). Written 18:30. Explainer for the team: https://claude.ai/artifact/2QCvM3KrxcdNmjzYg21dZM (ask Luka to share it).
 
+## Blocker (20:30)
+- **Mubit's starter credit is used up on both routes** for our project (Anthropic and OpenAI return `402 starter_credit_used_up`). Nothing that goes through Mubit runs until someone adds their own Anthropic key (and OpenAI if the app uses GPT) under Provider keys in the Mubit console: https://app.mubit.ai/console/provider-keys. Calls still go through Mubit, so the hackathon rule holds.
+- Until then: the Generator exam runs detector-only (`scripts/runs/gen-exam.sh`), and Juror scores are added afterwards with `npx tsx scripts/gen-rejudge.ts <tag>`.
+
+## Generator scorecard (new, the main track's "quality, cost and latency side by side")
+- `npx tsx scripts/gen-scorecard.ts` prints the table and writes `data/gen/scorecard.json`. Every section now records its time and tokens.
+- Once credit is back: rerun Sonnet's holdout sections into a timed tag (or `gen-rejudge` plus a fresh timed run) so latency and cost come from measurement, not estimates.
+- Round 2 fine-tune overnight: add Rassa's 56 clean sections (`rassa/gen-more`, merge its brands into `data/gen/brands.json`) to the 172.
+
 ## Where things stand
 - **Generator distillation** (`feat/generator-distill`, see `changes/2026-10-24-generator-distill.md`): Sonnet with `generator-skills-v1` made 220 sections; 172 passed the slop detector with no findings; the local Qwen3 4B is fine-tuning on 150 of them with the plain `generator-v1` prompt (step 60 of 150 at 18:24).
 - **Holdout so far** (24 sections per contender: bento and magazine layouts, 2 preset and 4 unseen brands):
