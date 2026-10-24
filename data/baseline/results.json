@@ -1,0 +1,180 @@
+{
+  "at": "2026-10-24T00:58:59.370Z",
+  "method": "text boxes copied from measure.json, no model",
+  "sites": {
+    "aino-agency": {
+      "image": 8.1,
+      "dom": 100,
+      "visible": 0.081
+    },
+    "ashley-brooke": {
+      "image": 97.1,
+      "dom": 100,
+      "visible": 0.906
+    },
+    "bucks-sauce": {
+      "image": 78.2,
+      "dom": 100,
+      "visible": 0.697
+    },
+    "butter": {
+      "image": 90.5,
+      "dom": 100,
+      "visible": 0.6
+    },
+    "cerebrium": {
+      "image": 41.4,
+      "dom": 100,
+      "visible": 0.998
+    },
+    "coffeetech-r": {
+      "image": 59,
+      "dom": 100,
+      "visible": 1
+    },
+    "darknode": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "evolve-2": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "fluid-glass": {
+      "image": 4.4,
+      "dom": 100,
+      "visible": 0.079
+    },
+    "icomat": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "joby": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "leo-parpeix-portfolio-2026": {
+      "image": 91,
+      "dom": 100,
+      "visible": 1
+    },
+    "lxl-creative": {
+      "image": 96.1,
+      "dom": 100,
+      "visible": 0.374
+    },
+    "marvell-tile-stone": {
+      "image": 7.6,
+      "dom": 100,
+      "visible": 1
+    },
+    "monolog": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "mosbys-files": {
+      "image": 58.4,
+      "dom": 99.7,
+      "visible": 1
+    },
+    "offfforum": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "ref-digital": {
+      "image": 74.4,
+      "dom": 100,
+      "visible": 0.895
+    },
+    "sstr-friction-reduction": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "truckn-roll-r": {
+      "image": 83,
+      "dom": 100,
+      "visible": 0.543
+    },
+    "warm-fuzzy": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "where-worlds-take-shape": {
+      "image": 86,
+      "dom": 100,
+      "visible": 0.936
+    },
+    "white-desert": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "lidar-drone-scanning": {
+      "image": 97.8,
+      "dom": 100,
+      "visible": 0.568
+    },
+    "hobro-digital": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "rpa-comunicacion": {
+      "image": 76,
+      "dom": 100,
+      "visible": 0.652
+    },
+    "capitolium": {
+      "image": 0,
+      "dom": 100,
+      "visible": 0
+    },
+    "damn-good-brands-2": {
+      "image": 95.3,
+      "dom": 100,
+      "visible": 0.62
+    },
+    "seventeen": {
+      "image": 92.1,
+      "dom": 100,
+      "visible": 0.78
+    },
+    "mammoth-murals": {
+      "image": 43.4,
+      "dom": 100,
+      "visible": 0.946
+    },
+    "pantheon-media-group": {
+      "image": 32.9,
+      "dom": 100,
+      "visible": 0.791
+    },
+    "truus": {
+      "image": 18,
+      "dom": 100,
+      "visible": 0.934
+    },
+    "form-fun-studio": {
+      "image": 94.8,
+      "dom": 100,
+      "visible": 0.936
+    },
+    "metamask": {
+      "image": 86.3,
+      "dom": 100,
+      "visible": 0.894
+    }
+  },
+  "mean": {
+    "image": 44.5,
+    "dom": 100
+  }
+}
