@@ -3,9 +3,9 @@
 // the plain generator-v1 prompt, so what it learns from the skills lives in its weights.
 // Usage: npx tsx scripts/gen-dataset.ts <tag> [keep per brief, default 2]
 // Writes data/gen/dataset/{train,valid}.jsonl (mlx-lm chat format) and sources.json.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { PRESETS } from "../lib/brands";
+import { PRESETS, type Brand } from "../lib/brands";
 import type { Family } from "../lib/families";
 import { userMessage } from "./gen-distill-msg";
 
@@ -21,8 +21,9 @@ const picks = [...byBrief.values()].flatMap((rs) =>
   rs.sort((a, b) => a.slop - b.slop || a.quality - b.quality || b.overall - a.overall).slice(0, Number(KEEP)),
 );
 
+const SYNTHETIC: Brand[] = existsSync("data/gen/brands.json") ? JSON.parse(readFileSync("data/gen/brands.json", "utf8")) : [];
 const example = (r: Row) => {
-  const brand = PRESETS.find((b) => b.id === r.brand)!;
+  const brand = [...PRESETS, ...SYNTHETIC].find((b) => b.id === r.brand)!;
   const html = readFileSync(`data/gen/${TAG}/${r.id}.html`, "utf8");
   return JSON.stringify({ messages: [{ role: "system", content: SYSTEM }, { role: "user", content: userMessage(brand, r.family) }, { role: "assistant", content: html }] });
 };

@@ -27,7 +27,8 @@ const { values: opts } = parseArgs({
     split: { type: "string", default: "train" },
     variants: { type: "string", default: "6" },
     backend: { type: "string", default: "mubit" },
-    concurrency: { type: "string", default: "6" },
+    concurrency: { type: "string", default: "3" },
+    "skip-judge": { type: "boolean", default: false },
   },
 });
 if (!opts.tag) throw new Error("--tag is required");
@@ -35,6 +36,11 @@ if (!opts.tag) throw new Error("--tag is required");
 // Two families are never trained on, so the eval shows whether the student generalises to new layouts.
 export const HOLDOUT_FAMILIES: Family[] = ["bento", "magazine"];
 const families = FAMILIES.filter((f) => (opts.split === "holdout") === HOLDOUT_FAMILIES.includes(f));
+// Brands: the two presets plus synthetic kits (scripts/gen-brands.ts). Four synthetic brands are holdout only,
+// so holdout briefs pair unseen layout families with brands the student has never seen.
+const SYNTHETIC: Brand[] = existsSync("data/gen/brands.json") ? JSON.parse(readFileSync("data/gen/brands.json", "utf8")) : [];
+export const HOLDOUT_BRANDS = ["bobbin-riot", "museum-of-small-machines", "mendip-physio-works", "second-helping-fridges"];
+const BRANDS = [...PRESETS, ...SYNTHETIC.filter((b) => (opts.split === "holdout") === HOLDOUT_BRANDS.includes(b.id))];
 const SYSTEM = readFileSync(path.join(process.cwd(), "prompts", `${opts.prompt}.md`), "utf8");
 const OUT = `data/gen/${opts.tag}`;
 const RESULTS = `${OUT}/results.jsonl`;
@@ -42,6 +48,18 @@ const MODEL = process.env.GEN_MODEL || "claude-sonnet-5-5";
 const DETECT = process.env.IMPECCABLE_BIN || "impeccable";
 mkdirSync(OUT, { recursive: true });
 
+
+// Mubit's starter credit allows 4 calls in flight per project and answers 429 beyond that, so wait and retry.
+async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      if ((err as { status?: number }).status !== 429 || attempt >= 20) throw err;
+      await new Promise((r) => setTimeout(r, 3000 + Math.random() * 4000));
+    }
+  }
+}
 
 async function generateHtml(b: Brand, f: Family): Promise<string> {
   const user = userMessage(b, f);
@@ -56,7 +74,7 @@ async function generateHtml(b: Brand, f: Family): Promise<string> {
     const data = (await res.json()) as { choices: { message: { content: string } }[] };
     return data.choices[0]?.message.content ?? "";
   }
-  return (await ask({ model: MODEL, system: SYSTEM, content: [text(user)], maxTokens: 16000, session: `gen-${b.id}-${f}`, record: opts.split !== "holdout" })).text;
+  return (await withRetry(() => ask({ model: MODEL, system: SYSTEM, content: [text(user)], maxTokens: 16000, session: `gen-${b.id}-${f}`, record: opts.split !== "holdout" }))).text;
 }
 
 type Finding = { antipattern: string; category: string };
@@ -67,10 +85,15 @@ function detect(file: string) {
     encoding: "utf8",
     timeout: 30_000,
     stdio: ["ignore", "pipe", "pipe"], // with an open stdin pipe the detector waits for input forever
+    // IMPECCABLE_BIN should be the native binary: the npm launcher is a Node script that inherits tsx's
+    // NODE_OPTIONS and hangs. Clearing them keeps the launcher usable too.
+    env: { ...process.env, NODE_OPTIONS: "" },
   });
-  let findings: Finding[] = [];
+  // Exit 0 = clean, 2 = findings. Anything else (or no output) is a failed check, never a clean page.
+  if (r.error || (r.status !== 0 && r.status !== 2) || !r.stdout) throw new Error(`detector failed: ${r.error?.message ?? r.stderr?.slice(0, 200)}`);
+  let findings: Finding[];
   try {
-    findings = JSON.parse(r.stdout || "[]");
+    findings = JSON.parse(r.stdout);
   } catch {
     throw new Error(`detector output was not JSON: ${(r.stderr || r.stdout).slice(0, 200)}`);
   }
@@ -83,9 +106,12 @@ function detect(file: string) {
 }
 
 const done = new Set(existsSync(RESULTS) ? readFileSync(RESULTS, "utf8").trim().split("\n").filter(Boolean).map((l) => JSON.parse(l).id) : []);
-const jobs = PRESETS.flatMap((b) => families.flatMap((f) => Array.from({ length: Number(opts.variants) }, (_, v) => ({ b, f, v, id: `${b.id}-${f}-v${v}` })))).filter((j) => !done.has(j.id));
+const jobs = BRANDS.flatMap((b) => families.flatMap((f) => Array.from({ length: Number(opts.variants) }, (_, v) => ({ b, f, v, id: `${b.id}-${f}-v${v}` })))).filter((j) => !done.has(j.id));
 console.log(`${opts.tag}: ${jobs.length} to do (${done.size} done), prompt ${opts.prompt}, backend ${opts.backend}, families ${families.join(",")}`);
 
+// Launch the browser once before the workers start: parallel first launches timed out under load, and a failed
+// launch stays cached in lib/shot.ts for the rest of the process.
+await screenshot("<!doctype html><title>warm-up</title>");
 let next = 0;
 await Promise.all(
   Array.from({ length: Number(opts.concurrency) }, async () => {
@@ -97,12 +123,19 @@ await Promise.all(
         writeFileSync(file, raw);
         const t0 = Date.now();
         const det = detect(file);
+        if (opts["skip-judge"]) {
+          // Training data only: the detector filters, the Juror is saved for the holdout comparison.
+          const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...det, juror: null, overall: 0, note: "" };
+          appendFileSync(RESULTS, JSON.stringify(row) + "\n");
+          console.log(`${id}: slop ${det.slop}, quality ${det.quality}, ${raw.length} chars`);
+          continue;
+        }
         const shot = await screenshot(sanitise(raw));
         if (process.env.GEN_DEBUG) console.log(`${id}: detect+shot ${Date.now() - t0} ms`);
         const jpeg = Buffer.from(shot.dataUrl.split(",")[1], "base64");
         // One retry: the Juror occasionally returns a reply outside the score shape.
         const judgeOnce = async () =>
-          parseReply((await ask({ model: MODEL, system: JUROR_SYSTEM, content: [text(jurorUserMessage(b, [])), image(jpeg, "image/jpeg")], maxTokens: 4000, record: false })).text);
+          parseReply((await withRetry(() => ask({ model: MODEL, system: JUROR_SYSTEM, content: [text(jurorUserMessage(b, [])), image(jpeg, "image/jpeg")], maxTokens: 4000, record: false }))).text);
         const j = await judgeOnce().catch(judgeOnce);
         const scores = { design: j.design, usability: j.usability, creativity: j.creativity, content: j.content };
         const row = { id, brand: b.id, family: f, variant: v, prompt: opts.prompt, backend: opts.backend, chars: raw.length, ...det, juror: scores, overall: overallOf(scores), note: j.note };
