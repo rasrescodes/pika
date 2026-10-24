@@ -46,3 +46,4 @@ for (const split of ["train", "holdout"]) {
   const xs = Object.values(out).filter((r) => r.split === split).map((r) => r.total);
   if (xs.length) console.log(`${split}: ${xs.length} sites, mean ${(xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(1)}`);
 }
+process.exit(0); // Playwright can keep the event loop alive after closeBrowser.
