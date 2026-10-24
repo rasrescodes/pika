@@ -18,6 +18,8 @@ const EPOCHS = Number(process.env.LOCAL_EPOCHS || 3);
 const PRACTISE = Number(process.env.LOCAL_PRACTISE_SITES || 60);
 const ITERS = Number(process.env.LOCAL_ITERS || 400);
 const MODEL = process.env.LOCAL_MODEL || "mlx-community/Qwen3-4B-Instruct-2507-4bit";
+// mlx_lm.server batches concurrent requests; 4 long DOM prompts at once ran a 16 GB Mac out of GPU memory.
+const CONCURRENCY = process.env.LOCAL_CONCURRENCY || "1";
 const PORT = 8080;
 const LOG = "data/local/local.log";
 mkdirSync("data/local", { recursive: true });
@@ -61,7 +63,9 @@ const holdoutMean = (tag: string) => {
   return rs.length ? (rs.reduce((a, r) => a + r.firstShot, 0) / rs.length).toFixed(1) : "n/a";
 };
 const evalHoldout = (tag: string, label: string) =>
-  run("npx", ["tsx", "src/loop.ts", "--sites", SITES, "--mode", "dom", "--split", "holdout", "--no-lessons", "--rounds", "1", "--concurrency", "4", "--tag", tag, "--resume"], env(label));
+  run("npx", ["tsx", "src/loop.ts", "--sites", SITES, "--mode", "dom", "--split", "holdout", "--no-lessons", "--rounds", "1", "--concurrency", CONCURRENCY, "--tag", tag, "--resume"], env(label)).then(() => {
+    if (holdoutMean(tag) === "n/a") throw new Error(`holdout eval ${tag} produced no runs; see ${LOG}`);
+  });
 
 log(`local batch start: model ${MODEL}, ${EPOCHS} epochs, ${PRACTISE} practise sites per epoch, ${ITERS} LoRA iters`);
 if (!existsSync("data/local/teacher/scores.json")) await run("npx", ["tsx", "scripts/teacher-eval.ts", SITES]);
@@ -79,7 +83,8 @@ log(`base model holdout first-shot: ${holdoutMean("local-base")}`);
 const trainSlugs = Object.entries(teacher).filter(([, r]) => r.split === "train").map(([s]) => s).sort();
 for (let e = 1; e <= EPOCHS; e++) {
   const adapter = `data/local/adapters/e${e}`;
-  if (!existsSync(`${adapter}/adapters.safetensors`)) {
+  // adapters.safetensors is also written at each checkpoint, so only the final iteration's file means done.
+  if (!existsSync(`${adapter}/${String(ITERS).padStart(7, "0")}_adapters.safetensors`)) {
     server?.kill();
     server = undefined;
     if ((await run("npx", ["tsx", "scripts/local-dataset.ts", SITES])) !== 0) throw new Error("dataset failed");
@@ -96,7 +101,7 @@ for (let e = 1; e <= EPOCHS; e++) {
   if (e === EPOCHS) break;
   // A different slice of train sites each epoch, so the model practises on as many pages as time allows.
   const slice = trainSlugs.filter((_, i) => i % EPOCHS === (e - 1) % EPOCHS).slice(0, PRACTISE);
-  await run("npx", ["tsx", "src/loop.ts", "--sites", SITES, "--mode", "dom", "--no-lessons", "--rounds", "3", "--target", "95", "--concurrency", "4", "--tag", `local-e${e}-practise`, "--resume", ...slice], env(`lora-e${e}`, "0.5"));
+  await run("npx", ["tsx", "src/loop.ts", "--sites", SITES, "--mode", "dom", "--no-lessons", "--rounds", "3", "--target", "95", "--concurrency", CONCURRENCY, "--tag", `local-e${e}-practise`, "--resume", ...slice], env(`lora-e${e}`, "0.5"));
 }
 server?.kill();
 await run("npx", ["tsx", "src/report.ts"]);
