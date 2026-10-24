@@ -21,7 +21,7 @@ export type SiteMeta = {
   big_canvas?: boolean;
 };
 export type Label = { visual_style?: string; layout_style?: string; category?: string; theme?: string; difficulty?: number; note?: string; bad_capture?: boolean };
-export type Site = SiteMeta & { label: Label; hasThumb: boolean };
+export type Site = SiteMeta & { label: Label; hasThumb: boolean; heldOut: boolean; heldOutWhy: string | null };
 
 export type Score = { total: number; structure: number; colour: number; edges: number; visible: number; dom?: number };
 export type Round = { round: number; score: Score; fixes: string[]; ms: number; spec: string; hasBuild: boolean };
@@ -43,6 +43,14 @@ function labels(): Record<string, Label> {
 
 const SLUG = /^[a-z0-9][a-z0-9-]{0,80}$/;
 
+// Held out = never recorded for training: the main holdout split plus Luka's extra list of
+// type-led training sites kept back for the screenshot scorecard (data/holdout-extra.json).
+let extraCache: string[] | null = null;
+function holdoutExtra(): string[] {
+  if (!extraCache) extraCache = json<{ slugs: string[] }>(path.join(ROOT, "data", "holdout-extra.json"), { slugs: [] }).slugs;
+  return extraCache;
+}
+
 export function listSites(): Site[] {
   if (!existsSync(SITES)) return [];
   return readdirSync(SITES)
@@ -55,7 +63,15 @@ export function getSite(slug: string): Site | null {
   if (!SLUG.test(slug)) return null;
   const meta = json<SiteMeta | null>(path.join(SITES, slug, "meta.json"), null);
   if (!meta) return null;
-  return { ...meta, label: labels()[slug] ?? {}, hasThumb: existsSync(path.join(SITES, slug, "thumb.jpg")) };
+  const extra = holdoutExtra().includes(slug);
+  const heldOut = meta.split === "holdout" || extra;
+  return {
+    ...meta,
+    label: labels()[slug] ?? {},
+    hasThumb: existsSync(path.join(SITES, slug, "thumb.jpg")),
+    heldOut,
+    heldOutWhy: meta.split === "holdout" ? "held-out set" : extra ? "extra held-out set" : null,
+  };
 }
 
 // Runs are folders named <ISO time with dashes>-<mode>-<tag>; rounds are r1, r2, ...
