@@ -17,8 +17,9 @@ const SYSTEM = readFileSync(path.join(process.cwd(), "prompts", "generator-v1.md
 
 const byBrief = new Map<string, Row[]>();
 for (const r of rows) byBrief.set(`${r.brand}-${r.family}`, [...(byBrief.get(`${r.brand}-${r.family}`) ?? []), r]);
+// Only sections with no detector findings at all are training targets.
 const picks = [...byBrief.values()].flatMap((rs) =>
-  rs.sort((a, b) => a.slop - b.slop || a.quality - b.quality || b.overall - a.overall).slice(0, Number(KEEP)),
+  rs.filter((r) => r.slop + r.quality === 0).sort((a, b) => a.slop - b.slop || a.quality - b.quality || b.overall - a.overall).slice(0, Number(KEEP)),
 );
 
 const SYNTHETIC: Brand[] = existsSync("data/gen/brands.json") ? JSON.parse(readFileSync("data/gen/brands.json", "utf8")) : [];
