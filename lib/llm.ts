@@ -12,6 +12,8 @@ export type ChatInput = {
   maxTokens: number;
   temperature?: number;
   model?: string;
+  // false = ask Mubit not to keep this call for training (held-out evaluation). Header from Mubit's docs.
+  record?: boolean;
 };
 
 export type ChatResult = {
@@ -73,15 +75,18 @@ export async function chat(input: ChatInput): Promise<ChatResult> {
   for (const url of input.images ?? []) content.push({ type: "image_url", image_url: { url } });
 
   const started = performance.now();
-  const res = await mubit().chat.completions.create({
-    model,
-    max_tokens: input.maxTokens,
-    temperature: input.temperature ?? 0,
-    messages: [
-      { role: "system", content: input.system },
-      { role: "user", content },
-    ],
-  });
+  const res = await mubit().chat.completions.create(
+    {
+      model,
+      max_tokens: input.maxTokens,
+      temperature: input.temperature ?? 0,
+      messages: [
+        { role: "system", content: input.system },
+        { role: "user", content },
+      ],
+    },
+    input.record === false ? { headers: { "x-middleware-record": "metadata" } } : undefined,
+  );
   const ms = Math.round(performance.now() - started);
   return {
     text: res.choices[0]?.message?.content ?? "",

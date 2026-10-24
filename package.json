@@ -16,7 +16,10 @@
     "fixtures": "tsx scripts/make-fixtures.ts",
     "spike:image": "node scripts/spike-image.mjs",
     "spike:task": "node scripts/spike-task.mjs scripts/fixtures/sections 30",
-    "postinstall": "playwright install chromium"
+    "postinstall": "playwright install chromium",
+    "jury:baselines": "tsx scripts/jury-baselines.ts",
+    "jury": "tsx scripts/jury-run.ts",
+    "jury:plan": "tsx scripts/jury-run.ts --dry-run"
   },
   "dependencies": {
     "geist": "^1.8.2",

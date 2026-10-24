@@ -1,0 +1,9 @@
+{
+  "visual_style": ["minimal-swiss", "editorial-serif", "brutalist", "maximal-expressive", "luxury-refined", "playful-illustrative", "tech-futuristic", "retro-nostalgic", "organic-natural", "corporate-clean", "photographic-immersive", "3d-webgl"],
+  "layout_style": ["big-type-poster", "centred-hero", "split-two-column", "asymmetric-editorial", "multi-column-grid", "list-index", "full-bleed-media", "canvas-overlay", "sidebar-nav"],
+  "category": ["agency-studio", "portfolio-personal", "product-saas", "ecommerce-fashion", "architecture-interior", "food-drink", "culture-events-music", "finance-crypto", "real-estate", "education-nonprofit", "automotive-mobility", "health-beauty", "entertainment-games", "other"],
+  "theme": ["light", "dark", "colourful"],
+  "type_mix": ["sans", "serif", "mono", "display", "mixed"],
+  "density": ["sparse", "balanced", "dense"],
+  "nav": ["top-bar", "corners", "side", "hidden", "none"]
+}

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 
-export default function Header({ current, children }: { current: "wall" | "brand" | "scorecard"; children?: React.ReactNode }) {
+export default function Header({ current, children }: { current: "wall" | "jury" | "brand" | "scorecard"; children?: React.ReactNode }) {
   const links: [typeof current, string, string][] = [
     ["wall", "/", "The Wall"],
-    ["brand", "/brand", "Brand kit"],
+    ["jury", "/jury", "Jury mode"],
     ["scorecard", "/scorecard", "Scorecard"],
+    ["brand", "/brand", "Brand kit"],
   ];
   return (
     <header className={styles.header}>

@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-24T01:08:17.856Z",
+  "dataset": {
+    "sites": 212,
+    "train": 178,
+    "heldOut": 34,
+    "juryOverall": {
+      "mean": 7.36,
+      "min": 7.15,
+      "max": 8.18
+    }
+  },
+  "topCriterionDistribution": {
+    "design": 46,
+    "usability": 4,
+    "creativity": 86,
+    "content": 42
+  },
+  "baselines": {
+    "maeOverall": {
+      "constantAverage": 0.109,
+      "styleAverage": 0.111
+    },
+    "topCriterionAccuracy": {
+      "alwaysMajority": 0.471,
+      "majorityCriterion": "creativity",
+      "random": 0.25
+    },
+    "pairAccuracy": {
+      "coinFlip": 0.5,
+      "styleAverage": 0.431,
+      "pairs": 102
+    }
+  }
+}

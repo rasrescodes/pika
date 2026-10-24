@@ -331,6 +331,47 @@
         "width": 1440,
         "height": 1080
       }
+    },
+    {
+      "id": "JR-9",
+      "persona": "an ML-engineer judge asking whether Pika really learns the jury's taste",
+      "entry": "http://127.0.0.1:3000/jury",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_selector": "[data-testid=jury-page]"
+        },
+        {
+          "expect_text": "free baseline"
+        },
+        {
+          "expect_selector": "[data-testid=jury-metrics]"
+        },
+        {
+          "expect_count": {
+            "selector": "[data-testid=jury-card]",
+            "min": 30
+          }
+        },
+        {
+          "eval": "[...document.querySelectorAll('[data-testid=jury-score]')].every(e => e.textContent.trim()==='?')"
+        },
+        {
+          "click": "[data-testid=reveal-jury]"
+        },
+        {
+          "eval": "[...document.querySelectorAll('[data-testid=jury-score]')].every(e => !isNaN(parseFloat(e.textContent)))"
+        },
+        {
+          "screenshot": "jury-revealed"
+        }
+      ],
+      "pass": "Jury mode shows the three measured tasks against free baselines, 30+ held-out sites with the jury hidden, and the reveal shows every real jury score",
+      "then": null
     }
   ]
 }

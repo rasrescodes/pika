@@ -29,6 +29,13 @@ npm run dev            # http://localhost:3000
 - **Brand kit** (`/brand`): Pika or Mubit presets, or your own.
 - **Scorecard** (`/scorecard`): the Juror against real Awwwards jury scores, big model against Mubit's small model, cost and speed. Only recorded numbers; see `data/scorecard/README.md`.
 
+## Jury mode (`/jury`): does Pika see what the Awwwards jury sees?
+The answer key is the real Awwwards jury: 212 captured Sites of the Day with their public scores (from the team's capture, `data/sites/`).
+- Pika (the Juror) scores each site's hero to one decimal. On training sites, every miss against the real jury becomes a calibration note that goes into every later call through Mubit (recorded, so Mubit trains on them). The 34 held-out sites are scored before and after, with the no-train header, so they never leak into training.
+- Three measured tasks, each against a free baseline (`npm run jury:baselines`): average miss on the overall score (baseline 0.109, guessing the average), naming the criterion the jury rewarded most (baseline 47%, always "creativity"), and picking which of two sites the jury preferred (102 clear pairs, baseline 50%).
+- Why these tasks: every captured site is a winner, so overall scores sit between 7.15 and 8.18. Predicting the score alone would be easy to fake by guessing the average; the baselines make that impossible to hide.
+- Run it: `npm run jury:plan` (prints the call count, spends nothing), then `npm run jury` with a key (246 calls, under the daily cap).
+
 ## MOCK mode (no key)
 Sections come from 12 built-in templates and the Juror is rule-based: fixed per-layout scores, and each correction moves that layout family by 0.35 points per place moved (so #7 to #1 lifts it 2.1 points, to the top). The header shows MOCK. Add a key to switch to real calls through Mubit.
 

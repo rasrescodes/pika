@@ -1,0 +1,20 @@
+{
+ "why": "Extra holdout for the screenshot loop: only 3 of the 20 main holdout sites are pixel-friendly. Treated as holdout in both modes, never recorded. Bad captures excluded.",
+ "slugs": [
+  "coffeetech-r",
+  "rpa-comunicacion",
+  "mammoth-murals",
+  "truckn-roll-r",
+  "where-worlds-take-shape",
+  "marvell-tile-stone",
+  "damn-good-brands-2",
+  "ref-digital",
+  "truus",
+  "form-fun-studio",
+  "seventeen",
+  "ashley-brooke",
+  "metamask",
+  "pantheon-media-group",
+  "lidar-drone-scanning"
+ ]
+}
