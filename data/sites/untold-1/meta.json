@@ -1,0 +1,24 @@
+{
+  "slug": "untold-1",
+  "url": "https://untold.site/en",
+  "awwwards_url": "https://www.awwwards.com/sites/untold-1",
+  "award": "Site of the Day",
+  "award_date": "2025-10-27",
+  "jury": {
+    "design": 7.4,
+    "usability": 7.29,
+    "creativity": 7.94,
+    "content": 7.62,
+    "overall": 7.5
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:31:51.660Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.144,
+  "big_canvas": true,
+  "notes": ""
+}

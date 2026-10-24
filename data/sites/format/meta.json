@@ -1,0 +1,24 @@
+{
+  "slug": "format",
+  "url": "https://format.obys.agency/",
+  "awwwards_url": "https://www.awwwards.com/sites/format",
+  "award": "Site of the Day",
+  "award_date": "2026-10-19",
+  "jury": {
+    "design": 7.85,
+    "usability": 7.2,
+    "creativity": 7.78,
+    "content": 7.38,
+    "overall": 7.59
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:08:22.306Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.258,
+  "big_canvas": false,
+  "notes": ""
+}

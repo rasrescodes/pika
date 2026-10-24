@@ -1,0 +1,24 @@
+{
+  "slug": "prototype-3",
+  "url": "https://www.prototypestudio.fr/",
+  "awwwards_url": "https://www.awwwards.com/sites/prototype-3",
+  "award": "Site of the Day",
+  "award_date": "2026-01-06",
+  "jury": {
+    "design": 7.21,
+    "usability": 7.14,
+    "creativity": 7.26,
+    "content": 7.21,
+    "overall": 7.2
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:28:34.846Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

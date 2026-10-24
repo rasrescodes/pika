@@ -1,0 +1,24 @@
+{
+  "slug": "la-revoltosa",
+  "url": "https://larevoltosa.es/",
+  "awwwards_url": "https://www.awwwards.com/sites/la-revoltosa",
+  "award": "Site of the Day",
+  "award_date": "2026-05-21",
+  "jury": {
+    "design": 7.53,
+    "usability": 7.09,
+    "creativity": 7.81,
+    "content": 7.48,
+    "overall": 7.45
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:18:12.892Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 0.004,
+  "big_canvas": true,
+  "notes": ""
+}

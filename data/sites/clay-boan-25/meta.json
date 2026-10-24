@@ -1,0 +1,24 @@
+{
+  "slug": "clay-boan-25",
+  "url": "https://clayboan.com",
+  "awwwards_url": "https://www.awwwards.com/sites/clay-boan-25",
+  "award": "Site of the Day",
+  "award_date": "2025-08-22",
+  "jury": {
+    "design": 7.38,
+    "usability": 7.32,
+    "creativity": 7.63,
+    "content": 7.57,
+    "overall": 7.43
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:06.342Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.311,
+  "big_canvas": true,
+  "notes": ""
+}

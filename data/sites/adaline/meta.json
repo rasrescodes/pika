@@ -1,0 +1,24 @@
+{
+  "slug": "adaline",
+  "url": "https://www.adaline.ai/",
+  "awwwards_url": "https://www.awwwards.com/sites/adaline",
+  "award": "Site of the Day",
+  "award_date": "2025-07-31",
+  "jury": {
+    "design": 7.29,
+    "usability": 7.16,
+    "creativity": 7.63,
+    "content": 7.63,
+    "overall": 7.35
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:53.117Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "boc-studio",
+  "url": "https://boc.studio/",
+  "awwwards_url": "https://www.awwwards.com/sites/boc-studio",
+  "award": "Site of the Day",
+  "award_date": "2026-09-19",
+  "jury": {
+    "design": 7.4,
+    "usability": 6.84,
+    "creativity": 7.29,
+    "content": 7.56,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:10:02.325Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

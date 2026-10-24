@@ -1,0 +1,24 @@
+{
+  "slug": "dapper",
+  "url": "https://www.dapper.agency/",
+  "awwwards_url": "https://www.awwwards.com/sites/dapper",
+  "award": "Site of the Day",
+  "award_date": "2025-08-08",
+  "jury": {
+    "design": 7.4,
+    "usability": 7.43,
+    "creativity": 7.27,
+    "content": 7.44,
+    "overall": 7.38
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:33.891Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

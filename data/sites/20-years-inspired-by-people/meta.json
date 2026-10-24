@@ -1,0 +1,24 @@
+{
+  "slug": "20-years-inspired-by-people",
+  "url": "https://inspiring.nk.studio/es",
+  "awwwards_url": "https://www.awwwards.com/sites/20-years-inspired-by-people",
+  "award": "Site of the Day",
+  "award_date": "2026-08-07",
+  "jury": {
+    "design": 7.28,
+    "usability": 7.03,
+    "creativity": 7.55,
+    "content": 7.47,
+    "overall": 7.28
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:13:35.753Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.14,
+  "big_canvas": true,
+  "notes": ""
+}

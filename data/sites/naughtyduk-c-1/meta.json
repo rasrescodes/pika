@@ -1,0 +1,24 @@
+{
+  "slug": "naughtyduk-c-1",
+  "url": "https://naughtyduk.com",
+  "awwwards_url": "https://www.awwwards.com/sites/naughtyduk-c-1",
+  "award": "Site of the Day",
+  "award_date": "2026-04-12",
+  "jury": {
+    "design": 7.63,
+    "usability": 6.85,
+    "creativity": 7.42,
+    "content": 7.52,
+    "overall": 7.34
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:21:58.138Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

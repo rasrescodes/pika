@@ -1,0 +1,24 @@
+{
+  "slug": "make-it-real-foundation-merch",
+  "url": "https://www.mirfundmerch.com",
+  "awwwards_url": "https://www.awwwards.com/sites/make-it-real-foundation-merch",
+  "award": "Site of the Day",
+  "award_date": "2025-08-31",
+  "jury": {
+    "design": 7.29,
+    "usability": 7.31,
+    "creativity": 7.56,
+    "content": 7.56,
+    "overall": 7.38
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:34:57.835Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 0.98,
+  "big_canvas": false,
+  "notes": ""
+}

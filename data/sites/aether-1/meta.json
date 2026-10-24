@@ -1,0 +1,24 @@
+{
+  "slug": "aether-1",
+  "url": "https://www.aether1.ai/",
+  "awwwards_url": "https://www.awwwards.com/sites/aether-1",
+  "award": "Site of the Day",
+  "award_date": "2025-08-14",
+  "jury": {
+    "design": 7.64,
+    "usability": 7.13,
+    "creativity": 8.11,
+    "content": 7.71,
+    "overall": 7.59
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:18.075Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.004,
+  "big_canvas": true,
+  "notes": ""
+}

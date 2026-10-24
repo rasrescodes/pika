@@ -1,0 +1,584 @@
+{
+ "stolaze": {
+  "slug": "stolaze",
+  "title": "Stolaze",
+  "url": "https://stolaze.com",
+  "awardDate": "2026-10-22",
+  "styles": [
+   "Minimal",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Stolaze is the portfolio of graphic designer Amaury Eckern. The portfolio uses enormous monochrome typography, an index-like project structure, translucent fading text and a sculptural 3D hero object.",
+  "onepagelove_url": "https://onepagelove.com/stolaze",
+  "skip3d": true
+ },
+ "resurf": {
+  "slug": "resurf",
+  "title": "Resurf",
+  "url": "https://resurf.so",
+  "awardDate": "2026-10-21",
+  "styles": [
+   "Editorial",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "Resurf is a local-first personal knowledge library for collecting and searching notes, bookmarks, screenshots, PDFs and other research, with optional AI summaries and agent integrations. Its refined landing page combines spacious editorial typography, large native-app previews and a structured grid of softly shaded feature cards.",
+  "onepagelove_url": "https://onepagelove.com/resurf",
+  "skip3d": false
+ },
+ "eventually": {
+  "slug": "eventually",
+  "title": "eventually",
+  "url": null,
+  "awardDate": null,
+  "styles": [],
+  "blurb": "",
+  "onepagelove_url": "https://onepagelove.com/eventually",
+  "skip3d": false
+ },
+ "kern-society": {
+  "slug": "kern-society",
+  "title": "Kern Society",
+  "url": "https://shockingmike.github.io/kern-society",
+  "awardDate": "2026-10-13",
+  "styles": [
+   "Bold",
+   "Brutalism",
+   "Typographic"
+  ],
+  "blurb": "Kern Society is an independent type foundry that creates variable fonts with adjustable properties like stretch, softness, and looseness. The design is dominated by expressive letterforms, a stark cream-black-orange palette, monospaced labels, scrolling text, and interactive controls. We spotlighted this site in Love Letter #95 .",
+  "onepagelove_url": "https://onepagelove.com/kern-society",
+  "skip3d": false
+ },
+ "applied-imagination": {
+  "slug": "applied-imagination",
+  "title": "Applied Imagination",
+  "url": "https://applied-imagination.gpc.consulting",
+  "awardDate": "2026-10-03",
+  "styles": [
+   "Editorial",
+   "Fun",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Applied Imagination examines how companies can reimagine work processes rather than simply automating them with AI technology. This interactive long-form essay has us falling through the sky with drifting clouds, altitude indicators, collage imagery, animated data graphics, blurred text, and scroll-controlled storytelling. We spotlighted this site in Love Letter #94 .",
+  "onepagelove_url": "https://onepagelove.com/applied-imagination",
+  "skip3d": false
+ },
+ "bob-moll": {
+  "slug": "bob-moll",
+  "title": "Bob Moll",
+  "url": "https://bobmoll.tech",
+  "awardDate": "2026-10-02",
+  "styles": [
+   "Brutalism",
+   "Horizontal Layout",
+   "Typographic"
+  ],
+  "blurb": "Bob Moll creates electronic music influenced by minimal and dub techno from Cologne, Berlin, and Detroit. Its stripped-back design resembles a horizontal record shelf with one continuous row of square cover artworks, sparse labeling, and a vivid neon-green footer gradient. We spotlighted this site in Love Letter #94 .",
+  "onepagelove_url": "https://onepagelove.com/bob-moll",
+  "skip3d": false
+ },
+ "flashform": {
+  "slug": "flashform",
+  "title": "Flashform",
+  "url": "https://flshfrm.com",
+  "awardDate": "2026-09-30",
+  "styles": [
+   "3D",
+   "Fun",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Flashform sends website contact form data to messaging apps and email services like WhatsApp, Discord, and Telegram. Its experimental landing page uses acidic lime green against near-black, fragmented, oversized typography, luminous three-dimensional objects, and dramatic (fun) scroll-controlled transitions.",
+  "onepagelove_url": "https://onepagelove.com/flashform",
+  "skip3d": true
+ },
+ "deeo-studio-2": {
+  "slug": "deeo-studio-2",
+  "title": "Deeo Studio",
+  "url": "https://deeo.studio",
+  "awardDate": "2026-09-21",
+  "styles": [
+   "3D",
+   "Bold",
+   "Typographic"
+  ],
+  "blurb": "A redesign of the Deeo Studio One Pager (built with Framer ) featuring the duo via intro video, big background wallpaper and even a vintage photo in the footer. We spotlighted this site in Love Letter #93 .",
+  "onepagelove_url": "https://onepagelove.com/deeo-studio-2",
+  "skip3d": true
+ },
+ "colosse": {
+  "slug": "colosse",
+  "title": "Colosse Foundry",
+  "url": null,
+  "awardDate": "2026-09-17",
+  "styles": [
+   "Brutalism",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Parallax scrolling, brutalist One Pager (built with Webflow ) showcasing the unique typefaces on offer at Colosse Foundry. We spotlighted this site in Love Letter #93 .",
+  "onepagelove_url": "https://onepagelove.com/colosse",
+  "skip3d": false
+ },
+ "weeksync": {
+  "slug": "weeksync",
+  "title": "WeekSync",
+  "url": "https://weeksync.app",
+  "awardDate": "2026-09-16",
+  "styles": [
+   "Minimal",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "WeekSync is a planning platform that helps creative teams coordinate projects, schedules, workloads, personal goals, and team analytics. Its landing page uses oversized typography, a warm monochromatic palette, dotted borders, monospaced accents, and playful animated details to create a minimal but distinctive editorial appearance.",
+  "onepagelove_url": "https://onepagelove.com/weeksync",
+  "skip3d": false
+ },
+ "zara-webb": {
+  "slug": "zara-webb",
+  "title": "Zara Webb",
+  "url": "https://zperinatal.com",
+  "awardDate": "2026-09-13",
+  "styles": [
+   "Illustrative",
+   "Retro & Vintage",
+   "Typographic"
+  ],
+  "blurb": "Zara Webb provides newborn care, pediatric sleep consulting, and antenatal education services to families locally and worldwide. This one pager has a refined editorial design, combines warm family photography, elegant serif typography, a soft cream palette, and whimsical baby-themed illustrations. We spotlighted this site in Love Letter #93 .",
+  "onepagelove_url": "https://onepagelove.com/zara-webb",
+  "skip3d": false
+ },
+ "fromt": {
+  "slug": "fromt",
+  "title": "fromT",
+  "url": "https://www.fromt.app",
+  "awardDate": "2026-09-10",
+  "styles": [
+   "Fun",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "fromT is a nifty browser-based tool for previewing, filtering, and comparing every font installed on a user’s computer. Its interface combines softly layered cards, pale blue gradients, expressive typography, and hand-drawn illustrations to make font selection feel friendly and tactile.",
+  "onepagelove_url": "https://onepagelove.com/fromt",
+  "skip3d": false
+ },
+ "full-page-screenshot-in-one-click": {
+  "slug": "full-page-screenshot-in-one-click",
+  "title": "OpenScreenShot",
+  "url": "https://openscreenshot.app",
+  "awardDate": "2026-09-09",
+  "styles": [
+   "Flat Design",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "OpenScreenShot is a free, open-source Chrome extension for capturing, annotating, recording, and exporting browser content without cloud uploads. Its landing page uses oversized black typography, abundant whitespace, rounded controls, and restrained product imagery to create a direct, privacy-focused presentation.",
+  "onepagelove_url": "https://onepagelove.com/full-page-screenshot-in-one-click",
+  "skip3d": false
+ },
+ "aevion": {
+  "slug": "aevion",
+  "title": "Aevion",
+  "url": "https://drone.riotters.com",
+  "awardDate": "2026-09-08",
+  "styles": [
+   "3D",
+   "Futuristic",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "The Aevion site combines photorealistic 3D drone imagery, technical data displays, pale monochrome typography and scroll-controlled reveals with interactive WebGL elements. It captures three-dimensional environment data using LiDAR technology in a foldable 42-centimeter device.",
+  "onepagelove_url": "https://onepagelove.com/aevion",
+  "skip3d": true
+ },
+ "dialkit": {
+  "slug": "dialkit",
+  "title": "DialKit",
+  "url": "https://www.dialkit.dev",
+  "awardDate": "2026-09-07",
+  "styles": [
+   "Glassmorphism",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "The DialKit one pager shows oversized typography and floating, glossy black control panels against a minimal dark background. It provides a floating control panel for React, Solid, Svelte, and Vue that lets developers adjust motion, layout, color, and interface details in real time.",
+  "onepagelove_url": "https://onepagelove.com/dialkit",
+  "skip3d": false
+ },
+ "glide-typeface": {
+  "slug": "glide-typeface",
+  "title": "Glide Typeface",
+  "url": "https://blode.co/glide",
+  "awardDate": "2026-09-05",
+  "styles": [
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "Glide is a variable UI sans-serif font offering roman, italic &amp; monospaced versions across a broad range of weights. The website uses interactive editable text, weight and size sliders, a detailed glyph inspector and developer installation examples within a restrained pink-and-coral layout. We spotlighted this site in Love Letter #92 .",
+  "onepagelove_url": "https://onepagelove.com/glide-typeface",
+  "skip3d": false
+ },
+ "uglycash": {
+  "slug": "uglycash",
+  "title": "UGLYCASH",
+  "url": "https://ugly.cash",
+  "awardDate": "2026-08-31",
+  "styles": [
+   "Bold",
+   "Brutalism",
+   "Typographic"
+  ],
+  "blurb": "Ugly Cash app for receiving, spending, transferring, earning and investing money across traditional banking and cryptocurrency networks. Its website uses enormous condensed typography, stark monochrome layouts, oversized phone mockups and electric-pink glow accents to create a rebellious, neo-brutalist fintech identity.",
+  "onepagelove_url": "https://onepagelove.com/uglycash",
+  "skip3d": false
+ },
+ "vessa": {
+  "slug": "vessa",
+  "title": "Vessa",
+  "url": "https://vessa.design",
+  "awardDate": "2026-08-31",
+  "styles": [
+   "Minimal",
+   "Pixel Art",
+   "Typographic"
+  ],
+  "blurb": "Tired of building brand guidelines from scratch all the time? Vessa turns traditional brand guidelines into live, editable pages containing motion, colors, typography, assets, and AI-assisted publishing. The website uses vivid cobalt-blue accents, halftone textures, modular interface demonstrations, and a structured product-led layout. We spotlighted this site in Love Letter #92 .",
+  "onepagelove_url": "https://onepagelove.com/vessa",
+  "skip3d": false
+ },
+ "tiny-computer-co": {
+  "slug": "tiny-computer-co",
+  "title": "Tiny Computer Co.",
+  "url": "https://tinycomputer.co",
+  "awardDate": "2026-08-28",
+  "styles": [
+   "Minimal",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Tiny Computer Co. builds Boardwalk, a visual library app for collecting and organizing ideas across Apple devices. The website uses a large editorial serif headline, generous whitespace, restrained colors, and a polished product-interface preview. We spotlighted this site in Love Letter #92 .",
+  "onepagelove_url": "https://onepagelove.com/tiny-computer-co",
+  "skip3d": false
+ },
+ "woblo": {
+  "slug": "woblo",
+  "title": "Woblo",
+  "url": "https://woblo.in",
+  "awardDate": "2026-08-26",
+  "styles": [
+   "Bold",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "Woblo, a Chrome extension, extracts colors, fonts, icons and CSS from websites and exports them as design systems for Tailwind, shadcn or AI tools.",
+  "onepagelove_url": "https://onepagelove.com/woblo",
+  "skip3d": false
+ },
+ "samuel-raikkonen-portfolio": {
+  "slug": "samuel-raikkonen-portfolio",
+  "title": "Samuel Räikkönen Portfolio",
+  "url": "https://honest.fi",
+  "awardDate": "2026-08-25",
+  "styles": [
+   "3D",
+   "Typographic"
+  ],
+  "blurb": "Samuel Räikkönen is a Creative Director with nearly 20 years of experience building Finnish and Nordic brands. This one pager combines atmospheric full-screen 3D imagery with oversized serif project titles, a dark cinematic palette, and very little interface decoration.",
+  "onepagelove_url": "https://onepagelove.com/samuel-raikkonen-portfolio",
+  "skip3d": true
+ },
+ "the-content-architecture": {
+  "slug": "the-content-architecture",
+  "title": "The Content Architecture",
+  "url": "https://www.contentarchitecture.dev",
+  "awardDate": "2026-08-21",
+  "styles": [
+   "Pixel Art",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "The Content Architecture is an agent-ready Sanity starter kit for Next.js and Astro that packages reusable CMS architecture, production tooling, and established development conventions. The page has an experimental and technical design that combines a light-and-dark split layout with monospaced typography, animated text spirals, ticker-style messaging, dotted textures, and terminal-inspired interface elements. We spotlighted this site in Love Letter #91 .",
+  "onepagelove_url": "https://onepagelove.com/the-content-architecture",
+  "skip3d": false
+ },
+ "estacion-venenta": {
+  "slug": "estacion-venenta",
+  "title": "estacion venenta",
+  "url": "https://estacionvenenta.com",
+  "awardDate": "2026-08-20",
+  "styles": [
+   "Brutalism",
+   "Minimal",
+   "Typographic"
+  ],
+  "blurb": "Estacion Venenta is an experimental ambient duo composed of Charlotte Daniélou and René Coignard making music together.",
+  "onepagelove_url": "https://onepagelove.com/estacion-venenta",
+  "skip3d": false
+ },
+ "specia1ne": {
+  "slug": "specia1ne",
+  "title": "Specia1ne",
+  "url": "https://specia1ne.com",
+  "awardDate": "2026-08-18",
+  "styles": [
+   "Editorial",
+   "Scroll Effects",
+   "Typographic"
+  ],
+  "blurb": "Specia1ne is an independent digital practice that develops product interfaces, web systems, and visual direction from concept through implementation. The site is built around one continuous structural axis connecting sections, transitions and interactions, with a strong focus on typography, motion, and responsive behavior. We spotlighted this site in Love Letter #91 .",
+  "onepagelove_url": "https://onepagelove.com/specia1ne",
+  "skip3d": false
+ },
+ "aniket": {
+  "slug": "aniket",
+  "title": "Aniket",
+  "url": "https://unfunnyket.com",
+  "awardDate": "2026-10-20",
+  "styles": [
+   "Flat Design",
+   "Grid Layout",
+   "Minimal",
+   "Narrow Layout"
+  ],
+  "blurb": "Aniket&#8217;s personal portfolio and résumé as a product engineer. Its playful alternate view transforms the page into an interactive photographic collage, with scattered images connected by thin pink lines across a subtle grid (each with its own sound!).",
+  "onepagelove_url": "https://onepagelove.com/aniket",
+  "skip3d": false
+ },
+ "pairio": {
+  "slug": "pairio",
+  "title": "Pairio",
+  "url": "https://pairio.app",
+  "awardDate": "2026-10-17",
+  "styles": [
+   "Editorial",
+   "Flat Design",
+   "Minimal"
+  ],
+  "blurb": "Pairio offers affordable pair programming with screen sharing, remote control, live drawing, and voice for €15 per month. The website combines a clean white editorial layout, understated serif typography, a restrained coral accent, detailed macOS interface mockups, and a large scroll-driven product demonstration.",
+  "onepagelove_url": "https://onepagelove.com/pairio",
+  "skip3d": false
+ },
+ "scout-graphics": {
+  "slug": "scout-graphics",
+  "title": "Scout Graphics",
+  "url": "https://scoutgraphics.com",
+  "awardDate": "2026-10-16",
+  "styles": [
+   "Illustrative",
+   "Minimal",
+   "Retro & Vintage"
+  ],
+  "blurb": "Scout Graphics is a Montreal design studio creating hand-drawn visual identities, illustration, custom signage and painting for brands. The site uses a warm off-white canvas, hand-drawn accents, signature-style lettering, generous whitespace, and tactile project photography arranged in an expressive collage.",
+  "onepagelove_url": "https://onepagelove.com/scout-graphics",
+  "skip3d": false
+ },
+ "melike-turgut": {
+  "slug": "melike-turgut",
+  "title": "Melike Turgut",
+  "url": "https://meliketurgut.com",
+  "awardDate": "2026-10-13",
+  "styles": [
+   "3D",
+   "Fun",
+   "Minimal"
+  ],
+  "blurb": "Melike Turgut presents a portfolio with eight candy-like 3D symbols between “me” and “like,” with each object opening a pastel editorial panel containing personal stories, project imagery, and playful controls. We spotlighted this site in Love Letter #95 .",
+  "onepagelove_url": "https://onepagelove.com/melike-turgut",
+  "skip3d": true
+ },
+ "bymayo-2": {
+  "slug": "bymayo-2",
+  "title": "ByMayo",
+  "url": "https://bymayo.co.uk",
+  "awardDate": "2026-10-12",
+  "styles": [
+   "Glitch",
+   "Minimal"
+  ],
+  "blurb": "The personal hub by Jason Mayo, creative developer and MadeByShape co-founder, who designs and builds apps and Craft CMS plugins. The site uses a muted grey-green palette, visible structural gridlines, understated typography, and rounded cards to showcase work.",
+  "onepagelove_url": "https://onepagelove.com/bymayo-2",
+  "skip3d": false
+ },
+ "tim-van-damme-max-voltar": {
+  "slug": "tim-van-damme-max-voltar",
+  "title": "Tim Van Damme (Max Voltar)",
+  "url": "https://timvandamme.com",
+  "awardDate": "2026-10-12",
+  "styles": [
+   "Editorial",
+   "Retro & Vintage"
+  ],
+  "blurb": "A household name at OPL, Tim Van Damme is a product designer at Figma and also goes by Max Voltar . This one pager resembles a photocopied editorial zine, combining textured paper, halftone photography, oversized outlined lettering, structured newspaper columns, and playful red-marker doodles.",
+  "onepagelove_url": "https://onepagelove.com/tim-van-damme-max-voltar",
+  "skip3d": false
+ },
+ "flowjam-2": {
+  "slug": "flowjam-2",
+  "title": "Flowjam",
+  "url": "https://flowjam.com",
+  "awardDate": "2026-09-28",
+  "styles": [
+   "Editorial",
+   "Fun",
+   "Glassmorphism"
+  ],
+  "blurb": "Flowjam produces animated and founder-led launch films for AI companies and YC startups. Its editorial design combines a sticky floral sidebar, characterful serif typography, soft grain and blur effects, a spacious modular video grid, and scroll-driven transitions. We spotlighted this site in Love Letter #94 .",
+  "onepagelove_url": "https://onepagelove.com/flowjam-2",
+  "skip3d": false
+ },
+ "artem-taradash": {
+  "slug": "artem-taradash",
+  "title": "Artem Taradash",
+  "url": "https://taradash.me",
+  "awardDate": "2026-09-27",
+  "styles": [
+   "Editorial",
+   "Grid Layout"
+  ],
+  "blurb": "An extensive portfolio presenting Artem Taradash’s brand and product-design work across automotive, mobility, banking, fintech, wearables, and robotics. Our screenshot is only a small preview of the full site. Its editorial presentation combines precise typography, a spacious modular grid, oversized product imagery, generous whitespace, and occasional gradient accents.",
+  "onepagelove_url": "https://onepagelove.com/artem-taradash",
+  "skip3d": false
+ },
+ "miso": {
+  "slug": "miso",
+  "title": "Miso",
+  "url": "https://miso.com",
+  "awardDate": "2026-09-14",
+  "styles": [
+   "Editorial",
+   "Luxury",
+   "Minimal"
+  ],
+  "blurb": "A website w/o words – Miso, an iMessage-based travel app that books flights and arranges travel plans with a dedicated concierge team created this extremely sparse landing page that resembles a luxury fashion campaign, using an isolated traveler, expansive white space, and neutral styling.",
+  "onepagelove_url": "https://onepagelove.com/miso",
+  "skip3d": false
+ },
+ "april-leihuanani-evangelista": {
+  "slug": "april-leihuanani-evangelista",
+  "title": "April Leihuanani Evangelista",
+  "url": "https://aprilleihuanani.com",
+  "awardDate": "2026-09-12",
+  "styles": [
+   "Editorial",
+   "Illustrative",
+   "Scroll Effects"
+  ],
+  "blurb": "The April Leihuanani Evangelista portfolio – This site combines a dark editorial layout with scrapbook-like collages, travel documents, Polaroid photography, layered paper textures, and handwritten accents.",
+  "onepagelove_url": "https://onepagelove.com/april-leihuanani-evangelista",
+  "skip3d": false
+ },
+ "smallbits": {
+  "slug": "smallbits",
+  "title": "Smallbits",
+  "url": "https://smallbits.design",
+  "awardDate": "2026-09-08",
+  "styles": [
+   "Brutalism",
+   "Fun",
+   "Pixel Art"
+  ],
+  "blurb": "We love a free tool! Smallbits provides over 290 pixelated icons designed on an 8×8 grid, free for personal and commercial use.",
+  "onepagelove_url": "https://onepagelove.com/smallbits",
+  "skip3d": false
+ },
+ "is-that-pigeon-a-fed": {
+  "slug": "is-that-pigeon-a-fed",
+  "title": "Is That Pigeon a Fed?",
+  "url": "https://readymag.website/u2492934797/isthatpigeonafed",
+  "awardDate": "2026-09-01",
+  "styles": [
+   "Brutalism",
+   "Fun",
+   "Grid Layout"
+  ],
+  "blurb": "Ever feel like you see a pigeon that looks slightly suspicious&#8230;this interactive satirical project invites visitors to upload a pigeon photograph and receive a mock government-style “suspicion” analysis. It resembles a classified surveillance terminal, using stark black-and-white panels, monospaced labels, visible grids and acid-green/orange interface accents. We spotlighted this site in Love Letter #92 .",
+  "onepagelove_url": "https://onepagelove.com/is-that-pigeon-a-fed",
+  "skip3d": false
+ },
+ "ayush-halder-portfolio": {
+  "slug": "ayush-halder-portfolio",
+  "title": "Ayush Halder Portfolio",
+  "url": "https://www.thoughtsofayush.com",
+  "awardDate": "2026-08-28",
+  "styles": [
+   "Brutalism",
+   "Editorial",
+   "Modular Layout",
+   "Scroll Effects"
+  ],
+  "blurb": "Ayush Halder’s portfolio, presents product, mobile, website, dashboard, and studio projects alongside his professional experience and awards. The one pager combines cinematic fire footage, stark white interface cards, mixed serif and sans-serif typography, measurement rulers, layered content, and an intentionally raw experimental composition.",
+  "onepagelove_url": "https://onepagelove.com/ayush-halder-portfolio",
+  "skip3d": false
+ },
+ "congrue": {
+  "slug": "congrue",
+  "title": "Congrue",
+  "url": "https://www.congrue.ai",
+  "awardDate": "2026-10-07",
+  "styles": [
+   "3D",
+   "Corporate",
+   "Grid Layout"
+  ],
+  "blurb": "Congrue automates MEP rep workflows by reading projects, quoting products, pricing orders, and processing them automatically. The website combines a dark industrial interface, bright lime accents, interactive product demonstrations, and polished 3D isometric equipment scenes.",
+  "onepagelove_url": "https://onepagelove.com/congrue",
+  "skip3d": true
+ },
+ "dabbit": {
+  "slug": "dabbit",
+  "title": "Dabbit",
+  "url": "https://dabbit.app",
+  "awardDate": "2026-10-05",
+  "styles": [
+   "Grid Layout",
+   "Illustrative",
+   "Scroll Effects"
+  ],
+  "blurb": "Dabbit is a color picker for macOS that samples screen colors, exports multiple formats, and integrates with Figma. The landing page uses a structured three-column grid, pastel swatches, polished interface demonstrations, and metallic three-dimensional branding. The color picker even follows your scroll! We spotlighted this site in Love Letter #95 .",
+  "onepagelove_url": "https://onepagelove.com/dabbit",
+  "skip3d": false
+ },
+ "select26": {
+  "slug": "select26",
+  "title": "Select26",
+  "url": "https://select.supabase.com",
+  "awardDate": "2026-10-04",
+  "styles": [
+   "Gradients",
+   "Grid Layout",
+   "Pixel Art"
+  ],
+  "blurb": "Supabase Select is a conference where builders learn about upcoming Supabase features, hear from industry experts, and connect with the Supabase team. The retro-computing design combines monospaced lettering, pixel graphics, ASCII-like patterns, dithered monochrome portraits, rigid speaker grids, and Supabase-green accents.",
+  "onepagelove_url": "https://onepagelove.com/select26",
+  "skip3d": false
+ },
+ "kontu": {
+  "slug": "kontu",
+  "title": "Kontu",
+  "url": "https://kontu.io",
+  "awardDate": "2026-09-18",
+  "styles": [
+   "Grid Layout",
+   "Minimal"
+  ],
+  "blurb": "Kontu helps users plan everyday spending and projects in multiple currencies, alone or with others who share finances. Its landing page uses generous whitespace, muted monochrome colors, structured interface cards, and softly blurred dashboard demonstrations for a polished, calm presentation.",
+  "onepagelove_url": "https://onepagelove.com/kontu",
+  "skip3d": false
+ },
+ "beige-force": {
+  "slug": "beige-force",
+  "title": "BEIGE FORCE",
+  "url": "https://beigeforce.com",
+  "awardDate": "2026-08-27",
+  "styles": [
+   "Grid Layout",
+   "Pixel Art"
+  ],
+  "blurb": "Beige Force is a satirical browser game about battling bland, beige hospitality design. The site resembles an old computer game with pixelated characters, monospaced text, and a rigid outlined grid, limited blue-and-black colors. Give the game a spin!",
+  "onepagelove_url": "https://onepagelove.com/beige-force",
+  "skip3d": false
+ }
+}

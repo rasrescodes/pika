@@ -1,0 +1,24 @@
+{
+  "slug": "iventions",
+  "url": "https://iventions.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/iventions",
+  "award": "Site of the Day",
+  "award_date": "2025-11-04",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.26,
+    "creativity": 7.45,
+    "content": 7.2,
+    "overall": 7.37
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:30:59.358Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.222,
+  "big_canvas": false,
+  "notes": ""
+}

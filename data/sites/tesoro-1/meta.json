@@ -1,0 +1,24 @@
+{
+  "slug": "tesoro-1",
+  "url": "https://www.tesoroxp.com",
+  "awwwards_url": "https://www.awwwards.com/sites/tesoro-1",
+  "award": "Site of the Day",
+  "award_date": "2025-12-25",
+  "jury": {
+    "design": 7.41,
+    "usability": 7.15,
+    "creativity": 7.46,
+    "content": 7.41,
+    "overall": 7.34
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:28:46.170Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

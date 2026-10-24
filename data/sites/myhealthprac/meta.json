@@ -1,0 +1,24 @@
+{
+  "slug": "myhealthprac",
+  "url": "https://www.myhealthprac.com",
+  "awwwards_url": "https://www.awwwards.com/sites/myhealthprac",
+  "award": "Site of the Day",
+  "award_date": "2025-07-11",
+  "jury": {
+    "design": 7.5,
+    "usability": 7.14,
+    "creativity": 6.86,
+    "content": 7.26,
+    "overall": 7.24
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:36:39.523Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

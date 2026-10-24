@@ -1,0 +1,24 @@
+{
+  "slug": "phive-clubs",
+  "url": "https://phive.pt/en",
+  "awwwards_url": "https://www.awwwards.com/sites/phive-clubs",
+  "award": "Site of the Day",
+  "award_date": "2025-08-05",
+  "jury": {
+    "design": 7.48,
+    "usability": 7.09,
+    "creativity": 7.73,
+    "content": 7.29,
+    "overall": 7.39
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:39.847Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

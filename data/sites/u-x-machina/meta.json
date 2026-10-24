@@ -1,0 +1,24 @@
+{
+  "slug": "u-x-machina",
+  "url": "https://uxmachina.co",
+  "awwwards_url": "https://www.awwwards.com/sites/u-x-machina",
+  "award": "Site of the Day",
+  "award_date": "2025-07-09",
+  "jury": {
+    "design": 7.58,
+    "usability": 6.93,
+    "creativity": 7.33,
+    "content": 6.94,
+    "overall": 7.27
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:37:09.836Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "bitter-creek",
+  "url": "https://www.bittercreek.studio/",
+  "awwwards_url": "https://www.awwwards.com/sites/bitter-creek",
+  "award": "Site of the Day",
+  "award_date": "2025-09-11",
+  "jury": {
+    "design": 7.69,
+    "usability": 7.19,
+    "creativity": 7.46,
+    "content": 7.49,
+    "overall": 7.47
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:34:32.300Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

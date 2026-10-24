@@ -1,0 +1,24 @@
+{
+  "slug": "studio-k95-3",
+  "url": "https://k95.it",
+  "awwwards_url": "https://www.awwwards.com/sites/studio-k95-3",
+  "award": "Site of the Day",
+  "award_date": "2026-08-11",
+  "jury": {
+    "design": 7.34,
+    "usability": 7.35,
+    "creativity": 7.32,
+    "content": 7.2,
+    "overall": 7.32
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:13:23.340Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

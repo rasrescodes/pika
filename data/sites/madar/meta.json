@@ -1,0 +1,24 @@
+{
+  "slug": "madar",
+  "url": "https://madarplatform.com/en",
+  "awwwards_url": "https://www.awwwards.com/sites/madar",
+  "award": "Site of the Day",
+  "award_date": "2025-09-19",
+  "jury": {
+    "design": 7.28,
+    "usability": 7.29,
+    "creativity": 7.28,
+    "content": 7.34,
+    "overall": 7.29
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:33.813Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

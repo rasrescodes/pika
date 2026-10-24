@@ -1,0 +1,24 @@
+{
+  "slug": "noho",
+  "url": "https://noho.ink",
+  "awwwards_url": "https://www.awwwards.com/sites/noho",
+  "award": "Site of the Day",
+  "award_date": "2026-09-18",
+  "jury": {
+    "design": 7.64,
+    "usability": 7,
+    "creativity": 7.25,
+    "content": 7.35,
+    "overall": 7.34
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:08:06.331Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.219,
+  "big_canvas": false,
+  "notes": "The right half is a photograph grid and is masked. The left half is type."
+}

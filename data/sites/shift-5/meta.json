@@ -1,0 +1,24 @@
+{
+  "slug": "shift-5",
+  "url": "https://shift5.io",
+  "awwwards_url": "https://www.awwwards.com/sites/shift-5",
+  "award": "Site of the Day",
+  "award_date": "2026-03-02",
+  "jury": {
+    "design": 7.49,
+    "usability": 7.22,
+    "creativity": 7.48,
+    "content": 7.41,
+    "overall": 7.4
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:25:25.037Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.186,
+  "big_canvas": true,
+  "notes": ""
+}

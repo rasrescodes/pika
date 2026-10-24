@@ -1,0 +1,24 @@
+{
+  "slug": "where-worlds-take-shape",
+  "url": "https://paodao.fr/",
+  "awwwards_url": "https://www.awwwards.com/sites/where-worlds-take-shape",
+  "award": "Site of the Day",
+  "award_date": "2026-05-03",
+  "jury": {
+    "design": 7.38,
+    "usability": 6.81,
+    "creativity": 7.74,
+    "content": 7.01,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T21:52:46.919Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.066,
+  "big_canvas": false,
+  "notes": ""
+}

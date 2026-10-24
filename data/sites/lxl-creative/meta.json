@@ -1,0 +1,24 @@
+{
+  "slug": "lxl-creative",
+  "url": "https://www.lxlcreative.co.uk/",
+  "awwwards_url": "https://www.awwwards.com/sites/lxl-creative",
+  "award": "Site of the Day",
+  "award_date": "2026-09-17",
+  "jury": {
+    "design": 7.33,
+    "usability": 7.19,
+    "creativity": 7.63,
+    "content": 7.54,
+    "overall": 7.37
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:10:01.574Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.634,
+  "big_canvas": false,
+  "notes": ""
+}

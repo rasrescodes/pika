@@ -1,0 +1,24 @@
+{
+  "slug": "hubtown",
+  "url": "https://hubtown.co.in/",
+  "awwwards_url": "https://www.awwwards.com/sites/hubtown",
+  "award": "Site of the Day",
+  "award_date": "2026-06-10",
+  "jury": {
+    "design": 7.78,
+    "usability": 7.22,
+    "creativity": 7.94,
+    "content": 7.89,
+    "overall": 7.66
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:18:03.911Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.907,
+  "big_canvas": true,
+  "notes": ""
+}

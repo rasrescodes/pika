@@ -1,0 +1,24 @@
+{
+  "slug": "damn-good-brands-2",
+  "url": "https://damngoodbrands.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/damn-good-brands-2",
+  "award": "Site of the Day",
+  "award_date": "2026-02-14",
+  "jury": {
+    "design": 7.29,
+    "usability": 6.9,
+    "creativity": 7.75,
+    "content": 7.41,
+    "overall": 7.28
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:25:55.423Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.393,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "8bit-ai",
+  "url": "https://www.8bit.ai",
+  "awwwards_url": "https://www.awwwards.com/sites/8bit-ai",
+  "award": "Site of the Day",
+  "award_date": "2025-07-21",
+  "jury": {
+    "design": 7.2,
+    "usability": 7.06,
+    "creativity": 7.77,
+    "content": 7.51,
+    "overall": 7.31
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:37:02.907Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "stefan-vitasovic-portfolio25",
+  "url": "https://stefanvitasovic.dev/",
+  "awwwards_url": "https://www.awwwards.com/sites/stefan-vitasovic-portfolio25",
+  "award": "Site of the Day",
+  "award_date": "2025-09-20",
+  "jury": {
+    "design": 7.31,
+    "usability": 6.94,
+    "creativity": 7.51,
+    "content": 7.38,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:26.452Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

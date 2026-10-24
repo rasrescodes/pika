@@ -1,0 +1,24 @@
+{
+  "slug": "heimdall-power",
+  "url": "https://www.heimdallpower.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/heimdall-power",
+  "award": "Site of the Day",
+  "award_date": "2025-10-17",
+  "jury": {
+    "design": 7.44,
+    "usability": 6.98,
+    "creativity": 7.41,
+    "content": 7.34,
+    "overall": 7.29
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:32:45.079Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

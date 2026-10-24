@@ -1,0 +1,24 @@
+{
+  "slug": "microsoft-ai",
+  "url": "https://microsoft.ai/",
+  "awwwards_url": "https://www.awwwards.com/sites/microsoft-ai",
+  "award": "Site of the Day",
+  "award_date": "2025-11-30",
+  "jury": {
+    "design": 7.25,
+    "usability": 7.19,
+    "creativity": 6.88,
+    "content": 7.28,
+    "overall": 7.16
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:29:59.038Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.331,
+  "big_canvas": true,
+  "notes": ""
+}

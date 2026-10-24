@@ -1,0 +1,24 @@
+{
+  "slug": "weavy",
+  "url": "https://weavy.ai/",
+  "awwwards_url": "https://www.awwwards.com/sites/weavy",
+  "award": "Site of the Day",
+  "award_date": "2025-09-28",
+  "jury": {
+    "design": 7.26,
+    "usability": 6.99,
+    "creativity": 7.3,
+    "content": 7.38,
+    "overall": 7.2
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:33:09.234Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

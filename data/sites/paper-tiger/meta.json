@@ -1,0 +1,24 @@
+{
+  "slug": "paper-tiger",
+  "url": "https://www.papertiger.com",
+  "awwwards_url": "https://www.awwwards.com/sites/paper-tiger",
+  "award": "Site of the Day",
+  "award_date": "2026-01-17",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.23,
+    "creativity": 7.37,
+    "content": 7.31,
+    "overall": 7.35
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:27:09.848Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.102,
+  "big_canvas": false,
+  "notes": ""
+}
