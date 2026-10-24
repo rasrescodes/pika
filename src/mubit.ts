@@ -102,6 +102,8 @@ export async function ask(call: Call): Promise<Reply> {
   usage.inTokens += data.usage.input_tokens;
   usage.outTokens += data.usage.output_tokens;
   const out = data.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join("");
+  // An empty reply would otherwise reach the next call as an empty text block and fail there with a 400.
+  if (!out.trim()) throw new Error(`empty reply from ${call.model} (stop_reason ${data.stop_reason}, ${data.usage.output_tokens} output tokens)`);
   return {
     text: out,
     requestId: response.headers.get("x-middleware-request-id"),
