@@ -16,3 +16,4 @@ data/runs/
 data/batch/READY
 data/batch/batch.log
 data/batch/watcher.out
+data/gen/
