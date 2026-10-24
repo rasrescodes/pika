@@ -25,6 +25,15 @@ How to run Pika. Keep this true as the stack lands.
 - Progress: `tail -f data/batch/batch.log`. To stop: kill the `tsx src/batch.ts` process. Rerunning resumes.
 - Honest notes: holdout calls are sent with `x-middleware-record: metadata`, so Mubit never trains on them. Site labels and the v2 prompts were drafted by our coding agents as dev tooling. No product prompt ran outside Mubit.
 
+## Generator distillation (custom Generator, see changes/2026-10-24-generator-distill.md)
+- Detector: `npm i --ignore-scripts impeccable@4.5.2` in a folder outside the repo, then point `IMPECCABLE_BIN` at the native binary `node_modules/@impeccable/cli-darwin-arm64/bin/impeccable`. Not the `.bin/impeccable` launcher: under tsx it hangs and spawns thousands of processes.
+- Brands: `npx tsx scripts/gen-brands.ts 24` writes `data/gen/brands.json` (fictional kits; 4 are holdout only).
+- Training data: `npx tsx scripts/gen-distill.ts --tag train-skills --split train --variants 1 --skip-judge --concurrency 3` (Sonnet with `generator-skills-v1`, recorded by Mubit).
+- Holdout: same script with `--split holdout --variants 2 --concurrency 1`, once per contender: `--tag hold-sonnet-skills`, `--tag hold-sonnet-plain --prompt generator-v1`, and the local student with `--backend local --prompt generator-v1` while `mlx_lm.server` runs (with `--adapter-path` for the fine-tuned one). Holdout calls are not recorded.
+- Fine-tune: `npx tsx scripts/gen-dataset.ts train-skills 1`, then `mlx_lm lora` on `data/gen/dataset` (see the Describer local loop for setup).
+- Limits: Mubit's starter credit allows 4 calls in flight per project (429 beyond, retried); don't run this beside `npm run batch`. Sonnet 5.5 thinks by default, so `max_tokens` is 16000.
+- Honest notes: the training targets are Sonnet's outputs with a prompt condensed from three open skills (credits in `prompts/NOTICE-skills.md`). The detector is someone else's rules and the Juror is a model; neither is a human jury. The local student runs offline.
+
 ## Mubit training
 - Training needs about 25 kept examples of one task (same system prompt, model, tools, output format).
 - There is a daily training cap (resets 00:00 UTC, which is 01:00 UK time until clocks go back on Sunday) and a pause between trainings. Send the Juror batch before midnight so it trains overnight.
