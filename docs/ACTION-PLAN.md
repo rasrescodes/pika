@@ -11,6 +11,12 @@ Owner: Luka (with his agent). Written 18:30. Explainer for the team: https://cla
 - Once credit is back: rerun Sonnet's holdout sections into a timed tag (or `gen-rejudge` plus a fresh timed run) so latency and cost come from measurement, not estimates.
 - Round 2 fine-tune overnight: add Rassa's 56 clean sections (`rassa/gen-more`, merge its brands into `data/gen/brands.json`) to the 172.
 
+## Round 2 result (23:10)
+- Round 2 (153 sections that pass both the detector and the layout check, incl. Rassa's, 300 steps): Juror 4.91 (23 of 24 judged), 1.42 findings per page, 12/24 clean, layout 16 any / 6 broken. By family: bento 4.50, magazine 5.28.
+- Against the untrained 4B (4.87, 1.13, 12/24, 18 / 8) that is level on the Juror and slightly worse on the detector. More data on the same 10 layouts did not transfer to bento and magazine, which the student never trained on.
+- Its median 50 s per section is not comparable with round 1's 24 s: output length is the same (692 against 658 tokens), and the Mac was also generating round 3's data during the exam.
+- Round 3 (adds 64 bento and magazine sections from training-only brands) is fine-tuning now; exam with the Juror follows. The exam then measures unseen brands on known layouts; report both framings.
+
 ## Where things stand
 - **Generator distillation** (`feat/generator-distill`, see `changes/2026-10-24-generator-distill.md`): Sonnet with `generator-skills-v1` made 220 sections; 172 passed the slop detector with no findings; the local Qwen3 4B is fine-tuning on 150 of them with the plain `generator-v1` prompt (step 60 of 150 at 18:24).
 - **Holdout so far** (24 sections per contender: bento and magazine layouts, 2 preset and 4 unseen brands):
