@@ -1,0 +1,24 @@
+{
+  "slug": "daydream-player",
+  "url": "https://daydreamplayer.com",
+  "awwwards_url": "https://www.awwwards.com/sites/daydream-player",
+  "award": "Site of the Day",
+  "award_date": "2025-07-25",
+  "jury": {
+    "design": 7.26,
+    "usability": 7.11,
+    "creativity": 7.33,
+    "content": 7.44,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:36:10.561Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.958,
+  "big_canvas": true,
+  "notes": ""
+}

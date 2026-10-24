@@ -1,0 +1,24 @@
+{
+  "slug": "lacoste-ace-breaker",
+  "url": "https://members-play.lacoste.com/ace-breaker-rg",
+  "awwwards_url": "https://www.awwwards.com/sites/lacoste-ace-breaker",
+  "award": "Site of the Day",
+  "award_date": "2026-08-03",
+  "jury": {
+    "design": 7.31,
+    "usability": 7.4,
+    "creativity": 7.88,
+    "content": 7.35,
+    "overall": 7.46
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:13:38.777Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

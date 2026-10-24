@@ -1,0 +1,24 @@
+{
+  "slug": "fluid-glass",
+  "url": "https://fluid.glass/",
+  "awwwards_url": "https://www.awwwards.com/sites/fluid-glass",
+  "award": "Site of the Day",
+  "award_date": "2026-03-30",
+  "jury": {
+    "design": 7.96,
+    "usability": 7.6,
+    "creativity": 7.63,
+    "content": 7.88,
+    "overall": 7.77
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:23:47.862Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.93,
+  "big_canvas": false,
+  "notes": ""
+}

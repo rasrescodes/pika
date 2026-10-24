@@ -1,0 +1,24 @@
+{
+  "slug": "fromanother-love",
+  "url": "https://www.fromanother.love/",
+  "awwwards_url": "https://www.awwwards.com/sites/fromanother-love",
+  "award": "Site of the Day",
+  "award_date": "2026-05-14",
+  "jury": {
+    "design": 7.75,
+    "usability": 6.86,
+    "creativity": 7.66,
+    "content": 7.5,
+    "overall": 7.44
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:19:00.087Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

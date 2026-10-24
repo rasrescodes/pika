@@ -1,0 +1,24 @@
+{
+  "slug": "ethical-life",
+  "url": "https://ethicallifeworld.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/ethical-life",
+  "award": "Site of the Day",
+  "award_date": "2025-08-16",
+  "jury": {
+    "design": 7.24,
+    "usability": 7.13,
+    "creativity": 7.5,
+    "content": 7.2,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:18.497Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.259,
+  "big_canvas": false,
+  "notes": ""
+}

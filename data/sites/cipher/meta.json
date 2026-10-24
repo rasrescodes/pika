@@ -1,0 +1,24 @@
+{
+  "slug": "cipher",
+  "url": "https://cipher.tv/",
+  "awwwards_url": "https://www.awwwards.com/sites/cipher",
+  "award": "Site of the Day",
+  "award_date": "2026-08-20",
+  "jury": {
+    "design": 7.54,
+    "usability": 7.17,
+    "creativity": 7.4,
+    "content": 7.35,
+    "overall": 7.38
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:13:32.830Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}

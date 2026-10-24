@@ -1,0 +1,24 @@
+{
+  "slug": "neon-rated",
+  "url": "https://neonrated.com",
+  "awwwards_url": "https://www.awwwards.com/sites/neon-rated",
+  "award": "Site of the Day",
+  "award_date": "2026-02-28",
+  "jury": {
+    "design": 7.23,
+    "usability": 7.4,
+    "creativity": 7.04,
+    "content": 7.77,
+    "overall": 7.3
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:25:07.959Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

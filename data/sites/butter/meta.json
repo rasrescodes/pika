@@ -1,0 +1,24 @@
+{
+  "slug": "butter",
+  "url": "https://www.butter.video/",
+  "awwwards_url": "https://www.awwwards.com/sites/butter",
+  "award": "Site of the Day",
+  "award_date": "2026-09-28",
+  "jury": {
+    "design": 7.38,
+    "usability": 7.56,
+    "creativity": 7.56,
+    "content": 7.69,
+    "overall": 7.5
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:09:38.915Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.398,
+  "big_canvas": false,
+  "notes": ""
+}

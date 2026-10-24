@@ -1,0 +1,24 @@
+{
+  "slug": "coffeetech-r",
+  "url": "https://coffee-tech.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/coffeetech-r",
+  "award": "Site of the Day",
+  "award_date": "2026-07-16",
+  "jury": {
+    "design": 7.25,
+    "usability": 7.26,
+    "creativity": 6.97,
+    "content": 7.12,
+    "overall": 7.18
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:07:46.914Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

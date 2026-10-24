@@ -1,0 +1,24 @@
+{
+  "slug": "fine-thought-site",
+  "url": "https://finethought.com.au",
+  "awwwards_url": "https://www.awwwards.com/sites/fine-thought-site",
+  "award": "Site of the Day",
+  "award_date": "2025-07-20",
+  "jury": {
+    "design": 7.27,
+    "usability": 6.58,
+    "creativity": 8.13,
+    "content": 7.26,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:36:17.489Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "clou-agency-portfolio",
+  "url": "https://www.clou.ch/",
+  "awwwards_url": "https://www.awwwards.com/sites/clou-agency-portfolio",
+  "award": "Site of the Day",
+  "award_date": "2025-09-05",
+  "jury": {
+    "design": 7.28,
+    "usability": 7.17,
+    "creativity": 7.38,
+    "content": 7.53,
+    "overall": 7.29
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:34:19.813Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.137,
+  "big_canvas": false,
+  "notes": ""
+}

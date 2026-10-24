@@ -1,0 +1,24 @@
+{
+  "slug": "paul-kalkbrenner",
+  "url": "https://www.paulkalkbrenner.net/",
+  "awwwards_url": "https://www.awwwards.com/sites/paul-kalkbrenner",
+  "award": "Site of the Day",
+  "award_date": "2026-09-02",
+  "jury": {
+    "design": 7.64,
+    "usability": 7.26,
+    "creativity": 7.45,
+    "content": 7.49,
+    "overall": 7.47
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:07:52.877Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.007,
+  "big_canvas": false,
+  "notes": "The navigation is split into single letters, so the text sample fills with those after the headline."
+}

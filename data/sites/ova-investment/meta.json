@@ -1,0 +1,24 @@
+{
+  "slug": "ova-investment",
+  "url": "https://ova-investment.com",
+  "awwwards_url": "https://www.awwwards.com/sites/ova-investment",
+  "award": "Site of the Day",
+  "award_date": "2025-10-25",
+  "jury": {
+    "design": 7.38,
+    "usability": 6.92,
+    "creativity": 7.44,
+    "content": 7.22,
+    "overall": 7.24
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:32:07.698Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

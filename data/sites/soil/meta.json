@@ -1,0 +1,24 @@
+{
+  "slug": "soil",
+  "url": "https://soil-net.jp/",
+  "awwwards_url": "https://www.awwwards.com/sites/soil",
+  "award": "Site of the Day",
+  "award_date": "2025-11-07",
+  "jury": {
+    "design": 7.39,
+    "usability": 6.85,
+    "creativity": 7.32,
+    "content": 7.2,
+    "overall": 7.19
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:30:50.229Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.348,
+  "big_canvas": false,
+  "notes": ""
+}

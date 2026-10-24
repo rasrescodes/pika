@@ -1,0 +1,24 @@
+{
+  "slug": "jason-bergh",
+  "url": "https://www.jasonbergh.com",
+  "awwwards_url": "https://www.awwwards.com/sites/jason-bergh",
+  "award": "Site of the Day",
+  "award_date": "2026-03-03",
+  "jury": {
+    "design": 7.76,
+    "usability": 7.25,
+    "creativity": 7.7,
+    "content": 7.63,
+    "overall": 7.58
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:25:04.320Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

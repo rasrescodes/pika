@@ -1,0 +1,24 @@
+{
+  "slug": "compsych-brand-hub",
+  "url": "https://compsych.konpo.co/",
+  "awwwards_url": "https://www.awwwards.com/sites/compsych-brand-hub",
+  "award": "Site of the Day",
+  "award_date": "2025-08-26",
+  "jury": {
+    "design": 7.35,
+    "usability": 7.11,
+    "creativity": 7.44,
+    "content": 7.28,
+    "overall": 7.29
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:35:00.816Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

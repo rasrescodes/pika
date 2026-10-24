@@ -1,0 +1,24 @@
+{
+  "slug": "tengile-malamala-collection",
+  "url": "https://tengilemalamala.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/tengile-malamala-collection",
+  "award": "Site of the Day",
+  "award_date": "2026-10-03",
+  "jury": {
+    "design": 7.3,
+    "usability": 7.26,
+    "creativity": 6.91,
+    "content": 7.43,
+    "overall": 7.22
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:09:15.474Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

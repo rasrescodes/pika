@@ -1,0 +1,24 @@
+{
+  "slug": "milledollars",
+  "url": "https://milledollars.fr/",
+  "awwwards_url": "https://www.awwwards.com/sites/milledollars",
+  "award": "Site of the Day",
+  "award_date": "2026-10-02",
+  "jury": {
+    "design": 7.25,
+    "usability": 7.15,
+    "creativity": 7.23,
+    "content": 7.39,
+    "overall": 7.23
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:09:38.991Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.018,
+  "big_canvas": true,
+  "notes": ""
+}

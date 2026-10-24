@@ -1,0 +1,24 @@
+{
+  "slug": "jesko-jets",
+  "url": "https://jeskojets.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/jesko-jets",
+  "award": "Site of the Day",
+  "award_date": "2026-01-20",
+  "jury": {
+    "design": 7.07,
+    "usability": 7.19,
+    "creativity": 7.5,
+    "content": 7.63,
+    "overall": 7.25
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:27:07.355Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

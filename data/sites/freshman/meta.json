@@ -1,0 +1,24 @@
+{
+  "slug": "freshman",
+  "url": "https://freshman.tv/",
+  "awwwards_url": "https://www.awwwards.com/sites/freshman",
+  "award": "Site of the Day",
+  "award_date": "2025-12-15",
+  "jury": {
+    "design": 7.72,
+    "usability": 7.51,
+    "creativity": 7.77,
+    "content": 7.94,
+    "overall": 7.69
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:29:20.542Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

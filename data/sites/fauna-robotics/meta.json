@@ -1,0 +1,24 @@
+{
+  "slug": "fauna-robotics",
+  "url": "https://faunarobotics.com",
+  "awwwards_url": "https://www.awwwards.com/sites/fauna-robotics",
+  "award": "Site of the Day",
+  "award_date": "2026-06-16",
+  "jury": {
+    "design": 7.53,
+    "usability": 7.22,
+    "creativity": 7.31,
+    "content": 7.5,
+    "overall": 7.39
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:16:05.965Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.585,
+  "big_canvas": false,
+  "notes": ""
+}

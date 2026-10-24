@@ -1,0 +1,24 @@
+{
+  "slug": "sstr-friction-reduction",
+  "url": "https://sstr.tech/en/",
+  "awwwards_url": "https://www.awwwards.com/sites/sstr-friction-reduction",
+  "award": "Site of the Day",
+  "award_date": "2026-08-16",
+  "jury": {
+    "design": 7.17,
+    "usability": 7.16,
+    "creativity": 7.28,
+    "content": 6.98,
+    "overall": 7.17
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:12:28.226Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

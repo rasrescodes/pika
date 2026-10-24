@@ -1,0 +1,24 @@
+{
+  "slug": "icomat",
+  "url": "https://www.icomat.co.uk/",
+  "awwwards_url": "https://www.awwwards.com/sites/icomat",
+  "award": "Site of the Day",
+  "award_date": "2026-04-09",
+  "jury": {
+    "design": 7.85,
+    "usability": 7.26,
+    "creativity": 7.36,
+    "content": 7.7,
+    "overall": 7.56
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:22:57.692Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "lando-norris",
+  "url": "https://landonorris.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/lando-norris",
+  "award": "Site of the Day",
+  "award_date": "2025-11-17",
+  "jury": {
+    "design": 8.12,
+    "usability": 7.9,
+    "creativity": 8.71,
+    "content": 8.18,
+    "overall": 8.18
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:30:47.648Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.38,
+  "big_canvas": true,
+  "notes": ""
+}

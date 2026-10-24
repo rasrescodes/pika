@@ -1,0 +1,24 @@
+{
+  "slug": "odyssee",
+  "url": "https://www.odysseeclinic.com.au/",
+  "awwwards_url": "https://www.awwwards.com/sites/odyssee",
+  "award": "Site of the Day",
+  "award_date": "2026-10-08",
+  "jury": {
+    "design": 7.56,
+    "usability": 7.21,
+    "creativity": 7.17,
+    "content": 7.63,
+    "overall": 7.38
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:09:04.252Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 1,
+  "big_canvas": false,
+  "notes": ""
+}

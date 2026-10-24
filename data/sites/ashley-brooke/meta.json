@@ -1,0 +1,24 @@
+{
+  "slug": "ashley-brooke",
+  "url": "https://ashleybrookecs.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/ashley-brooke",
+  "award": "Site of the Day",
+  "award_date": "2026-04-24",
+  "jury": {
+    "design": 7.45,
+    "usability": 7.22,
+    "creativity": 7.47,
+    "content": 7.34,
+    "overall": 7.37
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:20:04.722Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0.098,
+  "big_canvas": false,
+  "notes": ""
+}

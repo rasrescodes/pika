@@ -1,0 +1,24 @@
+{
+  "slug": "the-obsidian-assembly",
+  "url": "https://obsidianassembly.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/the-obsidian-assembly",
+  "award": "Site of the Day",
+  "award_date": "2026-04-14",
+  "jury": {
+    "design": 7.46,
+    "usability": 7.23,
+    "creativity": 7.6,
+    "content": 7.4,
+    "overall": 7.41
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:21:09.705Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": true,
+  "image_heavy": 1,
+  "big_canvas": true,
+  "notes": ""
+}

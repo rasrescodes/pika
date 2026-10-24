@@ -1,0 +1,24 @@
+{
+  "slug": "mosbys-files",
+  "url": "https://www.mosbyfiles.com/",
+  "awwwards_url": "https://www.awwwards.com/sites/mosbys-files",
+  "award": "Site of the Day",
+  "award_date": "2026-08-13",
+  "jury": {
+    "design": 7.33,
+    "usability": 7.03,
+    "creativity": 7.29,
+    "content": 7.34,
+    "overall": 7.23
+  },
+  "split": "holdout",
+  "captured_at": "2026-10-23T22:07:46.461Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": false,
+  "notes": ""
+}

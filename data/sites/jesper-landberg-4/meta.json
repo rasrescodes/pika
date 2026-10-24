@@ -1,0 +1,24 @@
+{
+  "slug": "jesper-landberg-4",
+  "url": "http://jesperlandberg.com",
+  "awwwards_url": "https://www.awwwards.com/sites/jesper-landberg-4",
+  "award": "Site of the Day",
+  "award_date": "2026-09-29",
+  "jury": {
+    "design": 7.72,
+    "usability": 7.52,
+    "creativity": 8.04,
+    "content": 7.77,
+    "overall": 7.73
+  },
+  "split": "train",
+  "captured_at": "2026-10-23T22:10:58.421Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "banner": false,
+  "image_heavy": 0,
+  "big_canvas": true,
+  "notes": ""
+}
