@@ -13,7 +13,6 @@ if (existsSync(".env")) {
 
 export const BACKEND = process.env.LLM_BACKEND === "local" ? "local" : "mubit";
 const LOCAL_URL = process.env.LOCAL_LLM_URL || "http://127.0.0.1:8080";
-const LOCAL_MODEL = process.env.LOCAL_MODEL || "mlx-community/Qwen3-4B-Instruct-2507-4bit";
 
 export const MODELS = {
   describer: process.env.DESCRIBER_MODEL || "claude-sonnet-5-5",
@@ -65,7 +64,8 @@ async function askLocal(call: Call, started: number): Promise<Reply> {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
-      model: LOCAL_MODEL,
+      // mlx_lm.server applies its --adapter-path only to "default_model"; any other name loads the bare model.
+      model: "default_model",
       max_tokens: call.maxTokens,
       temperature: Number(process.env.LOCAL_TEMPERATURE ?? 0.3),
       messages: [
