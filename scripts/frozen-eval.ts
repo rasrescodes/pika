@@ -15,7 +15,7 @@ if (cut < 0 || up.length !== 3 || down.length !== 3) {
   console.error("Give exactly 3 'up' images, then --, then 3 'down' images.");
   process.exit(1);
 }
-const system = readFileSync("prompts/juror-v1.md", "utf8");
+const system = readFileSync("prompts/jury-v1.md", "utf8");
 const user = "Brand: held-out evaluation. No art director notes yet.\nScore the section in the image.";
 const messages = [...up.map((p) => ({ p, expected: "up" })), ...down.map((p) => ({ p, expected: "down" }))].map(({ p, expected }) => ({
   section: path.basename(p).replace(/\.\w+$/, ""),

@@ -10,7 +10,8 @@ const pika = PRESETS[0];
 
 describe("Juror contract (the Mubit task)", () => {
   it("system prompt is the constant file content, never templated", () => {
-    expect(JUROR_SYSTEM).toBe(readFileSync("prompts/juror-v1.md", "utf8"));
+    expect(JUROR_SYSTEM).toBe(readFileSync("prompts/jury-v1.md", "utf8"));
+    expect(readFileSync("scripts/jury-run.ts", "utf8")).toContain('readFileSync("prompts/jury-v1.md"');
     expect(JUROR_SYSTEM).not.toMatch(/\$\{|\{\{/);
   });
 
@@ -30,6 +31,7 @@ describe("Juror contract (the Mubit task)", () => {
   it("rejects invalid JSON, wrong shapes and over-long replies", () => {
     expect(() => parseReply("not json")).toThrow(JurorError);
     expect(() => parseReply('{"design":11,"usability":7,"creativity":9,"content":6,"note":"x"}')).toThrow(JurorError);
+    expect(parseReply('{"design":7.4,"usability":7.1,"creativity":7.8,"content":7.3,"note":"ok"}').creativity).toBe(7.8);
     expect(() => parseReply('{"design":8,"usability":7,"creativity":9,"content":6}')).toThrow(JurorError);
     expect(() => parseReply("x".repeat(MAX_REPLY_CHARS + 1))).toThrow(JurorError);
   });

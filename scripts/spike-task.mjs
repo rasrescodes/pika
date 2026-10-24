@@ -18,7 +18,7 @@ if (!key || !model || !dir) {
   console.error("Usage: node scripts/spike-task.mjs <folder> [max]. Needs MUBIT_API_KEY and MODEL in .env.");
   process.exit(1);
 }
-const system = readFileSync("prompts/juror-v1.md", "utf8");
+const system = readFileSync("prompts/jury-v1.md", "utf8");
 const files = readdirSync(dir).filter((f) => /\.(png|jpe?g)$/i.test(f)).slice(0, max);
 let ok = 0;
 for (const f of files) {

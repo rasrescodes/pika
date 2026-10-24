@@ -8,10 +8,12 @@ import { type Brand, brandSummary } from "./brands";
 import { FAMILIES, type Family } from "./families";
 import { type TasteItem, tasteNotes, familyBias, TASTE_IN_PROMPT } from "./taste";
 
-export const JUROR_SYSTEM = readFileSync(path.join(process.cwd(), "prompts", "juror-v1.md"), "utf8");
+// One Juror for the whole product: the Wall and Jury mode share these instructions, so Mubit sees one
+// task and every call (Wall judgements and jury calibration alike) trains the same small model.
+export const JUROR_SYSTEM = readFileSync(path.join(process.cwd(), "prompts", "jury-v1.md"), "utf8");
 export const MAX_REPLY_CHARS = 400;
 
-const score = z.number().int().min(1).max(10);
+const score = z.number().min(1).max(10).transform((n) => Math.round(n * 10) / 10);
 export const JurorReply = z.object({
   design: score,
   usability: score,
@@ -50,8 +52,19 @@ export function parseReply(text: string): z.infer<typeof JurorReply> {
   return parsed.data;
 }
 
+// Calibration learned in Jury mode (data/jury/results.json), so the Wall's Juror starts from the real
+// jury's taste and the art director's notes sit on top.
+function juryCalibration(): string {
+  try {
+    const r = JSON.parse(readFileSync(path.join(process.cwd(), "data", "jury", "results.json"), "utf8")) as { calibration?: string };
+    return r.calibration ? `Calibration notes from the real Awwwards jury:\n${r.calibration}` : "No calibration notes yet.";
+  } catch {
+    return "No calibration notes yet.";
+  }
+}
+
 export function jurorUserMessage(brand: Brand, taste: TasteItem[]): string {
-  return `${brandSummary(brand)}\n${tasteNotes(taste)}\nScore the section in the image.`;
+  return `${juryCalibration()}\n${brandSummary(brand)}\n${tasteNotes(taste)}\nScore the section in the image.`;
 }
 
 export async function judge(input: { imageDataUrl: string; brand: Brand; family: Family; taste: TasteItem[] }): Promise<Verdict> {

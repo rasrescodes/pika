@@ -24,7 +24,7 @@ if (!existsSync(imgPath)) {
 }
 const mime = imgPath.endsWith(".png") ? "image/png" : "image/jpeg";
 const dataUrl = `data:${mime};base64,${readFileSync(imgPath).toString("base64")}`;
-const system = readFileSync("prompts/juror-v1.md", "utf8");
+const system = readFileSync("prompts/jury-v1.md", "utf8");
 
 const res = await fetch(`${base}/chat/completions`, {
   method: "POST",
