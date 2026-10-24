@@ -11,3 +11,5 @@ data/runs/
 data/batch/READY
 data/batch/batch.log
 data/batch/watcher.out
+.venv/
+data/local/

@@ -21,7 +21,8 @@ const log = (msg: string) => {
   appendFileSync(LOG, line + "\n");
 };
 
-const spent = () => loadRuns().reduce((a, r) => a + (r.calls ?? 0), 0);
+// Local-backend runs cost nothing and never count against the Mubit budget.
+const spent = () => loadRuns().filter((r) => r.backend !== "local").reduce((a, r) => a + (r.calls ?? 0), 0);
 
 function run(cmd: string, args: string[]) {
   return new Promise<number>((resolve) => {

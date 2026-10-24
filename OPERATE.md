@@ -18,6 +18,12 @@ How to run Pika. Keep this true as the stack lands.
 - Progress: `tail -f data/batch/batch.log`. To stop: kill the `tsx src/batch.ts` process. Rerunning resumes.
 - Honest notes: holdout calls are sent with `x-middleware-record: metadata`, so Mubit never trains on them. Site labels and the v2 prompts were drafted by our coding agents as dev tooling. No product prompt ran outside Mubit.
 
+## The local loop (no Mubit)
+- One-off setup: `uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python mlx-lm`, then `.venv/bin/hf download mlx-community/Qwen3-4B-Instruct-2507-4bit` (about 2.3 GB). Apple silicon only.
+- `BATCH_SITES=<sites dir> npm run local:batch` scores the rule-based teacher, evaluates the base model on holdout, then per epoch builds a dataset, fine-tunes a LoRA adapter and evaluates it. It starts and stops its own model server on port 8080 and logs to `data/local/local.log`. Rerunning resumes.
+- One site by hand: start `.venv/bin/mlx_lm.server --model mlx-community/Qwen3-4B-Instruct-2507-4bit`, then `LLM_BACKEND=local npm run loop -- --sites <dir> --mode dom <slug>`.
+- Honest notes: nothing here reaches Mubit or any provider. The teacher is code we wrote, and the first training targets are its specs. The DOM score compares measurements, which a rule-based transcriber matches well by construction, so read the pixel score beside it. The local adapter is a stand-in for Mubit's: it shows the loop works, not what Mubit's adapter will score.
+
 ## Mubit training
 - Training needs about 25 kept examples of one task (same system prompt, model, tools, output format).
 - There is a daily training cap (resets 00:00 UTC, which is 01:00 UK time until clocks go back on Sunday) and a pause between trainings. Send the Juror batch before midnight so it trains overnight.

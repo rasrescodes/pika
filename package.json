@@ -11,7 +11,9 @@
     "batch": "tsx src/batch.ts",
     "report": "tsx src/report.ts",
     "features": "tsx scripts/features.ts",
-    "labels:merge": "tsx scripts/labels-merge.ts"
+    "labels:merge": "tsx scripts/labels-merge.ts",
+    "local:batch": "tsx src/local-batch.ts",
+    "local:teacher": "tsx scripts/teacher-eval.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.2.0",

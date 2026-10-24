@@ -91,3 +91,9 @@ export function domScore(original: Measure, rebuild: Measure): number {
   const bg = Math.max(0, 1 - colourGap(original.bodyBg, rebuild.bodyBg) / 255);
   return Math.round(1000 * (0.85 * text + 0.15 * bg)) / 10;
 }
+
+// The DOM loop's total: pixel and measurement scores averaged, or the measurement score alone
+// when masks hide most of the frame (on a full-screen canvas both sides are grey).
+export function domTotal(pixelTotal: number, visible: number, dom: number) {
+  return visible >= 0.3 ? Math.round(5 * (pixelTotal + dom)) / 10 : dom;
+}

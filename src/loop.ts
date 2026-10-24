@@ -14,10 +14,10 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { describe, describeDom, build, critique, updateLessons } from "./agents.ts";
-import { usage } from "./mubit.ts";
+import { usage, BACKEND } from "./mubit.ts";
 import { render, closeBrowser } from "./render.ts";
 import { measureToText, type Measure } from "./measure.ts";
-import { domFixes, domScore } from "./dom-diff.ts";
+import { domFixes, domScore, domTotal } from "./dom-diff.ts";
 import { score, type Box, type Score } from "./score.ts";
 
 const { values: opts, positionals } = parseArgs({
@@ -56,7 +56,9 @@ const layoutOf = (slug: string) => LABELS[slug]?.layout_style ?? "unlabelled";
 
 // Lessons are kept per mode (pixels and numbers need different advice) and per layout style,
 // plus one file of rules that hold for every layout. The playbook is the fixed advice for a layout.
-const lessonPath = (layout: string) => `data/lessons/${MODE}/${layout}.md`;
+// The local backend keeps its own lessons, so offline runs never leak into what the Mubit batch reads.
+const LESSONS_DIR = BACKEND === "local" ? `data/lessons/local-${MODE}` : `data/lessons/${MODE}`;
+const lessonPath = (layout: string) => `${LESSONS_DIR}/${layout}.md`;
 const ALL = "_all";
 const read = (path: string) => (existsSync(path) ? readFileSync(path, "utf8").trim() : "");
 function guidance(slug: string) {
@@ -76,7 +78,7 @@ function alreadyDone(slug: string) {
 const lessonChains = new Map<string, Promise<void>>();
 function lessonUpdate(layout: string, fixes: string[]) {
   const next = (lessonChains.get(layout) ?? Promise.resolve()).then(async () => {
-    mkdirSync(`data/lessons/${MODE}`, { recursive: true });
+    mkdirSync(LESSONS_DIR, { recursive: true });
     writeFileSync(lessonPath(layout), (await updateLessons(read(lessonPath(layout)), fixes)) + "\n");
   });
   lessonChains.set(layout, next.catch(() => {}));
@@ -88,6 +90,7 @@ type Round = { round: number; score: Score; fixes: string[]; describerRequestId:
 async function runSite(slug: string) {
   const dir = `${opts.sites}/${slug}`;
   const record = SPLIT.get(slug) !== "holdout";
+  if (BACKEND === "local" && !DOM) throw new Error("the local backend is text only: use --mode dom");
   const original = readFileSync(`${dir}/original.png`);
   const masks: Box[] = readJson(`${dir}/masks.json`, []);
   const measured: Measure | undefined = DOM ? readJson(`${dir}/measure.json`, undefined) : undefined;
@@ -122,7 +125,7 @@ async function runSite(slug: string) {
     // (on a full-screen canvas the pixel score is meaningless, since both sides are grey).
     if (DOM) {
       s.dom = domScore(measured!, measure ?? { texts: [], bodyBg: "#ffffff", dominantBgs: [] });
-      s.total = s.visible >= 0.3 ? Math.round(5 * (s.total + s.dom)) / 10 : s.dom;
+      s.total = domTotal(s.total, s.visible, s.dom);
     } else if (s.visible < 0.3) {
       s.total = Math.round(s.total * s.visible * 10) / 10;
     }
@@ -148,6 +151,8 @@ async function runSite(slug: string) {
     slug,
     mode: MODE,
     tag: TAG,
+    backend: BACKEND,
+    model: BACKEND === "local" ? process.env.LOCAL_MODEL_LABEL || "local" : undefined,
     split: SPLIT.get(slug) ?? "unknown",
     ...LABELS[slug],
     recorded: record,
@@ -192,7 +197,7 @@ async function runQueues(queues: string[][], n: number) {
 
 // Rules for every layout, distilled from the per-layout lessons after a learning pass.
 async function refreshAllLessons() {
-  const dir = `data/lessons/${MODE}`;
+  const dir = LESSONS_DIR;
   if (!existsSync(dir)) return;
   const rules = readdirSync(dir)
     .filter((f) => f.endsWith(".md") && f !== `${ALL}.md`)
