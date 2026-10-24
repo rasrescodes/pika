@@ -8,14 +8,14 @@
 //   6. practise: the fine-tuned model runs the loop on a slice of train sites (code fixes, several rounds),
 //      and its best rounds can replace teacher targets in the next epoch's dataset
 // Resumable: finished phases are skipped by tag. Usage: npm run local:batch
-// env: LOCAL_EPOCHS=3 LOCAL_PRACTISE_SITES=60 LOCAL_ITERS=400 BATCH_SITES=data/sites
+// env: LOCAL_EPOCHS=3 LOCAL_PRACTISE_SITES=20 LOCAL_ITERS=400 BATCH_SITES=data/sites
 import { spawn, type ChildProcess } from "node:child_process";
 import { appendFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { loadRuns } from "./report.ts";
 
 const SITES = process.env.BATCH_SITES || "data/sites";
 const EPOCHS = Number(process.env.LOCAL_EPOCHS || 3);
-const PRACTISE = Number(process.env.LOCAL_PRACTISE_SITES || 60);
+const PRACTISE = Number(process.env.LOCAL_PRACTISE_SITES || 20);
 const ITERS = Number(process.env.LOCAL_ITERS || 400);
 const MODEL = process.env.LOCAL_MODEL || "mlx-community/Qwen3-4B-Instruct-2507-4bit";
 // mlx_lm.server batches concurrent requests; 4 long DOM prompts at once ran a 16 GB Mac out of GPU memory.

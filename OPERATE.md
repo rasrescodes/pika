@@ -21,6 +21,7 @@ How to run Pika. Keep this true as the stack lands.
 ## The local loop (no Mubit)
 - One-off setup: `uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python mlx-lm`, then `.venv/bin/hf download mlx-community/Qwen3-4B-Instruct-2507-4bit` (about 2.3 GB). Apple silicon only.
 - `BATCH_SITES=<sites dir> npm run local:batch` scores the rule-based teacher, evaluates the base model on holdout, then per epoch builds a dataset, fine-tunes a LoRA adapter and evaluates it. It starts and stops its own model server on port 8080 and logs to `data/local/local.log`. Rerunning resumes.
+- On a 16 GB Mac: one request at a time (`LOCAL_CONCURRENCY=1`, the default; 4 ran the GPU out of memory) and 20 practise sites per epoch (`LOCAL_PRACTISE_SITES`, default 20), about 1.5 minutes per site. The base holdout eval takes about 55 minutes; a full 3-epoch run takes most of a day.
 - One site by hand: start `.venv/bin/mlx_lm.server --model mlx-community/Qwen3-4B-Instruct-2507-4bit`, then `LLM_BACKEND=local npm run loop -- --sites <dir> --mode dom <slug>`.
 - Honest notes: nothing here reaches Mubit or any provider. The teacher is code we wrote, and the first training targets are its specs. The DOM score compares measurements, which a rule-based transcriber matches well by construction, so read the pixel score beside it. The local adapter is a stand-in for Mubit's: it shows the loop works, not what Mubit's adapter will score.
 
