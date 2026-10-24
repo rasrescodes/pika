@@ -1,11 +1,13 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 
-export default function Header({ current, children }: { current: "wall" | "jury" | "brand" | "scorecard"; children?: React.ReactNode }) {
+export default function Header({ current, children }: { current: "loop" | "jury" | "sites" | "wall" | "brand" | "scorecard"; children?: React.ReactNode }) {
   const links: [typeof current, string, string][] = [
-    ["wall", "/", "The Wall"],
-    ["jury", "/jury", "Jury mode"],
+    ["loop", "/", "The Loop"],
+    ["sites", "/sites", "Sites"],
     ["scorecard", "/scorecard", "Scorecard"],
+    ["wall", "/wall", "The Wall"],
+    ["jury", "/jury", "Jury mode"],
     ["brand", "/brand", "Brand kit"],
   ];
   return (

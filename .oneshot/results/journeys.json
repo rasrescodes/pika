@@ -9,7 +9,10 @@
     "JR-4",
     "JR-5",
     "JR-3D",
-    "JR-6"
+    "JR-6",
+    "JR-7",
+    "JR-8",
+    "JR-9"
   ],
   "journeys": [
     {
@@ -17,8 +20,8 @@
       "persona": "Night Shift judge at the expo table, watching on the demo laptop, never seen Pika",
       "device": "Desktop Chrome",
       "engine": "chromium",
-      "entry": "http://127.0.0.1:3000/",
-      "final_url": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
+      "final_url": "http://127.0.0.1:3000/wall",
       "pass": true,
       "pass_desc": "the Wall loads ready, a full batch of 12 is generated, rendered sandboxed and ranked inside the 60-second expo budget, with no console or network errors",
       "errors": [],
@@ -32,7 +35,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 1264
+          "ms": 582
         },
         {
           "step": 2,
@@ -42,27 +45,27 @@
         {
           "step": 3,
           "k": "expect_selector",
-          "ms": 10
+          "ms": 7
         },
         {
           "step": 4,
           "k": "expect_text",
-          "ms": 3
+          "ms": 8
         },
         {
           "step": 5,
           "k": "click",
-          "ms": 79
+          "ms": 88
         },
         {
           "step": 6,
           "k": "wait_for",
-          "ms": 178
+          "ms": 785
         },
         {
           "step": 7,
           "k": "wait_for",
-          "ms": 780
+          "ms": 78
         },
         {
           "step": 8,
@@ -72,12 +75,12 @@
         {
           "step": 9,
           "k": "expect_selector",
-          "ms": 4
+          "ms": 2
         },
         {
           "step": 10,
           "k": "expect_selector",
-          "ms": 6
+          "ms": 1
         },
         {
           "step": 11,
@@ -87,7 +90,7 @@
         {
           "step": 12,
           "k": "screenshot",
-          "ms": 67
+          "ms": 88
         }
       ]
     },
@@ -96,8 +99,8 @@
       "persona": "the same judge, invited to be the art director and overrule the Juror",
       "device": "Desktop Chrome",
       "engine": "chromium",
-      "entry": "http://127.0.0.1:3000/",
-      "final_url": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
+      "final_url": "http://127.0.0.1:3000/wall",
       "pass": true,
       "pass_desc": "a correction on the #7 card is saved and shown in taste memory, and in the next fresh batch the promoted layout family ranks higher than its no-taste baseline",
       "errors": [],
@@ -115,42 +118,42 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 556
+          "ms": 550
         },
         {
           "step": 2,
           "k": "click",
-          "ms": 29
+          "ms": 24
         },
         {
           "step": 3,
           "k": "click",
-          "ms": 33
+          "ms": 34
         },
         {
           "step": 4,
           "k": "wait_for",
-          "ms": 784
+          "ms": 788
         },
         {
           "step": 5,
           "k": "eval",
-          "ms": 5
+          "ms": 11
         },
         {
           "step": 6,
           "k": "click",
-          "ms": 99
+          "ms": 37
         },
         {
           "step": 7,
           "k": "fill",
-          "ms": 6
+          "ms": 7
         },
         {
           "step": 8,
           "k": "click",
-          "ms": 246
+          "ms": 238
         },
         {
           "step": 9,
@@ -165,32 +168,32 @@
         {
           "step": 11,
           "k": "click",
-          "ms": 40
+          "ms": 47
         },
         {
           "step": 12,
           "k": "wait_for",
-          "ms": 782
+          "ms": 781
         },
         {
           "step": 13,
           "k": "expect_selector",
-          "ms": 1
+          "ms": 2
         },
         {
           "step": 14,
           "k": "wait_ms",
-          "ms": 702
+          "ms": 703
         },
         {
           "step": 15,
           "k": "eval",
-          "ms": 3
+          "ms": 2
         },
         {
           "step": 16,
           "k": "screenshot",
-          "ms": 101
+          "ms": 78
         }
       ]
     },
@@ -213,7 +216,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 537
+          "ms": 544
         },
         {
           "step": 2,
@@ -223,22 +226,22 @@
         {
           "step": 3,
           "k": "expect_text",
-          "ms": 7
+          "ms": 6
         },
         {
           "step": 4,
           "k": "expect_selector",
-          "ms": 1
+          "ms": 2
         },
         {
           "step": 5,
           "k": "expect_selector",
-          "ms": 2
+          "ms": 0
         },
         {
           "step": 6,
           "k": "screenshot",
-          "ms": 63
+          "ms": 39
         }
       ]
     },
@@ -250,7 +253,7 @@
       "entry": "http://127.0.0.1:3000/does-not-exist",
       "final_url": "http://127.0.0.1:3000/brand",
       "pass": true,
-      "pass_desc": "an unknown route lands on the Wall, and the brand form loads with the Mubit preset",
+      "pass_desc": "an unknown route lands on the Loop home, and the brand form loads with the Mubit preset",
       "errors": [],
       "video": "/Users/rassa/Documents/pika/.oneshot/proof/video/JR-4.webm",
       "screenshots": [
@@ -262,7 +265,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 546
+          "ms": 560
         },
         {
           "step": 2,
@@ -272,12 +275,12 @@
         {
           "step": 3,
           "k": "goto",
-          "ms": 525
+          "ms": 522
         },
         {
           "step": 4,
           "k": "expect_selector",
-          "ms": 2
+          "ms": 3
         },
         {
           "step": 5,
@@ -287,7 +290,7 @@
         {
           "step": 6,
           "k": "screenshot",
-          "ms": 38
+          "ms": 55
         }
       ]
     },
@@ -296,8 +299,8 @@
       "persona": "the stage projector at 1920x1080, then the next expo judge after a reset",
       "device": "Desktop Chrome",
       "engine": "chromium",
-      "entry": "http://127.0.0.1:3000/",
-      "final_url": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
+      "final_url": "http://127.0.0.1:3000/wall",
       "pass": true,
       "pass_desc": "the Wall fits a 1920x1080 projector with no horizontal scroll, and reset clears taste memory for the next judge",
       "errors": [],
@@ -313,32 +316,32 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 549
+          "ms": 543
         },
         {
           "step": 2,
           "k": "click",
-          "ms": 21
+          "ms": 34
         },
         {
           "step": 3,
           "k": "wait_for",
-          "ms": 781
+          "ms": 785
         },
         {
           "step": 4,
           "k": "eval",
-          "ms": 6
+          "ms": 7
         },
         {
           "step": 5,
           "k": "screenshot",
-          "ms": 84
+          "ms": 87
         },
         {
           "step": 6,
           "k": "click",
-          "ms": 12
+          "ms": 22
         },
         {
           "step": 7,
@@ -348,7 +351,7 @@
         {
           "step": 8,
           "k": "screenshot",
-          "ms": 28
+          "ms": 27
         }
       ]
     },
@@ -373,7 +376,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 538
+          "ms": 539
         }
       ]
     },
@@ -382,8 +385,8 @@
       "persona": "a judge dragging the #7 card to the top with the mouse",
       "device": "Desktop Chrome",
       "engine": "chromium",
-      "entry": "http://127.0.0.1:3000/",
-      "final_url": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
+      "final_url": "http://127.0.0.1:3000/wall",
       "pass": true,
       "pass_desc": "a real mouse drag of #7 onto slot 1 saves a correction that persists across reload, and the next fresh batch ranks that layout family first",
       "errors": [],
@@ -401,7 +404,7 @@
         {
           "step": 1,
           "k": "goto",
-          "ms": 1106
+          "ms": 1143
         },
         {
           "step": 2,
@@ -411,22 +414,22 @@
         {
           "step": 3,
           "k": "click",
-          "ms": 21
+          "ms": 35
         },
         {
           "step": 4,
           "k": "wait_for",
-          "ms": 782
+          "ms": 788
         },
         {
           "step": 5,
           "k": "eval",
-          "ms": 6
+          "ms": 8
         },
         {
           "step": 6,
           "k": "drag",
-          "ms": 210
+          "ms": 217
         },
         {
           "step": 7,
@@ -441,12 +444,12 @@
         {
           "step": 9,
           "k": "click",
-          "ms": 246
+          "ms": 245
         },
         {
           "step": 10,
           "k": "goto",
-          "ms": 531
+          "ms": 536
         },
         {
           "step": 11,
@@ -461,17 +464,17 @@
         {
           "step": 13,
           "k": "click",
-          "ms": 7
+          "ms": 11
         },
         {
           "step": 14,
           "k": "wait_for",
-          "ms": 786
+          "ms": 779
         },
         {
           "step": 15,
           "k": "wait_ms",
-          "ms": 702
+          "ms": 701
         },
         {
           "step": 16,
@@ -481,14 +484,196 @@
         {
           "step": 17,
           "k": "screenshot",
-          "ms": 92
+          "ms": 101
+        }
+      ]
+    },
+    {
+      "id": "JR-7",
+      "persona": "a judge at the expo table, first look at the Loop",
+      "device": "Desktop Chrome",
+      "engine": "chromium",
+      "entry": "http://127.0.0.1:3000/",
+      "final_url": "http://127.0.0.1:3000/",
+      "pass": true,
+      "pass_desc": "the Loop home explains the loop, shows a held-out site with the original hidden, and the reveal shows the real captured original",
+      "errors": [],
+      "video": "/Users/rassa/Documents/pika/.oneshot/proof/video/JR-7.webm",
+      "screenshots": [
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-7-01-step1-goto.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-7-02-step6-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-7-03-loop-revealed.png"
+      ],
+      "timings": [
+        {
+          "step": 1,
+          "k": "goto",
+          "ms": 542
+        },
+        {
+          "step": 2,
+          "k": "expect_selector",
+          "ms": 3
+        },
+        {
+          "step": 3,
+          "k": "expect_text",
+          "ms": 7
+        },
+        {
+          "step": 4,
+          "k": "expect_selector",
+          "ms": 1
+        },
+        {
+          "step": 5,
+          "k": "eval",
+          "ms": 0
+        },
+        {
+          "step": 6,
+          "k": "click",
+          "ms": 20
+        },
+        {
+          "step": 7,
+          "k": "wait_ms",
+          "ms": 503
+        },
+        {
+          "step": 8,
+          "k": "eval",
+          "ms": 1
+        },
+        {
+          "step": 9,
+          "k": "eval",
+          "ms": 1
+        },
+        {
+          "step": 10,
+          "k": "screenshot",
+          "ms": 54
+        }
+      ]
+    },
+    {
+      "id": "JR-8",
+      "persona": "a judge browsing the captured sites",
+      "device": "Desktop Chrome",
+      "engine": "chromium",
+      "entry": "http://127.0.0.1:3000/sites?set=holdout",
+      "final_url": "http://127.0.0.1:3000/sites/aino-agency",
+      "pass": true,
+      "pass_desc": "the held-out gallery lists the sites and opens a site page with the viewer and jury score (file-route refusals are unit-tested)",
+      "errors": [],
+      "video": "/Users/rassa/Documents/pika/.oneshot/proof/video/JR-8.webm",
+      "screenshots": [
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-8-01-step1-goto.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-8-02-step3-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-8-03-site-page.png"
+      ],
+      "timings": [
+        {
+          "step": 1,
+          "k": "goto",
+          "ms": 614
+        },
+        {
+          "step": 2,
+          "k": "expect_count",
+          "ms": 1
+        },
+        {
+          "step": 3,
+          "k": "click",
+          "ms": 30
+        },
+        {
+          "step": 4,
+          "k": "expect_selector",
+          "ms": 3
+        },
+        {
+          "step": 5,
+          "k": "expect_text",
+          "ms": 7
+        },
+        {
+          "step": 6,
+          "k": "screenshot",
+          "ms": 49
+        }
+      ]
+    },
+    {
+      "id": "JR-9",
+      "persona": "an ML-engineer judge asking whether Pika really learns the jury's taste",
+      "device": "Desktop Chrome",
+      "engine": "chromium",
+      "entry": "http://127.0.0.1:3000/jury",
+      "final_url": "http://127.0.0.1:3000/jury",
+      "pass": true,
+      "pass_desc": "Jury mode shows the three measured tasks against free baselines, 30+ held-out sites with the jury hidden, and the reveal shows every real jury score",
+      "errors": [],
+      "video": "/Users/rassa/Documents/pika/.oneshot/proof/video/JR-9.webm",
+      "screenshots": [
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-9-01-step1-goto.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-9-02-step7-click.png",
+        "/Users/rassa/Documents/pika/.oneshot/proof/shots/JR-9-03-jury-revealed.png"
+      ],
+      "timings": [
+        {
+          "step": 1,
+          "k": "goto",
+          "ms": 592
+        },
+        {
+          "step": 2,
+          "k": "expect_selector",
+          "ms": 3
+        },
+        {
+          "step": 3,
+          "k": "expect_text",
+          "ms": 8
+        },
+        {
+          "step": 4,
+          "k": "expect_selector",
+          "ms": 2
+        },
+        {
+          "step": 5,
+          "k": "expect_count",
+          "ms": 1
+        },
+        {
+          "step": 6,
+          "k": "eval",
+          "ms": 0
+        },
+        {
+          "step": 7,
+          "k": "click",
+          "ms": 16
+        },
+        {
+          "step": 8,
+          "k": "eval",
+          "ms": 0
+        },
+        {
+          "step": 9,
+          "k": "screenshot",
+          "ms": 152
         }
       ]
     }
   ],
   "stamp": {
-    "contract": "735301ee0f582297",
-    "head": "a0bd6f44e02efd8fa90d60ec334d63b4ad37d827+dirty:72e1c5c8",
-    "at": "2026-10-23T23:58:04"
+    "contract": "87d93ce56bb37c39",
+    "head": "e37a2796f552a47577150260d9ee601129d77293+dirty:b1174640",
+    "at": "2026-10-24T11:16:49"
   }
 }

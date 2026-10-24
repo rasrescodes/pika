@@ -1,14 +1,14 @@
 {
   "pass": true,
-  "target": "http://127.0.0.1:3000/",
-  "texts": 30,
+  "target": "http://127.0.0.1:3000/sites/18-years-of-buro",
+  "texts": 39,
   "private_terms": [
     "UK English."
   ],
   "findings": [],
   "stamp": {
-    "contract": "735301ee0f582297",
-    "head": "a0bd6f44e02efd8fa90d60ec334d63b4ad37d827+dirty:72e1c5c8",
-    "at": "2026-10-23T23:58:04"
+    "contract": "87d93ce56bb37c39",
+    "head": "e37a2796f552a47577150260d9ee601129d77293+dirty:c919a71e",
+    "at": "2026-10-24T11:17:17"
   }
 }

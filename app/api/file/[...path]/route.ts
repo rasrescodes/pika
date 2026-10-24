@@ -1,15 +1,13 @@
-import { readFileSync, existsSync } from "node:fs";
-import path from "node:path";
+import { readFileSync } from "node:fs";
+import { servableFile } from "@/lib/loopData";
 
 export const runtime = "nodejs";
 
-// Serves only captured screenshots: data/sites/<slug>/{original.png,thumb.jpg}. Nothing else.
+// Serves only screenshots: data/sites/<slug>/{original.png,thumb.jpg}, data/runs/<slug>/<run>/r<N>/build.png
+// and data/baseline/<slug>.png. Never site code, never anything outside data/.
 export async function GET(_req: Request, ctx: { params: Promise<{ path: string[] }> }) {
-  const { path: parts } = await ctx.params;
-  const rel = parts.join("/");
-  const m = rel.match(/^sites\/([a-z0-9][a-z0-9-]{0,80})\/(original\.png|thumb\.jpg)$/);
-  if (!m) return new Response("Not found", { status: 404 });
-  const file = path.join(process.cwd(), "data", "sites", m[1], m[2]);
-  if (!existsSync(file)) return new Response("Not found", { status: 404 });
-  return new Response(readFileSync(file), { headers: { "content-type": m[2].endsWith(".jpg") ? "image/jpeg" : "image/png", "cache-control": "public, max-age=3600" } });
+  const { path } = await ctx.params;
+  const hit = servableFile(path);
+  if (!hit) return new Response("Not found", { status: 404 });
+  return new Response(readFileSync(hit.file), { headers: { "content-type": hit.type, "cache-control": "public, max-age=3600" } });
 }

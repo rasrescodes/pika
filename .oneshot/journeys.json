@@ -16,7 +16,7 @@
     {
       "id": "JR-1",
       "persona": "Night Shift judge at the expo table, watching on the demo laptop, never seen Pika",
-      "entry": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -67,7 +67,7 @@
     {
       "id": "JR-2",
       "persona": "the same judge, invited to be the art director and overrule the Juror",
-      "entry": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -166,7 +166,7 @@
           "goto": "http://127.0.0.1:3000/does-not-exist"
         },
         {
-          "expect_selector": "[data-testid=wall]"
+          "expect_selector": "[data-testid=loop-home]"
         },
         {
           "goto": "http://127.0.0.1:3000/brand"
@@ -181,13 +181,13 @@
           "screenshot": "brand-form"
         }
       ],
-      "pass": "an unknown route lands on the Wall, and the brand form loads with the Mubit preset",
+      "pass": "an unknown route lands on the Loop home, and the brand form loads with the Mubit preset",
       "then": null
     },
     {
       "id": "JR-5",
       "persona": "the stage projector at 1920x1080, then the next expo judge after a reset",
-      "entry": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
       "device": "Desktop Chrome",
       "viewport": {
         "width": 1920,
@@ -263,7 +263,7 @@
     {
       "id": "JR-6",
       "persona": "a judge dragging the #7 card to the top with the mouse",
-      "entry": "http://127.0.0.1:3000/",
+      "entry": "http://127.0.0.1:3000/wall",
       "device": "Desktop Chrome",
       "auth": null,
       "steps": [
@@ -331,6 +331,79 @@
         "width": 1440,
         "height": 1080
       }
+    },
+    {
+      "id": "JR-7",
+      "persona": "a judge at the expo table, first look at the Loop",
+      "entry": "http://127.0.0.1:3000/",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_selector": "[data-testid=loop-home]"
+        },
+        {
+          "expect_text": "rebuilds award-winning sites"
+        },
+        {
+          "expect_selector": "[data-testid=loop-viewer]"
+        },
+        {
+          "eval": "getComputedStyle(document.querySelector('[data-testid=original] img')).filter.includes('blur')"
+        },
+        {
+          "click": "[data-testid=reveal]"
+        },
+        {
+          "wait_ms": 500
+        },
+        {
+          "eval": "!getComputedStyle(document.querySelector('[data-testid=original] img')).filter.includes('blur')"
+        },
+        {
+          "eval": "document.querySelector('[data-testid=original] img').naturalWidth > 0"
+        },
+        {
+          "screenshot": "loop-revealed"
+        }
+      ],
+      "pass": "the Loop home explains the loop, shows a held-out site with the original hidden, and the reveal shows the real captured original",
+      "then": "JR-8"
+    },
+    {
+      "id": "JR-8",
+      "persona": "a judge browsing the captured sites",
+      "entry": "http://127.0.0.1:3000/sites?set=holdout",
+      "device": "Desktop Chrome",
+      "auth": null,
+      "steps": [
+        {
+          "goto": "{entry}"
+        },
+        {
+          "expect_count": {
+            "selector": "[data-testid=site-card]",
+            "min": 15
+          }
+        },
+        {
+          "click": "[data-testid=site-card]"
+        },
+        {
+          "expect_selector": "[data-testid=loop-viewer]"
+        },
+        {
+          "expect_text": "Awwwards jury"
+        },
+        {
+          "screenshot": "site-page"
+        }
+      ],
+      "pass": "the held-out gallery lists the sites and opens a site page with the viewer and jury score (file-route refusals are unit-tested)",
+      "then": null
     },
     {
       "id": "JR-9",

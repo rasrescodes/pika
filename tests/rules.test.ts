@@ -70,3 +70,14 @@ describe("Mubit-only provenance", () => {
     expect(crossSite(new Request("http://127.0.0.1:3000/api/reset", { method: "POST", headers: { "sec-fetch-site": "same-origin" } }))).toBeNull();
   });
 });
+
+describe("file route only serves screenshots", () => {
+  it("refuses traversal and anything that is not a screenshot", async () => {
+    const { servableFile } = await import("@/lib/loopData");
+    expect(servableFile(["..", "..", ".env"])).toBeNull();
+    expect(servableFile(["sites", "..", "..", ".env"])).toBeNull();
+    expect(servableFile(["sites", "2xa-studio", "measure.json"])).toBeNull();
+    expect(servableFile(["runs", "x", "y", "r1", "build.html"])).toBeNull();
+    expect(servableFile(["sites", "2xa-studio", "original.png"])?.type).toBe("image/png");
+  });
+});
