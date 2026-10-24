@@ -1,5 +1,6 @@
 // The only place Pika talks to a model. Every call goes to MUBIT_BASE_URL (the hackathon rule);
 // with no key or model configured, Pika runs in MOCK mode and callers use their fixtures instead.
+import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import { read, write } from "./store";
 
@@ -52,6 +53,38 @@ function mubit(): OpenAI {
   return client;
 }
 
+// Claude models only run on Mubit's Anthropic route (the OpenAI route's starter credit serves GPT only).
+export const DEFAULT_ANTHROPIC_URL = "https://api.mubit.ai/anthropic";
+let anthropicClient: Anthropic | null = null;
+function mubitAnthropic(): Anthropic {
+  const baseURL = process.env.MUBIT_ANTHROPIC_URL || DEFAULT_ANTHROPIC_URL;
+  if (!isMubitUrl(baseURL)) throw new Error("MUBIT_ANTHROPIC_URL must be a Mubit URL");
+  // authToken: null so a stray ANTHROPIC_AUTH_TOKEN is never sent beside the Mubit key.
+  anthropicClient ??= new Anthropic({ baseURL, apiKey: process.env.MUBIT_API_KEY, authToken: null });
+  return anthropicClient;
+}
+
+async function chatAnthropic(input: ChatInput, model: string): Promise<ChatResult> {
+  const content: Anthropic.ContentBlockParam[] = [];
+  for (const url of input.images ?? []) {
+    const m = url.match(/^data:(image\/(?:png|jpeg));base64,(.*)$/);
+    if (!m) throw new Error("images must be png or jpeg data URLs");
+    content.push({ type: "image", source: { type: "base64", media_type: m[1] as "image/png" | "image/jpeg", data: m[2] } });
+  }
+  content.push({ type: "text", text: input.user });
+  const started = performance.now();
+  const res = await mubitAnthropic().messages.create(
+    { model, max_tokens: input.maxTokens, system: input.system, messages: [{ role: "user", content }] },
+    input.record === false ? { headers: { "x-middleware-record": "metadata" } } : undefined,
+  );
+  return {
+    text: res.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join(""),
+    usage: { input: res.usage.input_tokens, output: res.usage.output_tokens },
+    ms: Math.round(performance.now() - started),
+    model,
+  };
+}
+
 // Spend guard: a hard cap on paid model calls per day (PIKA_MAX_CALLS_PER_DAY, default 300).
 // Calls over the cap are refused before they reach Mubit, so nothing over the cap is ever charged.
 export class SpendCapError extends Error {}
@@ -71,6 +104,7 @@ export async function chat(input: ChatInput): Promise<ChatResult> {
   if (mode() !== "MUBIT") throw new Error("chat() called in MOCK mode");
   reserveCall();
   const model = input.model || (process.env.MODEL as string);
+  if (model.startsWith("claude")) return chatAnthropic(input, model);
   const content: OpenAI.Chat.Completions.ChatCompletionContentPart[] = [{ type: "text", text: input.user }];
   for (const url of input.images ?? []) content.push({ type: "image_url", image_url: { url } });
 
