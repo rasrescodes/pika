@@ -17,6 +17,12 @@ Owner: Luka (with his agent). Written 18:30. Explainer for the team: https://cla
 - Its median 50 s per section is not comparable with round 1's 24 s: output length is the same (692 against 658 tokens), and the Mac was also generating round 3's data during the exam.
 - Round 3 (adds 64 bento and magazine sections from training-only brands) is fine-tuning now; exam with the Juror follows. The exam then measures unseen brands on known layouts; report both framings.
 
+## Overnight queue (set 00:45 Sunday)
+- Round 3 fine-tune: step 70 of 300 at 00:15, so the exam (with Juror) should finish about 05:30, later than the 01:30 first estimated.
+- Mubit Describer batch resumed 00:20 with `BATCH_MAX_CALLS=6266` (4,766 already spent plus 1,500 agreed with Luka), `BATCH_CONCURRENCY=2`. It first fills epoch 1 gaps (empty replies), then finishes epoch 2 and its holdout exam.
+- After both: `scripts/sonnet-distill.sh` runs by itself (chain in `data/local/chain.out`, log `data/local/local.log`), tag `local-sonnet`.
+- Explainer updated to draft v4 with rounds 1 and 2; round 3 and Describer epoch 2 slots say "overnight".
+
 ## Where things stand
 - **Generator distillation** (`feat/generator-distill`, see `changes/2026-10-24-generator-distill.md`): Sonnet with `generator-skills-v1` made 220 sections; 172 passed the slop detector with no findings; the local Qwen3 4B is fine-tuning on 150 of them with the plain `generator-v1` prompt (step 60 of 150 at 18:24).
 - **Holdout so far** (24 sections per contender: bento and magazine layouts, 2 preset and 4 unseen brands):
