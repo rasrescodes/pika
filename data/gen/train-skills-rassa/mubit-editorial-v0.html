@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Mubit</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#d2dad1;color:#263b32;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.wrap{position:absolute;inset:0;padding:40px 64px 48px;display:flex;flex-direction:column}
+.mast{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:2px solid #263b32}
+.mast b{font-family:Menlo,'Courier New',monospace;font-size:22px;letter-spacing:-0.01em}
+.mast span{font-size:14px;opacity:.7;line-height:1.45}
+h1{font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:64px;line-height:1;letter-spacing:-0.025em;margin:64px 0 0;max-width:780px;text-wrap:balance}
+svg{position:absolute;right:0;top:112px;width:400px;height:360px}
+.cols{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;border-top:2px solid #263b32;padding-top:32px}
+h2{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.4;margin:0;max-width:34ch;text-wrap:pretty}
+p{font-size:16px;line-height:1.55;margin:0 0 24px;max-width:52ch;text-wrap:pretty;opacity:.85}
+a{display:inline-flex;align-items:center;gap:16px;height:48px;padding:0 24px;background:#263b32;color:#d2dad1;font-size:16px;font-weight:700;text-decoration:none}
+a i{width:8px;height:8px;background:#d9421d;display:block}
+</style></head><body>
+<div class="wrap">
+<div class="mast"><b>Mubit</b><span>Calibration for agents in production</span></div>
+<h1>The runtime calibration layer for AI agents</h1>
+<div class="cols">
+<h2>Your frontier models stay in place. Every run teaches the next one.</h2>
+<div><p>Mubit sits between your agent and its tools. It checks each run against what the run should have done, then adjusts the next one.</p><a href="#">Connect your agent<i></i></a></div>
+</div>
+</div>
+<svg viewBox="0 0 400 360" fill="none" stroke-width="2" aria-hidden="true">
+<path stroke="#263b32" d="M400 120A60 60 0 0 0 400 240M400 60A120 120 0 0 0 400 300M400 0A180 180 0 0 0 400 360"/>
+<path stroke="#d9421d" d="M348 150L244 90"/>
+</svg>
+</body></html>

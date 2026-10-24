@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Mubit</title>
+<style>
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#d2dad1;color:#263b32;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.mark{position:absolute;left:64px;top:56px;font-family:Menlo,'Courier New',monospace;font-size:20px;font-weight:700;letter-spacing:-0.01em;display:flex;align-items:center;gap:12px}
+.mark i{display:block;width:16px;height:16px;border-radius:50%;border:2px solid #263b32;box-sizing:border-box}
+main{position:absolute;left:64px;bottom:88px;width:700px}
+h1{font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:64px;line-height:1.02;letter-spacing:-0.03em;margin:0 0 32px;text-wrap:balance}
+p{font-size:20px;line-height:1.5;margin:0 0 48px;max-width:46ch;opacity:.82;text-wrap:pretty}
+a{display:inline-flex;align-items:center;height:56px;padding:0 32px;background:#263b32;color:#d2dad1;font-size:18px;font-weight:500;text-decoration:none;border-radius:4px;gap:16px}
+a svg{width:24px;height:12px}
+.art{position:absolute;right:0;top:0;width:560px;height:720px}
+.note{position:absolute;right:64px;bottom:56px;font-size:16px;line-height:1.45;opacity:.82;width:200px;text-align:left;color:#263b32}
+</style></head><body>
+<div class="mark"><i></i>Mubit</div>
+<svg class="art" viewBox="0 0 560 720" fill="none" stroke="#263b32" stroke-width="2" aria-hidden="true">
+<path d="M500 60A320 320 0 0 0 500 700M500 160A220 220 0 0 0 500 600M500 -40A420 420 0 0 0 500 800" />
+<path d="M500 260A120 120 0 0 0 500 500Z" fill="#263b32"/>
+<line x1="320" y1="254" x2="500" y2="380"/>
+<line x1="80" y1="380" x2="560" y2="380" opacity=".35"/>
+<circle cx="320" cy="254" r="12" fill="#d9421d" stroke="none"/>
+</svg>
+<main>
+<h1>The runtime calibration layer for AI agents</h1>
+<p>Your frontier models stay in place. Every run teaches the next one.</p>
+<a href="#">Connect your agent <svg viewBox="0 0 24 12" fill="none" stroke="#d2dad1" stroke-width="2"><path d="M0 6H22M17 1l5 5-5 5"/></svg></a>
+</main>
+<div class="note">Calibration runs beside your agent, not inside your model.</div>
+</body></html>

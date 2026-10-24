@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Driftquery</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#0B1220;color:#E6EDF7;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.brand{position:absolute;left:64px;top:48px;font-family:Menlo,'Courier New',monospace;font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.brand span{opacity:.6;font-weight:400}
+main{position:absolute;left:64px;top:168px;width:620px}
+h1{font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:72px;line-height:1;letter-spacing:-0.03em;margin:0 0 32px;text-wrap:balance}
+p.sub{font-size:20px;line-height:1.5;margin:0 0 48px;max-width:46ch;opacity:.78;text-wrap:pretty}
+a.cta{display:inline-flex;align-items:center;height:56px;padding:0 32px;background:#3DDC97;color:#0B1220;font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:18px;text-decoration:none;border-radius:4px}
+svg{position:absolute;left:700px;top:96px}
+.note{position:absolute;left:1024px;top:128px;width:192px;font-family:Menlo,'Courier New',monospace;font-size:16px;line-height:1.45;letter-spacing:0}
+.note b{display:block;margin-bottom:8px;font-size:16px}
+.note span{opacity:.7}
+.budget{position:absolute;left:708px;top:304px;font-family:Menlo,'Courier New',monospace;font-size:14px;opacity:.6}
+.foot{position:absolute;left:64px;bottom:48px;font-family:Menlo,'Courier New',monospace;font-size:14px;opacity:.6}
+</style></head><body>
+<div class="brand">driftquery<span>/slow</span></div>
+<main>
+<h1>Find the slow query before users do</h1>
+<p class="sub">Driftquery watches your database and flags the queries that cost you time, with plain explanations.</p>
+<a class="cta" href="#">Start free trial</a>
+</main>
+<svg width="580" height="528" viewBox="0 0 580 528" fill="none" stroke="#E6EDF7" stroke-width="2" aria-hidden="true">
+<line x1="0" y1="240" x2="580" y2="240" stroke-dasharray="6 8" opacity=".35"/>
+<path d="M0 400 L120 392 L200 404 L270 396 L300 40 L330 396 L420 402 L500 394 L580 400" stroke-linejoin="miter"/>
+<line x1="300" y1="470" x2="300" y2="500" opacity=".5"/>
+<circle cx="300" cy="40" r="8" fill="#3DDC97" stroke="#3DDC97"/>
+</svg>
+<div class="budget">latency budget</div>
+<div class="note"><b>Seq scan on orders</b><span>Add an index on user_id. The planner reads every row today.</span></div>
+<div class="foot">Postgres query log, last 24 hours</div>
+</body></html>

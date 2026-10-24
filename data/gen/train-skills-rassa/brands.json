@@ -1,0 +1,206 @@
+[
+ {
+  "id": "brindle-hearth",
+  "name": "Brindle Hearth",
+  "colours": {
+   "bg": "#1C1410",
+   "ink": "#F5E9D8",
+   "accent": "#E2733A",
+   "soft": "#3A2A20"
+  },
+  "displayFont": "serif",
+  "bodyFont": "sans",
+  "tone": "Warm and unhurried, like a long supper beside an open fire.",
+  "headline": "Fire, salt and a long table",
+  "subline": "Wood-fired plates from a Leeds kitchen that cooks only what the market sends that morning.",
+  "action": "Book a table",
+  "source": "synthetic"
+ },
+ {
+  "id": "oddlot-atelier",
+  "name": "Oddlot Atelier",
+  "colours": {
+   "bg": "#FFE14D",
+   "ink": "#1A1A1A",
+   "accent": "#FF2E63",
+   "soft": "#FFF2A8"
+  },
+  "displayFont": "sans",
+  "bodyFont": "sans",
+  "tone": "Cheeky and loud, with a grin about taking clothes seriously.",
+  "headline": "Clothes that talk over dinner",
+  "subline": "Bold jackets and trousers cut from reclaimed fabric in small runs in Glasgow.",
+  "action": "Shop the drop",
+  "source": "synthetic"
+ },
+ {
+  "id": "lintel-and-grain",
+  "name": "Lintel & Grain Architects",
+  "colours": {
+   "bg": "#EDEBE6",
+   "ink": "#222222",
+   "accent": "#5C6B5A",
+   "soft": "#D8D5CC"
+  },
+  "displayFont": "serif",
+  "bodyFont": "sans",
+  "tone": "Calm, measured and precise, letting the materials speak.",
+  "headline": "Quiet buildings, built to last",
+  "subline": "A Bristol practice designing homes and schools in timber, brick and lime.",
+  "action": "View our projects",
+  "source": "synthetic"
+ },
+ {
+  "id": "driftquery",
+  "name": "Driftquery",
+  "colours": {
+   "bg": "#0B1220",
+   "ink": "#E6EDF7",
+   "accent": "#3DDC97",
+   "soft": "#16233A"
+  },
+  "displayFont": "mono",
+  "bodyFont": "sans",
+  "tone": "Dry, technical and direct, written by engineers for engineers.",
+  "headline": "Find the slow query before users do",
+  "subline": "Driftquery watches your database and flags the queries that cost you time, with plain explanations.",
+  "action": "Start free trial",
+  "source": "synthetic"
+ },
+ {
+  "id": "marrow-lane-savings",
+  "name": "Marrow Lane Savings",
+  "colours": {
+   "bg": "#F4F7F5",
+   "ink": "#0F2A24",
+   "accent": "#0F6B57",
+   "soft": "#DCE8E3"
+  },
+  "displayFont": "serif",
+  "bodyFont": "sans",
+  "tone": "Trustworthy and plainspoken, with no jargon and no surprises.",
+  "headline": "Savings that stay simple",
+  "subline": "A member-owned savings society in Cardiff with one account, clear rates and no small print.",
+  "action": "Open an account",
+  "source": "synthetic"
+ },
+ {
+  "id": "wren-street-museum",
+  "name": "Wren Street Museum of Everyday Objects",
+  "colours": {
+   "bg": "#2B1B3A",
+   "ink": "#F3ECF7",
+   "accent": "#F4B942",
+   "soft": "#4A3560"
+  },
+  "displayFont": "serif",
+  "bodyFont": "serif",
+  "tone": "Curious and gently witty, treating the ordinary as worth a second look.",
+  "headline": "Look again at the ordinary",
+  "subline": "A museum of kettles, keys and kitchen drawers, with stories from the people who used them.",
+  "action": "Plan your visit",
+  "source": "synthetic"
+ },
+ {
+  "id": "low-tide-records",
+  "name": "Low Tide Records",
+  "colours": {
+   "bg": "#0A0A0A",
+   "ink": "#F2F2F2",
+   "accent": "#FF3B1F",
+   "soft": "#2A2A2A"
+  },
+  "displayFont": "mono",
+  "bodyFont": "sans",
+  "tone": "Moody, underground and a little secretive.",
+  "headline": "Records made after midnight",
+  "subline": "An independent Manchester label pressing limited vinyl from bands you have not heard yet.",
+  "action": "Browse new releases",
+  "source": "synthetic"
+ },
+ {
+  "id": "northfield-fell-runners",
+  "name": "Northfield Fell Runners",
+  "colours": {
+   "bg": "#FFFFFF",
+   "ink": "#0D2B45",
+   "accent": "#F26B1D",
+   "soft": "#E3EEF7"
+  },
+  "displayFont": "sans",
+  "bodyFont": "sans",
+  "tone": "Encouraging and outdoorsy, with muddy boots and no ego.",
+  "headline": "Run the hills, finish together",
+  "subline": "A Lake District running club for all paces, with weekly group runs and navigation coaching.",
+  "action": "Join a run",
+  "source": "synthetic"
+ },
+ {
+  "id": "fennel-physio",
+  "name": "Fennel Physio",
+  "colours": {
+   "bg": "#F6FBF8",
+   "ink": "#1D3B34",
+   "accent": "#2F9E78",
+   "soft": "#DDF1E8"
+  },
+  "displayFont": "sans",
+  "bodyFont": "sans",
+  "tone": "Reassuring and practical, speaking to patients as capable adults.",
+  "headline": "Move without the worry",
+  "subline": "Physiotherapy in Norwich built around your goals, with clear plans and no long waits.",
+  "action": "Book an appointment",
+  "source": "synthetic"
+ },
+ {
+  "id": "kittiwake-rail-holidays",
+  "name": "Kittiwake Rail Holidays",
+  "colours": {
+   "bg": "#FBEFD9",
+   "ink": "#3B1F14",
+   "accent": "#C8452B",
+   "soft": "#F3D9AE"
+  },
+  "displayFont": "serif",
+  "bodyFont": "sans",
+  "tone": "Nostalgic and relaxed, in favour of the journey over the destination.",
+  "headline": "Cross Europe by sleeper train",
+  "subline": "Small-group rail holidays with pre-booked berths, local guides and time to look out of the window.",
+  "action": "See the routes",
+  "source": "synthetic"
+ },
+ {
+  "id": "marginalia-press",
+  "name": "Marginalia Press",
+  "colours": {
+   "bg": "#F1E7D3",
+   "ink": "#2A2118",
+   "accent": "#7A1F2B",
+   "soft": "#E3D4B5"
+  },
+  "displayFont": "serif",
+  "bodyFont": "serif",
+  "tone": "Scholarly and austere, with quiet pride in the printed page.",
+  "headline": "Books for slow readers",
+  "subline": "An independent Edinburgh press publishing translated fiction and neglected essays.",
+  "action": "Browse the catalogue",
+  "source": "synthetic"
+ },
+ {
+  "id": "bramble-dice",
+  "name": "Bramble Dice Games",
+  "colours": {
+   "bg": "#2D1B69",
+   "ink": "#FFF4E0",
+   "accent": "#FFB400",
+   "soft": "#4B34A0"
+  },
+  "displayFont": "sans",
+  "bodyFont": "sans",
+  "tone": "Boisterous and playful, built for noisy family evenings.",
+  "headline": "Games for loud tables",
+  "subline": "Card and board games from a Sheffield studio, made for families who cannot agree on the rules.",
+  "action": "Shop all games",
+  "source": "synthetic"
+ }
+]
