@@ -8,6 +8,7 @@ const CONTENDERS = [
   { tag: "hold-local-base", label: "Qwen3 4B, untrained", kind: "small" },
   { tag: "hold-local-ft", label: "Qwen3 4B, fine-tuned round 1 (ours)", kind: "small" },
   { tag: "hold-local-ft2", label: "Qwen3 4B, fine-tuned round 2 (ours)", kind: "small" },
+  { tag: "hold-local-ft3", label: "Qwen3 4B, round 3, trained on all 12 layouts (ours)", kind: "small" },
   { tag: "hold-sonnet-plain", label: "Sonnet 5.5, generator-v1", kind: "big" },
   { tag: "hold-sonnet-skills", label: "Sonnet 5.5, generator-skills-v1", kind: "big" },
 ];
@@ -19,7 +20,10 @@ const out = CONTENDERS.flatMap((c) => {
   if (!existsSync(f)) return [];
   const rows: Row[] = readFileSync(f, "utf8").trim().split("\n").map((l) => JSON.parse(l));
   const judged = rows.filter((r) => r.juror);
-  const timed = rows.filter((r) => r.ms);
+  // Speed and cost come from a separate timed run (<tag>-timed) when the original rows were made before timing existed.
+  const timedFile = `data/gen/${c.tag}-timed/results.jsonl`;
+  const timedRows: Row[] = existsSync(timedFile) ? readFileSync(timedFile, "utf8").trim().split("\n").map((l) => JSON.parse(l)) : [];
+  const timed = [...rows, ...timedRows].filter((r) => r.ms);
   const costPer100 = c.kind === "big" && timed.length ? (100 * mean(timed.map((r) => (r.inTokens! * SONNET.inPer1M + r.outTokens! * SONNET.outPer1M) / 1e6))) : c.kind === "small" ? 0 : NaN;
   return [{
     ...c, sections: rows.length,

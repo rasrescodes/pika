@@ -29,18 +29,22 @@ const { values: opts } = parseArgs({
     backend: { type: "string", default: "mubit" },
     concurrency: { type: "string", default: "3" },
     "skip-judge": { type: "boolean", default: false },
+    families: { type: "string" }, // comma list, overrides the split's families
+    "synthetic-only": { type: "boolean", default: false }, // leave out the presets (they are in the holdout exam)
   },
 });
 if (!opts.tag) throw new Error("--tag is required");
 
 // Two families are never trained on, so the eval shows whether the student generalises to new layouts.
 export const HOLDOUT_FAMILIES: Family[] = ["bento", "magazine"];
-const families = FAMILIES.filter((f) => (opts.split === "holdout") === HOLDOUT_FAMILIES.includes(f));
+const families = opts.families
+  ? (opts.families.split(",") as Family[])
+  : FAMILIES.filter((f) => (opts.split === "holdout") === HOLDOUT_FAMILIES.includes(f));
 // Brands: the two presets plus synthetic kits (scripts/gen-brands.ts). Four synthetic brands are holdout only,
 // so holdout briefs pair unseen layout families with brands the student has never seen.
 const SYNTHETIC: Brand[] = existsSync("data/gen/brands.json") ? JSON.parse(readFileSync("data/gen/brands.json", "utf8")) : [];
 export const HOLDOUT_BRANDS = ["bobbin-riot", "museum-of-small-machines", "mendip-physio-works", "second-helping-fridges"];
-const BRANDS = [...PRESETS, ...SYNTHETIC.filter((b) => (opts.split === "holdout") === HOLDOUT_BRANDS.includes(b.id))];
+const BRANDS = [...(opts["synthetic-only"] ? [] : PRESETS), ...SYNTHETIC.filter((b) => (opts.split === "holdout") === HOLDOUT_BRANDS.includes(b.id))];
 const SYSTEM = readFileSync(path.join(process.cwd(), "prompts", `${opts.prompt}.md`), "utf8");
 const OUT = `data/gen/${opts.tag}`;
 const RESULTS = `${OUT}/results.jsonl`;
