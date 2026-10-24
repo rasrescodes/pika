@@ -16,3 +16,7 @@ Things only a person can do. Tick when done.
 - [ ] Choose the held-out scorecard sites and record their public Awwwards scores.
 - [ ] Ask the Mubit team: which Claude models does the starter credit serve (or do we add our own Anthropic key)?
 - [ ] Ask the Mubit team: is Banyan Sapling served anywhere we can call through Mubit? (stretch only)
+- [ ] Luka: rotate the Mubit API key (it was pasted into an agent chat), then update `.env` in every checkout.
+- [ ] Ask the Mubit team: do long outputs (1,600 to 6,000 characters) train, and can the 4-calls-in-flight limit on the starter credit be raised for the event?
+- [ ] Check the provider terms on training a model from Sonnet's outputs before we present the distilled Generator as a product.
+- [ ] Luka: share the training explainer (https://claude.ai/artifact/2QCvM3KrxcdNmjzYg21dZM) with Rassa and Kimberley; Kimberley to sanity-check its use of brand v1.
