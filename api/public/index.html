@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pika Polish: make your section look designed</title>
+<meta name="description" content="Paste a website section. Pika checks it against open design rules for free, then redesigns it, keeping your words and colours.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;650&family=Inter:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><img src="/pika-mark.svg" alt="" width="28" height="40"><span>Pika Polish</span></a>
+  <nav aria-label="Main">
+    <a href="#try">Try it</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#api">API</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Make your section look <em>designed</em>, not generated.</h1>
+      <p class="lead">Paste a hero section. Pika checks it against Impeccable's design rules for free, then redesigns it with craft rules from three open design skills, keeping your words and your colours.</p>
+      <div class="actions">
+        <a class="btn primary" href="#try" data-sample="ai-hero">Try an AI-looking example</a>
+        <a class="btn" href="#api">Call the API</a>
+      </div>
+    </div>
+    <figure class="hero-mascot" aria-hidden="true">
+      <svg class="doodle" viewBox="0 0 120 120"><path d="M60 8 C63 44 76 57 112 60 C76 63 63 76 60 112 C57 76 44 63 8 60 C44 57 57 44 60 8 Z"/></svg>
+      <img src="/pika-mark.svg" alt="" width="190" height="270">
+    </figure>
+  </section>
+
+  <section id="try" class="tool" aria-labelledby="try-h">
+    <div class="tool-head">
+      <h2 id="try-h">Try it on your section</h2>
+      <p class="muted" id="quota">Checking is free. Redesigns are limited per day.</p>
+    </div>
+    <div class="input card">
+      <div class="input-bar">
+        <label for="html">Your section as HTML</label>
+        <div class="samples" role="group" aria-label="Examples">
+          <button type="button" class="chip" data-sample="ai-hero">AI-looking example</button>
+          <button type="button" class="chip" data-sample="plain-hero">Plain example</button>
+        </div>
+      </div>
+      <textarea id="html" spellcheck="false" placeholder="&lt;!doctype html&gt; ... one complete section, up to 40,000 characters"></textarea>
+      <div class="input-foot">
+        <label class="consent"><input type="checkbox" id="record" checked> Let Mubit keep this design to train Pika's model</label>
+        <div class="buttons">
+          <button type="button" class="btn" id="check">Check for free</button>
+          <button type="button" class="btn primary" id="improve">Redesign it</button>
+        </div>
+      </div>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <div class="results" id="results" hidden>
+      <article class="pane card">
+        <header><h3>Before</h3><p class="score"><span class="num" id="b-num">0</span> <span id="b-word">findings</span></p></header>
+        <div class="frame" id="b-frame"></div>
+        <ul class="findings" id="b-list"></ul>
+      </article>
+      <article class="pane card" id="after-pane" hidden>
+        <header><h3>After</h3><p class="score"><span class="num" id="a-num">0</span> <span id="a-word">findings</span></p></header>
+        <div class="frame" id="a-frame"></div>
+        <ul class="findings" id="a-list"></ul>
+        <div class="after-foot">
+          <p class="small muted" id="a-meta"></p>
+          <div class="buttons">
+            <button type="button" class="btn" id="copy">Copy HTML</button>
+            <button type="button" class="btn" id="download">Download</button>
+          </div>
+        </div>
+      </article>
+      <div class="thinking card" id="thinking" hidden>
+        <img src="/pika-mark.svg" alt="" width="64" height="92">
+        <p><strong>Pika is redesigning your section.</strong><br><span class="muted">This takes about 30 to 60 seconds.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence" class="evidence" aria-labelledby="ev-h">
+    <h2 id="ev-h">Why these rules</h2>
+    <p class="lead narrow">We measured them before shipping them. Same model, same 24 held-out briefs; only the prompt changed between Pika's plain prompt and the skills rules this API uses.</p>
+    <div class="stats">
+      <div class="stat card"><p class="big"><span>3.67</span><span class="arrow">to</span><span class="win">0.21</span></p><p>detector findings per page, about 94% fewer</p></div>
+      <div class="stat card"><p class="big"><span>6</span><span class="arrow">to</span><span class="win">0</span></p><p>broken layouts, where text is covered or runs off the frame</p></div>
+      <div class="stat card"><p class="big"><span>7.32</span><span class="arrow">and</span><span>7.17</span></p><p>Juror score out of 10, so the clean-up does not cost quality</p></div>
+    </div>
+    <p class="small muted narrow">Measured on sections Sonnet generated from a brand kit, not on redesigns of existing pages. The Juror is Pika's own model-based critic and the detector is Impeccable's rules; neither is a human jury.</p>
+  </section>
+
+  <section id="api" class="api" aria-labelledby="api-h">
+    <h2 id="api-h">The API</h2>
+    <p class="lead narrow">Two endpoints, JSON in and out, no key needed. Send one complete section as an HTML string.</p>
+    <div class="endpoints">
+      <div class="card endpoint">
+        <h3><span class="method">POST</span> /v1/check</h3>
+        <p>Runs Impeccable's detector. Free, no model involved, about half a second.</p>
+        <pre><code id="curl-check">curl -X POST https://pika.example/v1/check \
+  -H 'content-type: application/json' \
+  -d '{"html": "&lt;!doctype html&gt;..."}'</code></pre>
+        <p class="small muted">Returns <code>findings</code>, <code>slop</code> and <code>quality</code> counts, and <code>brandNotes</code> for rules that only judge your brand's own colours or fonts.</p>
+      </div>
+      <div class="card endpoint">
+        <h3><span class="method">POST</span> /v1/improve</h3>
+        <p>Checks, redesigns with the skills rules, and checks again. About 30 to 60 seconds.</p>
+        <pre><code id="curl-improve">curl -X POST https://pika.example/v1/improve \
+  -H 'content-type: application/json' \
+  -d '{"html": "&lt;!doctype html&gt;...", "notes": "keep it calm", "record": false}'</code></pre>
+        <p class="small muted">Returns <code>html</code>, <code>before</code> and <code>after</code> findings, token use and cost. <code>notes</code> is optional, up to 500 characters.</p>
+      </div>
+    </div>
+    <div class="card fine">
+      <h3>Limits and privacy</h3>
+      <ul>
+        <li>Up to 40,000 characters of HTML. Five redesigns an hour per address and a daily total; checks are limited only to stop abuse.</li>
+        <li>Redesigns run on Claude Sonnet through Mubit, the model gateway. Mubit records each redesign so Pika's own small model can learn from it. Send <code>"record": false</code> to keep only metadata. Do not send private or personal data.</li>
+        <li>Previews on this page run with scripts off and no outside requests.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Built at Night Shift, the Mubit hackathon in London, by Rassa, Luka and Kimberley.</p>
+  <p class="small muted">Design rules condensed from <a href="https://github.com/pbakaus/impeccable">Impeccable</a> by Paul Bakaus (Apache 2.0), <a href="https://github.com/SandroHub013/awwwards-skill">awwwards-skill</a> by Alessandro Boni (MIT) and <a href="https://github.com/tponscr-debug/claude-skill-awwwards">claude-skill-awwwards</a> by tponscr-debug (MIT per its README). <a href="/notice">Full notice</a>. Not affiliated with Awwwards.</p>
+</footer>
+</body>
+</html>

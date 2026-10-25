@@ -1,0 +1,16 @@
+{
+  "name": "pika-polish",
+  "private": true,
+  "type": "module",
+  "description": "Check a website section against Impeccable's design rules and redesign it with Pika's skills prompt, through Mubit.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --env-file=../.env server.mjs",
+    "sync": "cp ../prompts/improver-skills-v1.md ../prompts/NOTICE-skills.md prompts/"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.2.0",
+    "impeccable": "4.5.2"
+  }
+}
