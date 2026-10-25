@@ -35,16 +35,17 @@
     </div>
 
     <figure class="compare reveal" id="compare" aria-label="Before and after: drag to compare">
-      <div class="chrome"><span class="url">nimbus.example</span><span class="chrome-note">A whole landing page, redesigned</span></div>
+      <div class="chrome"><span class="url" data-ex="url">nimbus.example</span><span class="ex-tabs" role="group" aria-label="Choose an example"><button type="button" class="chip" data-ex-pick="nimbus" aria-pressed="true">Nimbus</button><button type="button" class="chip" data-ex-pick="kairo" aria-pressed="false">Kairo</button></span></div>
       <div class="stage" id="stage">
-        <img class="img-after" src="/compare-after.jpg" alt="After: the same page with calm type, an asymmetric features section and no gradients or glows." width="1280" height="1500">
-        <div class="clip" id="clip"><img src="/compare-before.jpg" alt="Before: purple gradients, gradient headline, glowing buttons, emoji icons and glass cards." width="1280" height="1500"></div>
-        <span class="tag tag-before">Before <b>43</b> findings</span>
-        <span class="tag tag-after">After <b>0</b> findings</span>
+        <img class="img-after" data-ex="after" src="/compare-after.jpg" alt="After: the same page with calm type, an asymmetric features section and no gradients or glows." width="1280" height="1500">
+        <div class="clip" id="clip"><img data-ex="before" src="/compare-before.jpg" alt="Before: purple gradients, gradient headline, glowing buttons, emoji icons and glass cards." width="1280" height="1500"><div class="spots" data-spots="compare"></div></div>
+        <span class="tag tag-before">Before <b data-ex="n-before">43</b> findings</span>
+        <span class="tag tag-after">After <b data-ex="n-after">0</b> findings</span>
         <div class="handle" id="handle" role="slider" tabindex="0" aria-label="Drag to compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span></span></div>
       </div>
-      <figcaption>Drag to compare. Same words, same colours, nothing invented.</figcaption>
-      <ul class="removed" aria-label="Findings removed from this page">
+      <div class="spot-bar"><button type="button" class="chip" id="spots-toggle" aria-pressed="true">Labels on</button><span>Hover or tap a yellow label to see what was found and why it matters.</span></div>
+      <figcaption data-ex="caption">Drag to compare. Same words, same colours, nothing invented.</figcaption>
+      <ul class="removed" data-ex="removed" aria-label="Findings removed from this page">
         <li>Low contrast text <b>11</b></li>
         <li>Gradient text <b>10</b></li>
         <li>Side-stripe cards <b>6</b></li>
@@ -57,11 +58,11 @@
     </figure>
   </section>
 
-  <section class="band" aria-label="The Nimbus redesign in numbers">
+  <section class="band" aria-label="The redesign in numbers">
     <div class="band-in reveal">
-      <div><p class="band-num">43<span>to</span>0</p><p>findings on the whole page</p></div>
-      <div><p class="band-num">84<span>s</span></p><p>to redesign every section</p></div>
-      <div><p class="band-num">$0.13</p><p>for the whole page</p></div>
+      <div><p class="band-num"><b data-ex="n-before">43</b><span>to</span><b data-ex="n-after">0</b></p><p>findings on the whole page</p></div>
+      <div><p class="band-num"><b data-ex="secs">84</b><span>s</span></p><p>to redesign every section</p></div>
+      <div><p class="band-num" data-ex="cost">$0.13</p><p>for the whole page</p></div>
       <div><p class="band-num">62</p><p>fixed rules, no model in the check</p></div>
     </div>
   </section>
@@ -121,9 +122,10 @@
       <h2 id="whole-h">Whole pages, top to bottom</h2>
       <p class="lead">Every section is redesigned in order: nav, features, numbers, quote, pricing, footer. Scroll either page; they move together.</p>
     </div>
+    <div class="ex-tabs ex-tabs-pages" role="group" aria-label="Choose an example"><button type="button" class="chip" data-ex-pick="nimbus" aria-pressed="true">Nimbus, an email app</button><button type="button" class="chip" data-ex-pick="kairo" aria-pressed="false">Kairo, a freelancer tool</button></div>
     <div class="pages reveal">
-      <figure><figcaption><span class="pill">Before</span> 43 findings</figcaption><div class="scroller" data-sync><img src="/page-before.jpg" alt="The full Nimbus page before: dark purple gradients throughout." width="560" height="1474" loading="lazy"></div></figure>
-      <figure><figcaption><span class="pill good">After</span> 0 findings</figcaption><div class="scroller" data-sync><img src="/page-after.jpg" alt="The full Nimbus page after: the same sections, calmer and clearer." width="560" height="1639" loading="lazy"></div></figure>
+      <figure><figcaption><span class="pill">Before</span> <span data-ex="n-before">43</span> findings</figcaption><div class="scroller" data-sync><div class="spot-wrap"><img data-ex="page-before" src="/page-before.jpg" alt="The full Nimbus page before: dark purple gradients throughout." width="560" height="1474" loading="lazy"><div class="spots small" data-spots="page"></div></div></div></figure>
+      <figure><figcaption><span class="pill good">After</span> <span data-ex="n-after">0</span> findings</figcaption><div class="scroller" data-sync><img data-ex="page-after" src="/page-after.jpg" alt="The full Nimbus page after: the same sections, calmer and clearer." width="560" height="1639" loading="lazy"></div></figure>
     </div>
   </section>
 
@@ -137,6 +139,7 @@
         <label for="html">HTML of a page or a single section</label>
         <div class="samples" role="group" aria-label="Examples">
           <button type="button" class="chip" data-sample="ai-landing">AI-looking landing page</button>
+          <button type="button" class="chip" data-sample="kairo-landing">Tutorial-built SaaS page</button>
           <button type="button" class="chip" data-sample="studio-page">Small business site</button>
           <button type="button" class="chip" data-sample="ai-hero">One section</button>
         </div>

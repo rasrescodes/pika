@@ -199,7 +199,7 @@ async function improve(req) {
   }
 }
 
-const TYPES = { ".jpg": "image/jpeg", ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
+const TYPES = { ".jpg": "image/jpeg", ".json": "application/json; charset=utf-8", ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
 // srcdoc previews inherit this policy: inline styles are allowed, scripts and outside requests are not.
 const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-src 'self' about:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 const STATIC = new Map([
@@ -212,10 +212,17 @@ const STATIC = new Map([
   ["/samples/plain-hero.html", "samples/plain-hero.html"],
   ["/samples/ai-landing.html", "samples/ai-landing.html"],
   ["/samples/studio-page.html", "samples/studio-page.html"],
+  ["/samples/kairo-landing.html", "samples/kairo-landing.html"],
   ["/compare-before.jpg", "public/compare-before.jpg"],
   ["/compare-after.jpg", "public/compare-after.jpg"],
   ["/page-before.jpg", "public/page-before.jpg"],
   ["/page-after.jpg", "public/page-after.jpg"],
+  ["/kairo-spots.json", "public/kairo-spots.json"],
+  ["/nimbus-spots.json", "public/nimbus-spots.json"],
+  ["/kairo-compare-before.jpg", "public/kairo-compare-before.jpg"],
+  ["/kairo-compare-after.jpg", "public/kairo-compare-after.jpg"],
+  ["/kairo-page-before.jpg", "public/kairo-page-before.jpg"],
+  ["/kairo-page-after.jpg", "public/kairo-page-after.jpg"],
   ["/notice", "prompts/NOTICE-skills.md"],
 ]);
 

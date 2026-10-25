@@ -104,6 +104,9 @@ main > section { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter)
 }
 .url { font: 500 13px/1 var(--mono); color: var(--muted); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px; }
 .chrome-note { font-size: 13px; color: var(--dim); }
+.ex-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.ex-tabs-pages { margin-bottom: 16px; }
+.band-num b { font: inherit; }
 .stage {
   position: relative; overflow: hidden; aspect-ratio: 1280 / 1000; border: 1px solid var(--border); border-top: 0;
   border-radius: 0 0 var(--r-big) var(--r-big); background: #0b0a1a; touch-action: pan-y; user-select: none; cursor: ew-resize;
@@ -126,6 +129,38 @@ main > section { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter)
 .tag-after { right: 16px; }
 .tag-after b { color: var(--accent); }
 .compare figcaption { font-size: 14px; color: var(--muted); }
+
+/* Detector labels over the before images: real findings, placed where the check found them */
+.spots { position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+.spots.off .spot, .spots.off .spot-page { visibility: hidden; }
+.spot {
+  position: absolute; pointer-events: auto; padding: 0; background: transparent; cursor: help;
+  border: 1.5px solid #FFC800; border-radius: 3px; box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.35);
+}
+.spot > span {
+  position: absolute; left: -1.5px; bottom: 100%; white-space: nowrap; background: #FFC800; color: #0A0A0A;
+  font: 600 10px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 5px; border-radius: 2px 2px 0 0;
+}
+.spot:hover, .spot:focus-visible, .spot[aria-expanded="true"] { background: rgba(255, 200, 0, 0.16); outline: none; z-index: 2; }
+.spots.small .spot > span { font-size: 8px; padding: 2px 3px; }
+.spot-pagebar {
+  position: absolute; top: 0; left: 0; right: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; pointer-events: auto;
+  background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid #FFC800; padding: 6px 8px;
+}
+.spots.off .spot-pagebar { display: none; }
+.spot-page { border: 0; cursor: help; background: #FFC800; color: #0A0A0A; font: 600 10px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 6px; border-radius: 2px; }
+.spots.small .spot-page { font-size: 8px; padding: 3px 4px; }
+.spot-wrap { position: relative; }
+.spot-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+.spot-tip {
+  position: fixed; z-index: 50; max-width: min(340px, calc(100vw - 32px)); background: #FFFFFF; color: var(--text);
+  border: 1px solid var(--border); border-top: 3px solid #FFC800; border-radius: 10px; padding: 12px 14px; box-shadow: 0 12px 32px rgba(10, 10, 10, 0.18);
+  font-size: 14px; line-height: 1.45; pointer-events: none;
+}
+.spot-tip h4 { margin: 0 0 4px; font: 600 14px/1.3 var(--body); }
+.spot-tip .d { margin: 0 0 6px; font: 500 12px/1.4 var(--mono); color: var(--muted); }
+.spot-tip p { margin: 0; }
+.spot-tip > div + div { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
 
 /* Removed findings under the slider */
 .removed { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -273,7 +308,7 @@ pre { margin: 0; padding: 16px; border-radius: var(--r-input); background: var(-
   .thinking { grid-column: auto; }
   .top nav a:not(.btn) { display: none; }
   .stage { aspect-ratio: 4 / 5; }
-  .stage img { width: 160%; max-width: none; }
+  .stage img, .stage .spots { width: 160%; max-width: none; }
   .chrome-note { display: none; }
   .closer-in { grid-template-columns: 1fr; }
   .scroller { height: 420px; }
