@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nimbus: AI for your inbox</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b0a1a;color:#e2e8f0}
+section{padding:96px 24px;text-align:center}.wrap{max-width:1120px;margin:0 auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;position:sticky;top:0;backdrop-filter:blur(14px);background:rgba(11,10,26,.6);border-bottom:1px solid rgba(255,255,255,.08);z-index:2}
+nav b{font-size:20px;background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{color:#94a3b8;margin-left:24px;text-decoration:none;font-size:14px}
+.hero{background:radial-gradient(circle at 50% 0%,rgba(139,92,246,.45),transparent 60%)}
+.eyebrow{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(167,139,250,.4);background:rgba(167,139,250,.12);color:#c4b5fd;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:68px;line-height:1.05;margin:0 auto 24px;max-width:900px;background:linear-gradient(90deg,#fff,#c4b5fd 50%,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:44px;margin:0 0 16px;background:linear-gradient(90deg,#fff,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:20px;color:#94a3b8;max-width:640px;margin:0 auto 40px}
+.btn{display:inline-block;padding:16px 32px;border-radius:12px;background:linear-gradient(90deg,#8b5cf6,#6366f1);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 0 32px rgba(139,92,246,.7);margin:0 6px}
+.btn.ghost{background:rgba(255,255,255,.06);box-shadow:none;border:1px solid rgba(255,255,255,.15)}
+.logos{display:flex;justify-content:center;gap:48px;color:#475569;font-weight:700;letter-spacing:.1em;font-size:14px;padding:32px 0;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;text-align:left}
+.card{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-left:4px solid #8b5cf6;border-radius:20px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#22d3ee);display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:20px;color:#fff}.card p{margin:0;color:#64748b;font-size:15px;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.stat b{display:block;font-size:48px;background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}.stat span{color:#64748b;font-size:14px}
+.quote{max-width:760px;margin:0 auto;font-size:26px;line-height:1.5;color:#e2e8f0;font-style:italic}
+.who{margin-top:20px;color:#94a3b8;font-size:14px}
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.plan{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px;text-align:left}
+.plan.pop{border:1px solid #8b5cf6;box-shadow:0 0 60px rgba(139,92,246,.5);position:relative}
+.plan .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#8b5cf6,#22d3ee);padding:4px 12px;border-radius:999px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.plan h3{margin:0;color:#c4b5fd;font-size:14px;letter-spacing:.14em;text-transform:uppercase}.plan .amt{font-size:48px;font-weight:800;margin:12px 0;color:#fff}
+.plan ul{list-style:none;padding:0;margin:0 0 24px;color:#94a3b8;font-size:15px;line-height:2}
+.cta{background:linear-gradient(135deg,#4c1d95,#6d28d9 50%,#0e7490);border-radius:32px;margin:0 24px 96px;padding:80px 24px}
+footer{padding:40px;color:#475569;font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:800px){h1{font-size:40px}.grid,.price,.stats{grid-template-columns:1fr}.logos{flex-wrap:wrap;gap:20px}}
+</style></head>
+<body>
+<nav><b>Nimbus</b><div><a href="#">Features</a><a href="#">Pricing</a><a href="#">Customers</a><a href="#">Log in</a></div></nav>
+<section class="hero"><div class="wrap">
+<span class="eyebrow">✨ Introducing Nimbus 2.0</span>
+<h1>Supercharge your inbox with next-generation AI</h1>
+<p class="sub">Unlock seamless email workflows. Nimbus empowers teams to elevate every conversation with cutting-edge, enterprise-grade intelligence.</p>
+<a class="btn" href="#">Get started free</a><a class="btn ghost" href="#">Book a demo</a>
+</div></section>
+<div class="logos"><span>Acme</span><span>Globex</span><span>Initech</span><span>Umbrella</span><span>Hooli</span></div>
+<section><div class="wrap">
+<span class="eyebrow">Features</span><h2>Everything you need. Nothing you don't.</h2><p class="sub">A world-class toolkit designed to streamline the way your team works.</p>
+<div class="grid">
+<div class="card"><div class="icon">⚡</div><h3>Smart triage</h3><p>Nimbus sorts every incoming email by urgency, so the important ones land at the top.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>Draft replies</h3><p>Get a first draft of every reply in your own tone, ready to edit and send.</p></div>
+<div class="card"><div class="icon">🔒</div><h3>Private by default</h3><p>Your mail is processed in your region and never used to train shared models.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Team insights</h3><p>See response times across the team and spot threads that are waiting too long.</p></div>
+<div class="card"><div class="icon">🔗</div><h3>Integrations</h3><p>Works with Gmail, Outlook, Slack and your CRM in a few clicks.</p></div>
+<div class="card"><div class="icon">🚀</div><h3>Fast setup</h3><p>Connect your inbox and Nimbus starts sorting in under five minutes.</p></div>
+</div></div></section>
+<section><div class="wrap"><div class="stats">
+<div class="stat"><b>10x</b><span>faster replies</span></div><div class="stat"><b>50k+</b><span>teams</span></div><div class="stat"><b>99.9%</b><span>uptime</span></div><div class="stat"><b>4.9★</b><span>average rating</span></div>
+</div></div></section>
+<section><div class="wrap"><p class="quote">"Nimbus didn't just change how we do email. It transformed how our whole team communicates."</p><p class="who">Jordan Lee, Head of Operations at Globex</p></div></section>
+<section><div class="wrap">
+<span class="eyebrow">Pricing</span><h2>Simple, transparent pricing</h2>
+<div class="price">
+<div class="plan"><h3>Starter</h3><div class="amt">$0</div><ul><li>✓ 1 inbox</li><li>✓ Smart triage</li><li>✓ 100 drafts a month</li></ul><a class="btn ghost" href="#">Start free</a></div>
+<div class="plan pop"><span class="tag">Most popular</span><h3>Pro</h3><div class="amt">$12</div><ul><li>✓ 3 inboxes</li><li>✓ Unlimited drafts</li><li>✓ Integrations</li></ul><a class="btn" href="#">Start trial</a></div>
+<div class="plan"><h3>Team</h3><div class="amt">$29</div><ul><li>✓ Unlimited inboxes</li><li>✓ Team insights</li><li>✓ Priority support</li></ul><a class="btn ghost" href="#">Contact sales</a></div>
+</div></div></section>
+<div class="cta"><h2>Ready to transform your inbox?</h2><p class="sub">Join 50,000+ teams who've already made the switch.</p><a class="btn" href="#">Get started free</a></div>
+<footer>© 2026 Nimbus Labs. All rights reserved.</footer>
+</body></html>

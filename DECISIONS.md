@@ -39,3 +39,7 @@ One line per decision: date and time, decision, why. Newest at the bottom.
 - New prompt `prompts/improver-skills-v1.md`: the same craft rules as `generator-skills-v1` (copied verbatim from "How the work is judged" on) under a header for redesigning a section someone sends: keep its size, words, palette and fonts; fix the detector's findings; banned filler words may be swapped for plain ones. It is a new Mubit task.
 - Service in `api/` (plain Node, two dependencies, no database) on Railway with sleep when idle. Detector runs the native Impeccable binary for the platform. Every model call goes through Mubit's Anthropic route.
 - Spend capped in code: 150 redesigns a day, 5 per address an hour, 3 in flight. Measured cost about $0.03 a redesign.
+
+## 2026-10-25 Pika UI handles whole pages: improver-skills-v2 (Luka's agent)
+- Luka asked for the site to speak about entire websites and designs, not hero sections, so the product now takes a whole page (up to 150,000 characters). `prompts/improver-skills-v2.md` keeps every section in order, must work at 1280px and 390px, keeps images, and applies the v1 craft rules per section (the rules after "How the work is judged" are unchanged). New Mubit task.
+- Calls stream with max_tokens 32,000; a cut-off reply returns 422 rather than a broken page. Daily cap lowered to 100 redesigns because a page costs about $0.13.

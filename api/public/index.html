@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pika UI: find out why your hero looks AI-made</title>
-<meta name="description" content="Paste a hero section. 62 fixed rules show what makes it look AI-made in half a second, free. One click redesigns it for about $0.03.">
+<title>Pika UI: find out why your site looks AI-made</title>
+<meta name="description" content="Paste a page. 62 fixed rules show what makes it look AI-made in under a second, free. One click redesigns the whole page, keeping your words, colours and fonts.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,80 +16,113 @@
 <header class="top">
   <a class="brand" href="/"><img src="/pika-mark.svg" alt="" width="28" height="40"><span>Pika UI</span></a>
   <nav aria-label="Main">
+    <a href="#tells">The tells</a>
     <a href="#how">How it works</a>
-    <a href="#try">Try it</a>
-    <a href="#evidence">Evidence</a>
     <a href="#api">API</a>
+    <a class="btn small-btn primary" href="#try">Check my site</a>
   </nav>
 </header>
 
 <main>
   <section class="hero">
     <div class="hero-copy">
-      <h1>Your hero looks <em>AI-made</em>. Here is why.</h1>
-      <p class="lead">Paste its HTML. 62 fixed rules flag gradient text, glows, eyebrow labels, low contrast and the rest in about half a second, free. One click redesigns it for about $0.03, keeping your words, colours and fonts, then checks it again.</p>
+      <h1>Your site looks <em>AI&#8209;made</em>. Here is why.</h1>
+      <p class="lead">Paste a page. 62 fixed rules point out the gradient text, glows, eyebrow labels and low contrast that give it away, in under a second, free. One click redesigns the whole thing, keeping your words, colours and fonts, then checks it again.</p>
       <div class="actions">
-        <a class="btn primary" href="#try" id="hero-cta">Check my section</a>
-        <a class="btn" href="#api">Read the API docs</a>
+        <a class="btn primary big" href="#try" id="hero-cta">Check my site</a>
+        <a class="btn big" href="#api">Read the API docs</a>
       </div>
-      <p class="small muted">No sign-up. Or <a href="#try" data-sample="ai-hero">load an AI-looking example</a> and press Redesign.</p>
     </div>
-    <figure class="hero-visual" aria-label="The AI-looking example before and after a Pika redesign">
-      <div class="shot before"><img src="/before.jpg" alt="Before: purple gradient, gradient headline, glowing button and glass cards." width="1280" height="720"><span class="badge">Before <b>15</b> findings</span></div>
-      <div class="shot after"><img src="/after.jpg" alt="After: the same words and colours set as a calm, left-aligned composition." width="1280" height="720"><span class="badge good">After <b>0</b> findings</span></div>
-      <img class="peek" src="/pika-mark.svg" alt="" width="70" height="100">
-      <svg class="doodle" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 8 C63 44 76 57 112 60 C76 63 63 76 60 112 C57 76 44 63 8 60 C44 57 57 44 60 8 Z"/></svg>
+
+    <figure class="compare reveal" id="compare" aria-label="Before and after: drag to compare">
+      <div class="chrome"><span class="url">nimbus.example</span><span class="chrome-note">A whole landing page, redesigned</span></div>
+      <div class="stage" id="stage">
+        <img class="img-after" src="/compare-after.jpg" alt="After: the same page with calm type, an asymmetric features section and no gradients or glows." width="1280" height="1500">
+        <div class="clip" id="clip"><img src="/compare-before.jpg" alt="Before: purple gradients, gradient headline, glowing buttons, emoji icons and glass cards." width="1280" height="1500"></div>
+        <span class="tag tag-before">Before <b>43</b> findings</span>
+        <span class="tag tag-after">After <b>0</b> findings</span>
+        <div class="handle" id="handle" role="slider" tabindex="0" aria-label="Drag to compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span></span></div>
+      </div>
+      <figcaption>Drag to compare. 84 seconds and $0.13 for the whole page. Same words, same colours, nothing invented.</figcaption>
     </figure>
   </section>
 
+  <section id="tells" class="tells" aria-labelledby="tells-h">
+    <div class="section-head">
+      <h2 id="tells-h">The tells, and what we flag</h2>
+      <p class="lead">You have seen these on a hundred launch pages. Each one is a fixed rule, so the check gives the same answer every time.</p>
+    </div>
+    <div class="specimens">
+      <article class="spec reveal"><div class="sample s-gradtext"><span>Build faster</span></div><h3>Gradient text</h3><p>Headlines filled with a purple-to-cyan sweep.</p></article>
+      <article class="spec reveal"><div class="sample s-purple"></div><h3>Purple gradients</h3><p>The default violet wash behind everything.</p></article>
+      <article class="spec reveal"><div class="sample s-glow"><span>Get started</span></div><h3>Coloured glows</h3><p>Buttons and cards lit by a neon halo.</p></article>
+      <article class="spec reveal"><div class="sample s-eyebrow"><span>Introducing 2.0</span><i></i></div><h3>Eyebrow chips</h3><p>A small tracked pill above every heading.</p></article>
+      <article class="spec reveal"><div class="sample s-stripe"><i></i></div><h3>Side-stripe cards</h3><p>A thick accent border down one edge.</p></article>
+      <article class="spec reveal"><div class="sample s-glass"><i></i></div><h3>Glass blur</h3><p>Frosted panels used as decoration.</p></article>
+      <article class="spec reveal"><div class="sample s-emoji"><span>&#9889;</span><span>&#128274;</span><span>&#128640;</span></div><h3>Emoji icons</h3><p>Emoji standing in for an icon system.</p></article>
+      <article class="spec reveal"><div class="sample s-words"><span>Supercharge</span><span>seamless</span><span>elevate</span></div><h3>Filler words</h3><p>Supercharge, unlock, seamless, cutting-edge.</p></article>
+    </div>
+    <p class="small muted">Plus the quality checks: low contrast, text under 14px, cramped padding, skipped heading levels and more.</p>
+  </section>
+
   <section id="how" class="how" aria-labelledby="how-h">
-    <h2 id="how-h">What happens when you paste</h2>
+    <div class="section-head">
+      <h2 id="how-h">What happens when you paste</h2>
+    </div>
     <ol class="flow">
-      <li class="step card">
+      <li class="step reveal">
         <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M22 14 h38 l14 14 v54 h-52 z"/><path d="M60 14 v14 h14"/><path d="M32 42 h22 M32 54 h30 M32 66 h16"/><circle cx="66" cy="66" r="12"/><path d="M75 75 l9 9"/></svg>
-        <span class="n">1</span>
         <h3>Check</h3>
-        <p>62 fixed rules read your HTML. No model is involved, so the same page always gets the same answer. They catch purple gradients, gradient text, glows, side-stripe cards, eyebrow labels, glass blur, emoji icons, filler words and low contrast.</p>
-        <p class="meta">Free, about half a second</p>
+        <p>The rules read your HTML. No model is involved, so the same page always gets the same findings.</p>
+        <p class="meta">Free, under a second</p>
       </li>
-      <li class="step card">
+      <li class="step reveal">
         <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 70 l34 -34 l10 10 l-34 34 l-14 4 z"/><path d="M58 42 l10 10"/><path d="M70 14 v12 M64 20 h12"/><path d="M20 30 v8 M16 34 h8"/><path d="M80 60 v6 M77 63 h6"/></svg>
-        <span class="n">2</span>
         <h3>Redesign</h3>
-        <p>Claude Sonnet rebuilds the section to clear every finding and tighten the type and layout. Your headline, button labels, colours and fonts stay as they are.</p>
-        <p class="meta">About 20 seconds, about $0.03</p>
+        <p>Claude Sonnet rebuilds every section to clear the findings and tighten type, layout and rhythm. Your copy, colours and fonts stay.</p>
+        <p class="meta">About 20 s for a section, 90 s for a page</p>
       </li>
-      <li class="step card">
+      <li class="step reveal">
         <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M48 14 a34 34 0 1 1 -30 18"/><path d="M14 22 l4 10 l10 -4"/><path d="M36 50 l9 9 l17 -19"/></svg>
-        <span class="n">3</span>
         <h3>Check again</h3>
-        <p>The same rules run on the result, so you see the count before and after instead of taking our word for it. You get plain HTML back.</p>
-        <p class="meta">Copy it or download it</p>
+        <p>The same rules run on the result, so you see the count before and after instead of taking our word for it.</p>
+        <p class="meta">Plain HTML back</p>
       </li>
-      <li class="step card soft">
+      <li class="step reveal soft">
         <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="34" cy="48" r="18"/><circle cx="62" cy="48" r="18"/><path d="M48 16 v8 M36 20 l4 6 M60 20 l-4 6"/></svg>
-        <span class="n">4</span>
         <h3>Learn</h3>
-        <p>Redesigns pass through Mubit, a model gateway that keeps the good ones to train Pika's own small model. Untick the box and only metadata is kept.</p>
-        <p class="meta">Your choice on every request</p>
+        <p>Redesigns pass through Mubit, a model gateway that keeps the good ones to train Pika's own small model.</p>
+        <p class="meta">Opt out on any request</p>
       </li>
     </ol>
   </section>
 
+  <section class="whole" aria-labelledby="whole-h">
+    <div class="section-head">
+      <h2 id="whole-h">Whole pages, top to bottom</h2>
+      <p class="lead">Every section is redesigned in order: nav, features, numbers, quote, pricing, footer. Scroll either page; they move together.</p>
+    </div>
+    <div class="pages reveal">
+      <figure><figcaption><span class="pill">Before</span> 43 findings</figcaption><div class="scroller" data-sync><img src="/page-before.jpg" alt="The full Nimbus page before: dark purple gradients throughout." width="560" height="1474" loading="lazy"></div></figure>
+      <figure><figcaption><span class="pill good">After</span> 0 findings</figcaption><div class="scroller" data-sync><img src="/page-after.jpg" alt="The full Nimbus page after: the same sections, calmer and clearer." width="560" height="1639" loading="lazy"></div></figure>
+    </div>
+  </section>
+
   <section id="try" class="tool" aria-labelledby="try-h">
-    <div class="tool-head">
-      <h2 id="try-h">Paste a section</h2>
+    <div class="section-head row">
+      <h2 id="try-h">Paste your page</h2>
       <p class="muted" id="quota">Checking is free. Redesigns are limited per day.</p>
     </div>
     <div class="input card">
       <div class="input-bar">
-        <label for="html">Your section as HTML</label>
+        <label for="html">HTML of a page or a single section</label>
         <div class="samples" role="group" aria-label="Examples">
-          <button type="button" class="chip" data-sample="ai-hero">AI-looking example</button>
-          <button type="button" class="chip" data-sample="plain-hero">Plain example</button>
+          <button type="button" class="chip" data-sample="ai-landing">AI-looking landing page</button>
+          <button type="button" class="chip" data-sample="studio-page">Small business site</button>
+          <button type="button" class="chip" data-sample="ai-hero">One section</button>
         </div>
       </div>
-      <textarea id="html" spellcheck="false" placeholder="&lt;!doctype html&gt; ... one complete section, up to 40,000 characters. Inline CSS works best."></textarea>
+      <textarea id="html" spellcheck="false" placeholder="&lt;!doctype html&gt; ... one HTML file with its CSS inline, up to 150,000 characters"></textarea>
       <div class="input-foot">
         <label class="consent"><input type="checkbox" id="record" checked> Let Mubit keep this design to train Pika's model</label>
         <div class="buttons">
@@ -120,29 +153,33 @@
       </article>
       <div class="thinking card" id="thinking" hidden>
         <img src="/pika-mark.svg" alt="" width="64" height="92">
-        <p><strong>Pika is redesigning your section.</strong><br><span class="muted">This takes about 30 to 60 seconds.</span></p>
+        <p><strong>Pika is redesigning your page.</strong><br><span class="muted">About 20 seconds for a section and up to two minutes for a long page.</span></p>
       </div>
     </div>
   </section>
 
   <section id="evidence" class="evidence" aria-labelledby="ev-h">
-    <h2 id="ev-h">What we measured</h2>
-    <p class="lead narrow">24 test sections from brands and layouts the model had not seen, made by the same model with and without Pika's rules.</p>
-    <div class="stats">
-      <div class="stat card"><p class="big"><span>3.67</span><span class="arrow">to</span><span class="win">0.21</span></p><p>findings per page, about 94% fewer</p></div>
-      <div class="stat card"><p class="big"><span>6</span><span class="arrow">to</span><span class="win">0</span></p><p>broken layouts, where text is covered or runs off the frame</p></div>
-      <div class="stat card"><p class="big"><span>7.32</span><span class="arrow">and</span><span>7.17</span></p><p>design critic score out of 10: level, so cleaner pages cost nothing in quality, and gained nothing either</p></div>
+    <div class="section-head">
+      <h2 id="ev-h">What we measured</h2>
+      <p class="lead">24 test designs from brands and layouts the model had not seen, made by the same model with and without Pika's rules.</p>
     </div>
-    <p class="small muted narrow">The critic is Pika's own model-based judge, not a human jury. These sections were generated from brand kits; redesigns of existing pages have not been measured at this scale yet. The example at the top went from 15 findings to 0.</p>
+    <div class="stats">
+      <div class="stat reveal"><p class="stat-num"><span>3.67</span><span class="arrow">to</span><span class="win">0.21</span></p><p>findings per design, about 94% fewer</p></div>
+      <div class="stat reveal"><p class="stat-num"><span>6</span><span class="arrow">to</span><span class="win">0</span></p><p>broken layouts, where text is covered or runs off the frame</p></div>
+      <div class="stat reveal"><p class="stat-num"><span>7.32</span><span class="arrow">and</span><span>7.17</span></p><p>design critic score out of 10: level, so cleaner designs cost nothing in quality, and gained nothing either</p></div>
+    </div>
+    <p class="small muted narrow">The critic is Pika's own model-based judge, not a human jury. Those 24 designs were single screens made from brand kits; whole-page redesigns are newer and have not been measured at that scale. The Nimbus page above went from 43 findings to 0.</p>
   </section>
 
   <section id="api" class="api" aria-labelledby="api-h">
-    <h2 id="api-h">API</h2>
-    <p class="lead narrow">Two endpoints. JSON in, JSON out, no key. Send one complete section as an HTML string.</p>
+    <div class="section-head">
+      <h2 id="api-h">API</h2>
+      <p class="lead">Two endpoints. JSON in, JSON out, no key. Send one HTML file as a string.</p>
+    </div>
     <div class="endpoints">
       <div class="card endpoint">
         <h3><span class="method">POST</span> /v1/check</h3>
-        <p>Runs the 62 rules. Free, no model, about half a second.</p>
+        <p>Runs the 62 rules. Free, no model, under a second.</p>
         <pre><code id="curl-check">curl -X POST https://pika.example/v1/check \
   -H 'content-type: application/json' \
   -d '{"html": "&lt;!doctype html&gt;..."}'</code></pre>
@@ -150,7 +187,7 @@
       </div>
       <div class="card endpoint">
         <h3><span class="method">POST</span> /v1/improve</h3>
-        <p>Checks, redesigns and checks again. About 20 seconds.</p>
+        <p>Checks, redesigns and checks again. 20 to 120 seconds.</p>
         <pre><code id="curl-improve">curl -X POST https://pika.example/v1/improve \
   -H 'content-type: application/json' \
   -d '{"html": "&lt;!doctype html&gt;...", "notes": "keep it calm", "record": false}'</code></pre>
@@ -159,16 +196,27 @@
     </div>
     <div class="faq">
       <div class="card qa"><h3>Is it just a prompt?</h3><p>No. The check is a fixed rule set that runs without a model and gives the same answer every time. The model only does the redesign, and the rules then check its work.</p></div>
-      <div class="card qa"><h3>What does it cost?</h3><p>Checks are free. Redesigns are free here too, up to five an hour per address and a daily total; each one costs us about $0.03.</p></div>
+      <div class="card qa"><h3>What does it cost?</h3><p>Checks are free. Redesigns are free here too, up to five an hour per address and a daily total. Each one costs us about $0.03 for a section and $0.10 to $0.20 for a full page.</p></div>
       <div class="card qa"><h3>Where does my HTML go?</h3><p>Checks stay on this server. Redesigns go to Claude Sonnet through Mubit, which records them to train Pika's model unless you untick the box or send <code>"record": false</code>. Do not send private or personal data.</p></div>
-      <div class="card qa"><h3>What do I get back?</h3><p>One plain HTML file with inline CSS and no scripts, yours to use. Previews here run with scripts off and no outside requests. Limit: 40,000 characters in.</p></div>
+      <div class="card qa"><h3>What do I get back?</h3><p>One HTML file with inline CSS and no scripts, yours to use. It keeps your images and works on desktop and mobile. Previews here run with scripts off.</p></div>
+    </div>
+  </section>
+
+  <section class="closer">
+    <div class="closer-in reveal">
+      <img src="/pika-mark.svg" alt="" width="120" height="172" class="closer-mark">
+      <div>
+        <h2>Paste a page. See what gives it away.</h2>
+        <p>The check is free and takes under a second.</p>
+        <a class="btn on-dark big" href="#try">Check my site</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="foot">
   <p>Built in a weekend at Night Shift, the Mubit hackathon in London, by Rassa, Luka and Kimberley.</p>
-  <p class="small muted">The rules and the redesign guidance are condensed from three open-source projects: <a href="https://github.com/pbakaus/impeccable">Impeccable</a> by Paul Bakaus (Apache 2.0), whose detector runs the check; <a href="https://github.com/SandroHub013/awwwards-skill">awwwards-skill</a> by Alessandro Boni (MIT); and <a href="https://github.com/tponscr-debug/claude-skill-awwwards">claude-skill-awwwards</a> by tponscr-debug (MIT per its README). <a href="/notice">Full notice</a>. Not affiliated with Awwwards.</p>
+  <p class="small muted">The rules and the redesign guidance are condensed from three open-source projects: <a href="https://github.com/pbakaus/impeccable">Impeccable</a> by Paul Bakaus (Apache 2.0), whose detector runs the check; <a href="https://github.com/SandroHub013/awwwards-skill">awwwards-skill</a> by Alessandro Boni (MIT); and <a href="https://github.com/tponscr-debug/claude-skill-awwwards">claude-skill-awwwards</a> by tponscr-debug (MIT per its README). <a href="/notice">Full notice</a>. Not affiliated with Awwwards. Nimbus is a made-up example.</p>
 </footer>
 </body>
 </html>

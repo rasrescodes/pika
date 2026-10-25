@@ -13,13 +13,13 @@ import Anthropic from "@anthropic-ai/sdk";
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const PORT = Number(process.env.PORT || 8787);
 const MODEL = process.env.MODEL || "claude-sonnet-5-5";
-const PROMPT_VERSION = "improver-skills-v1";
+const PROMPT_VERSION = "improver-skills-v2";
 const SYSTEM = await readFile(path.join(ROOT, "prompts", `${PROMPT_VERSION}.md`), "utf8");
 
 // Spend limits. Counters live in memory, so a restart resets them; the daily cap is the hard ceiling on cost.
 const LIMITS = {
-  htmlChars: Number(process.env.MAX_HTML_CHARS || 40_000),
-  improvePerDay: Number(process.env.MAX_IMPROVES_PER_DAY || 150),
+  htmlChars: Number(process.env.MAX_HTML_CHARS || 150_000),
+  improvePerDay: Number(process.env.MAX_IMPROVES_PER_DAY || 100),
   improvePerIpHour: Number(process.env.MAX_IMPROVES_PER_IP_HOUR || 5),
   checkPerIpHour: Number(process.env.MAX_CHECKS_PER_IP_HOUR || 120),
   improveInFlight: Number(process.env.MAX_IMPROVES_IN_FLIGHT || 3), // Mubit allows 4 calls in flight per project
@@ -165,11 +165,15 @@ async function improve(req) {
   const started = Date.now();
   try {
     const before = await detect(html);
-    const res = await mubit().messages.create(
-      { model: MODEL, max_tokens: 16_000, system: SYSTEM, messages: [{ role: "user", content: userMessage(html, before, notes) }] },
-      // record: false asks Mubit to keep only metadata, so the design is not kept for training.
-      record === false ? { headers: { "x-middleware-record": "metadata" } } : undefined,
-    );
+    // Streamed so a long page does not hit request timeouts; finalMessage() collects it.
+    const res = await mubit()
+      .messages.stream(
+        { model: MODEL, max_tokens: 32_000, system: SYSTEM, messages: [{ role: "user", content: userMessage(html, before, notes) }] },
+        // record: false asks Mubit to keep only metadata, so the design is not kept for training.
+        record === false ? { headers: { "x-middleware-record": "metadata" } } : undefined,
+      )
+      .finalMessage();
+    if (res.stop_reason === "max_tokens") throw httpError(422, "The redesign ran out of room. Try a shorter page, or one section at a time.");
     const out = extractHtml(res.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join(""));
     const after = await detect(out);
     const usd = (res.usage.input_tokens * PRICE.inPer1M + res.usage.output_tokens * PRICE.outPer1M) / 1e6;
@@ -197,17 +201,21 @@ async function improve(req) {
 
 const TYPES = { ".jpg": "image/jpeg", ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
 // srcdoc previews inherit this policy: inline styles are allowed, scripts and outside requests are not.
-const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-src 'self' about:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
+const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-src 'self' about:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 const STATIC = new Map([
   ["/", "public/index.html"],
   ["/styles.css", "public/styles.css"],
   ["/app.js", "public/app.js"],
   ["/pika-mark.svg", "public/pika-mark.svg"],
   ["/favicon.svg", "public/pika-icon.svg"],
-  ["/before.jpg", "public/before.jpg"],
-  ["/after.jpg", "public/after.jpg"],
   ["/samples/ai-hero.html", "samples/ai-hero.html"],
   ["/samples/plain-hero.html", "samples/plain-hero.html"],
+  ["/samples/ai-landing.html", "samples/ai-landing.html"],
+  ["/samples/studio-page.html", "samples/studio-page.html"],
+  ["/compare-before.jpg", "public/compare-before.jpg"],
+  ["/compare-after.jpg", "public/compare-after.jpg"],
+  ["/page-before.jpg", "public/page-before.jpg"],
+  ["/page-after.jpg", "public/page-after.jpg"],
   ["/notice", "prompts/NOTICE-skills.md"],
 ]);
 
@@ -237,7 +245,7 @@ const server = createServer(async (req, res) => {
     const file = STATIC.get(url.pathname);
     if (file && req.method === "GET") {
       const type = TYPES[path.extname(file)] ?? "text/plain; charset=utf-8";
-      const headers = { "content-type": type, "cache-control": file.endsWith(".svg") ? "public, max-age=86400" : "no-cache" };
+      const headers = { "content-type": type, "cache-control": /\.(svg|jpg)$/.test(file) ? "public, max-age=86400" : "no-cache" };
       if (type.startsWith("text/html") && file.startsWith("public")) headers["content-security-policy"] = CSP;
       // Samples are served as plain text so the browser never renders them as pages on this origin.
       if (file.startsWith("samples")) headers["content-type"] = "text/plain; charset=utf-8";
@@ -250,5 +258,5 @@ const server = createServer(async (req, res) => {
     send(res, status, { error: status >= 500 && !e.status ? "Something went wrong on our side." : e.message }, url.pathname.startsWith("/v1/") ? CORS : {});
   }
 });
-server.requestTimeout = 240_000;
+server.requestTimeout = 330_000;
 server.listen(PORT, () => console.log(`pika ui on :${PORT}; detector ${existsSync(DETECT) ? "ready" : "MISSING at " + DETECT}; model ${process.env.MUBIT_API_KEY ? MODEL : "not configured"}`));

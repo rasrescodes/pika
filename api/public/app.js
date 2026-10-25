@@ -27,7 +27,7 @@ document.querySelectorAll("[data-sample]").forEach((el) =>
   }),
 );
 
-// Previews: a 1280 x 720 page scaled to the pane, scripts off (sandbox without allow-scripts), no outside requests (CSP).
+// Previews: the page at 1280px wide, scaled to the pane and scrollable inside it; scripts off (sandbox without allow-scripts).
 function preview(holder, html) {
   holder.replaceChildren();
   const frame = document.createElement("iframe");
@@ -36,7 +36,11 @@ function preview(holder, html) {
   frame.setAttribute("loading", "lazy");
   frame.srcdoc = html;
   holder.append(frame);
-  const fit = () => (frame.style.transform = `scale(${holder.clientWidth / 1280})`);
+  const fit = () => {
+    const k = holder.clientWidth / 1280;
+    frame.style.transform = `scale(${k})`;
+    frame.style.height = `${holder.clientHeight / k}px`;
+  };
   new ResizeObserver(fit).observe(holder);
   fit();
 }
@@ -172,3 +176,57 @@ async function refreshQuota() {
   } catch {}
 }
 refreshQuota();
+
+// Before and after slider: drag, click or use the arrow keys.
+const stage = $("stage");
+const handle = $("handle");
+function setPos(pct) {
+  pct = Math.max(0, Math.min(100, pct));
+  stage.style.setProperty("--pos", `${pct}%`);
+  handle.setAttribute("aria-valuenow", String(Math.round(pct)));
+}
+function fromEvent(e) {
+  const r = stage.getBoundingClientRect();
+  setPos(((e.clientX - r.left) / r.width) * 100);
+}
+let dragging = false;
+stage.addEventListener("pointerdown", (e) => {
+  dragging = true;
+  stage.setPointerCapture(e.pointerId);
+  fromEvent(e);
+});
+stage.addEventListener("pointermove", (e) => dragging && fromEvent(e));
+stage.addEventListener("pointerup", () => (dragging = false));
+stage.addEventListener("pointercancel", () => (dragging = false));
+handle.addEventListener("keydown", (e) => {
+  const now = Number(handle.getAttribute("aria-valuenow"));
+  if (e.key === "ArrowLeft") setPos(now - 5);
+  else if (e.key === "ArrowRight") setPos(now + 5);
+  else return;
+  e.preventDefault();
+});
+setPos(50);
+
+// The two whole-page scrollers move together.
+const scrollers = [...document.querySelectorAll("[data-sync]")];
+let syncing = false;
+for (const el of scrollers)
+  el.addEventListener("scroll", () => {
+    if (syncing) return;
+    syncing = true;
+    const t = el.scrollTop / Math.max(1, el.scrollHeight - el.clientHeight);
+    for (const other of scrollers) if (other !== el) other.scrollTop = t * (other.scrollHeight - other.clientHeight);
+    requestAnimationFrame(() => (syncing = false));
+  });
+
+// Cards enter once as they come into view; the header gains a rule once the page scrolls.
+const io = new IntersectionObserver(
+  (entries) => entries.forEach((en) => en.isIntersecting && (en.target.classList.add("in"), io.unobserve(en.target))),
+  { rootMargin: "0px 0px -8% 0px" },
+);
+document.querySelectorAll(".reveal").forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 4) * 60}ms`;
+  io.observe(el);
+});
+const headerEl = document.querySelector(".top");
+addEventListener("scroll", () => headerEl.classList.toggle("scrolled", scrollY > 8), { passive: true });

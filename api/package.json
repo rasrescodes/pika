@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.mjs",
     "dev": "node --env-file=../.env server.mjs",
-    "sync": "cp ../prompts/improver-skills-v1.md ../prompts/NOTICE-skills.md prompts/"
+    "sync": "cp ../prompts/improver-skills-v2.md ../prompts/NOTICE-skills.md prompts/"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.2.0",
