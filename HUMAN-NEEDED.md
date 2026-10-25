@@ -21,5 +21,5 @@ Things only a person can do. Tick when done.
 - [ ] Check the provider terms on training a model from Sonnet's outputs before we present the distilled Generator as a product.
 - [ ] Luka: share the training explainer (https://claude.ai/artifact/2QCvM3KrxcdNmjzYg21dZM) with Rassa and Kimberley; Kimberley to sanity-check its use of brand v1.
 
-- [ ] When rotating the Mubit key, also update `MUBIT_API_KEY` on Railway (project pika-polish, services pika-ui and pika-polish), or the live Pika UI stops redesigning. (Luka, 25 Oct)
-- [x] Done 25 Oct 02:00 by Luka's agent: both Railway services serve v2 and the new design. Was: redeploy the Railway service from latest `main` (live site still serves improver-skills-v1, 40k limit, and 404s the compare images; main has v2, verified locally 25 Oct 02:10: 15 findings to 0 in 29.5 s, $0.046).
+- [ ] When rotating the Mubit key, also update `MUBIT_API_KEY` on Railway (project pika-polish, service pika-ui), or the live Pika UI stops redesigning. (Luka, 25 Oct)
+- [x] Done 25 Oct 02:00 by Luka's agent: the pika-ui service serves v2 and the new design; the old pika-polish service and its address were deleted at Luka's request. Was: redeploy the Railway service from latest `main` (live site still serves improver-skills-v1, 40k limit, and 404s the compare images; main has v2, verified locally 25 Oct 02:10: 15 findings to 0 in 29.5 s, $0.046).

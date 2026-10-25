@@ -6,7 +6,7 @@ AI-made web pages all share the same tells: gradient text, glows, eyebrow chips,
 
 Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa, Luka and Kimberley.
 
-- **Live:** https://pika-ui-production.up.railway.app (Pika UI: paste a page, check it for free, redesign it through Mubit). The first address, https://pika-polish-production.up.railway.app, serves the same build.
+- **Live:** https://pika-ui-production.up.railway.app (Pika UI: paste a page, check it for free, redesign it through Mubit).
 - **Demo video:** shows the live site checking an AI-looking page, redesigning it and checking it again, then how the redesigns feed training through Mubit.
 
 ## What it does
