@@ -6,7 +6,7 @@ AI-made web pages all share the same tells: gradient text, glows, eyebrow chips,
 
 Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa, Luka and Kimberley.
 
-- **Live:** https://pika-polish-production.up.railway.app (paste HTML, check for free, redesign through Mubit)
+- **Live:** https://pika-ui-production.up.railway.app (Pika UI: paste a page, check it for free, redesign it through Mubit). The first address, https://pika-polish-production.up.railway.app, serves the same build.
 - **Demo video:** shows the live site checking an AI-looking page, redesigning it and checking it again, then how the redesigns feed training through Mubit.
 
 ## What it does
@@ -24,7 +24,7 @@ Every model call in this repo goes through Mubit (`lib/llm.ts`, `src/mubit.ts`, 
 
 | Mubit task | What it is | What we measured |
 |---|---|---|
-| Pika Polish redesigns | Live API: Sonnet with the skills prompt | Recorded unless the user opts out |
+| Pika UI redesigns | Live API: Sonnet with the skills prompt | Recorded unless the user opts out |
 | Generator distillation | Sonnet with `generator-skills-v1` makes on-brand sections from fictional brand kits; only sections with zero detector findings become training data | 220 + 67 sections made, 228 clean |
 | Describer loop | Sonnet rebuilds a captured Awwwards hero from a screenshot or DOM, scored by pixel and DOM similarity, with lessons fed back | DOM holdout 77.7 to 85.7 after epoch 1 (31 paired sites) |
 | Juror / Jury mode | Sonnet scores sites like the Awwwards jury; each miss against the real jury score becomes a calibration note | 178 recorded training calls, results below |
@@ -55,7 +55,7 @@ Calibration removed most of the Juror's bias, but it does not beat simple guessi
 
 ## Repo map
 
-- `api/`: Pika Polish, the live API and site (Node, deployed on Railway).
+- `api/`: Pika UI (first called Pika Polish), the live API and site (Node, deployed on Railway).
 - `app/`, `lib/`: the Next.js studio app. The Wall (`/wall`) generates 12 hero sections for a brand, the Juror ranks them, and the art director's overrides go into taste memory. Also `/jury`, `/scorecard`, `/sites`, `/brand`.
 - `src/`: the Describer loop, Mubit batch runner and the local fine-tuning loop (MLX, Apple silicon).
 - `scripts/`: Generator distillation (`gen-*.ts`, `scripts/runs/`), Jury mode, smoke tests.
@@ -70,7 +70,7 @@ Calibration removed most of the Juror's bias, but it does not beat simple guessi
 npm install
 cp .env.example .env    # MUBIT_API_KEY and MODEL; without them the studio runs in MOCK mode
 npm run dev             # studio on http://localhost:3000
-cd api && npm install && npm run dev   # Pika Polish API and site
+cd api && npm install && npm run dev   # Pika UI API and site
 npm run verify          # tokens, typecheck, tests, production build
 ```
 
