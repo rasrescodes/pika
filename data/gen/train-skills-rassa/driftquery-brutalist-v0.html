@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Driftquery</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#0B1220;color:#E6EDF7;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.m{font-family:Menlo,'Courier New',monospace}
+.frame{position:absolute;left:64px;top:64px;width:1152px;height:592px;border:1px solid #E6EDF7}
+.bar{position:absolute;left:64px;top:64px;width:1152px;height:48px;border-bottom:1px solid #E6EDF7;display:flex;align-items:center;justify-content:space-between;padding:0 32px;font-size:14px}
+.bar b{font-weight:700;letter-spacing:0}
+.bar span{opacity:.65;margin-left:32px}
+.bar i{font-style:normal;color:#3DDC97}
+h1{position:absolute;left:96px;top:152px;margin:0;font-size:80px;line-height:1;letter-spacing:-.02em;font-weight:700;width:700px;text-wrap:balance}
+h1 em{font-style:normal;color:#3DDC97}
+.chart{position:absolute;left:96px;top:420px}
+.cap{position:absolute;left:96px;top:496px;font-size:14px;opacity:.65}
+.bot{position:absolute;left:64px;top:528px;width:1152px;height:128px;border-top:1px solid #E6EDF7}
+.bot .v{position:absolute;left:752px;top:0;height:127px;border-left:1px solid #E6EDF7}
+h2{position:absolute;left:32px;top:32px;margin:0;font-weight:400;font-size:20px;line-height:1.5;width:560px;text-wrap:pretty;letter-spacing:0}
+a{position:absolute;left:784px;top:36px;width:240px;height:56px;background:#3DDC97;color:#0B1220;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.panel{position:absolute;left:816px;top:144px;width:464px;height:296px;background:#0B1220;border:1px solid #E6EDF7;border-right:0;font-size:16px;line-height:1.5}
+.panel .h{display:flex;justify-content:space-between;padding:12px 64px 12px 24px;border-bottom:1px solid #E6EDF7;font-size:14px}
+.panel .h span:first-child{color:#3DDC97}
+.panel .h span:last-child{opacity:.65}
+.panel pre{margin:0;padding:16px 64px 16px 24px;font:inherit;white-space:pre-wrap;border-bottom:1px solid #E6EDF7}
+.panel p{margin:0;padding:16px 64px 0 24px}
+.panel p span{opacity:.65}
+.panel p b{color:#3DDC97;font-weight:400}
+</style></head><body>
+<div class="frame"></div>
+<div class="bar m"><b>driftquery_</b><div><span>docs</span><span>pricing</span><span>changelog</span></div></div>
+<h1 class="m">Find the <em>slow query</em> before users do</h1>
+<svg class="chart" width="664" height="64" viewBox="0 0 664 64" fill="none" stroke="#3DDC97" stroke-width="2"><path d="M0 56H400L416 8L432 56H664" opacity="1"/><path d="M0 63H664" stroke="#E6EDF7" opacity=".35"/></svg>
+<div class="cap m">latency per query, one outlier</div>
+<div class="panel m">
+<div class="h"><span>flagged</span><span>orders_by_customer</span></div>
+<pre>SELECT * FROM orders
+WHERE customer_id = $1
+ORDER BY created_at DESC;</pre>
+<p><span>why</span> seq scan on orders, no index on customer_id.</p>
+<p><b>fix</b> CREATE INDEX ON orders (customer_id);</p>
+</div>
+<div class="bot"><div class="v"></div>
+<h2>Driftquery watches your database and flags the queries that cost you time, with plain explanations.</h2>
+<a class="m" href="#">Start free trial</a></div>
+</body></html>
