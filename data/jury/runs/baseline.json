@@ -1,0 +1,550 @@
+{
+  "phase": "baseline",
+  "at": "2026-10-24T15:26:23.059Z",
+  "predictions": [
+    {
+      "slug": "aino-agency",
+      "scores": {
+        "design": 7.8,
+        "usability": 7,
+        "creativity": 7.9,
+        "content": 7.3
+      },
+      "overall": 7.5,
+      "note": "Confident split-screen with a mono-type nav and striking product and fashion imagery, but sparse context and tiny captions limit clarity.",
+      "ms": 1833,
+      "usage": {
+        "input": 2119,
+        "output": 83
+      }
+    },
+    {
+      "slug": "ashley-brooke",
+      "scores": {
+        "design": 7.8,
+        "usability": 7.4,
+        "creativity": 7.7,
+        "content": 7.4
+      },
+      "overall": 7.57,
+      "note": "Bold vermilion serif ABCS monogram on white with tight grotesk type; confident, minimal layout, though nav is plain text and the hero is sparse.",
+      "ms": 1638,
+      "usage": {
+        "input": 2119,
+        "output": 91
+      }
+    },
+    {
+      "slug": "bucks-sauce",
+      "scores": {
+        "design": 7.5,
+        "usability": 6.6,
+        "creativity": 7.6,
+        "content": 7
+      },
+      "overall": 7.18,
+      "note": "Bold dark hero with a strong stag-chef logo and floating fruit; striking, but there's no navigation or copy yet, which hurts clarity.",
+      "ms": 1695,
+      "usage": {
+        "input": 2119,
+        "output": 88
+      }
+    },
+    {
+      "slug": "butter",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.4,
+        "creativity": 7.7,
+        "content": 7.3
+      },
+      "overall": 7.5,
+      "note": "Polished 3D keychain hero with tight oversized type and clean minimal UI; strong craft, though the lower half feels empty.",
+      "ms": 1580,
+      "usage": {
+        "input": 2119,
+        "output": 81
+      }
+    },
+    {
+      "slug": "capitolium",
+      "scores": {
+        "design": 7.3,
+        "usability": 6.6,
+        "creativity": 7,
+        "content": 7
+      },
+      "overall": 6.98,
+      "note": "Elegant gold-on-grey Capitolium lockup with refined serif and script, but the loader-like hero shows little and gives no clear next action.",
+      "ms": 2149,
+      "usage": {
+        "input": 2119,
+        "output": 86
+      }
+    },
+    {
+      "slug": "cerebrium",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.4,
+        "creativity": 7.5,
+        "content": 7
+      },
+      "overall": 7.38,
+      "note": "Polished dark magenta 3D ribbons with bold type and clear CTAs; body text collides with the glow and the concept feels familiar for AI infra.",
+      "ms": 1836,
+      "usage": {
+        "input": 2119,
+        "output": 89
+      }
+    },
+    {
+      "slug": "coffeetech-r",
+      "scores": {
+        "design": 7.4,
+        "usability": 7.5,
+        "creativity": 6.8,
+        "content": 7
+      },
+      "overall": 7.18,
+      "note": "Bold oversized type on a dark ground with a single copper accent is clean and confident, but the hero is conventional and has no imagery.",
+      "ms": 2095,
+      "usage": {
+        "input": 2119,
+        "output": 81
+      }
+    },
+    {
+      "slug": "damn-good-brands-2",
+      "scores": {
+        "design": 8.1,
+        "usability": 7.3,
+        "creativity": 8.3,
+        "content": 7.7
+      },
+      "overall": 7.85,
+      "note": "Bold oversized type with glossy 3D objects, live weather details and playful toggle give strong personality; navigation is sparse but clear.",
+      "ms": 1995,
+      "usage": {
+        "input": 2119,
+        "output": 83
+      }
+    },
+    {
+      "slug": "darknode",
+      "scores": {
+        "design": 7.7,
+        "usability": 7.1,
+        "creativity": 7.8,
+        "content": 7.6
+      },
+      "overall": 7.55,
+      "note": "Moody silhouette footage with a bold condensed headline and HUD-style details; strong atmosphere, but low contrast and small nav text.",
+      "ms": 2516,
+      "usage": {
+        "input": 2119,
+        "output": 84
+      }
+    },
+    {
+      "slug": "evolve-2",
+      "scores": {
+        "design": 7.8,
+        "usability": 7.3,
+        "creativity": 7.4,
+        "content": 7.2
+      },
+      "overall": 7.43,
+      "note": "Bold oversized Helvetica-style type over a moody dark photo with a subtle grid; polished and confident, though a familiar agency formula.",
+      "ms": 1620,
+      "usage": {
+        "input": 2119,
+        "output": 85
+      }
+    },
+    {
+      "slug": "fluid-glass",
+      "scores": {
+        "design": 7.5,
+        "usability": 7.2,
+        "creativity": 6.9,
+        "content": 7.3
+      },
+      "overall": 7.23,
+      "note": "Elegant full-bleed architectural imagery with clean headline and minimal nav; polished but conventional for a premium glazing brand.",
+      "ms": 1912,
+      "usage": {
+        "input": 2119,
+        "output": 82
+      }
+    },
+    {
+      "slug": "form-fun-studio",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.3,
+        "creativity": 7.4,
+        "content": 7
+      },
+      "overall": 7.32,
+      "note": "Confident minimal wordmark with custom-feeling type and clean nav; the empty grey panel leaves the hero a bit sparse and unproven.",
+      "ms": 1588,
+      "usage": {
+        "input": 2119,
+        "output": 87
+      }
+    },
+    {
+      "slug": "hobro-digital",
+      "scores": {
+        "design": 7.6,
+        "usability": 7,
+        "creativity": 7.5,
+        "content": 7.2
+      },
+      "overall": 7.33,
+      "note": "Bold oversized wordmark over a warm blurred face video feels confident and cinematic, though the nav is cramped and the layout is fairly conventional.",
+      "ms": 1608,
+      "usage": {
+        "input": 2119,
+        "output": 88
+      }
+    },
+    {
+      "slug": "icomat",
+      "scores": {
+        "design": 7.8,
+        "usability": 7.2,
+        "creativity": 7.6,
+        "content": 7.3
+      },
+      "overall": 7.48,
+      "note": "Striking monochrome carbon-fiber imagery and bold headline; the small subcopy over the texture and the large empty top space cost some clarity.",
+      "ms": 1986,
+      "usage": {
+        "input": 2119,
+        "output": 86
+      }
+    },
+    {
+      "slug": "joby",
+      "scores": {
+        "design": 7.7,
+        "usability": 7.4,
+        "creativity": 7.5,
+        "content": 7.6
+      },
+      "overall": 7.55,
+      "note": "Cinematic cabin shot with a bold tagline and a rounded blue frame; polished and confident, though the layout is fairly conventional.",
+      "ms": 1950,
+      "usage": {
+        "input": 2119,
+        "output": 84
+      }
+    },
+    {
+      "slug": "leo-parpeix-portfolio-2026",
+      "scores": {
+        "design": 7.3,
+        "usability": 7.4,
+        "creativity": 6.9,
+        "content": 6.9
+      },
+      "overall": 7.13,
+      "note": "Refined minimalist portfolio with clean type and a confident grid, but the empty hero shows little personality or visual hook.",
+      "ms": 1617,
+      "usage": {
+        "input": 2119,
+        "output": 78
+      }
+    },
+    {
+      "slug": "lidar-drone-scanning",
+      "scores": {
+        "design": 7.6,
+        "usability": 7,
+        "creativity": 7.5,
+        "content": 7
+      },
+      "overall": 7.28,
+      "note": "Refined, airy monochrome hero with a ghosted oversized wordmark; elegant but very low contrast and sparse, so the first screen feels empty.",
+      "ms": 1905,
+      "usage": {
+        "input": 2119,
+        "output": 89
+      }
+    },
+    {
+      "slug": "lxl-creative",
+      "scores": {
+        "design": 8,
+        "usability": 7.3,
+        "creativity": 7.9,
+        "content": 7.5
+      },
+      "overall": 7.68,
+      "note": "Bold wordmark mixing script and grotesque over a striking portrait; warm palette is cohesive, though the tagline is small and its overlap hurts legibility.",
+      "ms": 1610,
+      "usage": {
+        "input": 2119,
+        "output": 92
+      }
+    },
+    {
+      "slug": "mammoth-murals",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.8,
+        "creativity": 7,
+        "content": 7.2
+      },
+      "overall": 7.4,
+      "note": "Bold condensed type on saturated yellow is confident and clear with strong CTAs, but the hero is imageless and the showreel is only 'coming soon'.",
+      "ms": 1676,
+      "usage": {
+        "input": 2119,
+        "output": 90
+      }
+    },
+    {
+      "slug": "marvell-tile-stone",
+      "scores": {
+        "design": 7.3,
+        "usability": 6.6,
+        "creativity": 7.1,
+        "content": 6.9
+      },
+      "overall": 6.98,
+      "note": "Clean Helvetica type on a subtle dark grid with a loader bar; confident but minimal, giving little to judge or act on yet.",
+      "ms": 1572,
+      "usage": {
+        "input": 2119,
+        "output": 83
+      }
+    },
+    {
+      "slug": "metamask",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.2,
+        "creativity": 7.3,
+        "content": 7.2
+      },
+      "overall": 7.33,
+      "note": "Bold condensed purple headline on soft peach is confident and clean, but the hero is sparse and the grey CTA looks muted.",
+      "ms": 1616,
+      "usage": {
+        "input": 2119,
+        "output": 81
+      }
+    },
+    {
+      "slug": "monolog",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.4,
+        "creativity": 7.2,
+        "content": 7.3
+      },
+      "overall": 7.38,
+      "note": "Bold tight-tracked headline, grain texture and client-win cards give a confident studio feel; layout is familiar but well crafted.",
+      "ms": 2045,
+      "usage": {
+        "input": 2119,
+        "output": 82
+      }
+    },
+    {
+      "slug": "mosbys-files",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.1,
+        "creativity": 7.8,
+        "content": 7.3
+      },
+      "overall": 7.45,
+      "note": "Bold folder-tab metaphor with strong type and saturated colour on dark; low-contrast intro text and small mono copy hurt legibility.",
+      "ms": 3285,
+      "usage": {
+        "input": 2119,
+        "output": 86
+      }
+    },
+    {
+      "slug": "offfforum",
+      "scores": {
+        "design": 7.6,
+        "usability": 7,
+        "creativity": 7.5,
+        "content": 7.3
+      },
+      "overall": 7.35,
+      "note": "Bold OFFF logotype with elegant serif over moody video; strong identity, but the cookie box and tight centered text weigh on the hero.",
+      "ms": 1760,
+      "usage": {
+        "input": 2119,
+        "output": 85
+      }
+    },
+    {
+      "slug": "pantheon-media-group",
+      "scores": {
+        "design": 7.6,
+        "usability": 7,
+        "creativity": 7.3,
+        "content": 6.9
+      },
+      "overall": 7.2,
+      "note": "Bold cropped wordmark with a striking monochrome minimal layout; confident typography, but the hero is sparse and gives little context.",
+      "ms": 2634,
+      "usage": {
+        "input": 2119,
+        "output": 82
+      }
+    },
+    {
+      "slug": "ref-digital",
+      "scores": {
+        "design": 6.8,
+        "usability": 5.8,
+        "creativity": 6.6,
+        "content": 6
+      },
+      "overall": 6.3,
+      "note": "Only a beige blank screen and a cookie box with empty buttons; the folder-tab styling is neat but the hero is not visible.",
+      "ms": 1394,
+      "usage": {
+        "input": 2119,
+        "output": 81
+      }
+    },
+    {
+      "slug": "rpa-comunicacion",
+      "scores": {
+        "design": 7.5,
+        "usability": 6.9,
+        "creativity": 7.6,
+        "content": 7.2
+      },
+      "overall": 7.3,
+      "note": "Bold dark green and lime palette with an irregular polygon photo mask and kinetic type; the cookie banner and a cropped word hurt the first impression.",
+      "ms": 1920,
+      "usage": {
+        "input": 2119,
+        "output": 89
+      }
+    },
+    {
+      "slug": "seventeen",
+      "scores": {
+        "design": 7.3,
+        "usability": 6.6,
+        "creativity": 7.7,
+        "content": 6.8
+      },
+      "overall": 7.1,
+      "note": "Bold minimal colour-block column with a quirky agency feel; navigation and the project hook are cryptic and low contrast.",
+      "ms": 1573,
+      "usage": {
+        "input": 2119,
+        "output": 79
+      }
+    },
+    {
+      "slug": "sstr-friction-reduction",
+      "scores": {
+        "design": 7.7,
+        "usability": 7.4,
+        "creativity": 7.5,
+        "content": 7.3
+      },
+      "overall": 7.48,
+      "note": "Moody industrial hero with a striking 3D drilling tool, tight headline and a bold orange CTA; clean but fairly conventional layout.",
+      "ms": 1605,
+      "usage": {
+        "input": 2119,
+        "output": 86
+      }
+    },
+    {
+      "slug": "truckn-roll-r",
+      "scores": {
+        "design": 7.8,
+        "usability": 7,
+        "creativity": 7.8,
+        "content": 7.3
+      },
+      "overall": 7.48,
+      "note": "Bold condensed type and a tilted logo on black feel confident and on-brand, but the hero is cropped and the nav is slightly scattered.",
+      "ms": 1608,
+      "usage": {
+        "input": 2119,
+        "output": 85
+      }
+    },
+    {
+      "slug": "truus",
+      "scores": {
+        "design": 7.6,
+        "usability": 7,
+        "creativity": 7.7,
+        "content": 7.4
+      },
+      "overall": 7.43,
+      "note": "Bold mixed grotesk/serif headline over cinematic video with playful stickers; strong personality, but minimal nav and a cursor sticker covers the text.",
+      "ms": 2262,
+      "usage": {
+        "input": 2119,
+        "output": 91
+      }
+    },
+    {
+      "slug": "warm-fuzzy",
+      "scores": {
+        "design": 8.1,
+        "usability": 7.3,
+        "creativity": 8,
+        "content": 7.7
+      },
+      "overall": 7.78,
+      "note": "Full-bleed, dreamy Dunkin' 3D diorama gives instant personality; nav is small over busy imagery, but the feel-good tagline lands.",
+      "ms": 2516,
+      "usage": {
+        "input": 2119,
+        "output": 92
+      }
+    },
+    {
+      "slug": "where-worlds-take-shape",
+      "scores": {
+        "design": 7.2,
+        "usability": 6.9,
+        "creativity": 7.5,
+        "content": 7.2
+      },
+      "overall": 7.2,
+      "note": "Charming low-poly walking character loader with a helpful hint, but the screenshot shows only a minimal loading screen on a dark background.",
+      "ms": 1577,
+      "usage": {
+        "input": 2119,
+        "output": 82
+      }
+    },
+    {
+      "slug": "white-desert",
+      "scores": {
+        "design": 7.6,
+        "usability": 7.3,
+        "creativity": 7.6,
+        "content": 7.5
+      },
+      "overall": 7.5,
+      "note": "Striking airplane-window framing and huge condensed ANTARCTICA type give strong atmosphere; cookie banner overlaps the title and small tagline is weak.",
+      "ms": 1612,
+      "usage": {
+        "input": 2119,
+        "output": 93
+      }
+    }
+  ]
+}
