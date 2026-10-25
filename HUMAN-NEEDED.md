@@ -20,3 +20,5 @@ Things only a person can do. Tick when done.
 - [ ] Ask the Mubit team: do long outputs (1,600 to 6,000 characters) train, and can the 4-calls-in-flight limit on the starter credit be raised for the event?
 - [ ] Check the provider terms on training a model from Sonnet's outputs before we present the distilled Generator as a product.
 - [ ] Luka: share the training explainer (https://claude.ai/artifact/2QCvM3KrxcdNmjzYg21dZM) with Rassa and Kimberley; Kimberley to sanity-check its use of brand v1.
+
+- [ ] When rotating the Mubit key, also update `MUBIT_API_KEY` on Railway (project pika-polish, services pika-ui and pika-polish), or the live Pika UI stops redesigning. (Luka, 25 Oct)
