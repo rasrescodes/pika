@@ -212,7 +212,7 @@ const EXAMPLES = {
   nimbus: {
     url: "nimbus.example", before: "/compare-before.jpg", after: "/compare-after.jpg", pageBefore: "/page-before.jpg", pageAfter: "/page-after.jpg",
     nBefore: 43, nAfter: 0, secs: 84, cost: "$0.13",
-    caption: "Drag to compare. Same words, same colours, nothing invented.",
+    caption: "Drag to compare the two designs. Same brief, different composition.",
     altBefore: "Before: purple gradients, gradient headline, glowing buttons, emoji icons and glass cards.",
     altAfter: "After: the same page with calm type, an asymmetric features section and no gradients or glows.",
     removed: [["Low contrast text", 11], ["Gradient text", 10], ["Side-stripe cards", 6], ["Icon tiles above headings", 6], ["Glowing shadows", 5], ["Eyebrow labels", 3], ["AI colour palette", 1], ["Filler words", 1]],
