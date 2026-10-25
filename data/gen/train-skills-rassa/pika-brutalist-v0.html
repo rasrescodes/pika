@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Pika</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#FBF5EA;color:#0A0A0A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.m{font-family:monospace;font-size:14px;line-height:1.3;letter-spacing:.04em}
+.frame{position:absolute;left:64px;top:64px;width:1152px;height:592px;border:1px solid #0A0A0A}
+.bar{position:absolute;left:0;right:0;height:48px;display:flex}
+.bar span{display:flex;align-items:center;padding:0 16px;border-right:1px solid #0A0A0A}
+.top{top:0;border-bottom:1px solid #0A0A0A}
+.bot{bottom:0;border-top:1px solid #0A0A0A}
+.top span:first-child{width:712px;justify-content:space-between;font-weight:700}
+.bot span{width:384px}
+.bot span:last-child{border-right:0;width:384px}
+.div{position:absolute;left:711px;top:48px;bottom:48px;border-left:1px solid #0A0A0A}
+h1{position:absolute;left:32px;top:96px;width:648px;margin:0;font-size:72px;line-height:.98;letter-spacing:-.02em;font-weight:700;text-wrap:balance}
+p{position:absolute;left:32px;top:340px;width:520px;margin:0;font-size:20px;line-height:1.5;letter-spacing:-.005em;text-wrap:pretty}
+a{position:absolute;left:32px;top:456px;height:56px;padding:0 32px;display:flex;align-items:center;background:#3027F4;color:#FBF5EA;font-size:18px;font-weight:700;text-decoration:none;letter-spacing:0}
+.wall{position:absolute;left:776px;top:112px;width:504px;height:432px;background:#FBF5EA;display:grid;grid-template-columns:repeat(3,168px);grid-template-rows:repeat(3,144px);border-bottom:1px solid #0A0A0A}
+.c{position:relative;border-right:1px solid #0A0A0A;border-bottom:1px solid #0A0A0A}
+.c:nth-child(n+7){border-bottom:0}
+.c svg{display:block}
+.c .m{position:absolute;left:16px;bottom:12px}
+</style></head><body>
+<div class="frame">
+<div class="bar top m"><span>Pika <b style="font-weight:400">art director on call</b></span><span style="border:0">Wall of designs</span></div>
+<div class="div"></div>
+<h1>An art director that learns your taste</h1>
+<p>Generate a wall of designs. Overrule the Juror once. Watch the next batch come back your way.</p>
+<a href="#">Generate a wall</a>
+<div class="bar bot m"><span>Generate</span><span>Overrule once</span><span>Next batch follows</span></div>
+</div>
+<div class="wall">
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M84 28a36 36 0 1 0 .1 0z"/></svg><span class="m">Kept</span></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M52 28h64v64H52z"/></svg></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M48 92a36 36 0 0 1 72 0z"/></svg></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="#0A0A0A" stroke="#0A0A0A" stroke-width="2"><path d="M52 92V28a64 64 0 0 1 64 64z"/></svg><span class="m">Overruled</span></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M84 24l40 72H44z"/></svg></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M48 60a36 36 0 0 1 72 0M48 92a36 36 0 0 0 72 0"/></svg></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M40 44h88v40H40z"/></svg></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M52 28a32 32 0 0 1 0 64M116 28a32 32 0 0 0 0 64"/></svg><span class="m">Next batch</span></div>
+<div class="c"><svg width="168" height="144" viewBox="0 0 168 144" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M84 24v72M48 60h72"/></svg></div>
+</div>
+</body></html>

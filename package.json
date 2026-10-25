@@ -27,7 +27,9 @@
     "labels:merge": "tsx scripts/labels-merge.ts",
     "jury:baselines": "tsx scripts/jury-baselines.ts",
     "jury": "tsx scripts/jury-run.ts",
-    "jury:plan": "tsx scripts/jury-run.ts --dry-run"
+    "jury:plan": "tsx scripts/jury-run.ts --dry-run",
+    "local:batch": "tsx src/local-batch.ts",
+    "local:teacher": "tsx scripts/teacher-eval.ts"
   },
   "dependencies": {
     "geist": "^1.8.2",

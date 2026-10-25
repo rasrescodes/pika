@@ -12,6 +12,8 @@ const SITES = process.env.BATCH_SITES || "data/sites";
 const MAX_CALLS = Number(process.env.BATCH_MAX_CALLS || 5000);
 const MAX_EPOCHS = Number(process.env.BATCH_MAX_EPOCHS || 4);
 const MODES = (process.env.BATCH_MODES || "image,dom").split(",");
+// Browser pages per mode. On a 16 GB Mac shared with the local model, 6 to 8 let Chromium renderers die and a loop hang.
+const CONCURRENCY = process.env.BATCH_CONCURRENCY;
 const LOG = "data/batch/batch.log";
 mkdirSync("data/batch", { recursive: true });
 
@@ -21,7 +23,8 @@ const log = (msg: string) => {
   appendFileSync(LOG, line + "\n");
 };
 
-const spent = () => loadRuns().reduce((a, r) => a + (r.calls ?? 0), 0);
+// Local-backend runs cost nothing and never count against the Mubit budget.
+const spent = () => loadRuns().filter((r) => r.backend !== "local").reduce((a, r) => a + (r.calls ?? 0), 0);
 
 function run(cmd: string, args: string[]) {
   return new Promise<number>((resolve) => {
@@ -58,12 +61,12 @@ if ((await run("npx", ["tsx", "scripts/mubit-smoke-image.ts"])) !== 0) {
   process.exit(1);
 }
 
-await phase("baseline", ["--split", "holdout", "--no-lessons", "--rounds", "1", "--concurrency", "6"]);
+await phase("baseline", ["--split", "holdout", "--no-lessons", "--rounds", "1", "--concurrency", CONCURRENCY || "6"]);
 let previous = holdoutMean("baseline");
 let flat = 0;
 for (let epoch = 1; epoch <= MAX_EPOCHS; epoch++) {
-  if (!(await phase(`train-e${epoch}`, ["--split", "train", "--learn", "--rounds", "5", "--concurrency", "8"]))) break;
-  if (!(await phase(`eval-e${epoch}`, ["--split", "holdout", "--rounds", "1", "--concurrency", "6"]))) break;
+  if (!(await phase(`train-e${epoch}`, ["--split", "train", "--learn", "--rounds", "5", "--concurrency", CONCURRENCY || "8"]))) break;
+  if (!(await phase(`eval-e${epoch}`, ["--split", "holdout", "--rounds", "1", "--concurrency", CONCURRENCY || "6"]))) break;
   const now = holdoutMean(`eval-e${epoch}`);
   log(`epoch ${epoch}: holdout first-shot ${previous.toFixed(1)} -> ${now.toFixed(1)}`);
   flat = now - previous < 1 ? flat + 1 : 0;

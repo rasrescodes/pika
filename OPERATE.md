@@ -33,6 +33,12 @@ How to run Pika. Keep this true as the stack lands.
 - Fine-tune: `npx tsx scripts/gen-dataset.ts train-skills 1`, then `mlx_lm lora` on `data/gen/dataset` (see the Describer local loop for setup).
 - Limits: Mubit's starter credit allows 4 calls in flight per project (429 beyond, retried); don't run this beside `npm run batch`. Sonnet 5.5 thinks by default, so `max_tokens` is 16000.
 - Honest notes: the training targets are Sonnet's outputs with a prompt condensed from three open skills (credits in `prompts/NOTICE-skills.md`). The detector is someone else's rules and the Juror is a model; neither is a human jury. The local student runs offline.
+## The local loop (no Mubit)
+- One-off setup: `uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python mlx-lm`, then `.venv/bin/hf download mlx-community/Qwen3-4B-Instruct-2507-4bit` (about 2.3 GB). Apple silicon only.
+- `BATCH_SITES=<sites dir> npm run local:batch` scores the rule-based teacher, evaluates the base model on holdout, then per epoch builds a dataset, fine-tunes a LoRA adapter and evaluates it. It starts and stops its own model server on port 8080 and logs to `data/local/local.log`. Rerunning resumes.
+- On a 16 GB Mac: one request at a time (`LOCAL_CONCURRENCY=1`, the default; 4 ran the GPU out of memory) and 20 practise sites per epoch (`LOCAL_PRACTISE_SITES`, default 20), about 1.5 minutes per site. The base holdout eval takes about 55 minutes; a full 3-epoch run takes most of a day.
+- One site by hand: start `.venv/bin/mlx_lm.server --model mlx-community/Qwen3-4B-Instruct-2507-4bit`, then `LLM_BACKEND=local npm run loop -- --sites <dir> --mode dom <slug>`.
+- Honest notes: nothing here reaches Mubit or any provider. The teacher is code we wrote, and the first training targets are its specs. The DOM score compares measurements, which a rule-based transcriber matches well by construction, so read the pixel score beside it. The local adapter is a stand-in for Mubit's: it shows the loop works, not what Mubit's adapter will score.
 
 ## Mubit training
 - Training needs about 25 kept examples of one task (same system prompt, model, tools, output format).

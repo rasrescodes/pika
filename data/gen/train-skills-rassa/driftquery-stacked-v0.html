@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Driftquery</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#0B1220;color:#E6EDF7;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+h1{margin:0;font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:84px;line-height:1;letter-spacing:-.03em;text-wrap:balance}
+h1 span{display:flex;align-items:center;height:200px;padding:0 64px;white-space:nowrap;position:relative}
+h1 .b2{background:#E6EDF7;color:#0B1220}
+.spike{position:absolute;right:0;top:200px;width:380px;height:200px}
+.b3{position:absolute;top:400px;left:0;width:1280px;height:264px;display:flex;align-items:center;padding:0 64px}
+.b3:before{content:"";position:absolute;inset:0;background:#E6EDF7;opacity:.06}
+.b3>*{position:relative}
+p{margin:0;font-size:22px;line-height:1.5;max-width:52ch;text-wrap:pretty;width:600px}
+.code{margin-left:96px;font-family:Menlo,'Courier New',monospace;font-size:16px;line-height:1.5;display:grid;gap:8px}
+.code .m{opacity:.7}
+.code .a{color:#3DDC97}
+.b4{position:absolute;top:664px;left:0;width:1280px;height:56px;background:#3DDC97;color:#0B1220;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+button{height:44px;padding:0 24px;border:0;border-radius:4px;background:#0B1220;color:#3DDC97;font:700 16px Menlo,'Courier New',monospace;letter-spacing:-.01em}
+.w{font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:16px}
+</style></head><body>
+<h1><span>Find the slow query</span><span class="b2">before users do</span></h1>
+<svg class="spike" viewBox="0 0 380 200" fill="none" stroke="#0B1220" stroke-width="3" stroke-linejoin="round"><path d="M0 140H150L178 40L212 160L236 140H380"/><circle cx="178" cy="40" r="8" fill="#3DDC97" stroke="#0B1220"/></svg>
+<div class="b3">
+<p>Driftquery watches your database and flags the queries that cost you time, with plain explanations.</p>
+<div class="code"><span>seq scan on orders</span><span class="m">filter: user_id, no index</span><span class="a">fix: create index on orders (user_id)</span></div>
+</div>
+<div class="b4"><button>Start free trial</button><span class="w">driftquery</span></div>
+</body></html>

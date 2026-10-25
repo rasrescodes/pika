@@ -1,44 +1,83 @@
 # Pika
 
-An AI art director that learns your taste.
+**Make your section look designed, not generated.**
 
-Pika generates on-brand website sections from a client's brand kit, then a critic model, the Juror, scores every version the way an Awwwards jury does (design, usability, creativity, content). When the art director overrides the Juror, that correction goes through Mubit and becomes a model update, so the next batch is ranked the way they would rank it.
+AI-made web pages all share the same tells: gradient text, glows, eyebrow chips, side stripes, filler words. Big brands now ship pages written by LLMs, and they need those pages to look like their brand, not like every other AI page. Pika takes a page or a section, finds the tells, and redesigns it to award-level craft while keeping your words, colours and fonts. Every redesign goes through Mubit, which keeps the good ones so Pika's own small model can learn the taste.
 
-Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa and Luka.
+Built at Night Shift, the Mubit hackathon (London, 23 to 25 Oct 2026), by Rassa, Luka and Kimberley.
 
-## Why it fits the brief
-- **Recurring task:** design critique. Every studio reviews dozens of options a day.
-- **Corrections become model updates:** the art director's overrides train the Juror through Mubit.
-- **Own your intelligence layer (main track):** a small trained critic is cheap enough to judge 100 designs instead of 5 (the scorecard measures whether that holds). Show quality, cost and speed against the big model side by side.
+- **Live:** https://pika-polish-production.up.railway.app (paste HTML, check for free, redesign through Mubit)
+- **Demo video:** shows the live site checking an AI-looking page, redesigning it and checking it again, then how the redesigns feed training through Mubit.
 
-## Start here
-- `docs/BRIEF.md`: the event, tracks, judging, and verified Mubit facts.
-- `docs/PLAN.md`: what we build, in order, and who does what.
-- `AGENTS.md`: rules for any AI agent working in this repo.
+## What it does
 
-## Setup
+1. **Check (free, about 0.5 s).** Impeccable's 62 design rules read your HTML and flag the AI tells.
+2. **Redesign (about 20 s for a section).** Claude Sonnet 5.5, through Mubit, redesigns the page with craft rules condensed from three open design skills (`prompts/improver-skills-v2.md`). Your copy and brand stay; the findings go.
+3. **Check again.** The same rules score the result, so you get before and after in numbers, not a promise. The AI-looking sample goes from 15 findings to 0; a 7.5k-character landing page from 43 to 0.
+4. **Learn.** Mubit records each redesign (opt out with `"record": false`) and those become training data for Pika's own model.
+
+API: `POST /v1/check`, `POST /v1/improve`, `GET /v1/status`. See `api/README.md`.
+
+## How Pika uses Mubit
+
+Every model call in this repo goes through Mubit (`lib/llm.ts`, `src/mubit.ts`, `api/server.mjs`). Held-out evaluation calls send `x-middleware-record: metadata` so they never leak into training.
+
+| Mubit task | What it is | What we measured |
+|---|---|---|
+| Pika Polish redesigns | Live API: Sonnet with the skills prompt | Recorded unless the user opts out |
+| Generator distillation | Sonnet with `generator-skills-v1` makes on-brand sections from fictional brand kits; only sections with zero detector findings become training data | 220 + 67 sections made, 228 clean |
+| Describer loop | Sonnet rebuilds a captured Awwwards hero from a screenshot or DOM, scored by pixel and DOM similarity, with lessons fed back | DOM holdout 77.7 to 85.7 after epoch 1 (31 paired sites) |
+| Juror / Jury mode | Sonnet scores sites like the Awwwards jury; each miss against the real jury score becomes a calibration note | 178 recorded training calls, results below |
+
+### Results (held-out, measured)
+
+Same model, 24 held-out briefs, only the prompt changes:
+
+| Contender | Juror /10 | Detector findings per page | Clean pages |
+|---|---|---|---|
+| Local Qwen3 4B, untrained | 4.87 | 1.12 | 12/24 |
+| Sonnet, plain prompt | 7.30 | 3.95 | 4/22 |
+| **Sonnet, Pika skills prompt** | **7.17** | **0.21** | **21/24** |
+| Local 4B, fine-tuned (round 2) | 4.91 | 1.42 | 12/24 |
+
+- The skills prompt cuts AI tells by about 94% and broken layouts from 6 to 0, at the same quality.
+- The distilled small model is not there yet: round 2 is level with the untrained model on the Juror. Round 3 (adds the layouts round 2 never saw) was still training at code freeze.
+
+**Jury mode** (34 held-out Awwwards Sites of the Day, against free baselines):
+
+| | Before | After | Free baseline |
+|---|---|---|---|
+| Average miss on overall score | 0.23 | 0.177 | 0.109 (guess the average) |
+| Picks the jury's preferred site of a pair | 36% | 29% | 50% |
+| Names the criterion the jury rewarded most | 47% | 33% | 47% |
+
+Calibration removed most of the Juror's bias, but it does not beat simple guessing: every Site of the Day scores between 7.15 and 8.18, so the spread is too tight to rank. We report it because the baselines make that impossible to hide. Raw runs in `data/jury/`.
+
+## Repo map
+
+- `api/`: Pika Polish, the live API and site (Node, deployed on Railway).
+- `app/`, `lib/`: the Next.js studio app. The Wall (`/wall`) generates 12 hero sections for a brand, the Juror ranks them, and the art director's overrides go into taste memory. Also `/jury`, `/scorecard`, `/sites`, `/brand`.
+- `src/`: the Describer loop, Mubit batch runner and the local fine-tuning loop (MLX, Apple silicon).
+- `scripts/`: Generator distillation (`gen-*.ts`, `scripts/runs/`), Jury mode, smoke tests.
+- `prompts/`: every prompt, versioned. Skills credits in `prompts/NOTICE-skills.md`.
+- `data/`: captured sites, Jury runs, generated training sections.
+- `brand/`: Kimberley's brand (logo, guidelines, tokens).
+- `docs/ACTION-PLAN.md`: the training plan and the latest numbers. `OPERATE.md`: how to run each part.
+
+## Run it
+
 ```bash
 npm install
-cp .env.example .env   # add MUBIT_API_KEY and MODEL; without them Pika runs in MOCK mode
-npm run dev            # http://localhost:3000
+cp .env.example .env    # MUBIT_API_KEY and MODEL; without them the studio runs in MOCK mode
+npm run dev             # studio on http://localhost:3000
+cd api && npm install && npm run dev   # Pika Polish API and site
+npm run verify          # tokens, typecheck, tests, production build
 ```
 
-## How it works
-- **The Wall** (`/`): Generate makes 12 hero sections for the current brand (one per layout family), screenshots each one in a locked-down browser, and the **Juror** scores it (design, usability, creativity, content). Cards are ranked by score.
-- **Corrections**: drag a card, click Move to top, or Score it yourself, and say why. The correction goes into **taste memory**, which travels in every later Juror call through Mubit, so the next batch is judged your way. Mubit trains its small model on those calls.
-- **Brand kit** (`/brand`): Pika or Mubit presets, or your own.
-- **Scorecard** (`/scorecard`): the Juror against real Awwwards jury scores, big model against Mubit's small model, cost and speed. Only recorded numbers; see `data/scorecard/README.md`.
+## Honest limits
 
-## Jury mode (`/jury`): does Pika see what the Awwwards jury sees?
-The answer key is the real Awwwards jury: 212 captured Sites of the Day with their public scores (from the team's capture, `data/sites/`).
-- Pika (the Juror) scores each site's hero to one decimal. On training sites, every miss against the real jury becomes a calibration note that goes into every later call through Mubit (recorded, so Mubit trains on them). The 34 held-out sites are scored before and after, with the no-train header, so they never leak into training.
-- Three measured tasks, each against a free baseline (`npm run jury:baselines`): average miss on the overall score (baseline 0.109, guessing the average), naming the criterion the jury rewarded most (baseline 47%, always "creativity"), and picking which of two sites the jury preferred (102 clear pairs, baseline 50%).
-- Why these tasks: every captured site is a winner, so overall scores sit between 7.15 and 8.18. Predicting the score alone would be easy to fake by guessing the average; the baselines make that impossible to hide.
-- Run it: `npm run jury:plan` (prints the call count, spends nothing), then `npm run jury` with a key (246 calls, under the daily cap).
-
-## MOCK mode (no key)
-Sections come from 12 built-in templates and the Juror is rule-based: fixed per-layout scores, and each correction moves that layout family by 0.35 points per place moved (so #7 to #1 lifts it 2.1 points, to the top). The header shows MOCK. Add a key to switch to real calls through Mubit.
-
-## Safety
-- Generated HTML can't run scripts or load anything: sanitised, CSP, sandboxed iframe, and a JavaScript-off, network-blocked screenshot browser.
-- Spend cap: at most `PIKA_MAX_CALLS_PER_DAY` model calls a day (default 300; one batch is 24). Calls over the cap are refused, never charged.
+- The detector is Impeccable's rules and the Juror is a model; neither is a human jury.
+- The evidence on the live page comes from generated sections in the holdout exam, not from redesigns of existing pages.
+- The local fine-tuned models run offline as stand-ins for a Mubit-trained adapter; the trained adapter can only be compared in Mubit's console today.
+- Training targets are Sonnet's outputs with a prompt condensed from open skills: Impeccable by Paul Bakaus (Apache 2.0), awwwards-skill by Alessandro Boni (MIT) and claude-skill-awwwards by tponscr-debug (MIT per its README). Not affiliated with Awwwards.
+- Generated HTML never runs scripts: sanitised, CSP, sandboxed iframes, and a JavaScript-off, network-blocked screenshot browser. A daily call cap and per-address limits stop runaway spend.

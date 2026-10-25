@@ -1,4 +1,6 @@
 // Every LLM call in Pika goes through here, and so through Mubit.
+// LLM_BACKEND=local is the one exception, for the offline dev loop: a model running on this machine
+// (mlx_lm.server or any OpenAI-compatible server at LOCAL_LLM_URL). No provider is called, Mubit sees nothing.
 import Anthropic from "@anthropic-ai/sdk";
 import { readFileSync, existsSync } from "node:fs";
 
@@ -8,6 +10,9 @@ if (existsSync(".env")) {
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
   }
 }
+
+export const BACKEND = process.env.LLM_BACKEND === "local" ? "local" : "mubit";
+const LOCAL_URL = process.env.LOCAL_LLM_URL || "http://127.0.0.1:8080";
 
 export const MODELS = {
   describer: process.env.DESCRIBER_MODEL || "claude-sonnet-5-5",
@@ -52,9 +57,36 @@ export type Reply = { text: string; requestId: string | null; ms: number; inToke
 // Running totals for this process, so a batch can report usage and stop at a budget.
 export const usage = { calls: 0, inTokens: 0, outTokens: 0 };
 
+// Text only: the local model has no eyes, so the local loop runs in DOM mode.
+async function askLocal(call: Call, started: number): Promise<Reply> {
+  if (call.content.some((b) => b.type !== "text")) throw new Error("LLM_BACKEND=local is text only: use --mode dom");
+  const res = await fetch(`${LOCAL_URL}/v1/chat/completions`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      // mlx_lm.server applies its --adapter-path only to "default_model"; any other name loads the bare model.
+      model: "default_model",
+      max_tokens: call.maxTokens,
+      temperature: Number(process.env.LOCAL_TEMPERATURE ?? 0.3),
+      messages: [
+        { role: "system", content: call.system },
+        { role: "user", content: call.content.map((b) => (b.type === "text" ? b.text : "")).join("\n\n") },
+      ],
+    }),
+  });
+  if (!res.ok) throw new Error(`local model ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  const data = (await res.json()) as { choices: { message: { content: string } }[]; usage?: { prompt_tokens: number; completion_tokens: number } };
+  const inTokens = data.usage?.prompt_tokens ?? 0;
+  const outTokens = data.usage?.completion_tokens ?? 0;
+  usage.inTokens += inTokens;
+  usage.outTokens += outTokens;
+  return { text: data.choices[0]?.message.content ?? "", requestId: null, ms: Date.now() - started, inTokens, outTokens };
+}
+
 export async function ask(call: Call): Promise<Reply> {
   const started = Date.now();
   usage.calls++;
+  if (BACKEND === "local") return askLocal(call, started);
   const { data, response } = await mubit()
     .messages.create(
       {
@@ -70,6 +102,8 @@ export async function ask(call: Call): Promise<Reply> {
   usage.inTokens += data.usage.input_tokens;
   usage.outTokens += data.usage.output_tokens;
   const out = data.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join("");
+  // An empty reply would otherwise reach the next call as an empty text block and fail there with a 400.
+  if (!out.trim()) throw new Error(`empty reply from ${call.model} (stop_reason ${data.stop_reason}, ${data.usage.output_tokens} output tokens)`);
   return {
     text: out,
     requestId: response.headers.get("x-middleware-request-id"),

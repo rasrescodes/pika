@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-24T15:33:34.737Z",
+  "model": "claude-sonnet-5-5",
+  "before": {
+    "n": 34,
+    "maeOverall": 0.23,
+    "topCriterionAccuracy": 0.471,
+    "pairAccuracy": 0.363,
+    "pairs": 102
+  },
+  "after": {
+    "n": 33,
+    "maeOverall": 0.177,
+    "topCriterionAccuracy": 0.333,
+    "pairAccuracy": 0.289,
+    "pairs": 97
+  },
+  "calibration": "From 178 sites compared with the real jury:\n- Overall you score 0.01 too high on average.\n- design: you score 0.11 too high.\n- content: you score 0.14 too low.\n- corporate clean sites: the jury rates them 0.11 higher than you do.\n- tech futuristic sites: the jury rates them 0.12 higher than you do.\n- maximal expressive sites: the jury rates them 0.10 lower than you do.",
+  "trainCalls": 178
+}

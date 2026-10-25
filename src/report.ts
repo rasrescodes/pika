@@ -4,7 +4,7 @@ import { readdirSync, readFileSync, existsSync, writeFileSync, mkdirSync } from 
 
 export type Run = {
   slug: string; mode: string; tag: string; split: string; firstShot: number; best: number; rounds: number; calls: number;
-  converged: boolean; lessonsUsed: boolean; visual_style?: string; layout_style?: string; category?: string;
+  converged: boolean; lessonsUsed: boolean; backend?: string; visual_style?: string; layout_style?: string; category?: string;
 };
 
 export function loadRuns(): Run[] {

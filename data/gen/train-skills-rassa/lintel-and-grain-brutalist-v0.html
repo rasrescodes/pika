@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Lintel &amp; Grain Architects</title>
+<style>
+*{box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#EDEBE6;color:#222222;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.frame{position:absolute;left:64px;top:40px;width:1152px;height:640px;border:1px solid #222222;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:48px 1fr 136px}
+.cell{border-right:1px solid #222222;border-bottom:1px solid #222222;padding:16px 16px;position:relative}
+.cell:last-child,.end{border-right:0}
+.bottom{border-bottom:0}
+.label{font-size:14px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;margin:0}
+.muted{opacity:.7}
+.top{display:flex;align-items:center;padding:0 16px}
+.t1{grid-column:1/9}.t2{grid-column:9/13;border-right:0}
+.main{grid-column:1/9;display:flex;align-items:flex-end;padding:32px 32px 32px 32px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:96px;line-height:.96;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.fig{grid-column:9/13;padding:0;border-right:0}
+.fig .label{position:absolute;left:16px;top:16px}
+.fig svg{position:absolute;left:0;top:0;overflow:visible}
+.sub{grid-column:1/6;display:flex;align-items:center;padding:16px 32px}
+.sub h2{margin:0;font-size:20px;font-weight:400;line-height:1.5;letter-spacing:0;text-wrap:pretty;max-width:60ch}
+.mat{grid-column:6/9;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.act{grid-column:9/13;display:flex;align-items:center;justify-content:space-between;padding:16px 32px 16px 16px;border-right:0}
+.btn{display:inline-flex;align-items:center;height:56px;padding:0 32px;background:#222222;color:#EDEBE6;font-size:18px;text-decoration:none;letter-spacing:0}
+</style></head><body>
+<main class="frame">
+<div class="cell top t1"><p class="label">Lintel &amp; Grain Architects</p></div>
+<div class="cell top t2"><p class="label muted">Bristol, England</p></div>
+
+<div class="cell main"><h1>Quiet buildings, built to last</h1></div>
+<div class="cell fig">
+<p class="label muted">Oak lintel, elevation</p>
+<svg width="416" height="455" viewBox="0 0 416 455" fill="none" stroke="#222222" stroke-width="1.5" aria-hidden="true">
+<rect x="40" y="168" width="376" height="64" fill="#5C6B5A"/>
+<path d="M72 232V454M136 232V454M248 232V454M312 232V454"/>
+<path d="M0 454H384"/>
+</svg>
+</div>
+
+<div class="cell sub bottom"><h2>A Bristol practice designing homes and schools in timber, brick and lime.</h2></div>
+<div class="cell mat bottom"><p class="label">Timber</p><p class="label">Brick</p><p class="label">Lime</p></div>
+<div class="cell act bottom"><a class="btn" href="#projects">View our projects</a></div>
+</main>
+</body></html>

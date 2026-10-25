@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Mubit</title>
+<style>
+body{width:1280px;height:720px;overflow:hidden;margin:0;background:#d2dad1;color:#263b32;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;position:relative}
+.band{position:relative;display:flex;align-items:center;box-sizing:border-box;isolation:isolate}
+.tint::before{content:"";position:absolute;inset:0;background:#263b32;opacity:.08;z-index:-1}
+.ink{background:#263b32;color:#d2dad1}
+header{height:64px;padding:0 64px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px;font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:20px;letter-spacing:-.01em}
+h1{margin:0;font-family:Menlo,'Courier New',monospace;font-weight:700;font-size:72px;line-height:1;letter-spacing:-.03em}
+h1 span.band{height:128px;width:1280px;white-space:nowrap}
+.l1{padding-left:64px}.l2{padding-left:192px}.l3{padding-left:320px}
+em{font-style:normal;color:#d9421d}
+.act{height:144px;padding:0 64px;justify-content:space-between}
+h2{margin:0;font-weight:400;font-size:22px;line-height:1.5;max-width:44ch;letter-spacing:0;text-wrap:pretty}
+a{display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 32px;background:#263b32;color:#d2dad1;font-size:18px;font-weight:700;text-decoration:none;border-radius:4px}
+.sig{height:128px;padding:0}
+.sig svg{display:block}
+.rule{position:absolute;left:0;right:0;bottom:0;height:8px;background:#d9421d}
+</style></head><body>
+<header class="band"><div class="brand"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#263b32" stroke-width="2"><path d="M4 22V6l10 12L24 6v16"/></svg>Mubit</div></header>
+<h1>
+<span class="band tint l1">The runtime</span>
+<span class="band ink l2">calibration layer</span>
+<span class="band l3">for&nbsp;<em>AI agents</em></span>
+</h1>
+<div class="band tint act">
+<h2>Your frontier models stay in place. Every run teaches the next one.</h2>
+<a href="#">Connect your agent <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="#d2dad1" stroke-width="2"><path d="M0 8h22M15 1l7 7-7 7"/></svg></a>
+</div>
+<div class="band sig"><svg width="1280" height="128" viewBox="0 0 1280 128" fill="none" stroke="#263b32" stroke-width="2"><path d="M0 100H160V28H320V100H480V46H640V84H800V58H960V70H1296"/><circle cx="1216" cy="70" r="8" fill="#d9421d" stroke="none"/></svg></div>
+<div class="rule"></div>
+</body></html>
