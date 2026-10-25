@@ -217,8 +217,6 @@ const STATIC = new Map([
   ["/compare-after.jpg", "public/compare-after.jpg"],
   ["/page-before.jpg", "public/page-before.jpg"],
   ["/page-after.jpg", "public/page-after.jpg"],
-  ["/kairo-spots.json", "public/kairo-spots.json"],
-  ["/nimbus-spots.json", "public/nimbus-spots.json"],
   ["/kairo-compare-before.jpg", "public/kairo-compare-before.jpg"],
   ["/kairo-compare-after.jpg", "public/kairo-compare-after.jpg"],
   ["/kairo-page-before.jpg", "public/kairo-page-before.jpg"],

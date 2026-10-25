@@ -220,8 +220,8 @@ const EXAMPLES = {
   kairo: {
     url: "kairo.example", before: "/kairo-compare-before.jpg", after: "/kairo-compare-after.jpg", pageBefore: "/kairo-page-before.jpg", pageAfter: "/kairo-page-after.jpg",
     nBefore: 38, nAfter: 3, secs: 176, cost: "$0.31",
-    caption: "Built from a published vibe-coding tutorial prompt. The yellow labels mark what the check found. Three small spacing notes remain after.",
-    altBefore: "Before, with the check's labels: glowing buttons, gradient headline, nested cards and low contrast text.",
+    caption: "Built from a published vibe-coding tutorial prompt. Three small spacing notes remain after.",
+    altBefore: "Before: glowing buttons, gradient headline, nested cards and low contrast text.",
     altAfter: "After: a plain dark page with one accent colour, a left-aligned headline and a flat board.",
     removed: [["Glowing shadows", 18], ["Low contrast text", 7], ["Icon tiles above headings", 6], ["Gradient text", 4], ["Skipped heading level", 1], ["AI colour palette", 1], ["Pulsing status dot", 1]],
   },
@@ -250,123 +250,9 @@ function showExample(name) {
   );
   document.querySelectorAll("[data-ex-pick]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.exPick === name)));
   document.querySelectorAll("[data-sync]").forEach((el) => (el.scrollTop = 0));
-  loadSpots(name);
 }
 document.querySelectorAll("[data-ex-pick]").forEach((b) => b.addEventListener("click", () => showExample(b.dataset.exPick)));
 
-// Detector labels: each finding the check reported, drawn where it was found on the before page.
-// Positions come from a 1280px-wide render; the slider shows the top 1500px, the scroller the whole page.
-const spotCache = {};
-const tip = document.createElement("div");
-tip.className = "spot-tip";
-tip.hidden = true;
-tip.setAttribute("role", "tooltip");
-tip.id = "spot-tip";
-document.body.append(tip);
-let pinned = null;
-
-function showTip(btn, findings) {
-  tip.replaceChildren(
-    ...findings.map((f) => {
-      const box = document.createElement("div");
-      const h = document.createElement("h4");
-      h.textContent = f.n;
-      box.append(h);
-      if (f.d) {
-        const d = document.createElement("p");
-        d.className = "d";
-        d.textContent = f.d;
-        box.append(d);
-      }
-      const why = document.createElement("p");
-      why.textContent = f.why;
-      box.append(why);
-      return box;
-    }),
-  );
-  tip.hidden = false;
-  const r = btn.getBoundingClientRect();
-  const t = tip.getBoundingClientRect();
-  const left = Math.min(Math.max(16, r.left), innerWidth - t.width - 16);
-  const below = r.bottom + 8 + t.height < innerHeight;
-  tip.style.left = `${left}px`;
-  tip.style.top = `${below ? r.bottom + 8 : Math.max(16, r.top - t.height - 8)}px`;
-}
-function hideTip() {
-  tip.hidden = true;
-  pinned?.setAttribute("aria-expanded", "false");
-  pinned = null;
-}
-function spotButton(cls, findings) {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = cls;
-  btn.setAttribute("aria-expanded", "false");
-  btn.setAttribute("aria-describedby", "spot-tip");
-  btn.setAttribute("aria-label", findings.map((f) => f.n).join(", "));
-  btn.addEventListener("pointerdown", (e) => e.stopPropagation()); // keep the slider from dragging
-  btn.addEventListener("mouseenter", () => !pinned && showTip(btn, findings));
-  btn.addEventListener("mouseleave", () => !pinned && (tip.hidden = true));
-  btn.addEventListener("focus", () => !pinned && showTip(btn, findings));
-  btn.addEventListener("blur", () => !pinned && (tip.hidden = true));
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const same = pinned === btn;
-    hideTip();
-    if (same) return;
-    pinned = btn;
-    btn.setAttribute("aria-expanded", "true");
-    showTip(btn, findings);
-  });
-  return btn;
-}
-function drawSpots(layer, data, cropH) {
-  const h = Math.min(cropH ?? data.h, data.h);
-  layer.style.aspectRatio = `${data.w} / ${h}`;
-  const pct = (v, of) => `${(v / of) * 100}%`;
-  const nodes = data.spots
-    .filter((s) => s.y < h - 8)
-    .map((s) => {
-      const names = [...new Set(s.f.map((f) => f.n))];
-      const btn = spotButton("spot", s.f);
-      const label = document.createElement("span");
-      label.textContent = names.length > 1 ? `${names[0]} +${names.length - 1}` : names[0];
-      btn.append(label);
-      Object.assign(btn.style, { left: pct(s.x, data.w), top: pct(s.y, h), width: pct(s.w, data.w), height: pct(Math.min(s.h, h - s.y), h) });
-      return btn;
-    });
-  const bar = document.createElement("div");
-  bar.className = "spot-pagebar";
-  for (const f of data.page) {
-    const b = spotButton("spot-page", [f]);
-    b.textContent = f.n;
-    bar.append(b);
-  }
-  // Page-wide findings get a bar on the whole-page view only; on the slider it would cover the counts.
-  layer.replaceChildren(...nodes, ...(data.page.length && !cropH ? [bar] : []));
-}
-async function loadSpots(name) {
-  hideTip();
-  try {
-    spotCache[name] ??= await (await fetch(`/${name}-spots.json`)).json();
-  } catch {
-    return document.querySelectorAll("[data-spots]").forEach((l) => l.replaceChildren());
-  }
-  const data = spotCache[name];
-  document.querySelectorAll('[data-spots="compare"]').forEach((l) => drawSpots(l, data, 1500));
-  document.querySelectorAll('[data-spots="page"]').forEach((l) => drawSpots(l, data));
-}
-document.addEventListener("click", (e) => !tip.contains(e.target) && hideTip());
-document.addEventListener("keydown", (e) => e.key === "Escape" && hideTip());
-addEventListener("scroll", () => pinned && hideTip(), { passive: true, capture: true });
-$("spots-toggle").addEventListener("click", (e) => {
-  const on = e.currentTarget.getAttribute("aria-pressed") !== "true";
-  e.currentTarget.setAttribute("aria-pressed", String(on));
-  e.currentTarget.textContent = on ? "Labels on" : "Labels off";
-  document.querySelectorAll("[data-spots]").forEach((l) => l.classList.toggle("off", !on));
-  hideTip();
-});
-loadSpots("nimbus");
 
 // The two whole-page scrollers move together.
 const scrollers = [...document.querySelectorAll("[data-sync]")];
