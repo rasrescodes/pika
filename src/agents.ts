@@ -2,7 +2,8 @@
 // a changed prompt is a new Mubit task. Everything that varies goes in the user message.
 import { readFileSync } from "node:fs";
 import sharp from "sharp";
-import { ask, image, text, MODELS, type Reply } from "./mubit.ts";
+import { ask, image, text, MODELS, BACKEND, type Reply } from "./mubit.ts";
+import { compile, FIT_SCRIPT } from "./compile.ts";
 
 const prompt = (name: string) => readFileSync(`prompts/${name}.md`, "utf8").trim();
 // Pinned versions: changing one starts a new Mubit task, so bump on purpose and note it in DECISIONS.md.
@@ -38,28 +39,34 @@ export async function describe(input: DescribeInput & { original: Buffer }, sess
     model: MODELS.describer,
     system: SYSTEM.describer,
     content: [await jpeg(input.original), text(describeText(input, "This is the first attempt for this screenshot."))],
-    maxTokens: 900,
+    maxTokens: 1600,
     session,
     record,
   });
 }
+
+// Exported so local fine-tuning builds training examples from exactly the message the Describer sees.
+export const domMessage = (input: DescribeInput & { measured: string }) =>
+  `MEASUREMENTS:\n${input.measured}\n\n${describeText(input, "This is the first attempt for this page.")}`;
+export const DOM_SYSTEM = SYSTEM.describerDom;
 
 // DOM loop: text only, the measurements from measure.json. A separate Mubit task from the screenshot Describer.
 export async function describeDom(input: DescribeInput & { measured: string }, session: string, record = true): Promise<Reply> {
   return ask({
     model: MODELS.describer,
     system: SYSTEM.describerDom,
-    content: [text(`MEASUREMENTS:\n${input.measured}\n\n${describeText(input, "This is the first attempt for this page.")}`)],
-    maxTokens: 900,
+    content: [text(domMessage(input))],
+    maxTokens: 1600,
     session,
     record,
   });
 }
 
-const FIT_SCRIPT =
-  "<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('[data-fit]')){const r=Number(e.dataset.fit)/e.getBoundingClientRect().width;if(r>0.4&&r<2.5){e.style.transformOrigin='0 0';e.style.transform='scaleX('+r+')'}}})</script>";
+// BUILDER=code (the default on the local backend) compiles the spec in code: no LLM call, fully fixed.
+export const CODE_BUILDER = (process.env.BUILDER || (BACKEND === "local" ? "code" : "llm")) === "code";
 
 export async function build(spec: string, session: string, record = true) {
+  if (CODE_BUILDER) return { text: "", requestId: null, ms: 0, inTokens: 0, outTokens: 0, html: compile(spec) };
   const reply = await ask({
     model: MODELS.builder,
     system: SYSTEM.builder,
