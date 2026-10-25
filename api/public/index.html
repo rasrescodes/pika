@@ -16,6 +16,7 @@
 <header class="top">
   <a class="brand" href="/"><img src="/pika-mark.svg" alt="" width="28" height="40"><span>Pika Polish</span></a>
   <nav aria-label="Main">
+    <a href="#how">How it works</a>
     <a href="#try">Try it</a>
     <a href="#evidence">Evidence</a>
     <a href="#api">API</a>
@@ -32,10 +33,46 @@
         <a class="btn" href="#api">Call the API</a>
       </div>
     </div>
-    <figure class="hero-mascot" aria-hidden="true">
-      <svg class="doodle" viewBox="0 0 120 120"><path d="M60 8 C63 44 76 57 112 60 C76 63 63 76 60 112 C57 76 44 63 8 60 C44 57 57 44 60 8 Z"/></svg>
-      <img src="/pika-mark.svg" alt="" width="190" height="270">
+    <figure class="hero-visual" aria-label="The AI-looking example before and after a Pika redesign">
+      <div class="shot before"><img src="/before.jpg" alt="Before: purple gradient, gradient headline, glowing button and glass cards." width="1280" height="720"><span class="badge">Before <b>15</b> findings</span></div>
+      <div class="shot after"><img src="/after.jpg" alt="After: the same words and colours set as a calm, left-aligned composition." width="1280" height="720"><span class="badge good">After <b>0</b> findings</span></div>
+      <img class="peek" src="/pika-mark.svg" alt="" width="70" height="100">
+      <svg class="doodle" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 8 C63 44 76 57 112 60 C76 63 63 76 60 112 C57 76 44 63 8 60 C44 57 57 44 60 8 Z"/></svg>
     </figure>
+  </section>
+
+  <section id="how" class="how" aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <ol class="flow">
+      <li class="step card">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M22 14 h38 l14 14 v54 h-52 z"/><path d="M60 14 v14 h14"/><path d="M32 42 h22 M32 54 h30 M32 66 h16"/><circle cx="66" cy="66" r="12"/><path d="M75 75 l9 9"/></svg>
+        <span class="n">1</span>
+        <h3>Check</h3>
+        <p>Impeccable's 62 rules read your HTML and flag the AI tells: gradient text, glows, side stripes, eyebrow chips, filler words, low contrast.</p>
+        <p class="meta">Free · about half a second</p>
+      </li>
+      <li class="step card">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 70 l34 -34 l10 10 l-34 34 l-14 4 z"/><path d="M58 42 l10 10"/><path d="M70 14 v12 M64 20 h12"/><path d="M20 30 v8 M16 34 h8"/><path d="M80 60 v6 M77 63 h6"/></svg>
+        <span class="n">2</span>
+        <h3>Redesign</h3>
+        <p>Claude Sonnet redesigns the section with craft rules condensed from three open design skills. Your words, colours and fonts stay; the findings go.</p>
+        <p class="meta">About 20 seconds · about $0.03</p>
+      </li>
+      <li class="step card">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><path d="M48 14 a34 34 0 1 1 -30 18"/><path d="M14 22 l4 10 l10 -4"/><path d="M36 50 l9 9 l17 -19"/></svg>
+        <span class="n">3</span>
+        <h3>Check again</h3>
+        <p>The same rules check the result, so you get the before and after in numbers, not a promise. Copy the HTML or download it.</p>
+        <p class="meta">Same detector · same rules</p>
+      </li>
+      <li class="step card soft">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="34" cy="48" r="18"/><circle cx="62" cy="48" r="18"/><path d="M48 16 v8 M36 20 l4 6 M60 20 l-4 6"/></svg>
+        <span class="n">4</span>
+        <h3>Learn</h3>
+        <p>Every redesign goes through Mubit, which keeps the good ones to train Pika's own small model, so taste moves out of a long prompt and into the weights.</p>
+        <p class="meta">Untick the box to opt out</p>
+      </li>
+    </ol>
   </section>
 
   <section id="try" class="tool" aria-labelledby="try-h">

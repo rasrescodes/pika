@@ -195,7 +195,7 @@ async function improve(req) {
   }
 }
 
-const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
+const TYPES = { ".jpg": "image/jpeg", ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
 // srcdoc previews inherit this policy: inline styles are allowed, scripts and outside requests are not.
 const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-src 'self' about:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 const STATIC = new Map([
@@ -204,6 +204,8 @@ const STATIC = new Map([
   ["/app.js", "public/app.js"],
   ["/pika-mark.svg", "public/pika-mark.svg"],
   ["/favicon.svg", "public/pika-icon.svg"],
+  ["/before.jpg", "public/before.jpg"],
+  ["/after.jpg", "public/after.jpg"],
   ["/samples/ai-hero.html", "samples/ai-hero.html"],
   ["/samples/plain-hero.html", "samples/plain-hero.html"],
   ["/notice", "prompts/NOTICE-skills.md"],
