@@ -1,4 +1,4 @@
-// Pika Polish: a public API and one-page site that checks a website section against Impeccable's design rules
+// Pika UI: a public API and one-page site that checks a website section against Impeccable's design rules
 // and redesigns it with Pika's skills prompt. One small Node process, no database, no build step.
 // Every model call goes through Mubit's Anthropic route (the hackathon rule). Keys come from the environment only.
 import { createServer } from "node:http";
@@ -251,4 +251,4 @@ const server = createServer(async (req, res) => {
   }
 });
 server.requestTimeout = 240_000;
-server.listen(PORT, () => console.log(`pika polish on :${PORT}; detector ${existsSync(DETECT) ? "ready" : "MISSING at " + DETECT}; model ${process.env.MUBIT_API_KEY ? MODEL : "not configured"}`));
+server.listen(PORT, () => console.log(`pika ui on :${PORT}; detector ${existsSync(DETECT) ? "ready" : "MISSING at " + DETECT}; model ${process.env.MUBIT_API_KEY ? MODEL : "not configured"}`));

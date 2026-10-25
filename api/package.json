@@ -1,5 +1,5 @@
 {
-  "name": "pika-polish",
+  "name": "pika-ui",
   "private": true,
   "type": "module",
   "description": "Check a website section against Impeccable's design rules and redesign it with Pika's skills prompt, through Mubit.",

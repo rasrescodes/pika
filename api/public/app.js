@@ -1,4 +1,4 @@
-// Pika Polish front end: loads examples, calls /v1/check and /v1/improve, and shows sandboxed previews.
+// Pika UI front end: loads examples, calls /v1/check and /v1/improve, and shows sandboxed previews.
 const $ = (id) => document.getElementById(id);
 const area = $("html");
 const status = $("status");
@@ -17,6 +17,7 @@ async function loadSample(name) {
   area.value = await res.text();
   document.querySelectorAll(".chip[data-sample]").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.sample === name)));
 }
+$("hero-cta").addEventListener("click", () => setTimeout(() => area.focus({ preventScroll: true }), 400));
 document.querySelectorAll("[data-sample]").forEach((el) =>
   el.addEventListener("click", async (e) => {
     if (el.tagName === "A") e.preventDefault();
@@ -98,7 +99,7 @@ $("check").addEventListener("click", async () => {
   const html = needHtml();
   if (!html) return;
   busy(true);
-  say("Checking against Impeccable's rules...");
+  say("Checking against 62 design rules...");
   try {
     const r = await call("/v1/check", { html });
     $("results").hidden = false;

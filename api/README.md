@@ -1,4 +1,4 @@
-# Pika Polish
+# Pika UI
 
 A public API and one-page site: paste a website section, get Impeccable's design findings for free, or a redesign made with Pika's skills prompt (`prompts/improver-skills-v1.md`) through Mubit.
 
